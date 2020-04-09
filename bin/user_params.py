@@ -86,34 +86,52 @@ class UserTab(object):
           step=0.1,
           style=style, layout=widget_layout)
 
-        div_row3 = Button(description='---Apoptotic Response---', disabled=True, layout=divider_button_layout)
+        div_row3 = Button(description='---ACE2 receptor dynamics with virus binding---', disabled=True, layout=divider_button_layout)
 
-        param_name8 = Button(description='max_infected_apoptosis_rate', disabled=True, layout=name_button_layout)
+        param_name8 = Button(description='ACE2_receptors_per_cell', disabled=True, layout=name_button_layout)
         param_name8.style.button_color = 'tan'
+
+        self.ACE2_receptors_per_cell = IntText(
+          value=100,
+          step=10,
+          style=style, layout=widget_layout)
+
+        param_name9 = Button(description='ACE2_binding_rate', disabled=True, layout=name_button_layout)
+        param_name9.style.button_color = 'lightgreen'
+
+        self.ACE2_binding_rate = FloatText(
+          value=0.01,
+          step=0.001,
+          style=style, layout=widget_layout)
+
+        div_row4 = Button(description='---Apoptotic Response---', disabled=True, layout=divider_button_layout)
+
+        param_name10 = Button(description='max_infected_apoptosis_rate', disabled=True, layout=name_button_layout)
+        param_name10.style.button_color = 'tan'
 
         self.max_infected_apoptosis_rate = FloatText(
           value=0.001,
           step=0.0001,
           style=style, layout=widget_layout)
 
-        param_name9 = Button(description='max_apoptosis_half_max', disabled=True, layout=name_button_layout)
-        param_name9.style.button_color = 'lightgreen'
+        param_name11 = Button(description='max_apoptosis_half_max', disabled=True, layout=name_button_layout)
+        param_name11.style.button_color = 'lightgreen'
 
         self.max_apoptosis_half_max = FloatText(
           value=500,
           step=10,
           style=style, layout=widget_layout)
 
-        param_name10 = Button(description='apoptosis_hill_power', disabled=True, layout=name_button_layout)
-        param_name10.style.button_color = 'tan'
+        param_name12 = Button(description='apoptosis_hill_power', disabled=True, layout=name_button_layout)
+        param_name12.style.button_color = 'tan'
 
         self.apoptosis_hill_power = FloatText(
           value=1,
           step=0.1,
           style=style, layout=widget_layout)
 
-        param_name11 = Button(description='virus_fraction_released_at_death', disabled=True, layout=name_button_layout)
-        param_name11.style.button_color = 'lightgreen'
+        param_name13 = Button(description='virus_fraction_released_at_death', disabled=True, layout=name_button_layout)
+        param_name13.style.button_color = 'lightgreen'
 
         self.virus_fraction_released_at_death = FloatText(
           value=0,
@@ -140,14 +158,20 @@ class UserTab(object):
         units_button9.style.button_color = 'lightgreen'
         units_button10 = Button(description='', disabled=True, layout=units_button_layout) 
         units_button10.style.button_color = 'lightgreen'
-        units_button11 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button11 = Button(description='', disabled=True, layout=units_button_layout) 
         units_button11.style.button_color = 'tan'
-        units_button12 = Button(description='virion', disabled=True, layout=units_button_layout) 
+        units_button12 = Button(description='1/min', disabled=True, layout=units_button_layout) 
         units_button12.style.button_color = 'lightgreen'
         units_button13 = Button(description='', disabled=True, layout=units_button_layout) 
-        units_button13.style.button_color = 'tan'
-        units_button14 = Button(description='', disabled=True, layout=units_button_layout) 
-        units_button14.style.button_color = 'lightgreen'
+        units_button13.style.button_color = 'lightgreen'
+        units_button14 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button14.style.button_color = 'tan'
+        units_button15 = Button(description='virion', disabled=True, layout=units_button_layout) 
+        units_button15.style.button_color = 'lightgreen'
+        units_button16 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button16.style.button_color = 'tan'
+        units_button17 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button17.style.button_color = 'lightgreen'
 
         desc_button1 = Button(description='', disabled=True, layout=desc_button_layout) 
         desc_button1.style.button_color = 'lightgreen'
@@ -163,14 +187,18 @@ class UserTab(object):
         desc_button6.style.button_color = 'tan'
         desc_button7 = Button(description='rate coefficient for virion endocytosis', disabled=True, layout=desc_button_layout) 
         desc_button7.style.button_color = 'lightgreen'
-        desc_button8 = Button(description='maximum rate of cell apoptosis due to viral infection', disabled=True, layout=desc_button_layout) 
+        desc_button8 = Button(description='number of ACE2 receptors per cell', disabled=True, layout=desc_button_layout) 
         desc_button8.style.button_color = 'tan'
-        desc_button9 = Button(description='viral load at which cells reach half max apoptosis rate', disabled=True, layout=desc_button_layout) 
+        desc_button9 = Button(description='ACE2 receptor-SARS-CoV-2 binding rate', disabled=True, layout=desc_button_layout) 
         desc_button9.style.button_color = 'lightgreen'
-        desc_button10 = Button(description='Hill power for viral load apoptosis response', disabled=True, layout=desc_button_layout) 
+        desc_button10 = Button(description='maximum rate of cell apoptosis due to viral infection', disabled=True, layout=desc_button_layout) 
         desc_button10.style.button_color = 'tan'
-        desc_button11 = Button(description='fraction of internal virus released at cell death', disabled=True, layout=desc_button_layout) 
+        desc_button11 = Button(description='viral load at which cells reach half max apoptosis rate', disabled=True, layout=desc_button_layout) 
         desc_button11.style.button_color = 'lightgreen'
+        desc_button12 = Button(description='Hill power for viral load apoptosis response', disabled=True, layout=desc_button_layout) 
+        desc_button12.style.button_color = 'tan'
+        desc_button13 = Button(description='fraction of internal virus released at cell death', disabled=True, layout=desc_button_layout) 
+        desc_button13.style.button_color = 'lightgreen'
 
         row1 = [param_name1, self.random_seed, units_button1, desc_button1] 
         row2 = [param_name2, self.virion_uncoating_rate, units_button3, desc_button2] 
@@ -179,10 +207,12 @@ class UserTab(object):
         row5 = [param_name5, self.virion_assembly_rate, units_button6, desc_button5] 
         row6 = [param_name6, self.virion_export_rate, units_button8, desc_button6] 
         row7 = [param_name7, self.virion_uptake_rate, units_button9, desc_button7] 
-        row8 = [param_name8, self.max_infected_apoptosis_rate, units_button11, desc_button8] 
-        row9 = [param_name9, self.max_apoptosis_half_max, units_button12, desc_button9] 
-        row10 = [param_name10, self.apoptosis_hill_power, units_button13, desc_button10] 
-        row11 = [param_name11, self.virus_fraction_released_at_death, units_button14, desc_button11] 
+        row8 = [param_name8, self.ACE2_receptors_per_cell, units_button11, desc_button8] 
+        row9 = [param_name9, self.ACE2_binding_rate, units_button12, desc_button9] 
+        row10 = [param_name10, self.max_infected_apoptosis_rate, units_button14, desc_button10] 
+        row11 = [param_name11, self.max_apoptosis_half_max, units_button15, desc_button11] 
+        row12 = [param_name12, self.apoptosis_hill_power, units_button16, desc_button12] 
+        row13 = [param_name13, self.virus_fraction_released_at_death, units_button17, desc_button13] 
 
         box_layout = Layout(display='flex', flex_flow='row', align_items='stretch', width='100%')
         box1 = Box(children=row1, layout=box_layout)
@@ -196,6 +226,8 @@ class UserTab(object):
         box9 = Box(children=row9, layout=box_layout)
         box10 = Box(children=row10, layout=box_layout)
         box11 = Box(children=row11, layout=box_layout)
+        box12 = Box(children=row12, layout=box_layout)
+        box13 = Box(children=row13, layout=box_layout)
 
         self.tab = VBox([
           box1,
@@ -210,8 +242,11 @@ class UserTab(object):
           div_row3,
           box8,
           box9,
+          div_row4,
           box10,
           box11,
+          box12,
+          box13,
         ])
 
     # Populate the GUI widgets with values from the XML
@@ -230,6 +265,8 @@ class UserTab(object):
         self.virion_assembly_rate.value = float(uep.find('.//virion_assembly_rate').text)
         self.virion_export_rate.value = float(uep.find('.//virion_export_rate').text)
         self.virion_uptake_rate.value = float(uep.find('.//virion_uptake_rate').text)
+        self.ACE2_receptors_per_cell.value = int(uep.find('.//ACE2_receptors_per_cell').text)
+        self.ACE2_binding_rate.value = float(uep.find('.//ACE2_binding_rate').text)
         self.max_infected_apoptosis_rate.value = float(uep.find('.//max_infected_apoptosis_rate').text)
         self.max_apoptosis_half_max.value = float(uep.find('.//max_apoptosis_half_max').text)
         self.apoptosis_hill_power.value = float(uep.find('.//apoptosis_hill_power').text)
@@ -252,6 +289,8 @@ class UserTab(object):
         uep.find('.//virion_assembly_rate').text = str(self.virion_assembly_rate.value)
         uep.find('.//virion_export_rate').text = str(self.virion_export_rate.value)
         uep.find('.//virion_uptake_rate').text = str(self.virion_uptake_rate.value)
+        uep.find('.//ACE2_receptors_per_cell').text = str(self.ACE2_receptors_per_cell.value)
+        uep.find('.//ACE2_binding_rate').text = str(self.ACE2_binding_rate.value)
         uep.find('.//max_infected_apoptosis_rate').text = str(self.max_infected_apoptosis_rate.value)
         uep.find('.//max_apoptosis_half_max').text = str(self.max_apoptosis_half_max.value)
         uep.find('.//apoptosis_hill_power').text = str(self.apoptosis_hill_power.value)
