@@ -1,5 +1,5 @@
 VERSION := $(shell grep . VERSION.txt | cut -f1 -d:)
-PROGRAM_NAME:= myproj
+PROGRAM_NAME := myproj
 
 CC := g++
 # CC := g++-mp-7 # typical macports compiler name
@@ -30,6 +30,7 @@ ARCH := native # best auto-tuning
 # ARCH := nocona #64-bit pentium 4 or later 
 
 # CFLAGS := -march=$(ARCH) -Ofast -s -fomit-frame-pointer -mfpmath=both -fopenmp -m64 -std=c++11
+# CFLAGS := -march=$(ARCH) -O3 -fomit-frame-pointer -mfpmath=both -fopenmp -m64 -std=c++11
 # remove the -march arg to avoid SIGILL error on nanoHUB
 CFLAGS := -O3 -fomit-frame-pointer -mfpmath=both -fopenmp -m64 -std=c++11
 
@@ -46,7 +47,7 @@ PhysiCell_pugixml.o PhysiCell_settings.o
 
 # put your custom objects here (they should be in the custom_modules directory)
 
-PhysiCell_custom_module_OBJECTS := custom.o
+PhysiCell_custom_module_OBJECTS := custom.o submodel_data_structures.o internal_viral_dynamics.o internal_viral_response.o receptor_dynamics.o
 
 pugixml_OBJECTS := pugixml.o
 
@@ -141,6 +142,18 @@ PhysiCell_settings.o: ./modules/PhysiCell_settings.cpp
 custom.o: ./custom_modules/custom.cpp 
 	$(COMPILE_COMMAND) -c ./custom_modules/custom.cpp
 
+submodel_data_structures.o: ./custom_modules/submodel_data_structures.cpp
+	$(COMPILE_COMMAND) -c ./custom_modules/submodel_data_structures.cpp
+
+internal_viral_dynamics.o: ./custom_modules/internal_viral_dynamics.cpp
+	$(COMPILE_COMMAND) -c ./custom_modules/internal_viral_dynamics.cpp
+
+internal_viral_response.o: ./custom_modules/internal_viral_response.cpp
+	$(COMPILE_COMMAND) -c ./custom_modules/internal_viral_response.cpp
+
+receptor_dynamics.o: ./custom_modules/receptor_dynamics.cpp
+	$(COMPILE_COMMAND) -c ./custom_modules/receptor_dynamics.cpp
+
 # cleanup
 
 reset:
@@ -162,7 +175,7 @@ distclean: clean
 
 clean:
 	rm -f *.o
-	rm -f $(PROGRAM_NAME)
+	rm -f $(PROGRAM_NAME)*
 	
 data-cleanup:
 	rm -f *.mat
