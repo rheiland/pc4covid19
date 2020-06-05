@@ -22,8 +22,8 @@ for a summary of changes to the model.
 
 ## Release summary: 
 ### 3.0:
-The major change to the GUI in this release is the addition of an 'Cell Types' tab.
-This allows editing parameters associated with <cell_definitions> in the configuration file.
+The major change to the GUI in this release is the addition of a 'Cell Types' tab.
+This allows editing parameters associated with `<cell_definitions>` in the configuration file.
 
 ### 2.0:
 The major change to the GUI in this release is the addition of an 'Animate' tab.
