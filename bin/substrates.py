@@ -75,6 +75,7 @@ class SubstrateTab(object):
         # self.y_range = 2000.
 
         self.show_nucleus = False
+        self.semi_transparent = False
         self.show_edge = True
 
         substrates_default_disabled_flag = True  # True = disable them by default; False=enable them
@@ -262,12 +263,29 @@ class SubstrateTab(object):
         def cell_nucleus_toggle_cb(b):
             # self.update()
             if (self.cell_nucleus_toggle.value):  
-                self.show_nucleus = True
+                # self.show_nucleus = True
+                self.show_nucleus = False
             else:
                 self.show_nucleus = False
             self.i_plot.update()
 
         self.cell_nucleus_toggle.observe(cell_nucleus_toggle_cb)
+
+        #---------------------
+        self.cell_semitrans_toggle = Checkbox(
+            description='translucent',
+            disabled=False,
+            value = self.semi_transparent,
+#           layout=Layout(width=constWidth2),
+        )
+        def cell_semitrans_toggle_cb(b):
+            if (self.cell_semitrans_toggle.value):  
+                self.semi_transparent = True
+            else:
+                self.semi_transparent = False
+            self.i_plot.update()
+
+        self.cell_semitrans_toggle.observe(cell_semitrans_toggle_cb)
 
         #----
         self.cell_edges_toggle = Checkbox(
@@ -298,9 +316,12 @@ class SubstrateTab(object):
             if (self.cells_toggle.value):
                 self.cell_edges_toggle.disabled = False
                 self.cell_nucleus_toggle.disabled = False
+                self.cell_semitrans_toggle.disabled = False
+                # self.semi_transparent = True
             else:
                 self.cell_edges_toggle.disabled = True
                 self.cell_nucleus_toggle.disabled = True
+                self.cell_semitrans_toggle.disabled = True
 
         self.cells_toggle.observe(cells_toggle_cb)
 
@@ -355,7 +376,9 @@ class SubstrateTab(object):
                             align_items='stretch',
                             flex_direction='row',
                             display='flex')) 
-        row1b = Box( [self.cells_toggle, self.cell_nucleus_toggle, self.cell_edges_toggle], layout=Layout(border='1px solid black',
+        # row1b = Box( [self.cells_toggle, self.cell_nucleus_toggle, self.cell_edges_toggle], layout=Layout(border='1px solid black',
+        # row1b = Box( [self.cells_toggle, self.cell_edges_toggle], layout=Layout(border='1px solid black',
+        row1b = Box( [self.cells_toggle, self.cell_semitrans_toggle, self.cell_edges_toggle], layout=Layout(border='1px solid black',
                             width='50%',
                             height='',
                             align_items='stretch',
@@ -862,17 +885,21 @@ class SubstrateTab(object):
         # print('max=',markers_size.max())
 
         #rwh - temp fix - Ah, error only occurs when "edges" is toggled on
+        alpha_val = 1.0
+        if (self.semi_transparent):
+            alpha_val = 0.5
         if (self.show_edge):
             try:
                 # plt.scatter(xvals,yvals, s=markers_size, c=rgbs, edgecolor='black', linewidth=0.5)
-                self.circles(xvals,yvals, s=rvals, color=rgbs, edgecolor='black', linewidth=0.5)
+                self.circles(xvals,yvals, s=rvals, color=rgbs, edgecolor='black', linewidth=0.5, alpha=alpha_val)
                 # cell_circles = self.circles(xvals,yvals, s=rvals, color=rgbs, edgecolor='black', linewidth=0.5)
                 # plt.sci(cell_circles)
             except (ValueError):
                 pass
         else:
             # plt.scatter(xvals,yvals, s=markers_size, c=rgbs)
-            self.circles(xvals,yvals, s=rvals, color=rgbs)
+            # self.circles(xvals,yvals, s=rvals, color=rgbs, alpha=alpha_val, markeredgewidth=0.0 )
+            self.circles(xvals,yvals, s=rvals, color=rgbs, alpha=alpha_val, edgecolor=None )
 
         # if (self.show_tracks):
         #     for key in self.trackd.keys():

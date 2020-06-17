@@ -115,7 +115,9 @@ int main( int argc, char* argv[] )
 	
 	create_cell_types();
 	setup_tissue();
-
+	
+	/* test space */
+	
 	/* Users typically stop modifying here. END USERMODS */ 
 	
 	// set MultiCellDS save options 
@@ -191,9 +193,9 @@ int main( int argc, char* argv[] )
 				if( PhysiCell_settings.enable_SVG_saves == true )
 				{	
 					sprintf( filename , "%s/snapshot%08u.svg" , PhysiCell_settings.folder.c_str() , PhysiCell_globals.SVG_output_index ); 
-					SVG_plot( filename , microenvironment, 0.0 , PhysiCell_globals.current_time, cell_coloring_function );
+					SVG_plot_virus( filename , microenvironment, 0.0 , PhysiCell_globals.current_time, cell_coloring_function );
 					
-					PhysiCell_globals.SVG_output_index++; 
+ 					PhysiCell_globals.SVG_output_index++; 
 					PhysiCell_globals.next_SVG_save_time  += PhysiCell_settings.SVG_save_interval;
 				}
 			}
@@ -204,6 +206,11 @@ int main( int argc, char* argv[] )
 			// receptor dynamics 
 			
 			receptor_dynamics_main_model( diffusion_dt );
+			
+			// detach dead cells 
+			// detach_all_dead_cells( diffusion_dt );
+			
+			cells_to_move_from_edge.clear();
 		
 			// run PhysiCell 
 			((Cell_Container *)microenvironment.agent_container)->update_all_cells( PhysiCell_globals.current_time );
@@ -212,11 +219,13 @@ int main( int argc, char* argv[] )
 			  Custom add-ons could potentially go here. 
 			*/
 			
+			process_tagged_cells_on_edge(); 
+			
 			move_exported_to_viral_field(); 
 			
 			immune_cell_recruitment( diffusion_dt ); 
 			
-			keep_immune_cells_in_bounds( diffusion_dt ); 
+			// keep_immune_cells_in_bounds( diffusion_dt ); 
 			
 			PhysiCell_globals.current_time += diffusion_dt;
 		}
@@ -229,6 +238,15 @@ int main( int argc, char* argv[] )
 	}
 	catch( const std::exception& e )
 	{ // reference to the base of a polymorphic object
+	
+		std::cout << "Something went wrong. Let's save data." << std::endl; 
+		
+		sprintf( filename , "%s/error" , PhysiCell_settings.folder.c_str() ); 
+		save_PhysiCell_to_MultiCellDS_xml_pugi( filename , microenvironment , PhysiCell_globals.current_time ); 
+		
+		sprintf( filename , "%s/error.svg" , PhysiCell_settings.folder.c_str() ); 
+		SVG_plot( filename , microenvironment, 0.0 , PhysiCell_globals.current_time, cell_coloring_function );
+	
 		std::cout << e.what(); // information from length_error printed
 	}
 	
@@ -245,5 +263,27 @@ int main( int argc, char* argv[] )
 	std::cout << std::endl << "Total simulation runtime: " << std::endl; 
 	BioFVM::display_stopwatch_value( std::cout , BioFVM::runtime_stopwatch_value() ); 
 
+
+	
+	extern int recruited_neutrophils; 
+	extern int recruited_Tcells; 
+	
+	std::cout << std::endl; 
+	std::cout << "recruited neutrophils: " << recruited_neutrophils << std::endl; 
+	std::cout << "recruited T cells: " << recruited_Tcells << std::endl << std::endl; 
+	
+	recruited_neutrophils = 0; 
+	recruited_Tcells = 0; 
+	for( int n =0 ; n < (*all_cells).size() ; n++ )
+	{
+		Cell* pC = (*all_cells)[n]; 
+		if( pC->type == 5 )
+		{ recruited_neutrophils++; }
+		if( pC->type == 3 )
+		{ recruited_Tcells++; }
+	}
+	std::cout << "remaining neutrophils: " << recruited_neutrophils << std::endl; 
+	std::cout << "remaining T cells: " << recruited_Tcells << std::endl; 
+	
 	return 0; 
 }

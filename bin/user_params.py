@@ -58,48 +58,48 @@ class UserTab(object):
         param_name4.style.button_color = 'tan'
 
         self.neutrophil_max_recruitment_rate = FloatText(
-          value=0.00000005,
-          step=1e-08,
+          value=4e-9,
+          step=1e-09,
           style=style, layout=widget_layout)
 
         param_name5 = Button(description='neutrophil_recruitment_min_signal', disabled=True, layout=name_button_layout)
         param_name5.style.button_color = 'lightgreen'
 
         self.neutrophil_recruitment_min_signal = FloatText(
-          value=0.01,
-          step=0.001,
+          value=0.1,
+          step=0.01,
           style=style, layout=widget_layout)
 
         param_name6 = Button(description='neutrophil_recruitment_saturation_signal', disabled=True, layout=name_button_layout)
         param_name6.style.button_color = 'tan'
 
         self.neutrophil_recruitment_saturation_signal = FloatText(
-          value=0.03,
-          step=0.001,
+          value=0.3,
+          step=0.01,
           style=style, layout=widget_layout)
 
         param_name7 = Button(description='CD8_Tcell_max_recruitment_rate', disabled=True, layout=name_button_layout)
         param_name7.style.button_color = 'lightgreen'
 
         self.CD8_Tcell_max_recruitment_rate = FloatText(
-          value=0.00000005,
-          step=1e-08,
+          value=4e-9,
+          step=1e-09,
           style=style, layout=widget_layout)
 
         param_name8 = Button(description='CD8_Tcell_recruitment_min_signal', disabled=True, layout=name_button_layout)
         param_name8.style.button_color = 'tan'
 
         self.CD8_Tcell_recruitment_min_signal = FloatText(
-          value=0.03,
-          step=0.001,
+          value=0.2,
+          step=0.01,
           style=style, layout=widget_layout)
 
         param_name9 = Button(description='CD8_Tcell_recruitment_saturation_signal', disabled=True, layout=name_button_layout)
         param_name9.style.button_color = 'lightgreen'
 
         self.CD8_Tcell_recruitment_saturation_signal = FloatText(
-          value=0.05,
-          step=0.01,
+          value=0.4,
+          step=0.1,
           style=style, layout=widget_layout)
 
         div_row3 = Button(description='---Initialization Options--', disabled=True, layout=divider_button_layout)

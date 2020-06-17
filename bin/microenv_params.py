@@ -31,8 +31,8 @@ class MicroenvTab(object):
 
         param_name1 = Button(description='diffusion_coefficient', disabled=True, layout=name_button_layout)
 
-        self.virion_diffusion_coefficient = FloatText(value=10.0,
-          step=1,style=style, layout=widget_layout)
+        self.virion_diffusion_coefficient = FloatText(value=2.5,
+          step=0.1,style=style, layout=widget_layout)
 
         param_name2 = Button(description='decay_rate', disabled=True, layout=name_button_layout)
 
@@ -51,8 +51,8 @@ class MicroenvTab(object):
 
         param_name5 = Button(description='diffusion_coefficient', disabled=True, layout=name_button_layout)
 
-        self.assembled_virion_diffusion_coefficient = FloatText(value=10.0,
-          step=1,style=style, layout=widget_layout)
+        self.assembled_virion_diffusion_coefficient = FloatText(value=2.5,
+          step=0.1,style=style, layout=widget_layout)
 
         param_name6 = Button(description='decay_rate', disabled=True, layout=name_button_layout)
 
