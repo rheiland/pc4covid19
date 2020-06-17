@@ -6,8 +6,18 @@ std::string epithelium_submodel_version = "0.0.1";
 
 Submodel_Information epithelium_submodel_info; 
 
+void epithelium_contact_function( Cell* pC1, Phenotype& p1, Cell* pC2, Phenotype& p2, double dt )
+{
+	// elastic adhesions 
+	standard_elastic_contact_function( pC1,p1, pC2, p2, dt );
+	
+	return; 
+}
+
 void epithelium_phenotype( Cell* pCell, Phenotype& phenotype, double dt )
 {
+	static int debris_index = microenvironment.find_density_index( "debris");
+	
 	// receptor dynamics 
 	// requires faster time scale - done in main function 
 	
@@ -27,7 +37,9 @@ void epithelium_phenotype( Cell* pCell, Phenotype& phenotype, double dt )
 	if( phenotype.death.dead == true )
 	{
 		// detach all attached cells 
-		remove_all_adhesions( pCell ); 
+		// remove_all_adhesions( pCell ); 
+		
+		phenotype.secretion.secretion_rates[debris_index] = pCell->custom_data["debris_secretion_rate"]; 
 	}
 	
 	// if I am dead, make sure to still secrete the chemokine 
@@ -36,7 +48,7 @@ void epithelium_phenotype( Cell* pCell, Phenotype& phenotype, double dt )
 	double P = pCell->custom_data[nP];
 	
 	// warning hardcoded 
-	if( phenotype.death.dead == true && P > 0.001 )
+	if( phenotype.death.dead == false && P > 0.001 )
 	{
 		phenotype.secretion.secretion_rates[chemokine_index] = 
 			pCell->custom_data[ "infected_cell_chemokine_secretion_rate" ];
@@ -54,24 +66,30 @@ void epithelium_phenotype( Cell* pCell, Phenotype& phenotype, double dt )
 
 void epithelium_mechanics( Cell* pCell, Phenotype& phenotype, double dt )
 {
+	pCell->is_movable = false; 
+	
 	// if I'm dead, don't bother 
 	if( phenotype.death.dead == true )
 	{
 		// the cell death functions don't automatically turn off custom functions, 
 		// since those are part of mechanics. 
-		remove_all_adhesions( pCell ); 
+		// remove_all_adhesions( pCell ); 
 		
 		// Let's just fully disable now. 
 		pCell->functions.custom_cell_rule = NULL; 
+		pCell->functions.contact_function = NULL; 
 		return; 
 	}	
 	
+	// this is now part of contact_function 
+	/*
 	// if I'm adhered to something ... 
 	if( pCell->state.neighbors.size() > 0 )
 	{
 		// add the elastic forces 
 		extra_elastic_attachment_mechanics( pCell, phenotype, dt );
 	}
+	*/
 	return; 
 }
 
@@ -111,6 +129,7 @@ void epithelium_submodel_setup( void )
 	pCD = find_cell_definition( "lung epithelium" ); 
 	pCD->functions.update_phenotype = epithelium_submodel_info.phenotype_function;
 	pCD->functions.custom_cell_rule = epithelium_submodel_info.mechanics_function;
+	pCD->functions.contact_function = epithelium_contact_function; 
 	
 	return;
 }
@@ -125,9 +144,12 @@ void TCell_induced_apoptosis( Cell* pCell, Phenotype& phenotype, double dt )
 	{
 		// make sure to get rid of all adhesions! 
 		// detach all attached cells 
-		remove_all_adhesions( pCell ); 
+		// remove_all_adhesions( pCell ); 
 		
-		std::cout << "I'm dead of a T cell " << std::endl; 
+		#pragma omp critical(tcell)
+		{
+		std::cout << "\t\t\t\t" << pCell << " is dead of a T cell at " << pCell->position << std::endl; 
+		}
 		
 		// induce death 
 		pCell->start_death( apoptosis_index ); 
