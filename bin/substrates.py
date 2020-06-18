@@ -377,8 +377,8 @@ class SubstrateTab(object):
                             flex_direction='row',
                             display='flex')) 
         # row1b = Box( [self.cells_toggle, self.cell_nucleus_toggle, self.cell_edges_toggle], layout=Layout(border='1px solid black',
-        # row1b = Box( [self.cells_toggle, self.cell_edges_toggle], layout=Layout(border='1px solid black',
-        row1b = Box( [self.cells_toggle, self.cell_semitrans_toggle, self.cell_edges_toggle], layout=Layout(border='1px solid black',
+        # row1b = Box( [self.cells_toggle, self.cell_semitrans_toggle, self.cell_edges_toggle], layout=Layout(border='1px solid black',
+        row1b = Box( [self.cells_toggle, self.cell_edges_toggle], layout=Layout(border='1px solid black',
                             width='50%',
                             height='',
                             align_items='stretch',
@@ -885,21 +885,21 @@ class SubstrateTab(object):
         # print('max=',markers_size.max())
 
         #rwh - temp fix - Ah, error only occurs when "edges" is toggled on
-        alpha_val = 1.0
-        if (self.semi_transparent):
-            alpha_val = 0.5
+        # alpha_val = 1.0
+        # if (self.semi_transparent):
+        #     alpha_val = 0.5
         if (self.show_edge):
             try:
                 # plt.scatter(xvals,yvals, s=markers_size, c=rgbs, edgecolor='black', linewidth=0.5)
-                self.circles(xvals,yvals, s=rvals, color=rgbs, edgecolor='black', linewidth=0.5, alpha=alpha_val)
-                # cell_circles = self.circles(xvals,yvals, s=rvals, color=rgbs, edgecolor='black', linewidth=0.5)
+                # self.circles(xvals,yvals, s=rvals, color=rgbs, edgecolor='black', linewidth=0.5, alpha=alpha_val)
+                cell_circles = self.circles(xvals,yvals, s=rvals, color=rgbs, edgecolor='black', linewidth=0.5)
                 # plt.sci(cell_circles)
             except (ValueError):
                 pass
         else:
-            # plt.scatter(xvals,yvals, s=markers_size, c=rgbs)
+            plt.scatter(xvals,yvals, s=markers_size, c=rgbs)
             # self.circles(xvals,yvals, s=rvals, color=rgbs, alpha=alpha_val, markeredgewidth=0.0 )
-            self.circles(xvals,yvals, s=rvals, color=rgbs, alpha=alpha_val, edgecolor=None )
+            # self.circles(xvals,yvals, s=rvals, color=rgbs, alpha=alpha_val, edgecolor=None )
 
         # if (self.show_tracks):
         #     for key in self.trackd.keys():
