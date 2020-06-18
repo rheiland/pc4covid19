@@ -890,15 +890,13 @@ class SubstrateTab(object):
         #     alpha_val = 0.5
         if (self.show_edge):
             try:
-                # plt.scatter(xvals,yvals, s=markers_size, c=rgbs, edgecolor='black', linewidth=0.5)
                 # self.circles(xvals,yvals, s=rvals, color=rgbs, edgecolor='black', linewidth=0.5, alpha=alpha_val)
                 cell_circles = self.circles(xvals,yvals, s=rvals, color=rgbs, edgecolor='black', linewidth=0.5)
                 # plt.sci(cell_circles)
             except (ValueError):
                 pass
         else:
-            plt.scatter(xvals,yvals, s=markers_size, c=rgbs)
-            # self.circles(xvals,yvals, s=rvals, color=rgbs, alpha=alpha_val, markeredgewidth=0.0 )
+            self.circles(xvals,yvals, s=rvals, color=rgbs)
             # self.circles(xvals,yvals, s=rvals, color=rgbs, alpha=alpha_val, edgecolor=None )
 
         # if (self.show_tracks):
