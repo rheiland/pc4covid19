@@ -80,8 +80,8 @@ void epithelium_phenotype( Cell* pCell, Phenotype& phenotype, double dt )
 
 void epithelium_mechanics( Cell* pCell, Phenotype& phenotype, double dt )
 {
-	static int debris_index = microenvironment.find_density_index( "debris");
-	
+	static int debris_index = microenvironment.find_density_index( "debris" ); 
+
 	pCell->is_movable = false; 
 	
 	// if I'm dead, don't bother 

@@ -743,8 +743,6 @@ void Cell::update_position( double dt )
 	previous_velocity = velocity; 
 	
 	velocity[0]=0; velocity[1]=0; velocity[2]=0;
-	// #pragma omp critical
-	//{update_voxel_in_container();}
 	if(get_container()->underlying_mesh.is_position_valid(position[0],position[1],position[2]))
 	{
 		updated_current_mechanics_voxel_index=get_container()->underlying_mesh.nearest_voxel_index( position );
@@ -778,10 +776,8 @@ void Cell::update_voxel_in_container()
 		// check if this agent has a valid voxel index, if so, remove it from previous voxel
 		if( get_current_mechanics_voxel_index() >= 0)
 		{
-			// #pragma omp critical
 			{get_container()->remove_agent_from_voxel(this, get_current_mechanics_voxel_index());}
 		}
-		// #pragma omp critical
 		{get_container()->add_agent_to_outer_voxel(this);}
 		// std::cout<<"cell out of boundary..."<< __LINE__<<" "<<ID<<std::endl;
 		current_mechanics_voxel_index=-1;
@@ -796,7 +792,6 @@ void Cell::update_voxel_in_container()
 	// update mesh indices (if needed)
 	if(updated_current_mechanics_voxel_index!= get_current_mechanics_voxel_index())
 	{
-		// #pragma omp critical
 		{
 			container->remove_agent_from_voxel(this, get_current_mechanics_voxel_index());
 			container->add_agent_to_voxel(this, updated_current_mechanics_voxel_index);
@@ -1127,7 +1122,7 @@ void Cell::ingest_cell( Cell* pCell_to_eat )
 	{ return; } 
 		
 	// make this thread safe 
-	#pragma omp critical(ingest)
+	#pragma omp critical
 	{
 		bool volume_was_zero = false; 
 		if( pCell_to_eat->phenotype.volume.total < 1e-15 )
@@ -1196,9 +1191,7 @@ void Cell::ingest_cell( Cell* pCell_to_eat )
 		// pCell_to_eat->die(); // I don't think this is safe if it's in an OpenMP loop 
 		
 		// flag it for removal 
-//		if( volume_was_zero == false )
-//		{ pCell_to_eat->flag_for_removal(); } // should be safe now 
-		pCell_to_eat->flag_for_removal(); 
+		// pCell_to_eat->flag_for_removal(); 
 		// mark it as dead 
 		pCell_to_eat->phenotype.death.dead = true; 
 		// set secretion and uptake to zero 
@@ -1211,12 +1204,16 @@ void Cell::ingest_cell( Cell* pCell_to_eat )
 		pCell_to_eat->functions.contact_function = NULL; 
 
 		// remove all adhesions 
-		pCell_to_eat->remove_all_attached_cells();
+		// pCell_to_eat->remove_all_attached_cells();
 		
 		// set cell as unmovable and non-secreting 
 		pCell_to_eat->is_movable = false; 
 		pCell_to_eat->is_active = false; 
 	}
+
+	// things that have their own thread safety 
+	pCell_to_eat->flag_for_removal();
+	pCell_to_eat->remove_all_attached_cells();
 	
 	return; 
 }
@@ -1228,17 +1225,6 @@ void Cell::lyse_cell( void )
 	{ return; } 	
 	
 	// flag for removal 
-	/*
-	#pragma omp critical(lyse_cell)
-	{
-		bool volume_was_zero = false; 
-		if( phenotype.volume.total < 1e-15 )
-		{ volume_was_zero = true; }
-	
-		if( volume_was_zero == false )
-		{ flag_for_removal(); }
-	}
-	*/
 	flag_for_removal(); // should be safe now 
 	
 	// mark it as dead 
@@ -2270,16 +2256,19 @@ int Cell_State::number_of_attached_cells( void )
 
 void Cell::attach_cell( Cell* pAddMe )
 {
-	#pragma omp critical(attach)
+	#pragma omp critical
 	{
-		bool already_attached = false; 
-		for( int i=0 ; i < state.attached_cells.size() ; i++ )
-		{
-			if( state.attached_cells[i] == pAddMe )
-			{ already_attached = true; }
-		}
-		if( already_attached == false )
+		auto result = std::find( std::begin(state.attached_cells),std::end(state.attached_cells), pAddMe );
+		if( result == std::end(state.attached_cells) )
 		{ state.attached_cells.push_back( pAddMe ); }
+		// bool already_attached = false; 
+		// for( int i=0 ; i < state.attached_cells.size() ; i++ )
+		// {
+		// 	if( state.attached_cells[i] == pAddMe )
+		// 	{ already_attached = true; }
+		// }
+		// if( already_attached == false )
+		// { state.attached_cells.push_back( pAddMe ); }
 	}
 	// pAddMe->attach_cell( this ); 
 	return; 
@@ -2287,31 +2276,33 @@ void Cell::attach_cell( Cell* pAddMe )
 
 void Cell::detach_cell( Cell* pRemoveMe )
 {
-	#pragma omp critical(detach)
+	#pragma omp critical
 	{
-		bool found = false; 
-		int i = 0; 
-		while( !found && i < state.attached_cells.size() )
-		{
-			// if pRemoveMe is in the cell's list, remove it
-			if( state.attached_cells[i] == pRemoveMe )
-			{
-				int n = state.attached_cells.size(); 
-				// copy last entry to current position 
-				state.attached_cells[i] = state.attached_cells[n-1]; 
-				// shrink by one 
-				state.attached_cells.pop_back(); 
-				found = true; 
-			}
-			i++; 
-		}
+		auto result = std::find( std::begin(state.attached_cells),std::end(state.attached_cells), pRemoveMe );
+		if( result != std::end(state.attached_cells) )
+		{ state.attached_cells.erase( result ); }
+		// bool found = false; 
+		// int i = 0; 
+		// while( !found && i < state.attached_cells.size() )
+		// {
+		// 	// if pRemoveMe is in the cell's list, remove it
+		// 	if( state.attached_cells[i] == pRemoveMe )
+		// 	{
+		// 		int n = state.attached_cells.size(); 
+		// 		// copy last entry to current position 
+		// 		state.attached_cells[i] = state.attached_cells[n-1]; 
+		// 		// shrink by one 
+		// 		state.attached_cells.pop_back(); 
+		// 		found = true; 
+		// 	}
+		// 	i++; 
+		// }
 	}
 	return; 
 }
 
 void Cell::remove_all_attached_cells( void )
 {
-	#pragma omp critical(remove_all_attached_cells)
 	{
 		// remove self from any attached cell's list. 
 		for( int i = 0; i < state.attached_cells.size() ; i++ )

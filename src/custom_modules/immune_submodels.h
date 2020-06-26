@@ -45,6 +45,8 @@ void CD8_Tcell_contact_function( Cell* pC1, Phenotype& p1, Cell* pC2, Phenotype&
 void CD8_Tcell_phenotype( Cell* pCell, Phenotype& phenotype, double dt ); 
 void CD8_Tcell_mechanics( Cell* pCell, Phenotype& phenotype, double dt ); 
 
+void immune_cell_motility_direction( Cell* pCell, Phenotype& phenotype , double dt );
+
 void macrophage_phenotype( Cell* pCell, Phenotype& phenotype, double dt ); 
 void macrophage_mechanics( Cell* pCell, Phenotype& phenotype, double dt ); 
 
@@ -75,6 +77,9 @@ void immune_submodels_setup( void );
 
 bool check_for_out_of_bounds( Cell* pC , double tolerance );
 std::vector<double> set_nudge_from_edge( Cell* pC , double tolerance );
+
+void keep_immune_cells_off_edge(void); 
+void keep_immune_cells_in_bounds( double dt );
 
 void detach_all_dead_cells( void );
 void detach_all_dead_cells( double dt );
