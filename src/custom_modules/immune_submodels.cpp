@@ -354,6 +354,13 @@ void create_infiltrating_Tcell(void)
 	return;
 }
 
+void create_infiltrating_macrophage(void)
+{
+	static Cell_Definition* pCD = find_cell_definition( "macrophage" );
+	create_infiltrating_immune_cell( pCD ); 
+	
+	return;
+}
 
 void CD8_Tcell_contact_function( Cell* pC1, Phenotype& p1, Cell* pC2, Phenotype& p2 , double dt )
 {
@@ -418,21 +425,6 @@ void CD8_Tcell_mechanics( Cell* pCell, Phenotype& phenotype, double dt )
 	// if I'm adhered to something ... 
 	if( pCell->state.number_of_attached_cells() > 0 ) // pCell->state.neighbors.size() > 0 )
 	{
-		// add the elastic forces 
-		// extra_elastic_attachment_mechanics( pCell, phenotype, dt );
-		
-		// this will now be in the CD8 T-cell contact function 
-		/*
-		// induce damage to whatever we're adhered to 
-		#pragma omp critical(track_contact_time)
-		{
-			for( int n = 0; n < pCell->state.number_of_attached_cells() ; n++ )
-			{
-				pCell->state.neighbors[n]->custom_data["TCell_contact_time"] += dt; 
-			}
-		}
-		*/
-
 		// decide whether to detach 
 		bool detach_me = false; 
 		
@@ -443,13 +435,6 @@ void CD8_Tcell_mechanics( Cell* pCell, Phenotype& phenotype, double dt )
 		if( detach_me )
 		{
 			pCell->remove_all_attached_cells(); 
-			/*
-			// detach all attached cells 
-			for( int n = 0; n < pCell->state.neighbors.size() ; n++ )
-			{
-				detach_cells( pCell, pCell->state.neighbors[n] ); 
-			}
-			*/
 			// resume motile behavior 
 			phenotype.motility.is_motile = true; 
 		}
@@ -510,14 +495,6 @@ void macrophage_phenotype( Cell* pCell, Phenotype& phenotype, double dt )
 		return; 
 	}
 
-/*			
-	// determine bias_direction for macrophage based on "eat me" signals and chemokine
-	// this needs to be in migration bias direction so it's not overwritten by built-in chemotaxis 
-	double sensitivity_chemokine = pCell->custom_data["sensitivity_to_chemokine_chemotaxis"];
-	double sensitivity_eat_me = pCell->custom_data["sensitivity_to_eat_me_chemotaxis"];
-	pCell->phenotype.motility.migration_bias_direction = sensitivity_chemokine*pCell->nearest_gradient(chemokine_index)+sensitivity_eat_me*pCell->nearest_gradient(debris_index);
-	normalize( &( phenotype.motility.migration_bias_direction) );
-*/
 	// make changes to volume change rate??
 
 	// if too much debris, comit to apoptosis 	
@@ -555,11 +532,13 @@ void macrophage_phenotype( Cell* pCell, Phenotype& phenotype, double dt )
 			}	
 
 			// activate the cell 
-			pCell->phenotype.secretion.secretion_rates[proinflammatory_cytokine_index] = 
+			phenotype.secretion.secretion_rates[proinflammatory_cytokine_index] = 
 				pCell->custom_data["activated_cytokine_secretion_rate"]; // 10;
-			pCell->phenotype.secretion.saturation_densities[proinflammatory_cytokine_index] = 1;
+			phenotype.secretion.saturation_densities[proinflammatory_cytokine_index] = 1;
 
-			pCell->phenotype.motility.migration_speed = pCell->custom_data["activated_speed"]; 
+			phenotype.secretion.uptake_rates[proinflammatory_cytokine_index] = 0.0; 
+
+			phenotype.motility.migration_speed = pCell->custom_data["activated_speed"]; 
 				
 			pCell->custom_data["activated_immune_cell"] = 1.0; 
 			
@@ -630,14 +609,14 @@ void neutrophil_phenotype( Cell* pCell, Phenotype& phenotype, double dt )
 	int n = 0; 
 	Cell* pTestCell = neighbors[n]; 
 
-	double neutrophil_probability_of_phagocytosis = pCell->custom_data["neutrophil_probability_of_phagocytosis"];
+	double probability_of_phagocytosis = pCell->custom_data["phagocytosis_rate"] * dt; 
 
 	while( n < neighbors.size() )
 	{
 		pTestCell = neighbors[n]; 
 		// if it is not me and the target is dead 
 		if( pTestCell != pCell && pTestCell->phenotype.death.dead == true && 
-			UniformRandom()<neutrophil_probability_of_phagocytosis)
+			UniformRandom() < probability_of_phagocytosis)
 		{
 			// #pragma omp critical(neutrophil_eat)
 			{
@@ -646,11 +625,11 @@ void neutrophil_phenotype( Cell* pCell, Phenotype& phenotype, double dt )
 			}
 
 			// activate the cell 
-			pCell->phenotype.secretion.secretion_rates[proinflammatory_cytokine_index] = 
+			phenotype.secretion.secretion_rates[proinflammatory_cytokine_index] = 
 				pCell->custom_data["activated_cytokine_secretion_rate"]; // 10;
-			pCell->phenotype.secretion.saturation_densities[proinflammatory_cytokine_index] = 1;
+			phenotype.secretion.saturation_densities[proinflammatory_cytokine_index] = 1;
 
-			pCell->phenotype.motility.migration_speed = pCell->custom_data["activated_speed"]; 
+			phenotype.motility.migration_speed = pCell->custom_data["activated_speed"]; 
 				
 			pCell->custom_data["activated_immune_cell"] = 1.0; 
 			
@@ -797,122 +776,6 @@ Cell* check_for_dead_neighbor_for_interaction( Cell* pAttacker , double dt )
 	return NULL; 
 }
 
-/*
-void add_elastic_velocity( Cell* pActingOn, Cell* pAttachedTo , double elastic_constant )
-{
-	std::vector<double> displacement = pAttachedTo->position - pActingOn->position; 
-	
-	if (displacement.size() == 0 )
-	{
-		std::cout << "----- rwh: disp size=0" << std::endl;
-		std::cout << "----- pAttachedTo = " << pAttachedTo << std::endl;
-		std::cout << "----- pActingOn = " << pActingOn << std::endl;
-		
-		char filename[1024];
-		sprintf( filename , "%s/error" , PhysiCell_settings.folder.c_str() ); 
-		save_PhysiCell_to_MultiCellDS_xml_pugi( filename , microenvironment , PhysiCell_globals.current_time ); 
-		
-		extern std::vector<std::string> tissue_coloring_function(Cell*); // (*cell_coloring_function)(Cell*); 
-		
-		sprintf( filename , "%s/error.svg" , PhysiCell_settings.folder.c_str() ); 
-		SVG_plot( filename , microenvironment, 0.0 , PhysiCell_globals.current_time, tissue_coloring_function );
-	}	
-	
-	axpy( &(pActingOn->velocity) , elastic_constant , displacement ); 
-	
-	return; 
-}
-*/
-
-/*
-void extra_elastic_attachment_mechanics( Cell* pCell, Phenotype& phenotype, double dt )
-{
-	for( int i=0; i < pCell->state.neighbors.size() ; i++ )
-	{
-		add_elastic_velocity( pCell, pCell->state.neighbors[i], pCell->custom_data["elastic_attachment_coefficient"] ); 
-	}
-	return; 
-}
-*/	
-
-/*
-void attach_cells( Cell* pCell_1, Cell* pCell_2 )
-{
-	#pragma omp critical(attach)
-	{
-		bool already_attached = false; 
-		for( int i=0 ; i < pCell_1->state.neighbors.size() ; i++ )
-		{
-			if( pCell_1->state.neighbors[i] == pCell_2 )
-			{ already_attached = true; }
-		}
-		if( already_attached == false )
-		{ pCell_1->state.neighbors.push_back( pCell_2 ); }
-		
-		already_attached = false; 
-		for( int i=0 ; i < pCell_2->state.neighbors.size() ; i++ )
-		{
-			if( pCell_2->state.neighbors[i] == pCell_1 )
-			{ already_attached = true; }
-		}
-		if( already_attached == false )
-		{ pCell_2->state.neighbors.push_back( pCell_1 ); }
-	}
-
-	return; 
-}
-
-void detach_cells( Cell* pCell_1 , Cell* pCell_2 )
-{
-	#pragma omp critical(detach)
-	{
-		bool found = false; 
-		int i = 0; 
-		while( !found && i < pCell_1->state.neighbors.size() )
-		{
-			// if cell 2 is in cell 1's list, remove it
-			if( pCell_1->state.neighbors[i] == pCell_2 )
-			{
-				int n = pCell_1->state.neighbors.size(); 
-				// copy last entry to current position 
-				pCell_1->state.neighbors[i] = pCell_1->state.neighbors[n-1]; 
-				// shrink by one 
-				pCell_1->state.neighbors.pop_back(); 
-				found = true; 
-			}
-			i++; 
-		}
-	
-		found = false; 
-		i = 0; 
-		while( !found && i < pCell_2->state.neighbors.size() )
-		{
-			// if cell 1 is in cell 2's list, remove it
-			if( pCell_2->state.neighbors[i] == pCell_1 )
-			{
-				int n = pCell_2->state.neighbors.size(); 
-				// copy last entry to current position 
-				pCell_2->state.neighbors[i] = pCell_2->state.neighbors[n-1]; 
-				// shrink by one 
-				pCell_2->state.neighbors.pop_back(); 
-				found = true; 
-			}
-			i++; 
-		}
-	}
-	
-	return; 
-}
-
-void remove_all_adhesions( Cell* pCell )
-{
-	// detach all attached cells 
-	for( int n = 0; n < pCell->state.neighbors.size() ; n++ )
-	{ detach_cells( pCell, pCell->state.neighbors[n] ); }	
-	
-	return; 
-}
-*/
 
 bool attempt_immune_cell_attachment( Cell* pAttacker, Cell* pTarget , double dt )
 {
@@ -970,6 +833,11 @@ Cell* immune_cell_check_neighbors_for_attachment( Cell* pAttacker , double dt )
 
 int recruited_Tcells = 0; 
 int recruited_neutrophils = 0; 
+int recruited_macrophages = 0; 
+
+double first_macrophage_recruitment_time = 9e9; 
+double first_neutrophil_recruitment_time = 9e9; 
+double first_CD8_T_cell_recruitment_time = 9e9; 
 
 void immune_cell_recruitment( double dt )
 {
@@ -987,6 +855,49 @@ void immune_cell_recruitment( double dt )
 	if( t_immune > t_next_immune- tolerance )
 	{
 		double elapsed_time = (t_immune - t_last_immune );
+
+		// macrophage recruitment 
+		
+		static double macrophage_recruitment_rate = parameters.doubles( "macrophage_max_recruitment_rate" ); 
+		static double M_min_signal = parameters.doubles( "macrophage_recruitment_min_signal" ); 
+		static double M_sat_signal = parameters.doubles( "macrophage_recruitment_saturation_signal" ); 
+		static double M_max_minus_min = M_sat_signal - M_min_signal; 
+		
+		double total_rate = 0;
+		// integrate \int_domain r_max * (signal-signal_min)/(signal_max-signal_min) * dV 
+		double total_scaled_signal= 0.0;
+		for( int n=0; n<microenvironment.mesh.voxels.size(); n++ )
+		{
+			// (signal(x)-signal_min)/(signal_max/signal_min)
+			double dRate = ( microenvironment(n)[proinflammatory_cytokine_index] - M_min_signal ); 
+			dRate /= M_max_minus_min; 
+			// crop to [0,1] 
+			if( dRate > 1 ) 
+			{ dRate = 1; } 
+			if( dRate < 0 )
+			{ dRate = 0; }
+			total_rate += dRate; 
+		}	
+		// multiply by dV and rate_max 
+		total_scaled_signal = total_rate; 
+		
+		total_rate *= microenvironment.mesh.dV; 
+		total_rate *= macrophage_recruitment_rate; 
+
+		// expected number of new neutrophils 
+		int number_of_new_cells = (int) round( total_rate * elapsed_time ); 
+		recruited_macrophages += number_of_new_cells;
+		
+		if( number_of_new_cells )
+		{
+			if( t_immune < first_macrophage_recruitment_time )
+			{ first_macrophage_recruitment_time = t_immune; }
+
+			std::cout << "\tRecruiting " << number_of_new_cells << " macrophages ... " << std::endl; 
+			
+			for( int n = 0; n < number_of_new_cells ; n++ )
+			{ create_infiltrating_macrophage(); }
+		}
 		
 		// neutrophil recruitment 
 		
@@ -995,9 +906,9 @@ void immune_cell_recruitment( double dt )
 		static double NR_sat_signal = parameters.doubles( "neutrophil_recruitment_saturation_signal" ); 
 		static double NR_max_minus_min = NR_sat_signal - NR_min_signal; 
 		
-		double total_rate = 0;
+		total_rate = 0;
 		// integrate \int_domain r_max * (signal-signal_min)/(signal_max-signal_min) * dV 
-		double total_scaled_signal= 0.0;
+		total_scaled_signal= 0.0;
 		for( int n=0; n<microenvironment.mesh.voxels.size(); n++ )
 		{
 			// (signal(x)-signal_min)/(signal_max/signal_min)
@@ -1017,11 +928,14 @@ void immune_cell_recruitment( double dt )
 		total_rate *= neutrophil_recruitment_rate; 
 
 		// expected number of new neutrophils 
-		int number_of_new_cells = (int) round( total_rate * elapsed_time ); 
+		number_of_new_cells = (int) round( total_rate * elapsed_time ); 
 		recruited_neutrophils += number_of_new_cells;
 		
 		if( number_of_new_cells )
 		{
+			if( t_immune < first_neutrophil_recruitment_time )
+			{ first_neutrophil_recruitment_time = t_immune; }
+
 			std::cout << "\tRecruiting " << number_of_new_cells << " neutrophils ... " << std::endl; 
 			
 			for( int n = 0; n < number_of_new_cells ; n++ )
@@ -1062,6 +976,9 @@ void immune_cell_recruitment( double dt )
 		
 		if( number_of_new_cells )
 		{
+			if( t_immune < first_CD8_T_cell_recruitment_time )
+			{ first_CD8_T_cell_recruitment_time = t_immune; }
+			
 			std::cout << "\tRecruiting " << number_of_new_cells << " CD8 T cells ... " << std::endl; 
 
 			for( int n = 0; n < number_of_new_cells ; n++ )
