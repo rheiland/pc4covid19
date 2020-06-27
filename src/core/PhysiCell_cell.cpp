@@ -2258,17 +2258,14 @@ void Cell::attach_cell( Cell* pAddMe )
 {
 	#pragma omp critical
 	{
-		auto result = std::find( std::begin(state.attached_cells),std::end(state.attached_cells), pAddMe );
-		if( result == std::end(state.attached_cells) )
+		bool already_attached = false; 
+		for( int i=0 ; i < state.attached_cells.size() ; i++ )
+		{
+			if( state.attached_cells[i] == pAddMe )
+			{ already_attached = true; }
+		}
+		if( already_attached == false )
 		{ state.attached_cells.push_back( pAddMe ); }
-		// bool already_attached = false; 
-		// for( int i=0 ; i < state.attached_cells.size() ; i++ )
-		// {
-		// 	if( state.attached_cells[i] == pAddMe )
-		// 	{ already_attached = true; }
-		// }
-		// if( already_attached == false )
-		// { state.attached_cells.push_back( pAddMe ); }
 	}
 	// pAddMe->attach_cell( this ); 
 	return; 
@@ -2278,25 +2275,22 @@ void Cell::detach_cell( Cell* pRemoveMe )
 {
 	#pragma omp critical
 	{
-		auto result = std::find( std::begin(state.attached_cells),std::end(state.attached_cells), pRemoveMe );
-		if( result != std::end(state.attached_cells) )
-		{ state.attached_cells.erase( result ); }
-		// bool found = false; 
-		// int i = 0; 
-		// while( !found && i < state.attached_cells.size() )
-		// {
-		// 	// if pRemoveMe is in the cell's list, remove it
-		// 	if( state.attached_cells[i] == pRemoveMe )
-		// 	{
-		// 		int n = state.attached_cells.size(); 
-		// 		// copy last entry to current position 
-		// 		state.attached_cells[i] = state.attached_cells[n-1]; 
-		// 		// shrink by one 
-		// 		state.attached_cells.pop_back(); 
-		// 		found = true; 
-		// 	}
-		// 	i++; 
-		// }
+		bool found = false; 
+		int i = 0; 
+		while( !found && i < state.attached_cells.size() )
+		{
+			// if pRemoveMe is in the cell's list, remove it
+			if( state.attached_cells[i] == pRemoveMe )
+			{
+				int n = state.attached_cells.size(); 
+				// copy last entry to current position 
+				state.attached_cells[i] = state.attached_cells[n-1]; 
+				// shrink by one 
+				state.attached_cells.pop_back(); 
+				found = true; 
+			}
+			i++; 
+		}
 	}
 	return; 
 }
