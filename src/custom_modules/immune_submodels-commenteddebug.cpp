@@ -140,19 +140,15 @@ void replace_out_of_bounds_cell( Cell* pC , double tolerance )
 	
 	#pragma omp critical(kill_cell_on_edge)
 	{
-		if (PhysiCell_globals.current_time > 7400.)
-			std::cout << __FUNCTION__ << " --- time " << PhysiCell_globals.current_time << " - moving cell from edge " << pC << " " << pC->type_name << std::endl; 
-			std::cout << " --- pC->position  " <<  pC->position << std::endl; 
 		// create a new cell of same type 
 		Cell* pNewCell = create_cell( get_cell_definition(pC->type_name) ); 
-		std::cout << " --- position (for new one) " <<  position << std::endl; 
 		pNewCell->assign_position( position ); 
 		// pNewCell->custom_data = pC->custom_data; // enable in next testing 
 
 		// get rid of the old one 
 		// pC->remove_all_attached_cells(); 
-		// pC->die(); 
-		pC->lyse_cell(); 
+		pC->die(); 
+		// pC->lyse_cell(); 
 		
 		// alternate 
 		// pC->lyse_cell(); 
@@ -968,7 +964,7 @@ void immune_cell_recruitment( double dt )
 		
 		if( number_of_new_cells )
 		{
-			std::cout << "\tRecruiting " << number_of_new_cells << " neutrophils ... " << std::endl; 
+//rwh			std::cout << "\tRecruiting " << number_of_new_cells << " neutrophils ... " << std::endl; 
 			
 			for( int n = 0; n < number_of_new_cells ; n++ )
 			{ create_infiltrating_neutrophil(); }
@@ -1008,7 +1004,7 @@ void immune_cell_recruitment( double dt )
 		
 		if( number_of_new_cells )
 		{
-			std::cout << "\tRecruiting " << number_of_new_cells << " CD8 T cells ... " << std::endl; 
+//rwh			std::cout << "\tRecruiting " << number_of_new_cells << " CD8 T cells ... " << std::endl; 
 
 			for( int n = 0; n < number_of_new_cells ; n++ )
 			{ create_infiltrating_Tcell(); }
