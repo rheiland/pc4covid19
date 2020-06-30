@@ -29,12 +29,21 @@ class CellTypesTab(object):
         divider_button_layout={'width':'60%'}
         box_layout = Layout(display='flex', flex_flow='row', align_items='stretch', width='100%')
 
-        self.parent_name = Text(value='None',placeholder='Type something',description='Parent:',disabled=True)
-
-        self.cell_type_dropdown = Dropdown(description='Cell type:',)
+        # self.parent_name = Text(value='None',placeholder='Type something',description='Parent:',disabled=True)
+        # self.parent_name = Text(value='None',placeholder='Type something',description='cell type inherits properties from this parent type:',disabled=True)
+        # self.cell_type_dropdown = Dropdown(description='Cell type:', layout={'width':'30%'} )
+        self.cell_type_dropdown = Dropdown(description='Cell type:')
         self.cell_type_dropdown.style = {'description_width': '%sch' % str(len(self.cell_type_dropdown.description) + 1)}
 
+        cell_type_names_layout={'width':'30%'}
+        cell_type_names_style={'description_width':'initial'}
+        self.parent_name = Text(value='None',description='inherits properties from parent type:',disabled=True, style=cell_type_names_style, layout=cell_type_names_layout)
+
+        explain_inheritance = Label(value='    This cell line inherits its properties from its parent type. Any settings below override those inherited properties.')  # , style=cell_type_names_style, layout=cell_type_names_layout)
+
+
         self.cell_type_parent_row = HBox([self.cell_type_dropdown, self.parent_name])
+        # self.cell_type_parent_row = VBox([self.cell_type_dropdown, self.parent_name])
         self.cell_type_parent_dict = {}
 
         self.cell_type_dict = {}
@@ -1391,8 +1400,8 @@ class CellTypesTab(object):
 
 
         self.tab = VBox([
-          self.cell_type_parent_row, 
-self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbox3, self.cell_def_vbox4, self.cell_def_vbox5,         ])
+          self.cell_type_parent_row, explain_inheritance,
+          self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbox3, self.cell_def_vbox4, self.cell_def_vbox5,         ])
     #------------------------------
     def cell_type_cb(self, change):
         if change['type'] == 'change' and change['name'] == 'value':
