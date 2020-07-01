@@ -1,54 +1,62 @@
 <h2 id="about"><strong>COVID19 tissue simulator</strong></h2>
-<p>This model simulates replication dynamics of SARS-CoV-2 (coronavirus / COVID19) in a layer of epithelium. 
-    It is being rapidly prototyped and refined with community support (<a href="#model_details">see below</a>). </p>
-    
-    <p>In this model, SARS-CoV-2 (coronavirus / COVID19) infects a single cell, or a 
-        solution of virions is administered to the extracellular space. The virus is 
-        uncoated to explose viral RNA, which synthesizes viral proteins that are 
-        assembled into a virion. Assembled virions are exported to the environment, 
-        where they can diffuse and infect other cells. In the extracellular space, 
-        virions adhere to ACE2 receptors and get internalized through endocytosis. 
-        Internalized ACE2 receptors release their virus cargo and are recycled back to the surface.
-    </p>
-    
-    <p> In version 3, we implemented a submodel of realistic representation of the tissue-level 
-        immune response to SARS-CoV-2. The main immune cellular components included at this stage 
-        are tissue-resident macrophages, infiltrating neutrophils, and CD8<sup>+</sup> T cells, 
-        which are recruited as the infection progresses.
-    </p>
-    
-    
-    <p>
-    The model also includes a basic pharmacodynamic response (to assembled virions) to cause 
-        cell apoptosis. Apoptosed cells release some or all of their internal contents, 
-        notably including virions.
-    </p>
-    
-    <p>
-        Please cite this project via the preprint: 
-    </p>
-    
-    <p style="text-align: center;">
-        Y. Wang et al., Rapid community-driven development of a SARS-CoV-2 tissue simulator. 
-        <i>bioRxiv</i> 2020.04.02.019075, 2020, <b>(Preprint)</b>.  
-        doi: <a href="https://dx.doi.org/10.1101/2020.04.02.019075" target="_blank">10.1101/2020.04.02.019075</a>.
-    </p>
-    
-    <p><strong>Legend:</strong></b>
-    <ul>
-    
-    <li><strong>lung epithelium:</strong> are colored by their (assembled) virion loads in four colors
-    <ul style="font-family: courier;">
-    <li><span style="height: 25px; width: 25px; background-color: rgb(0,0,255); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 0 assembled virions. </li>
-    <li><span style="height: 25px; width: 25px; background-color: rgb(64,64,199); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 1-9 assembled virions. </li>
-    <li><span style="height: 25px; width: 25px; background-color: rgb(128,128,128); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 10-99 assembled virions. </li>
-    <li><span style="height: 25px; width: 25px; background-color: rgb(199,199,64); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 100-999 assembled virions. </li>
-    <li><span style="height: 25px; width: 25px; background-color: rgb(255,255,0); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 1000+ assembled virions. </li>
-    <li><span style="height: 25px; width: 25px; background-color: rgb(0,0,0); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Black cells are apoptotic (dead from viral load) </li>
-    </ul>
-    </li>
+<p>This model simulates viral dynamics of SARS-CoV-2 (coronavirus / COVID19) in a layer of epithelium and an immune response. 
+It is being rapidly prototyped and refined with community support (<a href="#model_details">see below</a>). </p>
 
-    <br/>
+<p>
+This multiscale simulator combines several modules:
+<ul>
+<li><b>Tissue:</b> Virus, cell debris, and chemokines diffuse within the extracellular space. They may also “decay” to reflect removal by interstitial flow into nearby blood vessels or airways.</li>
+    
+<br>
+<li><b>ACE2:</b> receptor dynamics: Virions bind to ACE2 receptors on the surface, which are internalized (endocytosed) into cells. After virions are released from internalized receptors, they can return to the surface.</li>
+
+<br>
+<li><b>Viral replication:</b> Internalized virus is uncoated to expose viral RNA, which synthesizes viral proteins that are assembled into virions. Assembled virions are transported to the cell surface to be exported to the tissue (exocytosed).</li>
+    
+<br>
+<li><b>Single-cell</b> response: Infected cells secrete a chemokine that may attract immune cells. In a simple pharmacodynamics response (to assembled virions), infected cells can undergo apoptosis. Apoptosed cells release some or all of their internal contents, notably including virions.</li>
+
+<br>
+<li><b>Immune response (new in v3):</b></li>
+<ul>
+<br>
+    <li><b>Resident (and recruited) macrophages</b> seek apoptotic cells. They phagocytose (ingest) dead cells upon contact and activate.</li>
+    
+<br>
+    <li><b>Activated macrophages</b> release a pro-inflammatory cytokine to recruit other immune cells, while seeking both apoptotic and infected cells by chemotaxis. Activated macrophages can “wear out” and apoptose after phagocytosing too much material.</li>
+    
+<br>
+    <li><b>Neutrophils</b> are recruited by accumulated pro-inflammatory cytokine. They seek apoptotic cells, phagocytose them, and activate. Activated neutrophils seek both apoptotic and infected cells. Neutrophils also capture extracellular virions.</li>
+    
+<br>
+    <li><b>CD8 T cells</b> are recruited by accumulated pro-inflammatory cytokine. They seek and adhere to infected cells. After sufficient contact time with one or more CD8 T cells, infected cells undergo apoptosis.</li>
+</ul> 
+</ul>    
+
+<p>
+Please cite this project via the preprint: 
+</p>
+<p style="text-align: center;">
+    Y. Wang et al., Rapid community-driven development of a SARS-CoV-2 tissue simulator. 
+    <i>bioRxiv</i> 2020.04.02.019075, 2020, <b>(Preprint)</b>.  
+    doi: <a href="https://dx.doi.org/10.1101/2020.04.02.019075" target="_blank">10.1101/2020.04.02.019075</a>.
+</p>
+
+<p><strong>Legend:</strong></b>
+<ul>
+
+<li><strong>lung epithelium:</strong> are colored by their (assembled) virion loads in four colors
+<ul style="font-family: courier;">
+<li><span style="height: 25px; width: 25px; background-color: rgb(0,0,255); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 0 assembled virions. </li>
+<li><span style="height: 25px; width: 25px; background-color: rgb(64,64,199); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 1-9 assembled virions. </li>
+<li><span style="height: 25px; width: 25px; background-color: rgb(128,128,128); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 10-99 assembled virions. </li>
+<li><span style="height: 25px; width: 25px; background-color: rgb(199,199,64); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 100-999 assembled virions. </li>
+<li><span style="height: 25px; width: 25px; background-color: rgb(255,255,0); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Cells with 1000+ assembled virions. </li>
+<li><span style="height: 25px; width: 25px; background-color: rgb(0,0,0); display: inline-block; border-radius: 50%; border: 1px solid black;"></span> Black cells are apoptotic (dead from viral load) </li>
+</ul>
+</li>
+
+<br/>
 
 <li><strong>CD8<sup>+</sup> T cells:</strong> are colored by their cell cycle status
 <ul style="font-family: courier;">
@@ -156,3 +164,6 @@ This model and cloud-hosted demo are part of the education and outreach for the 
 <a href="https://joss.theoj.org/papers/10.21105/joss.01408">R. Heiland, D. Mishler, T. Zhang, E. Bower, and P. Macklin. xml2jupyter: Mapping parameters between XML and Jupyter widgets. Journal of Open Source Software 4(39):1408, 2019. DOI: 10.21105/joss.01408.
 </li>
 </ol>
+<pre>
+
+</pre>
