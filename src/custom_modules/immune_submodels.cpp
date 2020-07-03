@@ -2,7 +2,7 @@
 
 using namespace PhysiCell; 
 
-std::string immune_submodels_version = "0.0.1"; 
+std::string immune_submodels_version = "0.1.1"; 
 // Submodel_Information Immune_submodels_info; // not needed for now 
 
 Submodel_Information CD8_submodel_info; 
@@ -457,23 +457,42 @@ void CD8_Tcell_mechanics( Cell* pCell, Phenotype& phenotype, double dt )
 
 void immune_cell_motility_direction( Cell* pCell, Phenotype& phenotype , double dt )
 {
+	if( phenotype.death.dead == true )
+	{
+		phenotype.motility.migration_speed = 0.0; 
+		return;
+	}
+	
 	static int chemokine_index = microenvironment.find_density_index( "chemokine");
 	static int debris_index = microenvironment.find_density_index( "debris");
 
+	// if not activated, chemotaxis along debris 
 
-	// determine bias_direction for macrophage based on "eat me" signals and chemokine
-	// this needs to be in migration bias direction so it's not overwritten by built-in chemotaxis 
-	double sensitivity_chemokine = pCell->custom_data["sensitivity_to_chemokine_chemotaxis"];
-	double sensitivity_to_debris = pCell->custom_data["sensitivity_to_debris_chemotaxis"];
+	phenotype.motility.migration_bias_direction = pCell->nearest_gradient(debris_index);
+	normalize( &phenotype.motility.migration_bias_direction ); 
+	if( pCell->custom_data["activated_immune_cell"] < 0.5 )
+	{ return; }
 
-	pCell->phenotype.motility.migration_bias_direction = pCell->nearest_gradient(chemokine_index);
-	pCell->phenotype.motility.migration_bias_direction *= sensitivity_chemokine; 
+	// if activated, follow the weighted direction 
 
-	axpy( &(pCell->phenotype.motility.migration_bias_direction), sensitivity_to_debris , pCell->nearest_gradient(debris_index) );
-
-//	pCell->phenotype.motility.migration_bias_direction = sensitivity_chemokine*pCell->nearest_gradient(chemokine_index)+sensitivity_eat_me*pCell->nearest_gradient(debris_index);
-
+	phenotype.motility.migration_bias_direction *= pCell->custom_data["sensitivity_to_debris_chemotaxis"];
+	
+	std::vector<double> gradC = pCell->nearest_gradient(chemokine_index);
+	normalize( &gradC ); 
+	gradC *= pCell->custom_data["sensitivity_to_chemokine_chemotaxis"];
+	
+	phenotype.motility.migration_bias_direction += gradC; 
+	
 	normalize( &( phenotype.motility.migration_bias_direction) );
+	
+/*	
+	#pragma omp critical
+	{
+		std::cout << phenotype.motility.migration_speed << " : " << pCell->custom_data["sensitivity_to_debris_chemotaxis"] 
+			<< " " << pCell->custom_data["sensitivity_to_chemokine_chemotaxis"] << " : [" << phenotype.motility.migration_bias_direction << "] vs [" 
+			<< pCell->nearest_gradient(chemokine_index) << "]" << std::endl; 
+	}
+*/	
 
 	return; 
 }
@@ -485,6 +504,12 @@ void macrophage_phenotype( Cell* pCell, Phenotype& phenotype, double dt )
 	static int proinflammatory_cytokine_index = microenvironment.find_density_index( "pro-inflammatory cytokine");
 	static int chemokine_index = microenvironment.find_density_index( "chemokine");
 	static int debris_index = microenvironment.find_density_index( "debris");
+	
+	// no apoptosis until activation (resident macrophages in constant number for homeostasis) 
+	if( pCell->custom_data["activated_immune_cell"] < 0.5 )
+	{ phenotype.death.rates[apoptosis_index] = 0.0; }
+	else
+	{ phenotype.death.rates[apoptosis_index] = pCD->phenotype.death.rates[apoptosis_index]; } 
 
 	if( phenotype.death.dead == true )
 	{
@@ -517,6 +542,7 @@ void macrophage_phenotype( Cell* pCell, Phenotype& phenotype, double dt )
 	{ return; } 
 	
 	double probability_of_phagocytosis = pCell->custom_data["phagocytosis_rate"] * dt; 
+	double max_phagocytosis_volume = pCell->custom_data["phagocytosis_relative_target_cutoff_size" ] * pCD->phenotype.volume.total; 
  
 	int n = 0; 
 	Cell* pTestCell = neighbors[n]; 
@@ -525,7 +551,8 @@ void macrophage_phenotype( Cell* pCell, Phenotype& phenotype, double dt )
 		pTestCell = neighbors[n]; 
 		// if it is not me and not a macrophage 
 		if( pTestCell != pCell && pTestCell->phenotype.death.dead == true &&  
-			UniformRandom() < probability_of_phagocytosis )
+			UniformRandom() < probability_of_phagocytosis && 
+			pTestCell->phenotype.volume.total < max_phagocytosis_volume )
 		{
 			{
 				pCell->ingest_cell( pTestCell ); 
@@ -610,13 +637,15 @@ void neutrophil_phenotype( Cell* pCell, Phenotype& phenotype, double dt )
 	Cell* pTestCell = neighbors[n]; 
 
 	double probability_of_phagocytosis = pCell->custom_data["phagocytosis_rate"] * dt; 
-
+	double max_phagocytosis_volume = pCell->custom_data["phagocytosis_relative_target_cutoff_size" ] * pCD->phenotype.volume.total; 
+	
 	while( n < neighbors.size() )
 	{
 		pTestCell = neighbors[n]; 
 		// if it is not me and the target is dead 
 		if( pTestCell != pCell && pTestCell->phenotype.death.dead == true && 
-			UniformRandom() < probability_of_phagocytosis)
+			UniformRandom() < probability_of_phagocytosis && 
+			pTestCell->phenotype.volume.total < max_phagocytosis_volume )
 		{
 			// #pragma omp critical(neutrophil_eat)
 			{
