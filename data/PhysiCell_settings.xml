@@ -271,7 +271,7 @@
 				<motility>  
 					<speed units="micron/min">4</speed>
 					<persistence_time units="min">5</persistence_time>
-					<migration_bias units="dimensionless">.5</migration_bias>
+					<migration_bias units="dimensionless">0.7</migration_bias>
 					
 					<options>
 						<enabled>false</enabled>
@@ -350,15 +350,15 @@
 				<max_infected_apoptosis_rate type="double" units="1/min" 
 					description="maximum rate of cell apoptosis due to viral infection">0.001</max_infected_apoptosis_rate>
 				<max_apoptosis_half_max type="double" units="virion" 
-					description="viral load at which cells reach half max apoptosis rate">500</max_apoptosis_half_max> <!-- 500 debug -->
+					description="viral load at which cells reach half max apoptosis rate">250</max_apoptosis_half_max> <!-- 500 -->
 				<apoptosis_hill_power type="double" units="none" 
 					description="Hill power for viral load apoptosis response">1</apoptosis_hill_power> 
 				<virus_fraction_released_at_death type="double" units="none" 
 					description="fraction of internal virus released at cell death">0</virus_fraction_released_at_death>
 				<infected_cell_chemokine_secretion_rate units="1/min" type="double"
-					description="rate that infected cells secrete chemokine">0.8254</infected_cell_chemokine_secretion_rate>
+					description="max rate that infected cells secrete chemokine">1</infected_cell_chemokine_secretion_rate>
 				<debris_secretion_rate units="1/min" type="double"
-					description="rate that dead cells release debris">0.8254</debris_secretion_rate>
+					description="rate that dead cells release debris">1</debris_secretion_rate>
 				
 				<infected_cell_chemokine_secretion_activated units="none" type="double"
 					description="used internally to track activation of chemokine secretion">0</infected_cell_chemokine_secretion_activated>
@@ -387,12 +387,12 @@
 				<sensitivity_to_debris_chemotaxis units="dimensionless" type="double" 
 					description="relative sensitivity to debris in chemotaxis">1.0</sensitivity_to_debris_chemotaxis>
 				<sensitivity_to_chemokine_chemotaxis units="dimensionless" type="double" 
-					description="relative sensitivity to chemokine in chemotaxis">0</sensitivity_to_chemokine_chemotaxis> 
+					description="relative sensitivity to chemokine in chemotaxis">10.0</sensitivity_to_chemokine_chemotaxis> 
 
 				<activated_speed units="micron/min" type="double" 
 					description="speed after activation">0.4</activated_speed>
 				<activated_cytokine_secretion_rate units="1/min" type="double" 
-					description="rate of secreting pro-inflamatory cytokine after activation">0.8524</activated_cytokine_secretion_rate>
+					description="rate of secreting pro-inflamatory cytokine after activation">1</activated_cytokine_secretion_rate>
 
 				<activated_immune_cell units="dimensionless" type="double" 
 					description="used internally to track activation state">0.0</activated_immune_cell>
@@ -437,7 +437,7 @@
 				<motility>  
 					<speed units="micron/min">4</speed>
 					<persistence_time units="min">5</persistence_time>
-					<migration_bias units="dimensionless">0.5</migration_bias>
+					<migration_bias units="dimensionless">0.70</migration_bias>
 					<options>
 						<enabled>true</enabled>
 						<use_2D>true</use_2D>
@@ -451,13 +451,13 @@
 
 				<secretion>
 					<substrate name="pro-inflammatory cytokine">
-						<uptake_rate units="1/min">1</uptake_rate>
+						<uptake_rate units="1/min">0.01</uptake_rate>
 					</substrate> 	
 					<substrate name="chemokine">
-						<uptake_rate units="1/min">1</uptake_rate>
+						<uptake_rate units="1/min">0.01</uptake_rate>
 					</substrate> 	
 					<substrate name="debris">
-						<uptake_rate units="1/min">1</uptake_rate>
+						<uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate> 	
 				</secretion>
 
@@ -468,7 +468,23 @@
 		
 		<cell_definition name="CD8 Tcell" parent_type="immune" ID="3">
 			<phenotype>
-				<motility>  
+				<death>
+					<model code="100" name="apoptosis"> 
+						<death_rate units="1/min">2.8e-4</death_rate> 
+					</model> 
+				</death>			
+			
+				<motility>
+					<migration_bias units="dimensionless">0.70</migration_bias>
+					<options>
+						<enabled>true</enabled>
+						<use_2D>true</use_2D>
+						<chemotaxis>
+							<enabled>true</enabled>
+							<substrate>chemokine</substrate>
+							<direction>1</direction>
+						</chemotaxis>
+					</options>
 				</motility>
 				<volume>
 					<total units="micron^3">478</total>
@@ -484,7 +500,7 @@
 			</phenotype>
 			<custom_data>
 				<cell_attachment_rate units="1/min">0.2</cell_attachment_rate> <!-- 0.2 --> 
-				<cell_attachment_lifetime units="min">8.5</cell_attachment_lifetime> <!-- 8.5 -->
+				<cell_attachment_lifetime units="min">8.5</cell_attachment_lifetime> 
 			</custom_data>
 		</cell_definition>
 		
@@ -493,18 +509,18 @@
 				<death>
 					<!-- death is about 5x slower --> 
 					<model code="100" name="apoptosis"> 
-						<death_rate units="1/min">1e-5</death_rate> <!-- 5.31667e-05 --> 
+						<death_rate units="1/min">2.1e-4</death_rate>  
 					</model> 
 				</death>
 				<motility>  
-					<migration_bias>0.99</migration_bias> <!-- 0.5 -->
+					<migration_bias>0.7</migration_bias> 
 					<persistence_time>5</persistence_time>
 					<options>
 						<enabled>true</enabled>
 						<use_2D>true</use_2D>					
 						<chemotaxis>
 							<enabled>true</enabled>
-							<substrate>debris</substrate> <!-- debris -->
+							<substrate>debris</substrate> 
 							<direction>1</direction>
 						</chemotaxis>
 					</options>
@@ -513,7 +529,11 @@
 				<volume>
 					<total units="micron^3">4849</total>
 					<nuclear units="micron^3">485</nuclear>
+
+					<cytoplasmic_biomass_change_rate units="1/min">0.045</cytoplasmic_biomass_change_rate> 
+					<!-- set this higher so that cells "digest" phagocytosed materials faster -->
 				</volume>
+				
 				
 			</phenotype>
 			<custom_data>
@@ -522,12 +542,12 @@
 				<sensitivity_to_debris_chemotaxis units="dimensionless" type="double" 
 					description="relative sensitivity to debris in chemotaxis">1.0</sensitivity_to_debris_chemotaxis>
 				<sensitivity_to_chemokine_chemotaxis units="dimensionless" type="double" 
-					description="relative sensitivity to chemokine in chemotaxis">0.0</sensitivity_to_chemokine_chemotaxis> <!-- 1 -->
+					description="relative sensitivity to chemokine in chemotaxis">10.0</sensitivity_to_chemokine_chemotaxis> <!-- 1 -->
 
 				<activated_speed units="micron/min" type="double" 
-					description="speed after activation">0.4</activated_speed>
+					description="speed after activation">0.4</activated_speed> <!-- 0.4 --> 
 				<activated_cytokine_secretion_rate units="1/min" type="double" 
-					description="rate of secreting pro-inflamatory cytokine after activation">0.8524</activated_cytokine_secretion_rate>
+					description="rate of secreting pro-inflamatory cytokine after activation">1</activated_cytokine_secretion_rate>
 
 			</custom_data>
 		</cell_definition>		
@@ -536,19 +556,20 @@
 			<phenotype>
 				<death>
 					<model code="100" name="apoptosis"> 
-						<death_rate units="1/min">1.44e-3</death_rate> <!-- 5.31667e-05 --> 
+						<death_rate units="1/min">8.9e-4</death_rate>  
 					</model> 
 				</death>
+				
 				<motility>  
 					<speed units="micron/min">19</speed>
-					<migration_bias>0.99</migration_bias>  <!-- 0.91 -->
+					<migration_bias>0.91</migration_bias>  
 					<persistence_time>5</persistence_time>
 					<options>
 						<enabled>true</enabled>
 						<use_2D>true</use_2D>					
 						<chemotaxis>
 							<enabled>true</enabled>
-							<substrate>debris</substrate> <!-- virion --> 
+							<substrate>debris</substrate>  
 							<direction>1</direction>							
 						</chemotaxis>
 					</options>
@@ -556,22 +577,25 @@
 
 				<secretion>
 					<substrate name="virion">
-						<uptake_rate units="1/min">0.001</uptake_rate>
+						<uptake_rate units="1/min">0.1</uptake_rate> <!-- 0.001 --> 
 					</substrate> 	
 				</secretion>
 
 				<volume>
 					<total units="micron^3">1437</total>
 					<nuclear units="micron^3">143.7</nuclear>
+					
+					<cytoplasmic_biomass_change_rate units="1/min">0.045</cytoplasmic_biomass_change_rate> 
+					<!-- set this higher so that cells "digest" phagocytosed materials faster -->
 				</volume>
 			</phenotype>
 			<custom_data>
 				<phagocytosis_rate units="1/min" type="double" 
-					desription="rate of phagocytosing a nearby target">0.167</phagocytosis_rate>
+					desription="rate of phagocytosing a nearby target">0.117</phagocytosis_rate>
 				<sensitivity_to_debris_chemotaxis units="dimensionless" type="double" 
-					description="relative sensitivity to debris in chemotaxis">0.0</sensitivity_to_debris_chemotaxis> <!-- 1 -->
+					description="relative sensitivity to debris in chemotaxis">1.0</sensitivity_to_debris_chemotaxis> 
 				<sensitivity_to_chemokine_chemotaxis units="dimensionless" type="double" 
-					description="relative sensitivity to chemokine in chemotaxis">1.0</sensitivity_to_chemokine_chemotaxis> 
+					description="relative sensitivity to chemokine in chemotaxis">10.0</sensitivity_to_chemokine_chemotaxis> 
 
 				<activated_speed units="micron/min" type="double" 
 					description="speed after activation">0.4</activated_speed>
@@ -612,9 +636,9 @@
 			<CD8_Tcell_max_recruitment_rate type="double" units="cells/min/micron^3"
 				description="max CD8 T cell recruitment rate (for saturated signal)">4e-9</CD8_Tcell_max_recruitment_rate> <!-- 4e-8 debug -->
 			<CD8_Tcell_recruitment_min_signal type="double" units="substrate/micron^3"
-				description="min concentration to attract CD8 T cells">0.2</CD8_Tcell_recruitment_min_signal> <!-- 0.3 debug -->
+				description="min concentration to attract CD8 T cells">0.3</CD8_Tcell_recruitment_min_signal> <!-- 0.3 debug -->
 			<CD8_Tcell_recruitment_saturation_signal type="double" units="substrate/micron^3"
-				description="saturating concentration to attract CD8 T cells">0.4</CD8_Tcell_recruitment_saturation_signal> <!-- 0.5 debug -->
+				description="saturating concentration to attract CD8 T cells">0.5</CD8_Tcell_recruitment_saturation_signal> <!-- 0.5 debug -->
 		
 		<div_initialization type="divider" description="---Initialization Options--"/>
 			<multiplicity_of_infection type="double" units="none" 
