@@ -2,7 +2,7 @@
 
 **Version:** 3.0
 
-**Release date:** 5 June 2020 
+**Release date:** 3 July 2020 
 
 ## Overview
 This repository contains code and data for the nanoHUB app https://nanohub.org/tools/pc4covid19.
@@ -24,6 +24,8 @@ for a summary of changes to the model.
 ### 3.0:
 The major change to the GUI in this release is the addition of a 'Cell Types' tab.
 This allows editing parameters associated with `<cell_definitions>` in the configuration file.
+
+This version also includes a `<style>` block in the Jupyter notebook that fixed an unwanted scrollbar in the lengthy `About` tab.
 
 ### 2.0:
 The major change to the GUI in this release is the addition of an 'Animate' tab.
