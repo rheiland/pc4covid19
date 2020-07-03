@@ -29,10 +29,7 @@ class CellTypesTab(object):
         divider_button_layout={'width':'60%'}
         box_layout = Layout(display='flex', flex_flow='row', align_items='stretch', width='100%')
 
-        # self.parent_name = Text(value='None',placeholder='Type something',description='Parent:',disabled=True)
-        # self.parent_name = Text(value='None',placeholder='Type something',description='cell type inherits properties from this parent type:',disabled=True)
-        # self.cell_type_dropdown = Dropdown(description='Cell type:', layout={'width':'30%'} )
-        self.cell_type_dropdown = Dropdown(description='Cell type:')
+        self.cell_type_dropdown = Dropdown(description='Cell type:',)
         self.cell_type_dropdown.style = {'description_width': '%sch' % str(len(self.cell_type_dropdown.description) + 1)}
 
         cell_type_names_layout={'width':'30%'}
@@ -41,9 +38,7 @@ class CellTypesTab(object):
 
         explain_inheritance = Label(value='    This cell line inherits its properties from its parent type. Any settings below override those inherited properties.')  # , style=cell_type_names_style, layout=cell_type_names_layout)
 
-
         self.cell_type_parent_row = HBox([self.cell_type_dropdown, self.parent_name])
-        # self.cell_type_parent_row = VBox([self.cell_type_dropdown, self.parent_name])
         self.cell_type_parent_dict = {}
 
         self.cell_type_dict = {}
@@ -363,7 +358,7 @@ class CellTypesTab(object):
 
         name_btn = Button(description='migration_bias', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float34 = FloatText(value='.5', step='0.1', style=style, layout=widget_layout)
+        self.float34 = FloatText(value='0.7', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float34, units_btn]
@@ -638,7 +633,7 @@ class CellTypesTab(object):
         box63 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_apoptosis_half_max', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float58 = FloatText(value='500', step='10', style=style, layout=widget_layout)
+        self.float58 = FloatText(value='250', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='virion', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='viral load at which cells reach half max apoptosis rate', disabled=True, layout=desc_button_layout)
@@ -668,17 +663,17 @@ class CellTypesTab(object):
         box66 = Box(children=row, layout=box_layout)
         name_btn = Button(description='infected_cell_chemokine_secretion_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float61 = FloatText(value='0.8254', step='0.1', style=style, layout=widget_layout)
+        self.float61 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
-        description_btn = Button(description='rate that infected cells secrete chemokine', disabled=True, layout=desc_button_layout)
+        description_btn = Button(description='max rate that infected cells secrete chemokine', disabled=True, layout=desc_button_layout)
         description_btn.style.button_color = 'tan'
         row = [name_btn, self.float61, units_btn, description_btn] 
 
         box67 = Box(children=row, layout=box_layout)
         name_btn = Button(description='debris_secretion_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float62 = FloatText(value='0.8254', step='0.1', style=style, layout=widget_layout)
+        self.float62 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate that dead cells release debris', disabled=True, layout=desc_button_layout)
@@ -788,7 +783,7 @@ class CellTypesTab(object):
         box78 = Box(children=row, layout=box_layout)
         name_btn = Button(description='sensitivity_to_chemokine_chemotaxis', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float73 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        self.float73 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='relative sensitivity to chemokine in chemotaxis', disabled=True, layout=desc_button_layout)
@@ -808,7 +803,7 @@ class CellTypesTab(object):
         box80 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_cytokine_secretion_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float75 = FloatText(value='0.8524', step='0.1', style=style, layout=widget_layout)
+        self.float75 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate of secreting pro-inflamatory cytokine after activation', disabled=True, layout=desc_button_layout)
@@ -954,7 +949,7 @@ class CellTypesTab(object):
 
         name_btn = Button(description='migration_bias', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float83 = FloatText(value='0.5', step='0.1', style=style, layout=widget_layout)
+        self.float83 = FloatText(value='0.70', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float83, units_btn]
@@ -988,7 +983,7 @@ class CellTypesTab(object):
         box92 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float84 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        self.float84 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float84, units_btn]
@@ -1000,7 +995,7 @@ class CellTypesTab(object):
         box94 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float85 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        self.float85 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float85, units_btn]
@@ -1012,7 +1007,7 @@ class CellTypesTab(object):
         box96 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float86 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        self.float86 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float86, units_btn]
@@ -1027,108 +1022,29 @@ class CellTypesTab(object):
 
         #  >>>>>>>>>>>>>>>>> <cell_definition> = CD8 Tcell
         #  ------------------------- 
-        div_row16 = Button(description='phenotype:motility', disabled=True, layout=divider_button_layout)
+        div_row16 = Button(description='phenotype:death', disabled=True, layout=divider_button_layout)
         div_row16.style.button_color = 'orange'
-        #  ------------------------- 
-        div_row17 = Button(description='phenotype:volume', disabled=True, layout=divider_button_layout)
-        div_row17.style.button_color = 'orange'
-        name_btn = Button(description='total', disabled=True, layout=name_button_layout)
+        death_model1 = Button(description='model: apoptosis', disabled=True, layout={'width':'30%'})
+        death_model1.style.button_color = '#ffde6b'
+        name_btn = Button(description='death rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float87 = FloatText(value='478', step='10', style=style, layout=widget_layout)
+        self.float87 = FloatText(value='2.8e-4', step='1e-05', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float87, units_btn, ]
         box98 = Box(children=row, layout=box_layout)
 
-        name_btn = Button(description='nuclear', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
-        self.float88 = FloatText(value='47.8', step='1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
-        row = [name_btn, self.float88, units_btn, ]
-        box99 = Box(children=row, layout=box_layout)
-
         #  ------------------------- 
-        div_row18 = Button(description='phenotype:secretion', disabled=True, layout=divider_button_layout)
-        div_row18.style.button_color = 'orange'
-        name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
-        self.text7 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
-        row = [name_btn, self.text7]
-        box100 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
-        self.float89 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
-        row = [name_btn, self.float89, units_btn]
-        box101 = Box(children=row, layout=box_layout)
-
-#      ================== <custom_data>, if present ==================
-
-        div_row19 = Button(description='Custom Data',disabled=True, layout=divider_button_layout)
-        div_row19.style.button_color = 'cyan'
-        name_btn = Button(description='cell_attachment_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
-        self.float90 = FloatText(value='0.2', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
-        description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
-        row = [name_btn, self.float90, units_btn, description_btn] 
-
-        box102 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='cell_attachment_lifetime', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
-        self.float91 = FloatText(value='8.5', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
-        description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
-        row = [name_btn, self.float91, units_btn, description_btn] 
-
-        box103 = Box(children=row, layout=box_layout)
-
-        self.cell_def_vbox3 = VBox([
-          div_row16, div_row17, box98, box99, div_row18, box100,box101,div_row19,          box102,
-          box103,
-        ])
-        # ------------------------------------------
-        self.cell_def_vboxes.append(self.cell_def_vbox3)
-
-        #  >>>>>>>>>>>>>>>>> <cell_definition> = macrophage
-        #  ------------------------- 
-        div_row20 = Button(description='phenotype:death', disabled=True, layout=divider_button_layout)
-        div_row20.style.button_color = 'orange'
-        death_model1 = Button(description='model: apoptosis', disabled=True, layout={'width':'30%'})
-        death_model1.style.button_color = '#ffde6b'
-        name_btn = Button(description='death rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
-        self.float92 = FloatText(value='1e-5', step='1e-06', style=style, layout=widget_layout)
-        units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
-        row = [name_btn, self.float92, units_btn, ]
-        box104 = Box(children=row, layout=box_layout)
-
-        #  ------------------------- 
-        div_row21 = Button(description='phenotype:motility', disabled=True, layout=divider_button_layout)
-        div_row21.style.button_color = 'orange'
+        div_row17 = Button(description='phenotype:motility', disabled=True, layout=divider_button_layout)
+        div_row17.style.button_color = 'orange'
 
         name_btn = Button(description='migration_bias', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float93 = FloatText(value='0.99', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='', disabled=True, layout=name_button_layout)
+        self.float88 = FloatText(value='0.70', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
-        row = [name_btn, self.float93, units_btn]
-        box105 = Box(children=row, layout=box_layout)
-
-        name_btn = Button(description='persistence_time', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
-        self.float94 = FloatText(value='5', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
-        row = [name_btn, self.float94, units_btn]
-        box106 = Box(children=row, layout=box_layout)
+        row = [name_btn, self.float88, units_btn]
+        box99 = Box(children=row, layout=box_layout)
         self.bool9 = Checkbox(description='enabled', value=True,layout=name_button_layout)
         self.bool10 = Checkbox(description='use_2D', value=True,layout=name_button_layout)
 
@@ -1138,142 +1054,116 @@ class CellTypesTab(object):
         self.bool11 = Checkbox(description='enabled', value=False,layout=name_button_layout)
 
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
-        self.chemotaxis_substrate5 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
-        row = [name_btn, self.chemotaxis_substrate5]
-        box107 = Box(children=row, layout=box_layout)
+        name_btn.style.button_color = 'lightgreen'
+        self.chemotaxis_substrate4 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
+        row = [name_btn, self.chemotaxis_substrate4]
+        box100 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='direction', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
-        self.chemotaxis_direction5 = Text(value='1', disabled=False, style=style, layout=widget_layout_long)
-        row = [name_btn, self.chemotaxis_direction5]
-        box108 = Box(children=row, layout=box_layout)
-        #  ------------------------- 
-        div_row22 = Button(description='phenotype:volume', disabled=True, layout=divider_button_layout)
-        div_row22.style.button_color = 'orange'
-        name_btn = Button(description='total', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float95 = FloatText(value='4849', step='100', style=style, layout=widget_layout)
-        units_btn = Button(description='', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
-        row = [name_btn, self.float95, units_btn, ]
-        box109 = Box(children=row, layout=box_layout)
+        self.chemotaxis_direction4 = Text(value='1', disabled=False, style=style, layout=widget_layout_long)
+        row = [name_btn, self.chemotaxis_direction4]
+        box101 = Box(children=row, layout=box_layout)
+        #  ------------------------- 
+        div_row18 = Button(description='phenotype:volume', disabled=True, layout=divider_button_layout)
+        div_row18.style.button_color = 'orange'
+        name_btn = Button(description='total', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'lightgreen'
+        self.float89 = FloatText(value='478', step='10', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'lightgreen'
+        row = [name_btn, self.float89, units_btn, ]
+        box102 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
-        self.float96 = FloatText(value='485', step='10', style=style, layout=widget_layout)
-        units_btn = Button(description='', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
-        row = [name_btn, self.float96, units_btn, ]
-        box110 = Box(children=row, layout=box_layout)
+        name_btn.style.button_color = 'tan'
+        self.float90 = FloatText(value='47.8', step='1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'tan'
+        row = [name_btn, self.float90, units_btn, ]
+        box103 = Box(children=row, layout=box_layout)
 
+        #  ------------------------- 
+        div_row19 = Button(description='phenotype:secretion', disabled=True, layout=divider_button_layout)
+        div_row19.style.button_color = 'orange'
+        name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'lightgreen'
+        self.text7 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
+        row = [name_btn, self.text7]
+        box104 = Box(children=row, layout=box_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'tan'
+        self.float91 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'tan'
+        row = [name_btn, self.float91, units_btn]
+        box105 = Box(children=row, layout=box_layout)
 
 #      ================== <custom_data>, if present ==================
 
-        div_row23 = Button(description='Custom Data',disabled=True, layout=divider_button_layout)
-        div_row23.style.button_color = 'cyan'
-        name_btn = Button(description='phagocytosis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
-        self.float97 = FloatText(value='0.167', step='0.01', style=style, layout=widget_layout)
+        div_row20 = Button(description='Custom Data',disabled=True, layout=divider_button_layout)
+        div_row20.style.button_color = 'cyan'
+        name_btn = Button(description='cell_attachment_rate', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'lightgreen'
+        self.float92 = FloatText(value='0.2', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'lightgreen'
+        description_btn = Button(description='', disabled=True, layout=desc_button_layout)
+        description_btn.style.button_color = 'lightgreen'
+        row = [name_btn, self.float92, units_btn, description_btn] 
+
+        box106 = Box(children=row, layout=box_layout)
+        name_btn = Button(description='cell_attachment_lifetime', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'tan'
+        self.float93 = FloatText(value='8.5', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
         description_btn.style.button_color = 'tan'
-        row = [name_btn, self.float97, units_btn, description_btn] 
+        row = [name_btn, self.float93, units_btn, description_btn] 
 
-        box111 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='sensitivity_to_debris_chemotaxis', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
-        self.float98 = FloatText(value='1.0', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
-        description_btn = Button(description='relative sensitivity to debris in chemotaxis', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
-        row = [name_btn, self.float98, units_btn, description_btn] 
+        box107 = Box(children=row, layout=box_layout)
 
-        box112 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='sensitivity_to_chemokine_chemotaxis', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
-        self.float99 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
-        description_btn = Button(description='relative sensitivity to chemokine in chemotaxis', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
-        row = [name_btn, self.float99, units_btn, description_btn] 
-
-        box113 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='activated_speed', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
-        self.float100 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
-        description_btn = Button(description='speed after activation', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
-        row = [name_btn, self.float100, units_btn, description_btn] 
-
-        box114 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='activated_cytokine_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
-        self.float101 = FloatText(value='0.8524', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
-        description_btn = Button(description='rate of secreting pro-inflamatory cytokine after activation', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
-        row = [name_btn, self.float101, units_btn, description_btn] 
-
-        box115 = Box(children=row, layout=box_layout)
-
-        self.cell_def_vbox4 = VBox([
-          div_row20, death_model1,box104, div_row21, box105,box106,self.bool9,self.bool10,chemotaxis_btn,self.bool11,box107,box108,div_row22, box109, box110, div_row23,          box111,
-          box112,
-          box113,
-          box114,
-          box115,
+        self.cell_def_vbox3 = VBox([
+          div_row16, death_model1,box98, div_row17, box99,self.bool9,self.bool10,chemotaxis_btn,self.bool11,box100,box101,div_row18, box102, box103, div_row19, box104,box105,div_row20,          box106,
+          box107,
         ])
         # ------------------------------------------
-        self.cell_def_vboxes.append(self.cell_def_vbox4)
+        self.cell_def_vboxes.append(self.cell_def_vbox3)
 
-        #  >>>>>>>>>>>>>>>>> <cell_definition> = neutrophil
+        #  >>>>>>>>>>>>>>>>> <cell_definition> = macrophage
         #  ------------------------- 
-        div_row24 = Button(description='phenotype:death', disabled=True, layout=divider_button_layout)
-        div_row24.style.button_color = 'orange'
+        div_row21 = Button(description='phenotype:death', disabled=True, layout=divider_button_layout)
+        div_row21.style.button_color = 'orange'
         death_model1 = Button(description='model: apoptosis', disabled=True, layout={'width':'30%'})
         death_model1.style.button_color = '#ffde6b'
         name_btn = Button(description='death rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float102 = FloatText(value='1.44e-3', step='0.0001', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float94 = FloatText(value='2.1e-4', step='1e-05', style=style, layout=widget_layout)
+        units_btn = Button(description='min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
-        row = [name_btn, self.float102, units_btn, ]
-        box116 = Box(children=row, layout=box_layout)
+        row = [name_btn, self.float94, units_btn, ]
+        box108 = Box(children=row, layout=box_layout)
 
         #  ------------------------- 
-        div_row25 = Button(description='phenotype:motility', disabled=True, layout=divider_button_layout)
-        div_row25.style.button_color = 'orange'
-
-        name_btn = Button(description='speed', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
-        self.float103 = FloatText(value='19', step='1', style=style, layout=widget_layout)
-        units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
-        row = [name_btn, self.float103, units_btn]
-        box117 = Box(children=row, layout=box_layout)
+        div_row22 = Button(description='phenotype:motility', disabled=True, layout=divider_button_layout)
+        div_row22.style.button_color = 'orange'
 
         name_btn = Button(description='migration_bias', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
-        self.float104 = FloatText(value='0.99', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
-        row = [name_btn, self.float104, units_btn]
-        box118 = Box(children=row, layout=box_layout)
-
-        name_btn = Button(description='persistence_time', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float105 = FloatText(value='5', step='0.1', style=style, layout=widget_layout)
+        self.float95 = FloatText(value='0.7', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
-        row = [name_btn, self.float105, units_btn]
-        box119 = Box(children=row, layout=box_layout)
+        row = [name_btn, self.float95, units_btn]
+        box109 = Box(children=row, layout=box_layout)
+
+        name_btn = Button(description='persistence_time', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'lightgreen'
+        self.float96 = FloatText(value='5', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'lightgreen'
+        row = [name_btn, self.float96, units_btn]
+        box110 = Box(children=row, layout=box_layout)
         self.bool12 = Checkbox(description='enabled', value=True,layout=name_button_layout)
         self.bool13 = Checkbox(description='use_2D', value=True,layout=name_button_layout)
 
@@ -1283,125 +1173,286 @@ class CellTypesTab(object):
         self.bool14 = Checkbox(description='enabled', value=False,layout=name_button_layout)
 
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
-        self.chemotaxis_substrate6 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
-        row = [name_btn, self.chemotaxis_substrate6]
-        box120 = Box(children=row, layout=box_layout)
+        name_btn.style.button_color = 'tan'
+        self.chemotaxis_substrate5 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
+        row = [name_btn, self.chemotaxis_substrate5]
+        box111 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='direction', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
-        self.chemotaxis_direction6 = Text(value='1', disabled=False, style=style, layout=widget_layout_long)
-        row = [name_btn, self.chemotaxis_direction6]
-        box121 = Box(children=row, layout=box_layout)
-        #  ------------------------- 
-        div_row26 = Button(description='phenotype:secretion', disabled=True, layout=divider_button_layout)
-        div_row26.style.button_color = 'orange'
-        name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.text8 = Text(value='virion', disabled=False, style=style, layout=widget_layout_long)
-        row = [name_btn, self.text8]
-        box122 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
-        self.float106 = FloatText(value='0.001', step='0.0001', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
-        row = [name_btn, self.float106, units_btn]
-        box123 = Box(children=row, layout=box_layout)
+        self.chemotaxis_direction5 = Text(value='1', disabled=False, style=style, layout=widget_layout_long)
+        row = [name_btn, self.chemotaxis_direction5]
+        box112 = Box(children=row, layout=box_layout)
         #  ------------------------- 
-        div_row27 = Button(description='phenotype:volume', disabled=True, layout=divider_button_layout)
-        div_row27.style.button_color = 'orange'
+        div_row23 = Button(description='phenotype:volume', disabled=True, layout=divider_button_layout)
+        div_row23.style.button_color = 'orange'
         name_btn = Button(description='total', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
-        self.float107 = FloatText(value='1437', step='100', style=style, layout=widget_layout)
+        name_btn.style.button_color = 'tan'
+        self.float97 = FloatText(value='4849', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
-        row = [name_btn, self.float107, units_btn, ]
-        box124 = Box(children=row, layout=box_layout)
+        units_btn.style.button_color = 'tan'
+        row = [name_btn, self.float97, units_btn, ]
+        box113 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'lightgreen'
+        self.float98 = FloatText(value='485', step='10', style=style, layout=widget_layout)
+        units_btn = Button(description='', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'lightgreen'
+        row = [name_btn, self.float98, units_btn, ]
+        box114 = Box(children=row, layout=box_layout)
+
+        name_btn = Button(description='cytoplasmic_biomass_change_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float108 = FloatText(value='143.7', step='10', style=style, layout=widget_layout)
+        self.float99 = FloatText(value='0.045', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
-        row = [name_btn, self.float108, units_btn, ]
-        box125 = Box(children=row, layout=box_layout)
+        row = [name_btn, self.float99, units_btn, ]
+        box115 = Box(children=row, layout=box_layout)
 
 
 #      ================== <custom_data>, if present ==================
 
-        div_row28 = Button(description='Custom Data',disabled=True, layout=divider_button_layout)
-        div_row28.style.button_color = 'cyan'
+        div_row24 = Button(description='Custom Data',disabled=True, layout=divider_button_layout)
+        div_row24.style.button_color = 'cyan'
         name_btn = Button(description='phagocytosis_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float109 = FloatText(value='0.167', step='0.01', style=style, layout=widget_layout)
+        self.float100 = FloatText(value='0.167', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
         description_btn.style.button_color = 'lightgreen'
-        row = [name_btn, self.float109, units_btn, description_btn] 
+        row = [name_btn, self.float100, units_btn, description_btn] 
 
-        box126 = Box(children=row, layout=box_layout)
+        box116 = Box(children=row, layout=box_layout)
         name_btn = Button(description='sensitivity_to_debris_chemotaxis', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float110 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
+        self.float101 = FloatText(value='1.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='relative sensitivity to debris in chemotaxis', disabled=True, layout=desc_button_layout)
         description_btn.style.button_color = 'tan'
-        row = [name_btn, self.float110, units_btn, description_btn] 
+        row = [name_btn, self.float101, units_btn, description_btn] 
 
-        box127 = Box(children=row, layout=box_layout)
+        box117 = Box(children=row, layout=box_layout)
         name_btn = Button(description='sensitivity_to_chemokine_chemotaxis', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float111 = FloatText(value='1.0', step='0.1', style=style, layout=widget_layout)
+        self.float102 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='relative sensitivity to chemokine in chemotaxis', disabled=True, layout=desc_button_layout)
         description_btn.style.button_color = 'lightgreen'
-        row = [name_btn, self.float111, units_btn, description_btn] 
+        row = [name_btn, self.float102, units_btn, description_btn] 
 
-        box128 = Box(children=row, layout=box_layout)
+        box118 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_speed', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float112 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
+        self.float103 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='speed after activation', disabled=True, layout=desc_button_layout)
         description_btn.style.button_color = 'tan'
-        row = [name_btn, self.float112, units_btn, description_btn] 
+        row = [name_btn, self.float103, units_btn, description_btn] 
 
-        box129 = Box(children=row, layout=box_layout)
+        box119 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_cytokine_secretion_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float113 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        self.float104 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate of secreting pro-inflamatory cytokine after activation', disabled=True, layout=desc_button_layout)
         description_btn.style.button_color = 'lightgreen'
-        row = [name_btn, self.float113, units_btn, description_btn] 
+        row = [name_btn, self.float104, units_btn, description_btn] 
 
+        box120 = Box(children=row, layout=box_layout)
+
+        self.cell_def_vbox4 = VBox([
+          div_row21, death_model1,box108, div_row22, box109,box110,self.bool12,self.bool13,chemotaxis_btn,self.bool14,box111,box112,div_row23, box113, box114, box115, div_row24,          box116,
+          box117,
+          box118,
+          box119,
+          box120,
+        ])
+        # ------------------------------------------
+        self.cell_def_vboxes.append(self.cell_def_vbox4)
+
+        #  >>>>>>>>>>>>>>>>> <cell_definition> = neutrophil
+        #  ------------------------- 
+        div_row25 = Button(description='phenotype:death', disabled=True, layout=divider_button_layout)
+        div_row25.style.button_color = 'orange'
+        death_model1 = Button(description='model: apoptosis', disabled=True, layout={'width':'30%'})
+        death_model1.style.button_color = '#ffde6b'
+        name_btn = Button(description='death rate', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'tan'
+        self.float105 = FloatText(value='8.9e-4', step='0.0001', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'tan'
+        row = [name_btn, self.float105, units_btn, ]
+        box121 = Box(children=row, layout=box_layout)
+
+        #  ------------------------- 
+        div_row26 = Button(description='phenotype:motility', disabled=True, layout=divider_button_layout)
+        div_row26.style.button_color = 'orange'
+
+        name_btn = Button(description='speed', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'lightgreen'
+        self.float106 = FloatText(value='19', step='1', style=style, layout=widget_layout)
+        units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'lightgreen'
+        row = [name_btn, self.float106, units_btn]
+        box122 = Box(children=row, layout=box_layout)
+
+        name_btn = Button(description='migration_bias', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'tan'
+        self.float107 = FloatText(value='0.91', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'tan'
+        row = [name_btn, self.float107, units_btn]
+        box123 = Box(children=row, layout=box_layout)
+
+        name_btn = Button(description='persistence_time', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'lightgreen'
+        self.float108 = FloatText(value='5', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'lightgreen'
+        row = [name_btn, self.float108, units_btn]
+        box124 = Box(children=row, layout=box_layout)
+        self.bool15 = Checkbox(description='enabled', value=True,layout=name_button_layout)
+        self.bool16 = Checkbox(description='use_2D', value=True,layout=name_button_layout)
+
+        chemotaxis_btn = Button(description='chemotaxis', disabled=True, layout={'width':'30%'})
+        chemotaxis_btn.style.button_color = '#ffde6b'
+
+        self.bool17 = Checkbox(description='enabled', value=False,layout=name_button_layout)
+
+        name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'tan'
+        self.chemotaxis_substrate6 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
+        row = [name_btn, self.chemotaxis_substrate6]
+        box125 = Box(children=row, layout=box_layout)
+
+        name_btn = Button(description='direction', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'lightgreen'
+        self.chemotaxis_direction6 = Text(value='1', disabled=False, style=style, layout=widget_layout_long)
+        row = [name_btn, self.chemotaxis_direction6]
+        box126 = Box(children=row, layout=box_layout)
+        #  ------------------------- 
+        div_row27 = Button(description='phenotype:secretion', disabled=True, layout=divider_button_layout)
+        div_row27.style.button_color = 'orange'
+        name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'tan'
+        self.text8 = Text(value='virion', disabled=False, style=style, layout=widget_layout_long)
+        row = [name_btn, self.text8]
+        box127 = Box(children=row, layout=box_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'lightgreen'
+        self.float109 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'lightgreen'
+        row = [name_btn, self.float109, units_btn]
+        box128 = Box(children=row, layout=box_layout)
+        #  ------------------------- 
+        div_row28 = Button(description='phenotype:volume', disabled=True, layout=divider_button_layout)
+        div_row28.style.button_color = 'orange'
+        name_btn = Button(description='total', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'tan'
+        self.float110 = FloatText(value='1437', step='100', style=style, layout=widget_layout)
+        units_btn = Button(description='', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'tan'
+        row = [name_btn, self.float110, units_btn, ]
+        box129 = Box(children=row, layout=box_layout)
+
+        name_btn = Button(description='nuclear', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'lightgreen'
+        self.float111 = FloatText(value='143.7', step='10', style=style, layout=widget_layout)
+        units_btn = Button(description='', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'lightgreen'
+        row = [name_btn, self.float111, units_btn, ]
         box130 = Box(children=row, layout=box_layout)
 
+        name_btn = Button(description='cytoplasmic_biomass_change_rate', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'tan'
+        self.float112 = FloatText(value='0.045', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'tan'
+        row = [name_btn, self.float112, units_btn, ]
+        box131 = Box(children=row, layout=box_layout)
+
+
+#      ================== <custom_data>, if present ==================
+
+        div_row29 = Button(description='Custom Data',disabled=True, layout=divider_button_layout)
+        div_row29.style.button_color = 'cyan'
+        name_btn = Button(description='phagocytosis_rate', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'lightgreen'
+        self.float113 = FloatText(value='0.117', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'lightgreen'
+        description_btn = Button(description='', disabled=True, layout=desc_button_layout)
+        description_btn.style.button_color = 'lightgreen'
+        row = [name_btn, self.float113, units_btn, description_btn] 
+
+        box132 = Box(children=row, layout=box_layout)
+        name_btn = Button(description='sensitivity_to_debris_chemotaxis', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'tan'
+        self.float114 = FloatText(value='1.0', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'tan'
+        description_btn = Button(description='relative sensitivity to debris in chemotaxis', disabled=True, layout=desc_button_layout)
+        description_btn.style.button_color = 'tan'
+        row = [name_btn, self.float114, units_btn, description_btn] 
+
+        box133 = Box(children=row, layout=box_layout)
+        name_btn = Button(description='sensitivity_to_chemokine_chemotaxis', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'lightgreen'
+        self.float115 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'lightgreen'
+        description_btn = Button(description='relative sensitivity to chemokine in chemotaxis', disabled=True, layout=desc_button_layout)
+        description_btn.style.button_color = 'lightgreen'
+        row = [name_btn, self.float115, units_btn, description_btn] 
+
+        box134 = Box(children=row, layout=box_layout)
+        name_btn = Button(description='activated_speed', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'tan'
+        self.float116 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'tan'
+        description_btn = Button(description='speed after activation', disabled=True, layout=desc_button_layout)
+        description_btn.style.button_color = 'tan'
+        row = [name_btn, self.float116, units_btn, description_btn] 
+
+        box135 = Box(children=row, layout=box_layout)
+        name_btn = Button(description='activated_cytokine_secretion_rate', disabled=True, layout=name_button_layout)
+        name_btn.style.button_color = 'lightgreen'
+        self.float117 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        units_btn.style.button_color = 'lightgreen'
+        description_btn = Button(description='rate of secreting pro-inflamatory cytokine after activation', disabled=True, layout=desc_button_layout)
+        description_btn.style.button_color = 'lightgreen'
+        row = [name_btn, self.float117, units_btn, description_btn] 
+
+        box136 = Box(children=row, layout=box_layout)
+
         self.cell_def_vbox5 = VBox([
-          div_row24, death_model1,box116, div_row25, box117,box118,box119,self.bool12,self.bool13,chemotaxis_btn,self.bool14,box120,box121,div_row26, box122,box123,div_row27, box124, box125, div_row28,          box126,
-          box127,
-          box128,
-          box129,
-          box130,
+          div_row25, death_model1,box121, div_row26, box122,box123,box124,self.bool15,self.bool16,chemotaxis_btn,self.bool17,box125,box126,div_row27, box127,box128,div_row28, box129, box130, box131, div_row29,          box132,
+          box133,
+          box134,
+          box135,
+          box136,
         ])
         # ------------------------------------------
         self.cell_def_vboxes.append(self.cell_def_vbox5)
 
 
 
-        row = [name_btn, self.float113, units_btn, description_btn] 
-        box125 = Box(children=row, layout=box_layout)
+        row = [name_btn, self.float117, units_btn, description_btn] 
+        box131 = Box(children=row, layout=box_layout)
 
 
         self.tab = VBox([
-          self.cell_type_parent_row, explain_inheritance,
-          self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbox3, self.cell_def_vbox4, self.cell_def_vbox5,         ])
+          self.cell_type_parent_row, explain_inheritance, 
+self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbox3, self.cell_def_vbox4, self.cell_def_vbox5,         ])
     #------------------------------
     def cell_type_cb(self, change):
         if change['type'] == 'change' and change['name'] == 'value':
@@ -1522,45 +1573,55 @@ class CellTypesTab(object):
         self.text6.value = uep.find('.//cell_definition[3]//phenotype//secretion//substrate[3]').attrib['name']
         self.float86.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[3]//uptake_rate').text)
         # ------------------ cell_definition: CD8 Tcell
+        # ---------  death 
+        self.float87.value = float(uep.find('.//cell_definition[4]//phenotype//death//model[1]//death_rate').text)
         # ---------  motility 
+        self.float88.value = float(uep.find('.//cell_definition[4]//phenotype//motility//migration_bias').text)
+        self.bool9.value = ('true' == (uep.find('.//cell_definition[4]//phenotype//motility//options//enabled').text.lower()))
+        self.bool10.value = ('true' == (uep.find('.//cell_definition[4]//phenotype//motility//options//use_2D').text.lower()))
+        self.bool11.value = ('true' == (uep.find('.//cell_definition[4]//phenotype//motility//options//chemotaxis//enabled').text.lower()))
+        self.chemotaxis_substrate4.value = uep.find('.//cell_definition[4]//phenotype//motility//options//chemotaxis//substrate').text
+        self.chemotaxis_direction4.value = uep.find('.//cell_definition[4]//phenotype//motility//options//chemotaxis//direction').text
         # ---------  volume 
-        self.float87.value = float(uep.find('.//cell_definition[4]//phenotype//volume//total').text)
-        self.float88.value = float(uep.find('.//cell_definition[4]//phenotype//volume//nuclear').text)
+        self.float89.value = float(uep.find('.//cell_definition[4]//phenotype//volume//total').text)
+        self.float90.value = float(uep.find('.//cell_definition[4]//phenotype//volume//nuclear').text)
         # ---------  secretion 
         self.text7.value = uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]').attrib['name']
-        self.float89.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float91.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]//uptake_rate').text)
         # ------------------ cell_definition: macrophage
         # ---------  death 
-        self.float92.value = float(uep.find('.//cell_definition[5]//phenotype//death//model[1]//death_rate').text)
+        self.float94.value = float(uep.find('.//cell_definition[5]//phenotype//death//model[1]//death_rate').text)
         # ---------  motility 
-        self.float93.value = float(uep.find('.//cell_definition[5]//phenotype//motility//migration_bias').text)
-        self.float94.value = float(uep.find('.//cell_definition[5]//phenotype//motility//persistence_time').text)
-        self.bool9.value = ('true' == (uep.find('.//cell_definition[5]//phenotype//motility//options//enabled').text.lower()))
-        self.bool10.value = ('true' == (uep.find('.//cell_definition[5]//phenotype//motility//options//use_2D').text.lower()))
-        self.bool11.value = ('true' == (uep.find('.//cell_definition[5]//phenotype//motility//options//chemotaxis//enabled').text.lower()))
+        self.float95.value = float(uep.find('.//cell_definition[5]//phenotype//motility//migration_bias').text)
+        self.float96.value = float(uep.find('.//cell_definition[5]//phenotype//motility//persistence_time').text)
+        self.bool12.value = ('true' == (uep.find('.//cell_definition[5]//phenotype//motility//options//enabled').text.lower()))
+        self.bool13.value = ('true' == (uep.find('.//cell_definition[5]//phenotype//motility//options//use_2D').text.lower()))
+        self.bool14.value = ('true' == (uep.find('.//cell_definition[5]//phenotype//motility//options//chemotaxis//enabled').text.lower()))
         self.chemotaxis_substrate5.value = uep.find('.//cell_definition[5]//phenotype//motility//options//chemotaxis//substrate').text
         self.chemotaxis_direction5.value = uep.find('.//cell_definition[5]//phenotype//motility//options//chemotaxis//direction').text
         # ---------  volume 
-        self.float95.value = float(uep.find('.//cell_definition[5]//phenotype//volume//total').text)
-        self.float96.value = float(uep.find('.//cell_definition[5]//phenotype//volume//nuclear').text)
+        self.float97.value = float(uep.find('.//cell_definition[5]//phenotype//volume//total').text)
+        self.float98.value = float(uep.find('.//cell_definition[5]//phenotype//volume//nuclear').text)
+        self.float99.value = float(uep.find('.//cell_definition[5]//phenotype//volume//cytoplasmic_biomass_change_rate').text)
         # ------------------ cell_definition: neutrophil
         # ---------  death 
-        self.float102.value = float(uep.find('.//cell_definition[6]//phenotype//death//model[1]//death_rate').text)
+        self.float105.value = float(uep.find('.//cell_definition[6]//phenotype//death//model[1]//death_rate').text)
         # ---------  motility 
-        self.float103.value = float(uep.find('.//cell_definition[6]//phenotype//motility//speed').text)
-        self.float104.value = float(uep.find('.//cell_definition[6]//phenotype//motility//migration_bias').text)
-        self.float105.value = float(uep.find('.//cell_definition[6]//phenotype//motility//persistence_time').text)
-        self.bool12.value = ('true' == (uep.find('.//cell_definition[6]//phenotype//motility//options//enabled').text.lower()))
-        self.bool13.value = ('true' == (uep.find('.//cell_definition[6]//phenotype//motility//options//use_2D').text.lower()))
-        self.bool14.value = ('true' == (uep.find('.//cell_definition[6]//phenotype//motility//options//chemotaxis//enabled').text.lower()))
+        self.float106.value = float(uep.find('.//cell_definition[6]//phenotype//motility//speed').text)
+        self.float107.value = float(uep.find('.//cell_definition[6]//phenotype//motility//migration_bias').text)
+        self.float108.value = float(uep.find('.//cell_definition[6]//phenotype//motility//persistence_time').text)
+        self.bool15.value = ('true' == (uep.find('.//cell_definition[6]//phenotype//motility//options//enabled').text.lower()))
+        self.bool16.value = ('true' == (uep.find('.//cell_definition[6]//phenotype//motility//options//use_2D').text.lower()))
+        self.bool17.value = ('true' == (uep.find('.//cell_definition[6]//phenotype//motility//options//chemotaxis//enabled').text.lower()))
         self.chemotaxis_substrate6.value = uep.find('.//cell_definition[6]//phenotype//motility//options//chemotaxis//substrate').text
         self.chemotaxis_direction6.value = uep.find('.//cell_definition[6]//phenotype//motility//options//chemotaxis//direction').text
         # ---------  secretion 
         self.text8.value = uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]').attrib['name']
-        self.float106.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float109.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]//uptake_rate').text)
         # ---------  volume 
-        self.float107.value = float(uep.find('.//cell_definition[6]//phenotype//volume//total').text)
-        self.float108.value = float(uep.find('.//cell_definition[6]//phenotype//volume//nuclear').text)
+        self.float110.value = float(uep.find('.//cell_definition[6]//phenotype//volume//total').text)
+        self.float111.value = float(uep.find('.//cell_definition[6]//phenotype//volume//nuclear').text)
+        self.float112.value = float(uep.find('.//cell_definition[6]//phenotype//volume//cytoplasmic_biomass_change_rate').text)
 
 
     # Read values from the GUI widgets to enable editing XML
@@ -1652,42 +1713,52 @@ class CellTypesTab(object):
         uep.find('.//cell_definition[3]//phenotype//secretion//substrate[3]').attrib['name'] = str(self.text6.value)
         uep.find('.//cell_definition[3]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float86.value)
         # ------------------ cell_definition: CD8 Tcell
+        # ---------  death 
+        uep.find('.//cell_definition[4]//phenotype//death//model[1]//death_rate').text = str(self.float87.value)
         # ---------  motility 
+        uep.find('.//cell_definition[4]//phenotype//motility//migration_bias').text = str(self.float88.value)
+        uep.find('.//cell_definition[4]//phenotype//motility//options//enabled').text = str(self.bool9.value)
+        uep.find('.//cell_definition[4]//phenotype//motility//options//use_2D').text = str(self.bool10.value)
+        uep.find('.//cell_definition[4]//phenotype//motility//options//chemotaxis//enabled').text = str(self.bool11.value)
+        uep.find('.//cell_definition[4]//phenotype//motility//options//chemotaxis//substrate').text = str(self.chemotaxis_substrate4.value)
+        uep.find('.//cell_definition[4]//phenotype//motility//options//chemotaxis//direction').text = str(self.chemotaxis_direction4.value)
         # ---------  volume 
-        uep.find('.//cell_definition[4]//phenotype//volume//total').text = str(self.float87.value)
-        uep.find('.//cell_definition[4]//phenotype//volume//nuclear').text = str(self.float88.value)
+        uep.find('.//cell_definition[4]//phenotype//volume//total').text = str(self.float89.value)
+        uep.find('.//cell_definition[4]//phenotype//volume//nuclear').text = str(self.float90.value)
         # ---------  secretion 
         uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]').attrib['name'] = str(self.text7.value)
-        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float89.value)
+        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float91.value)
         # ------------------ cell_definition: macrophage
         # ---------  death 
-        uep.find('.//cell_definition[5]//phenotype//death//model[1]//death_rate').text = str(self.float92.value)
+        uep.find('.//cell_definition[5]//phenotype//death//model[1]//death_rate').text = str(self.float94.value)
         # ---------  motility 
-        uep.find('.//cell_definition[5]//phenotype//motility//migration_bias').text = str(self.float93.value)
-        uep.find('.//cell_definition[5]//phenotype//motility//persistence_time').text = str(self.float94.value)
-        uep.find('.//cell_definition[5]//phenotype//motility//options//enabled').text = str(self.bool9.value)
-        uep.find('.//cell_definition[5]//phenotype//motility//options//use_2D').text = str(self.bool10.value)
-        uep.find('.//cell_definition[5]//phenotype//motility//options//chemotaxis//enabled').text = str(self.bool11.value)
+        uep.find('.//cell_definition[5]//phenotype//motility//migration_bias').text = str(self.float95.value)
+        uep.find('.//cell_definition[5]//phenotype//motility//persistence_time').text = str(self.float96.value)
+        uep.find('.//cell_definition[5]//phenotype//motility//options//enabled').text = str(self.bool12.value)
+        uep.find('.//cell_definition[5]//phenotype//motility//options//use_2D').text = str(self.bool13.value)
+        uep.find('.//cell_definition[5]//phenotype//motility//options//chemotaxis//enabled').text = str(self.bool14.value)
         uep.find('.//cell_definition[5]//phenotype//motility//options//chemotaxis//substrate').text = str(self.chemotaxis_substrate5.value)
         uep.find('.//cell_definition[5]//phenotype//motility//options//chemotaxis//direction').text = str(self.chemotaxis_direction5.value)
         # ---------  volume 
-        uep.find('.//cell_definition[5]//phenotype//volume//total').text = str(self.float95.value)
-        uep.find('.//cell_definition[5]//phenotype//volume//nuclear').text = str(self.float96.value)
+        uep.find('.//cell_definition[5]//phenotype//volume//total').text = str(self.float97.value)
+        uep.find('.//cell_definition[5]//phenotype//volume//nuclear').text = str(self.float98.value)
+        uep.find('.//cell_definition[5]//phenotype//volume//cytoplasmic_biomass_change_rate').text = str(self.float99.value)
         # ------------------ cell_definition: neutrophil
         # ---------  death 
-        uep.find('.//cell_definition[6]//phenotype//death//model[1]//death_rate').text = str(self.float102.value)
+        uep.find('.//cell_definition[6]//phenotype//death//model[1]//death_rate').text = str(self.float105.value)
         # ---------  motility 
-        uep.find('.//cell_definition[6]//phenotype//motility//speed').text = str(self.float103.value)
-        uep.find('.//cell_definition[6]//phenotype//motility//migration_bias').text = str(self.float104.value)
-        uep.find('.//cell_definition[6]//phenotype//motility//persistence_time').text = str(self.float105.value)
-        uep.find('.//cell_definition[6]//phenotype//motility//options//enabled').text = str(self.bool12.value)
-        uep.find('.//cell_definition[6]//phenotype//motility//options//use_2D').text = str(self.bool13.value)
-        uep.find('.//cell_definition[6]//phenotype//motility//options//chemotaxis//enabled').text = str(self.bool14.value)
+        uep.find('.//cell_definition[6]//phenotype//motility//speed').text = str(self.float106.value)
+        uep.find('.//cell_definition[6]//phenotype//motility//migration_bias').text = str(self.float107.value)
+        uep.find('.//cell_definition[6]//phenotype//motility//persistence_time').text = str(self.float108.value)
+        uep.find('.//cell_definition[6]//phenotype//motility//options//enabled').text = str(self.bool15.value)
+        uep.find('.//cell_definition[6]//phenotype//motility//options//use_2D').text = str(self.bool16.value)
+        uep.find('.//cell_definition[6]//phenotype//motility//options//chemotaxis//enabled').text = str(self.bool17.value)
         uep.find('.//cell_definition[6]//phenotype//motility//options//chemotaxis//substrate').text = str(self.chemotaxis_substrate6.value)
         uep.find('.//cell_definition[6]//phenotype//motility//options//chemotaxis//direction').text = str(self.chemotaxis_direction6.value)
         # ---------  secretion 
         uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]').attrib['name'] = str(self.text8.value)
-        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float106.value)
+        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float109.value)
         # ---------  volume 
-        uep.find('.//cell_definition[6]//phenotype//volume//total').text = str(self.float107.value)
-        uep.find('.//cell_definition[6]//phenotype//volume//nuclear').text = str(self.float108.value)
+        uep.find('.//cell_definition[6]//phenotype//volume//total').text = str(self.float110.value)
+        uep.find('.//cell_definition[6]//phenotype//volume//nuclear').text = str(self.float111.value)
+        uep.find('.//cell_definition[6]//phenotype//volume//cytoplasmic_biomass_change_rate').text = str(self.float112.value)

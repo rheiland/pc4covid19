@@ -112,7 +112,7 @@ class UserTab(object):
         param_name11.style.button_color = 'lightgreen'
 
         self.CD8_Tcell_recruitment_min_signal = FloatText(
-          value=0.2,
+          value=0.3,
           step=0.01,
           style=style, layout=widget_layout)
 
@@ -120,7 +120,7 @@ class UserTab(object):
         param_name12.style.button_color = 'tan'
 
         self.CD8_Tcell_recruitment_saturation_signal = FloatText(
-          value=0.4,
+          value=0.5,
           step=0.1,
           style=style, layout=widget_layout)
 
