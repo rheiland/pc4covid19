@@ -136,6 +136,8 @@ def write_config_file(name):
     config_tab.fill_xml(xml_root)
     microenv_tab.fill_xml(xml_root)
     user_tab.fill_xml(xml_root)
+    if xml_root.find('.//cell_definitions'):
+        cell_types_tab.fill_xml(xml_root)
     tree.write(name)
 
     # update substrate mesh layout (beware of https://docs.python.org/3/library/functions.html#round)
@@ -217,6 +219,8 @@ def fill_gui_params(config_file):
     config_tab.fill_gui(xml_root)
     microenv_tab.fill_gui(xml_root)
     user_tab.fill_gui(xml_root)
+    if xml_root.find('.//cell_definitions'):
+        cell_types_tab.fill_gui(xml_root)
 
 
 def run_done_func(s, rdir):
@@ -394,13 +398,14 @@ if nanoHUB_flag or hublib_flag:
     read_config.observe(read_config_cb, names='value') 
 
 tab_height = 'auto'
-tab_layout = widgets.Layout(width='auto',height=tab_height, overflow_y='scroll',)   # border='2px solid black',
+#tab_layout = widgets.Layout(width='auto',height=tab_height, overflow_y='scroll',)   # border='2px solid black',
+tab_layout = widgets.Layout(width='auto',height=tab_height)   # border='2px solid black',
 
 if xml_root.find('.//cell_definitions'):
     titles = ['About', 'Config Basics', 'Microenvironment', 'User Params', 'Cell Types', 'Out: Plots', 'Animate']
     tabs = widgets.Tab(children=[about_tab.tab, config_tab.tab, microenv_tab.tab, user_tab.tab, cell_types_tab.tab, sub.tab, animate_tab.tab],
-                   _titles={i: t for i, t in enumerate(titles)},
-                   layout=tab_layout)
+                   _titles={i: t for i, t in enumerate(titles)})
+#                   layout=tab_layout)
 else:
     titles = ['About', 'Config Basics', 'Microenvironment', 'User Params', 'Out: Plots', 'Animate']
     tabs = widgets.Tab(children=[about_tab.tab, config_tab.tab, microenv_tab.tab, user_tab.tab, sub.tab, animate_tab.tab],
