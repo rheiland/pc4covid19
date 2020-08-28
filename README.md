@@ -24,7 +24,6 @@ for a summary of changes to the model.
 ### 3.2:
 Updates to the core model; nothing new in the GUI.
 
-
 ### 3.1:
 Minor updates to `About` text, e.g., explaining nature of stochastic results. Edits to `immune_submodels.cpp` (see details in the core model repository).
 
