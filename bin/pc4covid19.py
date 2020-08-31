@@ -116,6 +116,8 @@ def read_config_cb(_b):
         # print("read_config_cb():  is_dir True, calling update_params")
         sub.update_params(config_tab, user_tab)
         sub.update(read_config.value)
+        sub.disable_2D_plotting(False)
+        sub.custom_data_toggle.value = False
     # else:  # may want to distinguish "DEFAULT" from other saved .xml config files
         # FIXME: really need a call to clear the visualizations
         # svg.update('')
@@ -251,6 +253,7 @@ def run_done_func(s, rdir):
     sub.update(rdir)
 
     animate_tab.gen_button.disabled = False
+    sub.disable_2D_plotting(False)
 
     # with debug_view:
     #     print('RDF DONE')
@@ -262,6 +265,7 @@ def run_sim_func(s):
     #     print('run_sim_func')
 
     animate_tab.gen_button.disabled = True
+    sub.disable_2D_plotting(True)   # disable 2D plots while a sim is running
 
     # If cells or substrates toggled off in Config tab, toggle off in Plots tab
     if config_tab.toggle_svg.value == False:
@@ -363,7 +367,11 @@ def run_button_cb(s):
 
     subprocess.Popen(["../bin/myproj", "config.xml"])
 
-
+def cancel_func(v):
+    if v['name'] == "description" and v['new'] == "Stopping":
+        sub.disable_2D_plotting(False)
+        sub.custom_data_toggle.value = False
+   
 #-------------------------------------------------
 if nanoHUB_flag:
     run_button = Submit(label='Run',
@@ -372,6 +380,7 @@ if nanoHUB_flag:
                         cachename='pc4covid19_v3',
                         showcache=False,
                         outcb=outcb)
+    run_button.but.observe(cancel_func, names="description", type='change')
 else:
     if (hublib_flag):
         run_button = RunCommand(start_func=run_sim_func,
@@ -379,6 +388,7 @@ else:
                             cachename='pc4covid19_v3',
                             showcache=False,
                             outcb=outcb)  
+        run_button.but.observe(cancel_func, names="description", type='change')
     else:
         run_button = widgets.Button(
             description='Run',
