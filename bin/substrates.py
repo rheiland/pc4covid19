@@ -852,6 +852,8 @@ class SubstrateTab(object):
         # print('t=',t)
 
         # if (t >= 0):
+        xoff= self.xval.max() * .01   # should be a % of axes range
+        fsize=12
         if (t >= 0 and len(self.xval) > 1):
             # print('self.xval=',self.xval)  # [   0.   60.  120. ...
             # array = np.asarray(self.xval)
@@ -862,7 +864,16 @@ class SubstrateTab(object):
                 self.ax1.plot(self.xval[self.substrate_frame], self.yval1[self.substrate_frame], p1[-1].get_color(), marker='o', markersize=12)
                 self.ax1.plot(self.xval[self.substrate_frame], self.yval2[self.substrate_frame], p2[-1].get_color(), marker='o', markersize=12)
                 self.ax1.plot(self.xval[self.substrate_frame], self.yval3[self.substrate_frame], p3[-1].get_color(), marker='o', markersize=12)
-                # self.ax1.plot(self.xval[self.substrate_frame], self.yval[self.substrate_frame], marker='o')
+
+                # label = "{:d}".format(self.yval1[self.substrate_frame]), 
+                # self.ax1.annotate(str(self.yval1[self.substrate_frame]), (self.xval[self.substrate_frame]+xoff,self.yval1[self.substrate_frame]+yoff) )
+                ymax= max(int(self.yval1.max()),int(self.yval2.max()),int(self.yval3.max())) # should be a % of axes range
+                yoff= ymax * .01   # should be a % of axes range
+
+                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval1[self.substrate_frame]+yoff, str(self.yval1[self.substrate_frame]), fontsize=fsize)
+                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval2[self.substrate_frame]+yoff, str(self.yval2[self.substrate_frame]), fontsize=fsize)
+                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval3[self.substrate_frame]+yoff, str(self.yval3[self.substrate_frame]), fontsize=fsize)
+                 
             elif 'mac' in self.custom_data_choice.value:  # mac,neut,cd8
                 self.ax1.plot(self.xval[self.substrate_frame], self.yval4[self.substrate_frame], p1[-1].get_color(), marker='o', markersize=12)
                 self.ax1.plot(self.xval[self.substrate_frame], self.yval5[self.substrate_frame], p2[-1].get_color(), marker='o', markersize=12)
@@ -871,8 +882,16 @@ class SubstrateTab(object):
             # self.ax1.gca().spines['right'].set_visible(False)
             # self.ax1.margins(0)
 
-        self.ax1.legend(loc='center left', prop={'size': 15})
+                # label markers
+                ymax= max(int(self.yval4.max()),int(self.yval5.max()),int(self.yval6.max())) # should be a % of axes range
+                yoff= ymax * .01   # should be a % of axes range
+                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval4[self.substrate_frame]+yoff, str(self.yval4[self.substrate_frame]), fontsize=fsize)
+                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval5[self.substrate_frame]+yoff, str(self.yval5[self.substrate_frame]), fontsize=fsize)
+                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval6[self.substrate_frame]+yoff, str(self.yval6[self.substrate_frame]), fontsize=fsize)
 
+
+
+        self.ax1.legend(loc='center left', prop={'size': 15})
         if xname == self.tname:
             self.ax1.set_xlabel('time (min)', fontsize=self.axis_label_fontsize)
         else:
