@@ -116,7 +116,8 @@ def read_config_cb(_b):
         # print("read_config_cb():  is_dir True, calling update_params")
         sub.update_params(config_tab, user_tab)
         sub.update(read_config.value)
-        sub.disable_2D_plotting(False)
+        sub.disable_2D_plotting(True)  # start fresh - no 2D plots computed
+        sub.custom_data_toggle.disabled = False
         sub.custom_data_toggle.value = False
     # else:  # may want to distinguish "DEFAULT" from other saved .xml config files
         # FIXME: really need a call to clear the visualizations
