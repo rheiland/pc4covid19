@@ -71,8 +71,8 @@ class MicroenvTab(object):
 
         param_name9 = Button(description='diffusion_coefficient', disabled=True, layout=name_button_layout)
 
-        self.interferon_1_diffusion_coefficient = FloatText(value=555.56,
-          step=10,style=style, layout=widget_layout)
+        self.interferon_1_diffusion_coefficient = FloatText(value=25,
+          step=1,style=style, layout=widget_layout)
 
         param_name10 = Button(description='decay_rate', disabled=True, layout=name_button_layout)
 

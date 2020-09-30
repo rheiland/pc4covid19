@@ -70,9 +70,6 @@
 #include "../BioFVM/BioFVM_vector.h"
 #include "PhysiCell_cell.h"
 
-#include <algorithm>
-#include <iterator> 
-
 using namespace BioFVM;
 
 namespace PhysiCell{
@@ -221,11 +218,6 @@ void Cell_Container::update_all_cells(double t, double phenotype_dt_ , double me
 			{
 				(*all_cells)[i]->functions.custom_cell_rule((*all_cells)[i], (*all_cells)[i]->phenotype, time_since_last_mechanics);
 			}
-			
-			if( (*all_cells)[i]->functions.contact_function )
-			{
-				evaluate_interactions( (*all_cells)[i], (*all_cells)[i]->phenotype , time_since_last_mechanics);
-			}
 		}
 		// Calculate new positions
 		#pragma omp parallel for 
@@ -292,17 +284,12 @@ void Cell_Container::update_all_cells(double t, double phenotype_dt_ , double me
 		{
 			cells_ready_to_divide[i]->divide();
 		}
-
-		std::sort( cells_ready_to_die.begin(), cells_ready_to_die.end() ); //rwh.  O(N log N)
-		std::vector<Cell*>::iterator it;
-    	it = std::adjacent_find( cells_ready_to_die.begin(), cells_ready_to_die.end());
-    	if (it != cells_ready_to_die.end() ) 
-		{
-			std::cout << __FUNCTION__ << ":-------  in cells_ready_to_die, repeated Cell* = " << *it << std::endl;
-			int foo = 42;
-		}
 		for( int i=0; i < cells_ready_to_die.size(); i++ )
 		{	
+			if (cells_ready_to_die[i]->ID == 3392)
+			{
+				std::cout << __FILE__ << " : " << __FUNCTION__ << " :  3392 going to die" << std::endl;
+			}
 			cells_ready_to_die[i]->die();	
 		}
 		num_divisions_in_current_step+=  cells_ready_to_divide.size();
@@ -327,49 +314,9 @@ void Cell_Container::update_all_cells(double t, double phenotype_dt_ , double me
 		// if we need gradients, compute them
 		if( default_microenvironment_options.calculate_gradients ) 
 		{ microenvironment.compute_all_gradient_vectors();  }
-		// end of new in Feb 2018 
+		// end of new in Feb 2018 		
 		
-		// perform interactions -- new in June 2020 
-		#pragma omp parallel for 
-		for( int i=0; i < (*all_cells).size(); i++ )
-		{
-			Cell* pC = (*all_cells)[i]; 
-			if( pC->functions.contact_function && pC->is_out_of_domain == false )
-			{ evaluate_interactions( pC,pC->phenotype,time_since_last_mechanics ); }
-		}
-		
-		// perform custom computations 
-
-		#pragma omp parallel for 
-		for( int i=0; i < (*all_cells).size(); i++ )
-		{
-			Cell* pC = (*all_cells)[i]; 
-			if( pC->functions.custom_cell_rule && pC->is_out_of_domain == false )
-			{ pC->functions.custom_cell_rule( pC,pC->phenotype,time_since_last_mechanics ); }
-		}
-		
-		// update velocities 
-		
-		#pragma omp parallel for 
-		for( int i=0; i < (*all_cells).size(); i++ )
-		{
-			Cell* pC = (*all_cells)[i]; 
-			if( pC->functions.update_velocity && pC->is_out_of_domain == false && pC->is_movable )
-			{ pC->functions.update_velocity( pC,pC->phenotype,time_since_last_mechanics ); }
-		}
-
-		// update positions 
-		
-		#pragma omp parallel for 
-		for( int i=0; i < (*all_cells).size(); i++ )
-		{
-			Cell* pC = (*all_cells)[i]; 
-			if( pC->is_out_of_domain == false && pC->is_movable)
-			{ pC->update_position(time_since_last_mechanics); }
-		}
-		
-/*		
-		// Compute custom functions, interations, and velocities
+		// Compute velocities
 		#pragma omp parallel for 
 		for( int i=0; i < (*all_cells).size(); i++ )
 		{
@@ -385,14 +332,6 @@ void Cell_Container::update_all_cells(double t, double phenotype_dt_ , double me
 			{
 				(*all_cells)[i]->functions.custom_cell_rule((*all_cells)[i], (*all_cells)[i]->phenotype, time_since_last_mechanics);
 			}
-			
-			// contact interactions 
-			
-			if( (*all_cells)[i]->functions.contact_function )
-			{
-				evaluate_interactions( (*all_cells)[i] , (*all_cells)[i]->phenotype, time_since_last_mechanics );
-			}
-			
 		}
 		// Calculate new positions
 		#pragma omp parallel for 
@@ -403,7 +342,6 @@ void Cell_Container::update_all_cells(double t, double phenotype_dt_ , double me
 				(*all_cells)[i]->update_position(time_since_last_mechanics);
 			}
 		}
-*/		
 		
 		// When somebody reviews this code, let's add proper braces for clarity!!! 
 		
@@ -483,25 +421,18 @@ int find_escaping_face_index(Cell* agent)
 
 void Cell_Container::flag_cell_for_division( Cell* pCell )
 { 
-	#pragma omp critical(flag_cell_for_division)
-	{
-		auto result = std::find(std::begin(cells_ready_to_divide), std::end(cells_ready_to_divide), pCell );
-		if( result == std::end(cells_ready_to_divide) )
-		{ cells_ready_to_divide.push_back( pCell ); }
-	} 
+	#pragma omp critical 
+	{cells_ready_to_divide.push_back( pCell );} 
 	return; 
 }
 
 void Cell_Container::flag_cell_for_removal( Cell* pCell )
 { 
-	#pragma omp critical(flag_cell_for_removal) 
-	{
-		auto result = std::find(std::begin(cells_ready_to_die), std::end(cells_ready_to_die), pCell );
-		if( result == std::end(cells_ready_to_die) )
-		{ cells_ready_to_die.push_back( pCell ); }		
-	} 
+	#pragma omp critical 
+	{cells_ready_to_die.push_back( pCell );} 
 	return; 
 }
+
 
 Cell_Container* create_cell_container_for_microenvironment( BioFVM::Microenvironment& m , double mechanics_voxel_size )
 {

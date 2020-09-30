@@ -108,6 +108,7 @@ class SubstrateTab(object):
 
         self.show_nucleus = False
         self.show_edge = True
+        self.alpha = 0.7
 
         substrates_default_disabled_flag = True  # True = disable them by default; False=enable them
 
@@ -843,9 +844,9 @@ class SubstrateTab(object):
             p2 = self.ax1.plot(self.xval, self.yval2, label='infected', linewidth=3)
             p3 = self.ax1.plot(self.xval, self.yval3, label='dead', linewidth=3)
         elif 'mac' in self.custom_data_choice.value:  # mac,neut,cd8
-            p1 = self.ax1.plot(self.xval, self.yval4, label='mac', linewidth=3)
-            p2 = self.ax1.plot(self.xval, self.yval5, label='neut', linewidth=3)
-            p3 = self.ax1.plot(self.xval, self.yval6, label='cd8', linewidth=3)
+            p1 = self.ax1.plot(self.xval, self.yval4, label='mac', linewidth=3, color='lime')
+            p2 = self.ax1.plot(self.xval, self.yval5, label='neut', linewidth=3, color='cyan')
+            p3 = self.ax1.plot(self.xval, self.yval6, label='cd8', linewidth=3, color='red')
 
         # print('xval=',xval)  # [   0.   60.  120. ...
         # print('yval=',yval)  # [2793 2793 2793 ...
@@ -1162,14 +1163,14 @@ class SubstrateTab(object):
         if (self.show_edge):
             try:
                 # plt.scatter(xvals,yvals, s=markers_size, c=rgbs, edgecolor='black', linewidth=0.5)
-                self.circles(xvals,yvals, s=rvals, color=rgbs, edgecolor='black', linewidth=0.5)
+                self.circles(xvals,yvals, s=rvals, color=rgbs, alpha=self.alpha, edgecolor='black', linewidth=0.5)
                 # cell_circles = self.circles(xvals,yvals, s=rvals, color=rgbs, edgecolor='black', linewidth=0.5)
                 # plt.sci(cell_circles)
             except (ValueError):
                 pass
         else:
             # plt.scatter(xvals,yvals, s=markers_size, c=rgbs)
-            self.circles(xvals,yvals, s=rvals, color=rgbs)
+            self.circles(xvals,yvals, s=rvals, color=rgbs, alpha=self.alpha)
 
         # im = ax.imshow(np.arange(100).reshape((10, 10)))   # rwh: dummy, for future testing
         # cbar = self.fig.colorbar(substrate_plot, ax=self.ax0)

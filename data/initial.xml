@@ -11,9 +11,9 @@
 		</software>
 		<citation />
 		<current_time units="min">0.000000</current_time>
-		<current_runtime units="sec">0.075902</current_runtime>
-		<created>2020-06-17T21:15:17Z</created>
-		<last_modified>2020-06-17T21:15:17Z</last_modified>
+		<current_runtime units="sec">0.098324</current_runtime>
+		<created>2020-09-30T16:39:38Z</created>
+		<last_modified>2020-09-30T16:39:38Z</last_modified>
 	</metadata>
 	<microenvironment>
 		<domain name="microenvironment">
@@ -44,7 +44,7 @@
 				<variable name="interferon 1" units="mol/micron^3" ID="2">
 					<physical_parameter_set>
 						<conditions />
-						<diffusion_coefficient units="micron^2/min">555.560000</diffusion_coefficient>
+						<diffusion_coefficient units="micron^2/min">25.000000</diffusion_coefficient>
 						<decay_rate units="1/min">0.010200</decay_rate>
 					</physical_parameter_set>
 				</variable>
@@ -127,24 +127,32 @@
 							<label index="48" size="1">virus_fraction_released_at_death</label>
 							<label index="49" size="1">infected_cell_chemokine_secretion_rate</label>
 							<label index="50" size="1">debris_secretion_rate</label>
-							<label index="51" size="1">TCell_contact_time</label>
-							<label index="52" size="1">cell_attachment_rate</label>
-							<label index="53" size="1">cell_attachment_lifetime</label>
-							<label index="54" size="1">TCell_contact_death_threshold</label>
-							<label index="55" size="1">max_attachment_distance</label>
-							<label index="56" size="1">elastic_attachment_coefficient</label>
-							<label index="57" size="1">relative_maximum_volume</label>
-							<label index="58" size="1">activated_macrophage_speed</label>
-							<label index="59" size="1">activated_macrophage_secretion_rate</label>
-							<label index="60" size="1">macrophage_probability_of_phagocytosis</label>
-							<label index="61" size="1">activated_cell_chemokine_uptake_rate</label>
-							<label index="62" size="1">activated_cell_cytokine_uptake_rate</label>
-							<label index="63" size="1">sensitivity_to_eat_me_chemotaxis</label>
-							<label index="64" size="1">sensitivity_to_chemokine_chemotaxis</label>
-							<label index="65" size="1">activated_macrophage</label>
-							<label index="66" size="1">activated_neutrophil_speed</label>
-							<label index="67" size="1">normal_neutrophil_speed</label>
-							<label index="68" size="1">neutrophil_probability_of_phagocytosis</label>
+							<label index="51" size="1">infected_cell_chemokine_secretion_activated</label>
+							<label index="52" size="1">interferon_secretion_rate_via_infection</label>
+							<label index="53" size="1">max_interferon_secretion_rate_via_paracrine</label>
+							<label index="54" size="1">interferon_max_response_threshold</label>
+							<label index="55" size="1">interferon_activation</label>
+							<label index="56" size="1">interferon_max_virus_inhibition</label>
+							<label index="57" size="1">interferon_viral_RNA_threshold</label>
+							<label index="58" size="1">TCell_contact_time</label>
+							<label index="59" size="1">cell_attachment_rate</label>
+							<label index="60" size="1">cell_attachment_lifetime</label>
+							<label index="61" size="1">TCell_contact_death_threshold</label>
+							<label index="62" size="1">max_attachment_distance</label>
+							<label index="63" size="1">elastic_attachment_coefficient</label>
+							<label index="64" size="1">time_to_next_phagocytosis</label>
+							<label index="65" size="1">material_internalisation_rate</label>
+							<label index="66" size="1">threshold_macrophage_volume</label>
+							<label index="67" size="1">threshold_neutrophil_volume</label>
+							<label index="68" size="1">exhausted_macrophage_death_rat</label>
+							<label index="69" size="1">ability_to_phagocytose_infected_cell</label>
+							<label index="70" size="1">time_of_DC_departure</label>
+							<label index="71" size="1">phagocytosis_rate</label>
+							<label index="72" size="1">sensitivity_to_debris_chemotaxis</label>
+							<label index="73" size="1">sensitivity_to_chemokine_chemotaxis</label>
+							<label index="74" size="1">activated_speed</label>
+							<label index="75" size="1">activated_cytokine_secretion_rate</label>
+							<label index="76" size="1">activated_immune_cell</label>
 						</labels>
 						<filename>initial_cells_physicell.mat</filename>
 					</simplified_data>

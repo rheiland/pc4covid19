@@ -1,0 +1,175 @@
+%!PS-Adobe-
+%%DocumentFonts: Courier Courier-Bold
+% PSP prologue file, version 1.0
+%
+% Copyright (c) 1989 Eric J. Kostelich
+%
+save
+/PSPstart {} def
+/p {	3 1 roll
+	Linespacing mul Textoffset exch sub
+	exch Textwidth Leftmargin add mul Leftmargin add
+	exch moveto show 
+} def
+
+/Setbold { /Courier-Bold findfont Boldsize scalefont setfont } def
+/SF { /Courier findfont Pointsize scalefont setfont } def
+%
+% (string) H  - for placing boldface titles
+%
+/H { Setbold Leftmargin Titleoffset moveto show SF } def
+%
+%  Normal mode - use titles, 54 lines/page
+%
+/Usual {/Leftmargin 66 def  /Textoffset 708 def /Titleoffset 738 def
+	/Boldsize 12 def  /Pointsize 10 def /Linespacing 12 def
+	/Textwidth 480 def /Rotatemode false def
+} def
+%
+%  Plain mode - no titles, 66 lines/page
+%
+/Plain {/Leftmargin 72 def  /Textoffset 756 def
+	/Boldsize 14 def  /Pointsize 9 def /Linespacing 11 def
+	/Textwidth 480 def /Rotatemode false def
+} def
+%
+% Rotated, two-column mode - 65 lines/column
+%
+/Rotated { /Rotatemode true def } def
+/Rotatepage { 612 0 translate 90 rotate
+	/Leftmargin 36 def /Textoffset 550 def /Titleoffset 568 def
+	/Boldsize 12 def  /Pointsize 7 def  /Linespacing 8 def
+	/Textwidth 336 def
+} def
+/Startpage { Rotatemode {Rotatepage} if SF } def
+/Endpage {showpage} def
+/PSPend {restore} def
+%%EndPrologue
+Rotated
+%%Page 1 1
+Startpage
+(...nd/git/COVID19-dev/PhysiCell/custom_modules/mac_pheno.cpp      Wed Jun 10 08:55:05 2020
+       1)H
+0 0(#include "./immune_submodels.h")p
+0 1(using namespace PhysiCell;)p
+0 2(std::string immune_submodels_version = "0.0.1";)p
+0 3(Submodel_Information CD8_submodel_info;)p
+0 4(Submodel_Information Macrophage_submodel_info;)p
+0 5(Submodel_Information Neutrophil_submodel_info;)p
+0 7(std::vector<int> vascularized_voxel_indices;)p
+0 9(void macrophage_phenotype\( Cell* pCell, Phenotype& phenotype, double dt \))p
+0 10({)p
+0 11(        static int apoptosis_index = phenotype.death.find_death_model_index\( "Ap)p
+0 12(optosis" \);)p
+0 13(        static Cell_Definition* pCD = find_cell_definition\( "macrophage" \);)p
+0 14(        static int proinflammatory_cytokine_index = microenvironment.find_densit)p
+0 15(y_index\( "pro-inflammatory cytokine"\);)p
+0 16(        static int chemokine_index = microenvironment.find_density_index\( "chemo)p
+0 17(kine"\);)p
+0 18(        static int debris_index = microenvironment.find_density_index\( "debris"\))p
+0 19(;)p
+0 21(        // determine bias_direction for macrophage based on "eat me" signals and)p
+0 22( chemokine)p
+0 23(        double sensitivity_chemokine = pCell->custom_data["sensitivity_to_chemok)p
+0 24(ine_chemotaxis"];)p
+0 25(        double sensitivity_eat_me = pCell->custom_data["sensitivity_to_eat_me_ch)p
+0 26(emotaxis"];)p
+0 28(        pCell->phenotype.motility.migration_bias_direction = sensitivity_chemoki)p
+0 29(ne*pCell->nearest_gradient\(chemokine_index\)+sensitivity_eat_me*pCell->nearest_gr)p
+0 30(adient\(debris_index\);)p
+0 31(        normalize\( &\( phenotype.motility.migration_bias_direction\) \);)p
+0 33(        // make changes to volume change rate??)p
+0 34(        // if too much debris, comit to apoptosis)p
+0 35(        double relative_volume = \( phenotype.volume.total/pCD->phenotype.volume.)p
+0 36(total \);)p
+0 37(        if\( relative_volume > pCell->custom_data[ "relative_maximum_volume" ] \))p
+0 38(        {)p
+0 39(                pCell->start_death\( apoptosis_index \);)p
+0 40(                pCell->phenotype.secretion.secretion_rates[proinflammatory_cytok)p
+0 41(ine_index] = 0;)p
+0 42(                pCell->phenotype.secretion.secretion_rates[debris_index] = pCell)p
+0 43(->custom_data["debris_secretion_rate"];)p
+0 45(//              std::cout << " I ate to much and must therefore die " << std::en)p
+0 46(dl;)p
+0 47(//              system\("pause"\);)p
+0 48(                // Paul on June 5, 2020: do you want a "return" here?)p
+0 49(                return;)p
+0 50(        })p
+0 51(        // check for cells to eat)p
+0 52(        std::vector<Cell*> neighbors = pCell->cells_in_my_container\(\);  // rwh_n)p
+0 53(brs)p
+0 55(        // at least one of the cells is pCell)p
+0 56(        if\( neighbors.size\(\) < 2 \))p
+0 57(        { return; })p
+0 59(        double macrophage_probability_of_phagocytosis = pCell->custom_data["macr)p
+0 60(ophage_probability_of_phagocytosis"];)p
+0 61(        // Note from Paul on June 5, 2020: this probability depends on dt.)p
+0 62(        // You shoudl chnage it to a rate, so probability = rate * dt)p
+0 64(        int n = 0;)p
+1 0(        Cell* pTestCell = neighbors[n];)p
+1 1(        while\( n < neighbors.size\(\) \))p
+1 2(        {)p
+1 3(                pTestCell = neighbors[n];)p
+1 4(                // if it is not me and not a macrophage)p
+1 5(                if\( pTestCell != pCell && pTestCell->phenotype.death.dead == tru)p
+1 6(e &&)p
+1 7(                        UniformRandom\(\)<macrophage_probability_of_phagocytosis \))p
+1 8(                {)p
+1 9(//                      std::cout << "\\t\\tnom nom nom" << std::endl;)p
+1 10(//                      std::cout << "\\t\\t\\t" << pCell  << " eats " << pTestCell)p
+1 11( << std::endl;)p
+1 12(                        #pragma omp critical\(macrophage_eat\))p
+1 13(                        {)p
+1 14(//                              std::cout << "\\t\\t\\t" << pCell->type_name << " ")p
+1 15( << pCell << " eats ")p
+1 16(//                              << pTestCell->type_name << " " << pTestCell << ")p
+1 17( " << pTestCell->phenotype.volume.total << std::endl;)p
+1 18(                                remove_all_adhesions\( pTestCell \); // debug)p
+1 19(                                pCell->ingest_cell\( pTestCell \);)p
+1 20(                        })p
+1 21(                                pCell->phenotype.secretion.secretion_rates[proin)p
+1 22(flammatory_cytokine_index] =)p
+1 23(                                        pCell->custom_data["activated_macrophage)p
+1 24(_secretion_rate"]; // 10;)p
+1 25(                                pCell->phenotype.secretion.uptake_rates[chemokin)p
+1 26(e_index] =)p
+1 27(                                        pCell->custom_data["activated_cell_chemo)p
+1 28(kine_uptake_rate"]; // 10;)p
+1 29(                                pCell->phenotype.secretion.uptake_rates[proinfla)p
+1 30(mmatory_cytokine_index] =)p
+1 31(                                        pCell->custom_data["activated_cell_cytok)p
+1 32(ine_uptake_rate"]; // 10;)p
+1 33(                                pCell->phenotype.secretion.uptake_rates[debris_i)p
+1 34(ndex] =)p
+1 35(                                        pCell->custom_data["activated_cell_chemo)p
+1 36(kine_uptake_rate"]; // 10;)p
+1 38(                        pCell->phenotype.motility.migration_speed =)p
+1 39(                                pCell->custom_data["activated_macrophage_speed"])p
+1 40(;)p
+1 41(                        pCell->custom_data["activated_macrophage"] = 1.0;)p
+1 42(//                      system\("pause"\);)p
+1 43(                        return;)p
+1 44(                })p
+1 45(//              else)p
+1 46(//              {)p
+1 47(//                      std::cout << " \(" << \(int\) pTestCell->phenotype.death.de)p
+1 48(ad << " " <<)p
+1 49(//                      \(int\) pTestCell->phenotype.flagged_for_removal << "\) " ;)p
+1 50(//              })p
+1 51(                n++;)p
+1 52(        })p
+1 53(        return;)p
+1 54(})p
+1 55(void macrophage_mechanics\( Cell* pCell, Phenotype& phenotype, double dt \))p
+1 56({)p
+1 57(        // bounds check)p
+1 58(        if\( check_for_out_of_bounds\( pCell , 10.0 \) \))p
+1 59(        {)p
+1 60(                replace_out_of_bounds_cell\( pCell, 10.0 \);)p
+1 61(                return;)p
+1 62(        })p
+1 64(        return;)p
+Endpage
+Endpage
+%%Trailer
+PSPend
