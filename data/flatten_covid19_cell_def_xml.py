@@ -15,7 +15,8 @@ xml_root = tree.getroot()
 #xml_root.text
 #xml_root.find('.//cell_definitions')
 
-leaf_cell_defs = ["lung epithelium", "CD8 Tcell", "macrophage", "neutrophil", "DC", "CD4 Tcell"]
+#leaf_cell_defs = ["lung epithelium", "CD8 Tcell", "macrophage", "neutrophil", "DC", "CD4 Tcell"]
+leaf_cell_defs = {"lung epithelium":"1", "CD8 Tcell":"3", "macrophage":"4", "neutrophil":"5", "DC":"6", "CD4 Tcell":"7"}
 
 #--------------------------------------------------
 print("--- Phase 1: create a new .xml containing 6 copies of 'default' cell_definition, with desired names.")
@@ -37,12 +38,14 @@ default_str = data[default_start:default_end+19]   # put entire 'default' cell_d
 user_params_start = data.index('<user_parameters>')
 
 f.write(data[:default_start])   # copy over everything up to the start of the 'default' cell_def
-# f.write(default_str)  # copy the 'default'
+f.write(default_str)  # copy the 'default'
 
 idx = 1
 # copy the 'default', but substitute the name and ID to be the leaf cell_defs
-for ctype in leaf_cell_defs:
-    f.write('\t\t<cell_definition name="' + ctype + '"  ID="' + str(idx) + '">\n')
+for ctype in leaf_cell_defs.keys():
+    # f.write('\t\t<cell_definition name="' + ctype + '"  ID="' + str(idx) + '">\n')
+    # f.write('\t\t<cell_definition name="' + ctype + '" parent_type="default"  ID="' + str(idx) + '">\n')
+    f.write('\t\t<cell_definition name="' + ctype + '" parent_type="default"  ID="' + leaf_cell_defs[ctype] + '">\n')
     f.write(default_str[40:])
     idx += 1
 f.write('\t</cell_definitions>\n\n')
