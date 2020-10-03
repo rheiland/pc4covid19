@@ -145,8 +145,8 @@ int writeCellReport(std::vector<Cell*> all_cells, double timepoint)
 
 void display_simulation_status( std::ostream& os )
 {
-	//rwh os << "current simulated time: " << PhysiCell_globals.current_time << " " << 
-	os << "time: " << PhysiCell_globals.current_time << " " << 
+	//rwh os << "time: " << PhysiCell_globals.current_time << " " << 
+	os << "current simulated time: " << PhysiCell_globals.current_time << " " << 
 		PhysiCell_settings.time_units << " (max: " << 
 		PhysiCell_settings.max_time << " " << 
 		PhysiCell_settings.time_units << ")" << std::endl; 
