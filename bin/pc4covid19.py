@@ -53,6 +53,7 @@ user_tab = UserTab()
 
 if xml_root.find('.//cell_definitions'):
     cell_types_tab = CellTypesTab()
+    cell_types_tab.display_cell_type_default()
 
 # svg = SVGTab()
 sub = SubstrateTab()
@@ -326,6 +327,9 @@ def outcb(s):
     # This is called when new output is received.
     # Only update file list for certain messages: 
     # print("outcb(): s=",s)
+
+    # BEWARE: this is a hack; there might be cout strings that confuse this
+    # if "interval wall" in s:    # find a unique string in the std out that indicates new output files
     if "simulat" in s:    # "current simulated time: 60 min (max: 14400 min)"
         # New Data. update visualizations
         # svg.update('')

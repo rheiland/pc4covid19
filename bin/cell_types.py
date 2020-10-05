@@ -43,7 +43,6 @@ class CellTypesTab(object):
 #        self.cell_type_parent_dict = {}
 
         self.cell_type_dict = {}
-        self.cell_type_dict['default'] = 'default'
         self.cell_type_dict['lung epithelium'] = 'lung epithelium'
         self.cell_type_dict['CD8 Tcell'] = 'CD8 Tcell'
         self.cell_type_dict['macrophage'] = 'macrophage'
@@ -6778,7 +6777,7 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
             # and only display the contents of the selected one.
             for vb in self.cell_def_vboxes:
                 vb.layout.display = 'none'   # vs. 'contents'
-            self.cell_def_vboxes[idx_selected].layout.display = 'contents'   # vs. 'contents'
+            self.cell_def_vboxes[idx_selected+1].layout.display = 'contents'   # vs. 'contents'  (added "+1" to idx_selected for version 4)
 
 
     #------------------------------
