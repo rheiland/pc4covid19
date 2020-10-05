@@ -25,6 +25,7 @@ Dr. Paul Macklin (macklinp@iu.edu)
 
 --- Versions ---
 1.0 - initial version
+4.0 - (Oct 2020) for 'Cell Types' tab format, switched from using cell_definition inheritance style to "flat" (verbose) style
 
 """
 
@@ -180,7 +181,7 @@ cell_type_dropdown_cb = """
             # and only display the contents of the selected one.
             for vb in self.cell_def_vboxes:
                 vb.layout.display = 'none'   # vs. 'contents'
-            self.cell_def_vboxes[idx_selected].layout.display = 'contents'   # vs. 'contents'
+            self.cell_def_vboxes[idx_selected+1].layout.display = 'contents'   # vs. 'contents'  (added "+1" to idx_selected for version 4)
 
 """
 
@@ -390,8 +391,9 @@ for child in uep.findall('cell_definition'):
         print(child.tag, child.attrib)
         print(child.attrib['name'])
     # cells_tab_header += "'" + child.attrib['name'] + ":'"
-    name_str = "'" + child.attrib['name'] + "'"
-    cells_tab_header += ndent + "self.cell_type_dict[" + name_str + "] = " + name_str 
+    if child.attrib['name'] != 'default':   # version 4: don't include 'default' in dropdown widget
+        name_str = "'" + child.attrib['name'] + "'"
+        cells_tab_header += ndent + "self.cell_type_dict[" + name_str + "] = " + name_str 
 
 cells_tab_header += ndent + "self.cell_type_dropdown.options = self.cell_type_dict\n"
 cells_tab_header += ndent + "self.cell_type_dropdown.observe(self.cell_type_cb)\n"
@@ -1073,6 +1075,7 @@ for cell_def in uep.findall('cell_definition'):
     cell_def_vbox_str += indent + "])\n"
 
     if cell_def_count >= 0:  # NOTE: kind of assuming 0th is "default"
+    # if cell_def_count > 0:  # version 4: don't display "default" cell_definition ?
         main_vbox_str += vbox_name + ", " 
 
     cells_tab_header += cell_def_vbox_str
