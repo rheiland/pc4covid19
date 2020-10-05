@@ -628,6 +628,7 @@ class SubstrateTab(object):
         all_files = sorted(glob.glob(os.path.join(self.output_dir, 'snap*.svg')))   # if .svg
         if len(all_files) > 0:
             last_file = all_files[-1]
+            # print("substrates.py/update(): len(snap*.svg) = ",len(all_files)," , last_file=",last_file)
             self.max_frames.value = int(last_file[-12:-4])  # assumes naming scheme: "snapshot%08d.svg"
         else:
             substrate_files = sorted(glob.glob(os.path.join(self.output_dir, 'output*.xml')))
