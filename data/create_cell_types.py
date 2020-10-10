@@ -161,7 +161,7 @@ display_cell_type_default = """
         # and only display the contents of 'default'
         for vb in self.cell_def_vboxes:
             vb.layout.display = 'none'   # vs. 'contents'
-        self.cell_def_vboxes[0].layout.display = 'contents'
+        self.cell_def_vboxes[1].layout.display = 'contents'
 """
 
 cell_type_dropdown_cb = """

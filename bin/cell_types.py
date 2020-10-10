@@ -6790,7 +6790,7 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         # and only display the contents of 'default'
         for vb in self.cell_def_vboxes:
             vb.layout.display = 'none'   # vs. 'contents'
-        self.cell_def_vboxes[0].layout.display = 'contents'
+        self.cell_def_vboxes[1].layout.display = 'contents'
 
 
     # Populate the GUI widgets with values from the XML
