@@ -15,48 +15,70 @@ leaf_cell_defs = {"lung epithelium":"1", "CD8 Tcell":"3", "macrophage":"4", "neu
 #--------------------------------------------------
 print("--- Phase 1: create a new .xml containing 6 copies of 'default' cell_definition, with desired names.")
 
-# output file: new, flattened config file
-new_xml_file = 'new_flat_config1.xml'
-f = open(new_xml_file, 'w')
+#tree0 = tree
+#flat_root = xml_root
+# default_cell_def = xml_root.find("cell_definitions//cell_definition[@name='default']")
+cell_defs = tree.find('cell_definitions')
+# root_node = cell_defs.getroot()
+print("--- Remove all but default cell_defs")
+for cell_def in list(cell_defs):
+    # print(cell_def.tag, cell_def.attrib['name'])
+    if (cell_def.attrib['name'] != 'default'):
+        print("removing ", cell_def.attrib['name'])
+        cell_defs.remove(cell_def)
+        # ET.SubElement(root_node,default_cell_def)
+        # cell_defs.insert(0,default_cell_def)
 
-# read the original config file into a string
-with open('PhysiCell_settings.xml', 'r') as file:
-    data = file.read()
-
-# Beware, kind of a hack.
-default_start = data.index('<cell_definition ')  # find the start of the 'default' cell_def
-#print('default_start = ',default_start)
-default_end = data.index('</cell_definition>')   # find the end of the 'default' cell_def
-#print('default_end = ',default_end)
-default_str = data[default_start:default_end+19]   # put entire 'default' cell_def into a string
-
-user_params_start = data.index('<user_parameters>')
-
-f.write(data[:default_start])   # copy over everything up to the start of the 'default' cell_def
-f.write(default_str)  # copy the 'default'
-
-idx = 1
-# copy the 'default', but substitute the name and ID to be the leaf cell_defs
-for ctype in leaf_cell_defs.keys():
-    f.write('\t\t<cell_definition name="' + ctype + '" parent_type="default"  ID="' + leaf_cell_defs[ctype] + '">\n')
-    f.write(default_str[40:])
-    idx += 1
-f.write('\t</cell_definitions>\n\n')
-
-# append the <user_parameters> block, plus the terminating '</PhysiCell_settings>'
-f.write('\t' + data[user_params_start:])
-
-f.close()
-print("\nDone.")
-
-tree_flat = ET.parse(new_xml_file)  
-xml_flat_root = tree_flat.getroot()
+default_cell_def = xml_root.find("cell_definitions//cell_definition[@name='default']")
+print("--- Insert duplicate default cell_def for each leaf")
+for leaf in leaf_cell_defs:
+    # print('-- ',leaf)
+#    print(cell_def.tag, cell_def.attrib['name'])
+    # print("insert default for ", leaf.attrib['name'])
+    # print("insert default for ", leaf)
+    # default_cell_def.attrib['name'] = leaf
+    # tmp_cd.attrib['name'] = leaf
+    # cell_defs.insert(0,default_cell_def)
+    cell_defs.insert(0,default_cell_def)
 
 # new_xml_file = "new_flat_config1.xml"
-# tree_flat.write(new_xml_file)
+new_xml_file = "flat.xml"
+tree.write(new_xml_file)
+
+#-------------
+# tree = ET.parse("new_flat_config1.xml")  
+tree = ET.parse(new_xml_file)  
+cell_defs = tree.find('cell_definitions')
+xml_root = tree.getroot()
+
+print("--- Change cell_def name for each leaf")
+idx = -1
+leaf_name = list(leaf_cell_defs.keys())
+for cell_def in list(cell_defs):
+# for leaf in leaf_cell_defs:
+    if idx >= 0:
+        cell_def.attrib['name'] = leaf_name[idx]
+        cell_def.attrib['ID'] = leaf_cell_defs[leaf_name[idx]]
+        print(cell_def.attrib['name'])
+    idx += 1
+    # cell_def.attrib['name'] = leaf
+
+#tree = tree0
+# default_cell_def = xml_root.find("cell_definitions//cell_definition[@name='default']")
+# ET.SubElement(cell_defs, default_cell_def)
+
+# new_xml_file = "new_flat_config1.xml"
+tree.write(new_xml_file)
+
+print("\nDone. Please check the output file: " + new_xml_file + "\n")
 
 #--------------------------------------------------
-print("--- Phase 2: edit the new .xml so each immune cell type has its parent's params.")
+print("--- Phase 2: edit the new .xml so each immune cell type has its parent's params (<cell_definition name='immune' parent_type='default' ...>)")
+
+# tree_flat = ET.parse("new_flat_config1.xml")  
+tree_flat = ET.parse(new_xml_file)  
+# tree = ET.parse("PhysiCell_settings.xml")  
+xml_flat_root = tree_flat.getroot()
 
 immune_cell_defs = ["CD8 Tcell", "macrophage", "neutrophil", "DC", "CD4 Tcell"]
 def update_all_immune_cell_def_params(xmlpath, save_param_val):
@@ -84,6 +106,8 @@ def recurse_node(root,xmlpath):
         update_all_immune_cell_def_params(xmlpath, save_param_val)
 
 idx = -1
+tree = ET.parse("PhysiCell_settings.xml")  
+xml_root = tree.getroot()
 uep = None
 # for requested cell_def param values in the original (inheritance) XML, copy them into the new (flattened) XML
 for cd in xml_root.findall('cell_definitions//cell_definition'):
@@ -98,12 +122,16 @@ for cd in xml_root.findall('cell_definitions//cell_definition'):
                 recurse_node(child,"")
 print("\nDone.")
 
-new_xml_file = "new_flat_config2.xml"
+# new_xml_file = "new_flat_config2.xml"
 tree_flat.write(new_xml_file)
+print("\nDone. Please check the output file: " + new_xml_file + "\n")
 
-# sys.exit()
 #--------------------------------------------------
 print("--- Phase 3: edit the new .xml so each immune cell type has its specific params.")
+
+# tree_flat = ET.parse("new_flat_config2.xml")  
+tree_flat = ET.parse(new_xml_file)  
+xml_flat_root = tree_flat.getroot()
 
 def update_this_immune_cell_def_params(xmlpath, save_param_val, cell_def_name):
 #    for cell_def in immune_cell_defs:
@@ -142,18 +170,7 @@ for cd in xml_root.findall('cell_definitions//cell_definition'):
 
 print("\nDone.")
 
-new_xml_file = "new_flat_config3.xml"
+# new_xml_file = "new_flat_config3.xml"
 tree_flat.write(new_xml_file)
 
-#--------------------------------------------------
-print("--- Phase 4: edit the new .xml so each (non-default) cell type has its custom_data values updated.")
-
-
-#--------------------------------------------------
-#tree_flat = ET.parse(new_xml_file)  
-#xml_root = tree.getroot()
-#tree_flat.write("new_flat_config2.xml")
-
-# new_xml_file = "new_flat_config.xml"
-#print("\nDone. Please check the output file: " + new_xml_file + "\n")
-print("\nDone. Please check the output file: " + new_xml_file + "\n")
+print("---> wrote ",new_xml_file, "(copy it to PhysiCell_settings.xml if desirable)\n")
