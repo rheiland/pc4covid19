@@ -731,26 +731,33 @@ class SubstrateTab(object):
 
         self.custom_data_wait.value = 'Wait for 1st time processing...'
         cwd = os.getcwd()
+        # print("----- cwd(1)=",cwd)
         data_dir = cwd
+        # print("----- data_dir(1)=",cwd)
 
         if 'cache' in self.output_dir:
             data_dir = self.output_dir
+            # print("----- data_dir(2)=",data_dir, " --> chdir to there")
             os.chdir(data_dir)
         else:
             # print('update_custom_data: cwd=',cwd)
             if not 'tmpdir' in cwd:
                 data_dir = os.path.abspath('tmpdir')
+                # print("----- data_dir(3)=",cwd)
 
 
         xml_files = glob.glob('output*.xml')
         # xml_files = glob.glob(os.path.join('tmpdir', 'output*.xml'))
         xml_files.sort()
-        os.chdir(cwd)
+        # print("----- chdir back to cwd=",cwd)
+        # os.chdir(cwd)
 
         ds_count = len(xml_files)
-        # mcds = [pyMCDS(xml_files[i], '.') for i in range(ds_count)]
+        # print("----- ds_count = ",ds_count)
+        mcds = [pyMCDS(xml_files[i], '.') for i in range(ds_count)]
         # mcds = [pyMCDS(xml_files[i], 'tmpdir') for i in range(ds_count)]
-        mcds = [pyMCDS(xml_files[i], data_dir) for i in range(ds_count)]
+        # mcds = [pyMCDS(xml_files[i], data_dir) for i in range(ds_count)]
+        # print("----- mcds = ",mcds)
         # print(mcds[0].data['discrete_cells'].keys())
 #        dict_keys(['ID', 'position_x', 'position_y', 'position_z', 'total_volume', 'cell_type', 'cycle_model', 'current_phase', 'elapsed_time_in_phase', 'nuclear_volume', 'cytoplasmic_volume', 'fluid_fraction', 'calcified_fraction', 'orientation_x', 'orientation_y', 'orientation_z', 'polarity', 'migration_speed', 'motility_vector_x', 'motility_vector_y', 'motility_vector_z', 'migration_bias', 'motility_bias_direction_x', 'motility_bias_direction_y', 'motility_bias_direction_z', 'persistence_time', 'motility_reserved', 'unbound_external_ACE2', 'bound_external_ACE2', 'unbound_internal_ACE2', 'bound_internal_ACE2', 'ACE2_binding_rate', 'ACE2_endocytosis_rate', 'ACE2_cargo_release_rate', 'ACE2_recycling_rate', 'virion', 'uncoated_virion', 'viral_RNA', 'viral_protein', 'assembled_virion', 'virion_uncoating_rate', 'uncoated_to_RNA_rate', 'protein_synthesis_rate', 'virion_assembly_rate', 'virion_export_rate', 'max_infected_apoptosis_rate', 'max_apoptosis_half_max', 'apoptosis_hill_power'])
 
