@@ -1256,7 +1256,8 @@
 
 				<molecular />
 			</phenotype>
-			<custom_data>0.045<virion description="endocytosed virions" type="double" units="virions">0</virion>
+			<custom_data>
+            <virion description="endocytosed virions" type="double" units="virions">0</virion>
 				<uncoated_virion description="uncoated endocytosed virions" type="double" units="virions">0</uncoated_virion>
 				<viral_RNA description="total (functional) viral RNA copies" type="double" units="RNA">0</viral_RNA>
 				<viral_protein description="total assembled sets of viral protein" type="double" units="protein">0</viral_protein>
@@ -1459,7 +1460,8 @@
 
 				<molecular />
 			</phenotype>
-			<custom_data>0<virion description="endocytosed virions" type="double" units="virions">0</virion>
+			<custom_data>
+            <virion description="endocytosed virions" type="double" units="virions">0</virion>
 				<uncoated_virion description="uncoated endocytosed virions" type="double" units="virions">0</uncoated_virion>
 				<viral_RNA description="total (functional) viral RNA copies" type="double" units="RNA">0</viral_RNA>
 				<viral_protein description="total assembled sets of viral protein" type="double" units="protein">0</viral_protein>
