@@ -2203,7 +2203,7 @@ class CellTypesTab(object):
         div_row20.style.button_color = 'orange'
         name_btn = Button(description='cell_cell_adhesion_strength', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float211 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        self.float211 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float211, units_btn, ]
@@ -2211,7 +2211,7 @@ class CellTypesTab(object):
 
         name_btn = Button(description='cell_cell_repulsion_strength', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float212 = FloatText(value='10', step='1', style=style, layout=widget_layout)
+        self.float212 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float212, units_btn, ]
@@ -3160,7 +3160,7 @@ class CellTypesTab(object):
         div_row28.style.button_color = 'orange'
         name_btn = Button(description='cell_cell_adhesion_strength', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float303 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        self.float303 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float303, units_btn, ]
@@ -3168,7 +3168,7 @@ class CellTypesTab(object):
 
         name_btn = Button(description='cell_cell_repulsion_strength', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float304 = FloatText(value='10', step='1', style=style, layout=widget_layout)
+        self.float304 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float304, units_btn, ]
@@ -3275,7 +3275,7 @@ class CellTypesTab(object):
         box334 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float313 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        self.float313 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float313, units_btn]
@@ -4117,7 +4117,7 @@ class CellTypesTab(object):
         div_row36.style.button_color = 'orange'
         name_btn = Button(description='cell_cell_adhesion_strength', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float395 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        self.float395 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float395, units_btn, ]
@@ -4125,7 +4125,7 @@ class CellTypesTab(object):
 
         name_btn = Button(description='cell_cell_repulsion_strength', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float396 = FloatText(value='10', step='1', style=style, layout=widget_layout)
+        self.float396 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float396, units_btn, ]
@@ -5074,7 +5074,7 @@ class CellTypesTab(object):
         div_row44.style.button_color = 'orange'
         name_btn = Button(description='cell_cell_adhesion_strength', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float487 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        self.float487 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float487, units_btn, ]
@@ -5082,7 +5082,7 @@ class CellTypesTab(object):
 
         name_btn = Button(description='cell_cell_repulsion_strength', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float488 = FloatText(value='10', step='1', style=style, layout=widget_layout)
+        self.float488 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float488, units_btn, ]
@@ -6031,7 +6031,7 @@ class CellTypesTab(object):
         div_row52.style.button_color = 'orange'
         name_btn = Button(description='cell_cell_adhesion_strength', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float579 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        self.float579 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float579, units_btn, ]
@@ -6039,7 +6039,7 @@ class CellTypesTab(object):
 
         name_btn = Button(description='cell_cell_repulsion_strength', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float580 = FloatText(value='10', step='1', style=style, layout=widget_layout)
+        self.float580 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float580, units_btn, ]
