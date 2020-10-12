@@ -41,13 +41,13 @@ for leaf in leaf_cell_defs:
     # cell_defs.insert(0,default_cell_def)
     cell_defs.insert(0,default_cell_def)
 
-# new_xml_file = "new_flat_config1.xml"
-new_xml_file = "flat.xml"
+new_xml_file = "new_flat_config1.xml"
+# new_xml_file = "flat.xml"
 tree.write(new_xml_file)
 
 #-------------
-# tree = ET.parse("new_flat_config1.xml")  
-tree = ET.parse(new_xml_file)  
+tree = ET.parse("new_flat_config1.xml")  
+# tree = ET.parse(new_xml_file)  
 cell_defs = tree.find('cell_definitions')
 xml_root = tree.getroot()
 
@@ -67,7 +67,7 @@ for cell_def in list(cell_defs):
 # default_cell_def = xml_root.find("cell_definitions//cell_definition[@name='default']")
 # ET.SubElement(cell_defs, default_cell_def)
 
-# new_xml_file = "new_flat_config1.xml"
+new_xml_file = "new_flat_config1.xml"
 tree.write(new_xml_file)
 
 print("\nDone. Please check the output file: " + new_xml_file + "\n")
@@ -75,8 +75,8 @@ print("\nDone. Please check the output file: " + new_xml_file + "\n")
 #--------------------------------------------------
 print("--- Phase 2: edit the new .xml so each immune cell type has its parent's params (<cell_definition name='immune' parent_type='default' ...>)")
 
-# tree_flat = ET.parse("new_flat_config1.xml")  
-tree_flat = ET.parse(new_xml_file)  
+tree_flat = ET.parse("new_flat_config1.xml")  
+# tree_flat = ET.parse(new_xml_file)  
 # tree = ET.parse("PhysiCell_settings.xml")  
 xml_flat_root = tree_flat.getroot()
 
@@ -105,8 +105,10 @@ def recurse_node(root,xmlpath):
         print(xmlpath,' = ',save_param_val)
         update_all_immune_cell_def_params(xmlpath, save_param_val)
 
+
 idx = -1
-tree = ET.parse("PhysiCell_settings.xml")  
+# tree = ET.parse("PhysiCell_settings.xml")  
+tree = ET.parse("new_flat_config1.xml")  
 xml_root = tree.getroot()
 uep = None
 # for requested cell_def param values in the original (inheritance) XML, copy them into the new (flattened) XML
@@ -122,15 +124,18 @@ for cd in xml_root.findall('cell_definitions//cell_definition'):
                 recurse_node(child,"")
 print("\nDone.")
 
-# new_xml_file = "new_flat_config2.xml"
+new_xml_file = "new_flat_config2.xml"
 tree_flat.write(new_xml_file)
 print("\nDone. Please check the output file: " + new_xml_file + "\n")
 
 #--------------------------------------------------
-print("--- Phase 3: edit the new .xml so each immune cell type has its specific params.")
+print("--- Phase 3: edit the new .xml so each immune cell type has its specific params (from the ORIGINAL .xml).")
 
-# tree_flat = ET.parse("new_flat_config2.xml")  
-tree_flat = ET.parse(new_xml_file)  
+tree = ET.parse("PhysiCell_settings.xml")  
+xml_root = tree.getroot()
+
+tree_flat = ET.parse("new_flat_config2.xml")  
+# tree_flat = ET.parse(new_xml_file)  
 xml_flat_root = tree_flat.getroot()
 
 def update_this_immune_cell_def_params(xmlpath, save_param_val, cell_def_name):
@@ -145,6 +150,9 @@ def recurse_node2(root,xmlpath, cell_def_name):
     xmlpath = xmlpath + "//" + root.tag[root.tag.rfind('}')+1:]
     param_val = ''
     for child in root:
+        if child.text == None:
+            print(">>>> ", child, ".text is None")
+            continue
         param_val = ' '.join(child.text.split())
         if param_val != '':
             # print('param value=',param_val, ' for ',end='')
@@ -162,7 +170,7 @@ for cd in xml_root.findall('cell_definitions//cell_definition'):
     if cd.attrib["name"] in immune_cell_defs:
         uep = cd
         # print("---------------- processing immune cell_def at idx= ",idx)   # 2  (0=default, 1=lung epi)
-        print("---------------- processing ",cd.attrib["name"])   # 2  (0=default, 1=lung epi)
+        print("\n---------------- processing ",cd.attrib["name"])   # 2  (0=default, 1=lung epi)
         # immune_uep = root.find('.//cell_definitions')
         for child in cd:
             print("------- calling recurse_node2 on child=",child)
@@ -170,7 +178,8 @@ for cd in xml_root.findall('cell_definitions//cell_definition'):
 
 print("\nDone.")
 
-# new_xml_file = "new_flat_config3.xml"
+#new_xml_file = "new_flat_config3.xml"
+new_xml_file = "flat.xml"
 tree_flat.write(new_xml_file)
 
 print("---> wrote ",new_xml_file, "(copy it to PhysiCell_settings.xml if desirable)\n")
