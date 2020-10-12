@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <PhysiCell_settings version="devel-version">
 	<domain>
 		<x_min>-400</x_min>
@@ -23,7 +24,7 @@
 	</overall>
 	
 	<parallel>
-		<omp_num_threads>6</omp_num_threads>
+		<omp_num_threads>4</omp_num_threads>
 	</parallel> 
 
 	<options>
