@@ -324,7 +324,7 @@
 			</custom_data>
 		</cell_definition>
 		
-		<cell_definition ID="1" name="lung epithelium">
+		<cell_definition ID="1" name="lung epithelium" parent_type="default">
 			<phenotype>
 				<cycle code="6" name="flow_cytometry_separated_cycle_model">  
 					
@@ -529,7 +529,7 @@
 			</custom_data>
 		</cell_definition>
 		
-		<cell_definition ID="3" name="CD8 Tcell">
+		<cell_definition ID="3" name="CD8 Tcell" parent_type="default">
 			<phenotype>
 				<cycle code="6" name="flow_cytometry_separated_cycle_model">  
 					
@@ -734,7 +734,7 @@
 			</custom_data>
 		</cell_definition>
 		
-		<cell_definition ID="4" name="macrophage">
+		<cell_definition ID="4" name="macrophage" parent_type="default">
 			<phenotype>
 				<cycle code="6" name="flow_cytometry_separated_cycle_model">  
 					
@@ -939,7 +939,7 @@
 			</custom_data>
 		</cell_definition>
 		
-		<cell_definition ID="5" name="neutrophil">
+		<cell_definition ID="5" name="neutrophil" parent_type="default">
 			<phenotype>
 				<cycle code="6" name="flow_cytometry_separated_cycle_model">  
 					
@@ -1144,7 +1144,7 @@
 			</custom_data>
 		</cell_definition>
 		
-		<cell_definition ID="6" name="DC">
+		<cell_definition ID="6" name="DC" parent_type="default">
 			<phenotype>
 				<cycle code="6" name="flow_cytometry_separated_cycle_model">  
 					
@@ -1347,7 +1347,7 @@
 			</custom_data>
 		</cell_definition>
 		
-		<cell_definition ID="7" name="CD4 Tcell">
+		<cell_definition ID="7" name="CD4 Tcell" parent_type="default">
 			<phenotype>
 				<cycle code="6" name="flow_cytometry_separated_cycle_model">  
 					
