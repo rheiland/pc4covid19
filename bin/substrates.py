@@ -467,8 +467,8 @@ class SubstrateTab(object):
 
     #---------------------------------------------------
     def update_dropdown_fields(self, data_dir):
-        # print('update_dropdown_fields called --------')
         self.output_dir = data_dir
+        # print('!! update_dropdown_fields() called: self.output_dir = ', self.output_dir)
         tree = None
         try:
             fname = os.path.join(self.output_dir, "initial.xml")
@@ -737,18 +737,20 @@ class SubstrateTab(object):
 
         if 'cache' in self.output_dir:
             data_dir = self.output_dir
-            # print("----- data_dir(2)=",data_dir, " --> chdir to there")
-            os.chdir(data_dir)
+            # print("----- chdir to data_dir(2)=",data_dir, " --> chdir to there")
+            # os.chdir(data_dir)
         else:
             # print('update_custom_data: cwd=',cwd)
             if not 'tmpdir' in cwd:
                 data_dir = os.path.abspath('tmpdir')
                 # print("----- data_dir(3)=",cwd)
 
+        os.chdir(data_dir)
 
         xml_files = glob.glob('output*.xml')
         # xml_files = glob.glob(os.path.join('tmpdir', 'output*.xml'))
         xml_files.sort()
+        # print('xml_files = ',xml_files)
         # print("----- chdir back to cwd=",cwd)
         # os.chdir(cwd)
 
