@@ -324,7 +324,7 @@
 			</custom_data>
 		</cell_definition>
 		
-		<cell_definition ID="1" name="lung epithelium" parent_type="default">
+		<cell_definition ID="1" name="lung epithelium" parent="default">
 			<phenotype>
 				<cycle code="6" name="flow_cytometry_separated_cycle_model">  
 					
@@ -422,15 +422,15 @@
 					</substrate> 	
 					<substrate name="pro-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.01</uptake_rate>
+						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
 					<substrate name="chemokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.01</uptake_rate>
+						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
 					<substrate name="debris">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.1</uptake_rate>
+						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
 				</secretion>
 
@@ -529,7 +529,7 @@
 			</custom_data>
 		</cell_definition>
 		
-		<cell_definition ID="3" name="CD8 Tcell" parent_type="default">
+		<cell_definition ID="3" name="CD8 Tcell" parent="default">
 			<phenotype>
 				<cycle code="6" name="flow_cytometry_separated_cycle_model">  
 					
@@ -631,11 +631,11 @@
 					</substrate> 	
 					<substrate name="chemokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.01</uptake_rate>
+						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
 					<substrate name="debris">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.1</uptake_rate>
+						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
 				</secretion>
 
@@ -734,7 +734,7 @@
 			</custom_data>
 		</cell_definition>
 		
-		<cell_definition ID="4" name="macrophage" parent_type="default">
+		<cell_definition ID="4" name="macrophage" parent="default">
 			<phenotype>
 				<cycle code="6" name="flow_cytometry_separated_cycle_model">  
 					
@@ -832,15 +832,15 @@
 					</substrate> 	
 					<substrate name="pro-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.01</uptake_rate>
+						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
 					<substrate name="chemokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.01</uptake_rate>
+						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
 					<substrate name="debris">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.1</uptake_rate>
+						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
 				</secretion>
 
@@ -939,7 +939,7 @@
 			</custom_data>
 		</cell_definition>
 		
-		<cell_definition ID="5" name="neutrophil" parent_type="default">
+		<cell_definition ID="5" name="neutrophil" parent="default">
 			<phenotype>
 				<cycle code="6" name="flow_cytometry_separated_cycle_model">  
 					
@@ -1041,11 +1041,11 @@
 					</substrate> 	
 					<substrate name="chemokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.01</uptake_rate>
+						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
 					<substrate name="debris">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.1</uptake_rate>
+						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
 				</secretion>
 
@@ -1144,7 +1144,7 @@
 			</custom_data>
 		</cell_definition>
 		
-		<cell_definition ID="6" name="DC" parent_type="default">
+		<cell_definition ID="6" name="DC" parent="default">
 			<phenotype>
 				<cycle code="6" name="flow_cytometry_separated_cycle_model">  
 					
@@ -1246,18 +1246,19 @@
 					</substrate> 	
 					<substrate name="chemokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.01</uptake_rate>
+						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
 					<substrate name="debris">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.1</uptake_rate>
+						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
 				</secretion>
 
 				<molecular />
 			</phenotype>
-			<custom_data>
-            <virion description="endocytosed virions" type="double" units="virions">0</virion>
+			<custom_data>  
+				 
+				<virion description="endocytosed virions" type="double" units="virions">0</virion>
 				<uncoated_virion description="uncoated endocytosed virions" type="double" units="virions">0</uncoated_virion>
 				<viral_RNA description="total (functional) viral RNA copies" type="double" units="RNA">0</viral_RNA>
 				<viral_protein description="total assembled sets of viral protein" type="double" units="protein">0</viral_protein>
@@ -1348,7 +1349,7 @@
 			</custom_data>
 		</cell_definition>
 		
-		<cell_definition ID="7" name="CD4 Tcell" parent_type="default">
+		<cell_definition ID="7" name="CD4 Tcell" parent="default">
 			<phenotype>
 				<cycle code="6" name="flow_cytometry_separated_cycle_model">  
 					
@@ -1450,18 +1451,19 @@
 					</substrate> 	
 					<substrate name="chemokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.01</uptake_rate>
+						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
 					<substrate name="debris">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.1</uptake_rate>
+						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
 				</secretion>
 
 				<molecular />
 			</phenotype>
-			<custom_data>
-            <virion description="endocytosed virions" type="double" units="virions">0</virion>
+			<custom_data>  
+				 
+				<virion description="endocytosed virions" type="double" units="virions">0</virion>
 				<uncoated_virion description="uncoated endocytosed virions" type="double" units="virions">0</uncoated_virion>
 				<viral_RNA description="total (functional) viral RNA copies" type="double" units="RNA">0</viral_RNA>
 				<viral_protein description="total assembled sets of viral protein" type="double" units="protein">0</viral_protein>
