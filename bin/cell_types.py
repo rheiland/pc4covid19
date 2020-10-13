@@ -404,7 +404,7 @@ class CellTypesTab(object):
         box40 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float37 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        self.float37 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float37, units_btn]
@@ -423,7 +423,7 @@ class CellTypesTab(object):
         box43 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float39 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        self.float39 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float39, units_btn]
@@ -442,7 +442,7 @@ class CellTypesTab(object):
         box46 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float41 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        self.float41 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float41, units_btn]
@@ -1361,7 +1361,7 @@ class CellTypesTab(object):
         box138 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float129 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        self.float129 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float129, units_btn]
@@ -1380,7 +1380,7 @@ class CellTypesTab(object):
         box141 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float131 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        self.float131 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float131, units_btn]
@@ -1399,7 +1399,7 @@ class CellTypesTab(object):
         box144 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float133 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        self.float133 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float133, units_btn]
@@ -2337,7 +2337,7 @@ class CellTypesTab(object):
         box239 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float223 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        self.float223 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float223, units_btn]
@@ -2356,7 +2356,7 @@ class CellTypesTab(object):
         box242 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float225 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        self.float225 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float225, units_btn]
@@ -3275,7 +3275,7 @@ class CellTypesTab(object):
         box334 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float313 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        self.float313 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float313, units_btn]
@@ -3294,7 +3294,7 @@ class CellTypesTab(object):
         box337 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float315 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        self.float315 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float315, units_btn]
@@ -3313,7 +3313,7 @@ class CellTypesTab(object):
         box340 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float317 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        self.float317 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float317, units_btn]
@@ -4251,7 +4251,7 @@ class CellTypesTab(object):
         box435 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float407 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        self.float407 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float407, units_btn]
@@ -4270,7 +4270,7 @@ class CellTypesTab(object):
         box438 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float409 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        self.float409 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float409, units_btn]
@@ -5208,7 +5208,7 @@ class CellTypesTab(object):
         box533 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float499 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        self.float499 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float499, units_btn]
@@ -5227,7 +5227,7 @@ class CellTypesTab(object):
         box536 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float501 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        self.float501 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float501, units_btn]
@@ -6165,7 +6165,7 @@ class CellTypesTab(object):
         box631 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float591 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        self.float591 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float591, units_btn]
@@ -6184,7 +6184,7 @@ class CellTypesTab(object):
         box634 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float593 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        self.float593 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float593, units_btn]
