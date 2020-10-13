@@ -9,6 +9,9 @@ python create_cell_types.py flat.xml
 cp flat.xml PhysiCell_settings.xml 
 cp cell_types.py ../bin
 
-# may need to re-run xml2jupyter to create new user_params.py
+# may need to re-run xml2jupyter:
+#   python xml2jupyter.py PhysiCell_settings.xml
+#   cp user_params.py ../bin
+
 # may need to update data/initial.xml
 

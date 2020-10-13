@@ -189,4 +189,9 @@ print("\nDone.")
 new_xml_file = "flat.xml"
 tree_flat.write(new_xml_file)
 
+with open(new_xml_file, 'r+') as f:
+    new_xml = f.read()
+    f.seek(0, 0)
+    f.write('<?xml version="1.0" encoding="UTF-8"?>' + '\n' + new_xml)
+
 print("---> wrote ",new_xml_file, "(copy it to PhysiCell_settings.xml if desirable)\n")
