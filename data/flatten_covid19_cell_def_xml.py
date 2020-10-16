@@ -7,6 +7,7 @@
 #
 
 import xml.etree.ElementTree as ET
+import sys
 
 tree = ET.parse("PhysiCell_settings.xml")  
 xml_root = tree.getroot()
@@ -79,62 +80,143 @@ tree.write(new_xml_file)
 print("\nDone. Please check the output file: " + new_xml_file + "\n")
 
 #--------------------------------------------------
+#  Now read the params from the original "immune" cell_definition and update them in each leaf immune cell def
+#  in the flattened .xml just created.
+print("\n===================================================================================")
 print("--- Phase 2: edit the new .xml so each immune cell type has its parent's params (<cell_definition name='immune' parent_type='default' ...>)")
 
+"""
+for example:
+				<secretion>
+					<substrate name="pro-inflammatory cytokine">
+						<uptake_rate units="1/min">0.01</uptake_rate>
+					</substrate> 	
+					<substrate name="chemokine">
+						<uptake_rate units="1/min">0.01</uptake_rate>
+					</substrate> 	
+					<substrate name="debris">
+						<uptake_rate units="1/min">0.1</uptake_rate>
+"""
+
 tree_flat = ET.parse("new_flat_config1.xml")  
-# tree_flat = ET.parse(new_xml_file)  
+# tree_flat = ET.parse(new_xml_file) 
 # tree = ET.parse("PhysiCell_settings.xml")  
 xml_flat_root = tree_flat.getroot()
 
-immune_cell_defs = ["CD8 Tcell", "macrophage", "neutrophil", "DC", "CD4 Tcell"]
-def update_all_immune_cell_def_params(xmlpath, save_param_val):
-    for cell_def in immune_cell_defs:
+leaf_immune_cell_defs = ["CD8 Tcell", "macrophage", "neutrophil", "DC", "CD4 Tcell"]
+# leaf_immune_cell_defs = ["CD8 Tcell"]
+def update_all_immune_cell_def_params(xmlpath, save_param_val, substrate_name_in):
+    print("*** ENTER: update_all_substrate_params: substrate_name_in (param) = ",substrate_name_in)
+    for cell_def in leaf_immune_cell_defs:
+        print("  * cell_def = ",cell_defs)
         for cd in xml_flat_root.findall('cell_definitions//cell_definition'):  # find *this* cell_def in flattened XML
-            if cd.attrib['name'] == cell_def:
-                print('-- update ',cell_def, ', xmlpath=',xmlpath, " = ",save_param_val)
-                cd.find('.'+xmlpath).text = save_param_val
-                # cd.'.//cell_definition[1]//phenotype//mechanics//cell_cell_adhesion_strength').text = save_param_val
+            if cd.attrib['name'] == cell_def:  # we've found one of the immune cell types (clone of "default")
+                print('  -- update ',cell_def, ', xmlpath=',xmlpath, " = ",save_param_val)
+                if "secretion//substrate" in xmlpath:   # need to handle secretion substrate carefully; match name 
+                    print("  =======  need special handling of secretion//substrate  for substrate_name_in=", substrate_name_in)
 
-def recurse_node(root,xmlpath):
+                    #---------
+                    uep_secretion = cd.find('.//phenotype//secretion')  # get the <secretion> element
+                    print("  =======  uep_secretion=", uep_secretion)
+                    for elm_sub in uep_secretion.findall('substrate'):  # for each <substrate name=...> in <secretion>
+                        substrate_name = elm_sub.attrib["name"]
+                        print('  *-- elm_sub ',elm_sub, ", name=",substrate_name)
+                        if (substrate_name_in != substrate_name):
+                            print("   THIS IS NOT THE DROID YOU'RE LOOKING FOR")
+                            continue
+                        print('   -- update ',uep_secretion, ', xmlpath=',xmlpath, ", save_param_val=",save_param_val)
+                        # if "secretion//substrate" in xmlpath:
+                        if "substrate//uptake_rate" in xmlpath:
+                            print("   =======  need special handling of secretion//substrate//uptake_rate  for ", substrate_name_in)
+                            if "uptake_rate" in xmlpath[-13:]:
+                                print("\n   =======     handle uptake_rate")
+                                print("   =======     xmlpath[:-13]",xmlpath[:-13] )
+                                print("   =======     substrate_name as param= ",substrate_name_in )
+                                if (substrate_name == substrate_name_in):
+                                    print("   WEEEEEEEEEEEEE!!! match found")
+                                    print('   xmlpath=',xmlpath)
+                                    # elm.find('.'+xmlpath).text = save_param_val   # FINALLY, update the value
+                                    # elm_sub.find('.'+xmlpath).text = save_param_val   # FINALLY, update the value
+                                    elm_sub.find('.'+'//uptake_rate').text = save_param_val   # FINALLY, update the value
+                                    break
+
+                    #---------
+                elif "death//model" in xmlpath:   
+                    print("=================   process <death>   =================")
+                    uep_death = cd.find('.//phenotype//death')  # get the <death> element; match <model name=...>
+                    for elm_sub in uep_death.findall('model'):  
+                        print("   >>> found death model = ",elm_sub.attrib["name"])
+                    print("=================   end <death>  (sounds good to me)  =================")
+
+                    # if "uptake_rate" in xmlpath[-13:]:
+                    #     print("\n  =======     handle uptake_rate")
+                    #     parent_elm = cd.find('.' + xmlpath[:-13])
+                    #     print("  =======     xmlpath[:-13]",xmlpath[:-13] )
+                    #     print("  =======     this substrate(parent) name= ",parent_elm.attrib["name"] )
+                    #     print("  =======     substrate_name_in = ",substrate_name_in )
+                    #     if (substrate_name_in == parent_elm.attrib["name"]):
+                    #         print(" WEEEEEEEEEEEEE!!! match found")
+                    #         # elm_sub.find('.'+'//uptake_rate').text = save_param_val   # FINALLY, update the value
+                    #         cd.find('.'+xmlpath).text = save_param_val
+                    #         break
+                    # parent_elm = cd.find('.' + xmlpath[:-13])
+                    # # print('  -- parent ',parent_elm)
+                    # if (parent_elm.tag == 'substrate'):
+                    #     print('  -- parent is ',parent_elm.tag, parent_elm.attrib["name"])
+                    # print("   parent=", cd.find('.'+xmlpath).getparent() )
+                # cd.find('.'+xmlpath).text = save_param_val
+                # cd.'.//cell_definition[1]//phenotype//mechanics//cell_cell_adhesion_strength').text = save_param_val
+    print("*** EXIT ")
+
+def recurse_node(root,xmlpath,substrate_name):
     global save_param_val
     xmlpath = xmlpath + "//" + root.tag[root.tag.rfind('}')+1:]
     param_val = ''
+    # substrate_name = ""
+    if (root.tag == "substrate") and (len(root.attrib) > 0):   # don't want substrate for chemotaxis, just secretion
+        print("recurse_node: ========>> found substrate (for secretion), attrib=",root.attrib)
+        substrate_name = root.attrib["name"]
+        print("recurse_node: ========>> substrate_name =",substrate_name ,"\n")
     for child in root:
         param_val = ' '.join(child.text.split())
         if param_val != '':
             # print('param value=',param_val, ' for ',end='')
             save_param_val = param_val
             # uep.find('.//cell_definition[1]//phenotype//mechanics//cell_cell_adhesion_strength').text = str(self.float27.value)
-        recurse_node(child,xmlpath)
-    if len(list(root)) == 0:
+        recurse_node(child,xmlpath,substrate_name)
+    if len(list(root)) == 0:  # we are finally at the bottom of the recursion; the element of interest.
+        # e.g.  //phenotype//motility//options//chemotaxis//direction  =  1
+        #       //phenotype//secretion//substrate//uptake_rate  =  0.01    (WRONG - also need to know substrate *name*)
         # print(xmlpath)
         print(xmlpath,' = ',save_param_val)
-        update_all_immune_cell_def_params(xmlpath, save_param_val)
+        update_all_immune_cell_def_params(xmlpath, save_param_val, substrate_name)
 
 
 idx = -1
-# tree = ET.parse("PhysiCell_settings.xml")  
-tree = ET.parse("new_flat_config1.xml")  
-xml_root = tree.getroot()
+tree_orig = ET.parse("PhysiCell_settings.xml")  
+# tree = ET.parse("new_flat_config1.xml")  
+xml_orig = tree_orig.getroot()
 uep = None
 # for requested cell_def param values in the original (inheritance) XML, copy them into the new (flattened) XML
-for cd in xml_root.findall('cell_definitions//cell_definition'):
+for cd in xml_orig.findall('cell_definitions//cell_definition'):
     idx += 1
-    if cd.attrib["name"] == "immune":
+    if cd.attrib["name"] == "immune":  # we only want the "immune" cell def
         uep = cd
         print("---------------- processing immune cell_def at idx= ",idx)   # 2  (0=default, 1=lung epi)
         # immune_uep = root.find('.//cell_definitions')
         for child in cd:
             if child.tag != 'custom_data':
                 print("------- calling recurse_node on child=",child)
-                recurse_node(child,"")
+                recurse_node(child,"","")  # should only call with child=<phenotype>, then recursively calls its children
 print("\nDone.")
 
 new_xml_file = "new_flat_config2.xml"
 tree_flat.write(new_xml_file)
 print("\nDone. Please check the output file: " + new_xml_file + "\n")
 
+# sys.exit()
 #--------------------------------------------------
+print("\n===================================================================================")
 print("--- Phase 3: edit the new .xml so each immune cell type has its specific params (from the ORIGINAL .xml).")
 
 tree_orig = ET.parse("PhysiCell_settings.xml")  
@@ -172,10 +254,10 @@ def recurse_node2(root,xmlpath, cell_def_name):
         save_param_val = None
 
 
-immune_cell_defs = ["CD8 Tcell", "macrophage", "neutrophil", "DC", "CD4 Tcell"]
+leaf_immune_cell_defs = ["CD8 Tcell", "macrophage", "neutrophil", "DC", "CD4 Tcell"]
 for cd in xml_orig.findall('cell_definitions//cell_definition'):
     idx += 1
-    if cd.attrib["name"] in immune_cell_defs:
+    if cd.attrib["name"] in leaf_immune_cell_defs:
         uep = cd
         print("\n---------------- processing ",cd.attrib["name"])   # 2  (0=default, 1=lung epi)
         # immune_uep = root.find('.//cell_definitions')
