@@ -631,11 +631,11 @@
 					</substrate> 	
 					<substrate name="chemokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.0</uptake_rate>
+						<uptake_rate units="1/min">0.01</uptake_rate>
 					</substrate> 	
 					<substrate name="debris">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.0</uptake_rate>
+						<uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate> 	
 				</secretion>
 
@@ -832,15 +832,15 @@
 					</substrate> 	
 					<substrate name="pro-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.0</uptake_rate>
+						<uptake_rate units="1/min">0.01</uptake_rate>
 					</substrate> 	
 					<substrate name="chemokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.0</uptake_rate>
+						<uptake_rate units="1/min">0.01</uptake_rate>
 					</substrate> 	
 					<substrate name="debris">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.0</uptake_rate>
+						<uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate> 	
 				</secretion>
 
@@ -1041,11 +1041,11 @@
 					</substrate> 	
 					<substrate name="chemokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.0</uptake_rate>
+						<uptake_rate units="1/min">0.01</uptake_rate>
 					</substrate> 	
 					<substrate name="debris">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.0</uptake_rate>
+						<uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate> 	
 				</secretion>
 
@@ -1246,11 +1246,11 @@
 					</substrate> 	
 					<substrate name="chemokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.0</uptake_rate>
+						<uptake_rate units="1/min">0.01</uptake_rate>
 					</substrate> 	
 					<substrate name="debris">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.0</uptake_rate>
+						<uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate> 	
 				</secretion>
 
@@ -1451,11 +1451,11 @@
 					</substrate> 	
 					<substrate name="chemokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.0</uptake_rate>
+						<uptake_rate units="1/min">0.01</uptake_rate>
 					</substrate> 	
 					<substrate name="debris">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
-						<uptake_rate units="1/min">0.0</uptake_rate>
+						<uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate> 	
 				</secretion>
 
