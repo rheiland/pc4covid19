@@ -3,18 +3,57 @@
 #
 # Note: leaf cell defs are hard-coded in this script for now.
 #
+#
+# $ grep cell_def PhysiCell_settings-with-complete-default-params.xml|grep parent
+# 		<cell_definition name="lung epithelium" parent_type="default" ID="1">
+# 		<cell_definition name="immune" parent_type="default" ID="2">
+# 		<cell_definition name="CD8 Tcell" parent_type="immune" ID="3">
+# 		<cell_definition name="macrophage" parent_type="immune" ID="4">
+# 		<cell_definition name="neutrophil" parent_type="immune" ID="5">
+# 		<cell_definition name="DC" parent_type="immune" ID="6">
+# 		<cell_definition name="CD4 Tcell" parent_type="immune" ID="7">
+# 		<cell_definition name="fibroblast" parent_type="immune" ID="8">
+#
+# --> after:
+# $ grep cell_def flat.xml|grep parent
+# 		<cell_definition ID="1" name="lung epithelium" parent="default">
+# 		<cell_definition ID="3" name="CD8 Tcell" parent="default">
+# 		<cell_definition ID="4" name="macrophage" parent="default">
+# 		<cell_definition ID="5" name="neutrophil" parent="default">
+# 		<cell_definition ID="6" name="DC" parent="default">
+# 		<cell_definition ID="7" name="CD4 Tcell" parent="default">
+# 		<cell_definition ID="8" name="fibroblast" parent="default">
+#
 # Author: Randy Heiland
 #
 
 import xml.etree.ElementTree as ET
 import sys
 
+#--------------------------------------------------
+print("\n--- Phase 0: build the leaf_cell_defs (all, including epi) dict and leaf_immune_cell_defs (just those with parent='immune')" )
+
 tree = ET.parse("PhysiCell_settings.xml")  
 xml_root = tree.getroot()
-leaf_cell_defs = {"lung epithelium":"1", "CD8 Tcell":"3", "macrophage":"4", "neutrophil":"5", "DC":"6", "CD4 Tcell":"7"}
+#leaf_cell_defs = {"lung epithelium":"1", "CD8 Tcell":"3", "macrophage":"4", "neutrophil":"5", "DC":"6", "CD4 Tcell":"7", "fibroblasts":"8"}
+leaf_cell_defs = {}
+cell_defs = tree.find('cell_definitions')
+for cell_def in list(cell_defs):
+    # if (cell_def.attrib['name'] != 'default') and ('parent_type' in cell_def.attrib.keys() ): # and ('immune' in cell_def.attrib['parent_type'] ) :
+    if (cell_def.attrib['name'] != 'default') and (cell_def.attrib['name'] != 'immune') and ('parent_type' in cell_def.attrib.keys() ): # and ('immune' in cell_def.attrib['parent_type'] ) :
+        leaf_cell_defs[cell_def.attrib['name']] = cell_def.attrib['ID']
+        
+print('leaf_cell_defs= ',leaf_cell_defs)  
 
+#leaf_immune_cell_defs = ["CD8 Tcell", "macrophage", "neutrophil", "DC", "CD4 Tcell", "fibroblasts"]
+leaf_immune_cell_defs = list(leaf_cell_defs.keys())
+leaf_immune_cell_defs.remove('lung epithelium')
+print('leaf_immune_cell_defs= ',leaf_immune_cell_defs)  
+
+xml_root = tree.getroot()
+# sys.exit()
 #--------------------------------------------------
-print("--- Phase 1: create a new .xml containing 6 copies of 'default' cell_definition, with desired names.")
+print("\n--- Phase 1: create a new .xml containing N copies of 'default' cell_definition, with desired names.")
 
 #tree0 = tree
 #flat_root = xml_root
@@ -55,7 +94,7 @@ tree = ET.parse("new_flat_config1.xml")
 cell_defs = tree.find('cell_definitions')
 xml_root = tree.getroot()
 
-print("--- Change cell_def name for each leaf")
+print("--- Change cell_def name for *each* leaf")
 idx = -1
 leaf_name = list(leaf_cell_defs.keys())
 for cell_def in list(cell_defs):
@@ -103,7 +142,7 @@ tree_flat = ET.parse("new_flat_config1.xml")
 # tree = ET.parse("PhysiCell_settings.xml")  
 xml_flat_root = tree_flat.getroot()
 
-leaf_immune_cell_defs = ["CD8 Tcell", "macrophage", "neutrophil", "DC", "CD4 Tcell"]
+#leaf_immune_cell_defs = ["CD8 Tcell", "macrophage", "neutrophil", "DC", "CD4 Tcell","fibroblasts"]
 # leaf_immune_cell_defs = ["CD8 Tcell"]
 def update_all_immune_cell_def_params(xmlpath, save_param_val, substrate_name_in):
     print("*** ENTER: update_all_substrate_params: substrate_name_in (param) = ",substrate_name_in)
@@ -254,7 +293,7 @@ def recurse_node2(root,xmlpath, cell_def_name):
         save_param_val = None
 
 
-leaf_immune_cell_defs = ["CD8 Tcell", "macrophage", "neutrophil", "DC", "CD4 Tcell"]
+#leaf_immune_cell_defs = ["CD8 Tcell", "macrophage", "neutrophil", "DC", "CD4 Tcell"]
 for cd in xml_orig.findall('cell_definitions//cell_definition'):
     idx += 1
     if cd.attrib["name"] in leaf_immune_cell_defs:
