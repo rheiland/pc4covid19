@@ -131,6 +131,7 @@ class SubstrateTab(object):
         self.yval4 = np.empty([1])
         self.yval5 = np.empty([1])
         self.yval6 = np.empty([1])
+        self.yval7 = np.empty([1])
         self.tname = "time"
         self.yname = 'Y'
         # self.num_2D_plots = 1
@@ -249,7 +250,7 @@ class SubstrateTab(object):
 
 
         self.custom_data_choice = RadioButtons(
-            options=['live,infected,dead', 'mac,neut,cd8'],
+            options=['live,infected,dead', 'Mac,Neut,CD8,DC'],
             value='live,infected,dead', 
 #           layout={'width': 'max-content'}, # If the items' names are long
             disabled=True
@@ -459,6 +460,7 @@ class SubstrateTab(object):
             self.yval4 = np.empty([1])
             self.yval5 = np.empty([1])
             self.yval6 = np.empty([1])
+            self.yval7 = np.empty([1])
             self.custom_data_set1 = False  # live, infected, dead
             self.custom_data_set2 = False  # mac, neut, cd8
             # self.custom_data_toggle.value = False
@@ -807,7 +809,7 @@ class SubstrateTab(object):
 
                 self.custom_data_set1 = True 
 
-        elif 'mac' in self.custom_data_choice.value:  # mac,neut,cd8
+        elif 'mac' in self.custom_data_choice.value:  # mac,neut,cd8,DC
             if (self.custom_data_set2 == False):
                 # count macs
                 self.yval4 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 4) == True)) for idx in range(ds_count)] )
@@ -817,6 +819,9 @@ class SubstrateTab(object):
 
                 # count cd8
                 self.yval6 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 3) == True)) for idx in range(ds_count)] )
+
+                # count DC
+                self.yval7 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 6) == True)) for idx in range(ds_count)] )
 
                 self.custom_data_set2 = True 
 
@@ -854,9 +859,10 @@ class SubstrateTab(object):
             p2 = self.ax1.plot(self.xval, self.yval2, label='infected', linewidth=3)
             p3 = self.ax1.plot(self.xval, self.yval3, label='dead', linewidth=3)
         elif 'mac' in self.custom_data_choice.value:  # mac,neut,cd8
-            p1 = self.ax1.plot(self.xval, self.yval4, label='mac', linewidth=3, color='lime')
-            p2 = self.ax1.plot(self.xval, self.yval5, label='neut', linewidth=3, color='cyan')
-            p3 = self.ax1.plot(self.xval, self.yval6, label='cd8', linewidth=3, color='red')
+            p1 = self.ax1.plot(self.xval, self.yval4, label='Mac', linewidth=3, color='lime')
+            p2 = self.ax1.plot(self.xval, self.yval5, label='Neut', linewidth=3, color='cyan')
+            p3 = self.ax1.plot(self.xval, self.yval6, label='CD8', linewidth=3, color='red')
+            p4 = self.ax1.plot(self.xval, self.yval7, label='DC', linewidth=3, color='fuchsia')
 
         # print('xval=',xval)  # [   0.   60.  120. ...
         # print('yval=',yval)  # [2793 2793 2793 ...
@@ -889,16 +895,18 @@ class SubstrateTab(object):
                 self.ax1.plot(self.xval[self.substrate_frame], self.yval4[self.substrate_frame], p1[-1].get_color(), marker='o', markersize=12)
                 self.ax1.plot(self.xval[self.substrate_frame], self.yval5[self.substrate_frame], p2[-1].get_color(), marker='o', markersize=12)
                 self.ax1.plot(self.xval[self.substrate_frame], self.yval6[self.substrate_frame], p3[-1].get_color(), marker='o', markersize=12)
+                self.ax1.plot(self.xval[self.substrate_frame], self.yval7[self.substrate_frame], p3[-1].get_color(), marker='o', markersize=12)
             # self.ax1.gca().spines['top'].set_visible(False)
             # self.ax1.gca().spines['right'].set_visible(False)
             # self.ax1.margins(0)
 
                 # label markers
-                ymax= max(int(self.yval4.max()),int(self.yval5.max()),int(self.yval6.max())) # should be a % of axes range
+                ymax= max(int(self.yval4.max()),int(self.yval5.max()),int(self.yval6.max()),int(self.yval7.max())) # should be a % of axes range
                 yoff= ymax * .01   # should be a % of axes range
                 self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval4[self.substrate_frame]+yoff, str(self.yval4[self.substrate_frame]), fontsize=fsize)
                 self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval5[self.substrate_frame]+yoff, str(self.yval5[self.substrate_frame]), fontsize=fsize)
                 self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval6[self.substrate_frame]+yoff, str(self.yval6[self.substrate_frame]), fontsize=fsize)
+                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval7[self.substrate_frame]+yoff, str(self.yval7[self.substrate_frame]), fontsize=fsize)
 
 
 
