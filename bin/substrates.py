@@ -133,6 +133,7 @@ class SubstrateTab(object):
         self.yval6 = np.empty([1])
         self.yval7 = np.empty([1])
         self.yval8 = np.empty([1])
+        self.yval9 = np.empty([1])
         self.tname = "time"
         self.yname = 'Y'
         # self.num_2D_plots = 1
@@ -251,7 +252,7 @@ class SubstrateTab(object):
 
 
         self.custom_data_choice = RadioButtons(
-            options=['live,infected,dead', 'Mac,Neut,CD8,DC,CD4'],
+            options=['live,infected,dead', 'Mac,Neut,CD8,DC,CD4,Fib'],
             value='live,infected,dead', 
 #           layout={'width': 'max-content'}, # If the items' names are long
             disabled=True
@@ -463,8 +464,9 @@ class SubstrateTab(object):
             self.yval6 = np.empty([1])
             self.yval7 = np.empty([1])
             self.yval8 = np.empty([1])
+            self.yval9 = np.empty([1])
             self.custom_data_set1 = False  # live, infected, dead
-            self.custom_data_set2 = False  # Mac, Neut, CD8
+            self.custom_data_set2 = False  # Mac, Neut, CD8, etc
             # self.custom_data_toggle.value = False
         # self.custom_data_choice.disabled = bool_val
         # self.custom_data_update_button.disabled = bool_val
@@ -811,7 +813,7 @@ class SubstrateTab(object):
 
                 self.custom_data_set1 = True 
 
-        elif 'Mac' in self.custom_data_choice.value:  # mac,neut,cd8,DC
+        elif 'Mac' in self.custom_data_choice.value:  # mac,neut,cd8,DC,cd4,Fib
             if (self.custom_data_set2 == False):
                 # count Macs
                 self.yval4 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 4) == True)) for idx in range(ds_count)] )
@@ -827,6 +829,9 @@ class SubstrateTab(object):
 
                 # count CD4
                 self.yval8 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 7) == True)) for idx in range(ds_count)] )
+
+                # count Fibroblasts
+                self.yval9 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 8) == True)) for idx in range(ds_count)] )
 
                 self.custom_data_set2 = True 
 
@@ -866,12 +871,13 @@ class SubstrateTab(object):
             p3 = self.ax1.plot(self.xval, self.yval3, label='dead', linewidth=3)
         elif 'Mac' in self.custom_data_choice.value:  # mac,neut,cd8,DC,cd4
             p1 = self.ax1.plot(self.xval, self.yval4, label='Mac', linewidth=3, color='lime')
-            p2 = self.ax1.plot(self.xval, self.yval5, label='Neut', linewidth=3, color='cyan')
+            p2 = self.ax1.plot(self.xval, self.yval5, linestyle='dashed', label='Neut', linewidth=3, color='cyan')
             p3 = self.ax1.plot(self.xval, self.yval6, label='CD8', linewidth=3, color='red')
-            p4 = self.ax1.plot(self.xval, self.yval7, label='DC', linewidth=3, color='fuchsia')
+            p4 = self.ax1.plot(self.xval, self.yval7, linestyle='dashed', label='DC', linewidth=3, color='fuchsia')
             # print('plot_cell_custom_data(): yval6=',self.yval6)
             # print('plot_cell_custom_data(): yval7=',self.yval7)
             p5 = self.ax1.plot(self.xval, self.yval8, label='CD4', linewidth=3, color='orange')
+            p6 = self.ax1.plot(self.xval, self.yval9, linestyle='dashed',  label='Fib', linewidth=3, color='orange') # dashes=[6,2],
 
         # print('xval=',xval)  # [   0.   60.  120. ...
         # print('yval=',yval)  # [2793 2793 2793 ...
@@ -906,12 +912,13 @@ class SubstrateTab(object):
                 self.ax1.plot(self.xval[self.substrate_frame], self.yval6[self.substrate_frame], p3[-1].get_color(), marker='o', markersize=12)
                 self.ax1.plot(self.xval[self.substrate_frame], self.yval7[self.substrate_frame], p4[-1].get_color(), marker='o', markersize=12)
                 self.ax1.plot(self.xval[self.substrate_frame], self.yval8[self.substrate_frame], p5[-1].get_color(), marker='o', markersize=12)
+                self.ax1.plot(self.xval[self.substrate_frame], self.yval9[self.substrate_frame], p6[-1].get_color(), marker='o', markersize=12)
             # self.ax1.gca().spines['top'].set_visible(False)
             # self.ax1.gca().spines['right'].set_visible(False)
             # self.ax1.margins(0)
 
                 # label markers
-                ymax= max(int(self.yval4.max()), int(self.yval5.max()), int(self.yval6.max()), int(self.yval7.max()), int(self.yval8.max()) ) # should be a % of axes range
+                ymax= max(int(self.yval4.max()), int(self.yval5.max()), int(self.yval6.max()), int(self.yval7.max()), int(self.yval8.max()), int(self.yval9.max()) ) # should be a % of axes range
                 # ymax= max(int(self.yval4.max()), int(self.yval5.max()), int(self.yval6.max()), int(self.yval7.max()) ) # should be a % of axes range
                 yoff= ymax * .01   # should be a % of axes range
                 self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval4[self.substrate_frame]+yoff, str(self.yval4[self.substrate_frame]), fontsize=fsize)
@@ -919,6 +926,7 @@ class SubstrateTab(object):
                 self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval6[self.substrate_frame]+yoff, str(self.yval6[self.substrate_frame]), fontsize=fsize)
                 self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval7[self.substrate_frame]+yoff, str(self.yval7[self.substrate_frame]), fontsize=fsize)
                 self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval8[self.substrate_frame]+yoff, str(self.yval8[self.substrate_frame]), fontsize=fsize)
+                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval9[self.substrate_frame]+yoff, str(self.yval9[self.substrate_frame]), fontsize=fsize)
 
 
 
