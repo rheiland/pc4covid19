@@ -1084,34 +1084,34 @@ class CellTypesTab(object):
         div_row9 = Button(description='phenotype:cycle (model: flow_cytometry_separated_cycle_model; code=6)', disabled=True, layout=divider_button_layout)
         div_row9.style.button_color = 'orange'
         name_btn = Button(description='Phase 0 -> Phase 1 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float99 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float99, units_btn, ]
         box107 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='Phase 1 -> Phase 2 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float100 = FloatText(value='0.00208333', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float100, units_btn, ]
         box108 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='Phase 2 -> Phase 3 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float101 = FloatText(value='0.00416667', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float101, units_btn, ]
         box109 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='Phase 3 -> Phase 0 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float102 = FloatText(value='0.0166667', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float102, units_btn, ]
         box110 = Box(children=row, layout=box_layout)
 
@@ -1121,116 +1121,116 @@ class CellTypesTab(object):
         death_model1 = Button(description='model: apoptosis', disabled=True, layout={'width':'30%'})
         death_model1.style.button_color = '#ffde6b'
         name_btn = Button(description='death rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float103 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float103, units_btn, ]
         box111 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='unlysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float104 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float104, units_btn, ]
         box112 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='lysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float105 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float105, units_btn, ]
         box113 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cytoplasmic_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float106 = FloatText(value='1.66667e-02', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float106, units_btn, ]
         box114 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float107 = FloatText(value='5.83333e-03', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float107, units_btn, ]
         box115 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcification_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float108 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float108, units_btn, ]
         box116 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_rupture_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float109 = FloatText(value='2.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float109, units_btn, ]
         box117 = Box(children=row, layout=box_layout)
 
         death_model2 = Button(description='model: necrosis', disabled=True, layout={'width':'30%'})
         death_model2.style.button_color = '#ffde6b'
         name_btn = Button(description='death rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float110 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float110, units_btn, ]
         box118 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='unlysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float111 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float111, units_btn, ]
         box119 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='lysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float112 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float112, units_btn, ]
         box120 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cytoplasmic_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float113 = FloatText(value='1.66667e-02', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float113, units_btn, ]
         box121 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float114 = FloatText(value='5.83333e-03', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float114, units_btn, ]
         box122 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcification_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float115 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float115, units_btn, ]
         box123 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_rupture_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float116 = FloatText(value='2.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float116, units_btn, ]
         box124 = Box(children=row, layout=box_layout)
 
@@ -1238,74 +1238,74 @@ class CellTypesTab(object):
         div_row11 = Button(description='phenotype:volume', disabled=True, layout=divider_button_layout)
         div_row11.style.button_color = 'orange'
         name_btn = Button(description='total', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float117 = FloatText(value='2494', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float117, units_btn, ]
         box125 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='fluid_fraction', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float118 = FloatText(value='0.75', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float118, units_btn, ]
         box126 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float119 = FloatText(value='540', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float119, units_btn, ]
         box127 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float120 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float120, units_btn, ]
         box128 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cytoplasmic_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float121 = FloatText(value='0.0045', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float121, units_btn, ]
         box129 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float122 = FloatText(value='0.0055', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float122, units_btn, ]
         box130 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcified_fraction', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float123 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float123, units_btn, ]
         box131 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcification_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float124 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float124, units_btn, ]
         box132 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_rupture_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float125 = FloatText(value='2.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float125, units_btn, ]
         box133 = Box(children=row, layout=box_layout)
 
@@ -1313,44 +1313,44 @@ class CellTypesTab(object):
         div_row12 = Button(description='phenotype:mechanics', disabled=True, layout=divider_button_layout)
         div_row12.style.button_color = 'orange'
         name_btn = Button(description='cell_cell_adhesion_strength', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float126 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float126, units_btn, ]
         box134 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cell_cell_repulsion_strength', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float127 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float127, units_btn, ]
         box135 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_maximum_adhesion_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float128 = FloatText(value='1.25', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float128, units_btn, ]
         box136 = Box(children=row, layout=box_layout)
 
         self.bool5 = Checkbox(description='enabled', value=False,layout=name_button_layout)
         name_btn = Button(description='set_relative_equilibrium_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float129 = FloatText(value='1.8', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [self.bool5, name_btn, self.float129, units_btn, ]
         box137 = Box(children=row, layout=box_layout)
 
         self.bool6 = Checkbox(description='enabled', value=False,layout=name_button_layout)
         name_btn = Button(description='set_absolute_equilibrium_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float130 = FloatText(value='15.12', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [self.bool6, name_btn, self.float130, units_btn, ]
         box138 = Box(children=row, layout=box_layout)
 
@@ -1359,26 +1359,26 @@ class CellTypesTab(object):
         div_row13.style.button_color = 'orange'
 
         name_btn = Button(description='speed', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float131 = FloatText(value='4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float131, units_btn]
         box139 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='persistence_time', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float132 = FloatText(value='5', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float132, units_btn]
         box140 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='migration_bias', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float133 = FloatText(value='0.7', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float133, units_btn]
         box141 = Box(children=row, layout=box_layout)
         self.bool7 = Checkbox(description='enabled', value=False,layout=name_button_layout)
@@ -1390,13 +1390,13 @@ class CellTypesTab(object):
         self.bool9 = Checkbox(description='enabled', value=False,layout=name_button_layout)
 
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.chemotaxis_substrate2 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.chemotaxis_substrate2]
         box142 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='direction', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.chemotaxis_direction2 = Text(value='1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.chemotaxis_direction2]
         box143 = Box(children=row, layout=box_layout)
@@ -1404,117 +1404,117 @@ class CellTypesTab(object):
         div_row14 = Button(description='phenotype:secretion', disabled=True, layout=divider_button_layout)
         div_row14.style.button_color = 'orange'
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.text6 = Text(value='interferon 1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text6]
         box144 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float134 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float134, units_btn]
         box145 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float135 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float135, units_btn]
         box146 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.text7 = Text(value='pro-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text7]
         box147 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float136 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float136, units_btn]
         box148 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float137 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float137, units_btn]
         box149 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.text8 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text8]
         box150 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float138 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float138, units_btn]
         box151 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float139 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float139, units_btn]
         box152 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.text9 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text9]
         box153 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float140 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float140, units_btn]
         box154 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float141 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float141, units_btn]
         box155 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.text10 = Text(value='anti-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text10]
         box156 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float142 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float142, units_btn]
         box157 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float143 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float143, units_btn]
         box158 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.text11 = Text(value='collagen', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text11]
         box159 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float144 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float144, units_btn]
         box160 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float145 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float145, units_btn]
         box161 = Box(children=row, layout=box_layout)
         #  ------------------------- 
@@ -1526,522 +1526,522 @@ class CellTypesTab(object):
         div_row16 = Button(description='Custom Data',disabled=True, layout=divider_button_layout)
         div_row16.style.button_color = 'cyan'
         name_btn = Button(description='virion', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float146 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='virions', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='endocytosed virions', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float146, units_btn, description_btn] 
 
         box162 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uncoated_virion', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float147 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='virions', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='uncoated endocytosed virions', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float147, units_btn, description_btn] 
 
         box163 = Box(children=row, layout=box_layout)
         name_btn = Button(description='viral_RNA', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float148 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='RNA', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='total (functional) viral RNA copies', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float148, units_btn, description_btn] 
 
         box164 = Box(children=row, layout=box_layout)
         name_btn = Button(description='viral_protein', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float149 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='protein', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='total assembled sets of viral protein', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float149, units_btn, description_btn] 
 
         box165 = Box(children=row, layout=box_layout)
         name_btn = Button(description='assembled_virion', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float150 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='total assembled virions', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float150, units_btn, description_btn] 
 
         box166 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_uncoating_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float151 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at which an internalized virion is uncoated', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float151, units_btn, description_btn] 
 
         box167 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uncoated_to_RNA_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float152 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate at which uncoated virion makes its mRNA available', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float152, units_btn, description_btn] 
 
         box168 = Box(children=row, layout=box_layout)
         name_btn = Button(description='protein_synthesis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float153 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at mRNA creates complete set of proteins', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float153, units_btn, description_btn] 
 
         box169 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_assembly_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float154 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate at which viral proteins are assembled into complete virion', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float154, units_btn, description_btn] 
 
         box170 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_export_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float155 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at which a virion is exported from a live cell', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float155, units_btn, description_btn] 
 
         box171 = Box(children=row, layout=box_layout)
         name_btn = Button(description='unbound_external_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float156 = FloatText(value='1000', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='initial number of unbound ACE2 receptors on surface', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float156, units_btn, description_btn] 
 
         box172 = Box(children=row, layout=box_layout)
         name_btn = Button(description='bound_external_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float157 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='initial number of bound ACE2 receptors on surface', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float157, units_btn, description_btn] 
 
         box173 = Box(children=row, layout=box_layout)
         name_btn = Button(description='unbound_internal_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float158 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='initial number of internalized unbound ACE2 receptors', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float158, units_btn, description_btn] 
 
         box174 = Box(children=row, layout=box_layout)
         name_btn = Button(description='bound_internal_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float159 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='initial number of internalized bound ACE2 receptors', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float159, units_btn, description_btn] 
 
         box175 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_binding_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float160 = FloatText(value='0.001', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='ACE2 receptor-virus binding rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float160, units_btn, description_btn] 
 
         box176 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_endocytosis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float161 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='ACE2 receptor-virus endocytosis rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float161, units_btn, description_btn] 
 
         box177 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_cargo_release_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float162 = FloatText(value='0.001', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='ACE2 receptor-virus cargo release rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float162, units_btn, description_btn] 
 
         box178 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_recycling_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float163 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='ACE2 receptor recycling rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float163, units_btn, description_btn] 
 
         box179 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_infected_apoptosis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float164 = FloatText(value='0.001', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='maximum rate of cell apoptosis due to viral infection', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float164, units_btn, description_btn] 
 
         box180 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_apoptosis_half_max', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float165 = FloatText(value='250', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='virion', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='viral load at which cells reach half max apoptosis rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float165, units_btn, description_btn] 
 
         box181 = Box(children=row, layout=box_layout)
         name_btn = Button(description='apoptosis_hill_power', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float166 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='none', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Hill power for viral load apoptosis response', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float166, units_btn, description_btn] 
 
         box182 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virus_fraction_released_at_death', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float167 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='none', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='fraction of internal virus released at cell death', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float167, units_btn, description_btn] 
 
         box183 = Box(children=row, layout=box_layout)
         name_btn = Button(description='infected_cell_chemokine_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float168 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='max rate that infected cells secrete chemokine', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float168, units_btn, description_btn] 
 
         box184 = Box(children=row, layout=box_layout)
         name_btn = Button(description='debris_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float169 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate that dead cells release debris', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float169, units_btn, description_btn] 
 
         box185 = Box(children=row, layout=box_layout)
         name_btn = Button(description='infected_cell_chemokine_secretion_activated', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float170 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='none', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='used internally to track activation of chemokine secretion', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float170, units_btn, description_btn] 
 
         box186 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_secretion_rate_via_infection', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float171 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='Type-1 interferon secretion rate for infected cells', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float171, units_btn, description_btn] 
 
         box187 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_interferon_secretion_rate_via_paracrine', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float172 = FloatText(value='0.5', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Type-1 interferon secretion rate after activation by Type-1 interferon', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float172, units_btn, description_btn] 
 
         box188 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_max_response_threshold', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float173 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='Interferon response scales linearly until Int-1 exceeds this threshold', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float173, units_btn, description_btn] 
 
         box189 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_activation', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float174 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Current interferon signaling activation state (between 0 and 1)', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float174, units_btn, description_btn] 
 
         box190 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_max_virus_inhibition', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float175 = FloatText(value='0.9', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='At max interferon activation, max inhibition of viral replication (between 0 and 1)', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float175, units_btn, description_btn] 
 
         box191 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_viral_RNA_threshold', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float176 = FloatText(value='2', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='infected cell interferon secretion saturates at this viral RNA level', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float176, units_btn, description_btn] 
 
         box192 = Box(children=row, layout=box_layout)
         name_btn = Button(description='TCell_contact_time', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float177 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='tracks total contact time with CD8 T cells', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float177, units_btn, description_btn] 
 
         box193 = Box(children=row, layout=box_layout)
         name_btn = Button(description='cell_attachment_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float178 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='the rate at which the cell attaches to cells in contact', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float178, units_btn, description_btn] 
 
         box194 = Box(children=row, layout=box_layout)
         name_btn = Button(description='cell_attachment_lifetime', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float179 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='the mean duration of a cell-cell attachment', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float179, units_btn, description_btn] 
 
         box195 = Box(children=row, layout=box_layout)
         name_btn = Button(description='TCell_contact_death_threshold', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float180 = FloatText(value='50', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='threshold CD8 T cell contact time to trigger apoptosis', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float180, units_btn, description_btn] 
 
         box196 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_attachment_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float181 = FloatText(value='15', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='micron', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float181, units_btn, description_btn] 
 
         box197 = Box(children=row, layout=box_layout)
         name_btn = Button(description='elastic_attachment_coefficient', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float182 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='elastic coefficient for cell-cell attachment', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float182, units_btn, description_btn] 
 
         box198 = Box(children=row, layout=box_layout)
         name_btn = Button(description='time_to_next_phagocytosis', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float183 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='time it takes for the apoptotic material to be phagocytosed', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float183, units_btn, description_btn] 
 
         box199 = Box(children=row, layout=box_layout)
         name_btn = Button(description='material_internalisation_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float184 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float184, units_btn, description_btn] 
 
         box200 = Box(children=row, layout=box_layout)
         name_btn = Button(description='threshold_macrophage_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float185 = FloatText(value='6500', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='micron', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float185, units_btn, description_btn] 
 
         box201 = Box(children=row, layout=box_layout)
         name_btn = Button(description='threshold_neutrophil_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float186 = FloatText(value='1581', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='micron', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float186, units_btn, description_btn] 
 
         box202 = Box(children=row, layout=box_layout)
         name_btn = Button(description='exhausted_macrophage_death_rat', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float187 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float187, units_btn, description_btn] 
 
         box203 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ability_to_phagocytose_infected_cell', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float188 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Boolean for whether macrophages can phagocytose infected cells', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float188, units_btn, description_btn] 
 
         box204 = Box(children=row, layout=box_layout)
         name_btn = Button(description='time_of_DC_departure', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float189 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='Time DC leaves tissue after activation', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float189, units_btn, description_btn] 
 
         box205 = Box(children=row, layout=box_layout)
         name_btn = Button(description='phagocytosis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float190 = FloatText(value='0.167', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float190, units_btn, description_btn] 
 
         box206 = Box(children=row, layout=box_layout)
         name_btn = Button(description='sensitivity_to_debris_chemotaxis', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float191 = FloatText(value='1.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='relative sensitivity to debris in chemotaxis', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float191, units_btn, description_btn] 
 
         box207 = Box(children=row, layout=box_layout)
         name_btn = Button(description='sensitivity_to_chemokine_chemotaxis', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float192 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='relative sensitivity to chemokine in chemotaxis', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float192, units_btn, description_btn] 
 
         box208 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_speed', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float193 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='speed after activation', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float193, units_btn, description_btn] 
 
         box209 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_cytokine_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float194 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate of secreting pro-inflamatory cytokine after activation', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float194, units_btn, description_btn] 
 
         box210 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_immune_cell', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float195 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='used internally to track activation state', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float195, units_btn, description_btn] 
 
         box211 = Box(children=row, layout=box_layout)
         name_btn = Button(description='antiinflammatory_cytokine_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float196 = FloatText(value='15', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='secretion rate of anti-inflammatory from infected epithelium cell', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float196, units_btn, description_btn] 
 
         box212 = Box(children=row, layout=box_layout)
         name_btn = Button(description='collagen_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float197 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='secretion rate of collagen from fibroblast', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float197, units_btn, description_btn] 
 
         box213 = Box(children=row, layout=box_layout)
@@ -3132,34 +3132,34 @@ class CellTypesTab(object):
         div_row25 = Button(description='phenotype:cycle (model: flow_cytometry_separated_cycle_model; code=6)', disabled=True, layout=divider_button_layout)
         div_row25.style.button_color = 'orange'
         name_btn = Button(description='Phase 0 -> Phase 1 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float297 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float297, units_btn, ]
         box321 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='Phase 1 -> Phase 2 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float298 = FloatText(value='0.00208333', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float298, units_btn, ]
         box322 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='Phase 2 -> Phase 3 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float299 = FloatText(value='0.00416667', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float299, units_btn, ]
         box323 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='Phase 3 -> Phase 0 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float300 = FloatText(value='0.0166667', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float300, units_btn, ]
         box324 = Box(children=row, layout=box_layout)
 
@@ -3169,116 +3169,116 @@ class CellTypesTab(object):
         death_model1 = Button(description='model: apoptosis', disabled=True, layout={'width':'30%'})
         death_model1.style.button_color = '#ffde6b'
         name_btn = Button(description='death rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float301 = FloatText(value='2.1e-4', step='1e-05', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float301, units_btn, ]
         box325 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='unlysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float302 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float302, units_btn, ]
         box326 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='lysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float303 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float303, units_btn, ]
         box327 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cytoplasmic_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float304 = FloatText(value='1.66667e-02', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float304, units_btn, ]
         box328 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float305 = FloatText(value='5.83333e-03', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float305, units_btn, ]
         box329 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcification_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float306 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float306, units_btn, ]
         box330 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_rupture_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float307 = FloatText(value='2.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float307, units_btn, ]
         box331 = Box(children=row, layout=box_layout)
 
         death_model2 = Button(description='model: necrosis', disabled=True, layout={'width':'30%'})
         death_model2.style.button_color = '#ffde6b'
         name_btn = Button(description='death rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float308 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float308, units_btn, ]
         box332 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='unlysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float309 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float309, units_btn, ]
         box333 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='lysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float310 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float310, units_btn, ]
         box334 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cytoplasmic_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float311 = FloatText(value='1.66667e-02', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float311, units_btn, ]
         box335 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float312 = FloatText(value='5.83333e-03', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float312, units_btn, ]
         box336 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcification_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float313 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float313, units_btn, ]
         box337 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_rupture_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float314 = FloatText(value='2.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float314, units_btn, ]
         box338 = Box(children=row, layout=box_layout)
 
@@ -3286,74 +3286,74 @@ class CellTypesTab(object):
         div_row27 = Button(description='phenotype:volume', disabled=True, layout=divider_button_layout)
         div_row27.style.button_color = 'orange'
         name_btn = Button(description='total', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float315 = FloatText(value='4849', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float315, units_btn, ]
         box339 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='fluid_fraction', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float316 = FloatText(value='0.75', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float316, units_btn, ]
         box340 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float317 = FloatText(value='485', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float317, units_btn, ]
         box341 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float318 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float318, units_btn, ]
         box342 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cytoplasmic_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float319 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float319, units_btn, ]
         box343 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float320 = FloatText(value='0.0055', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float320, units_btn, ]
         box344 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcified_fraction', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float321 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float321, units_btn, ]
         box345 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcification_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float322 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float322, units_btn, ]
         box346 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_rupture_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float323 = FloatText(value='2.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float323, units_btn, ]
         box347 = Box(children=row, layout=box_layout)
 
@@ -3361,44 +3361,44 @@ class CellTypesTab(object):
         div_row28 = Button(description='phenotype:mechanics', disabled=True, layout=divider_button_layout)
         div_row28.style.button_color = 'orange'
         name_btn = Button(description='cell_cell_adhesion_strength', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float324 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float324, units_btn, ]
         box348 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cell_cell_repulsion_strength', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float325 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float325, units_btn, ]
         box349 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_maximum_adhesion_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float326 = FloatText(value='1.25', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float326, units_btn, ]
         box350 = Box(children=row, layout=box_layout)
 
         self.bool15 = Checkbox(description='enabled', value=False,layout=name_button_layout)
         name_btn = Button(description='set_relative_equilibrium_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float327 = FloatText(value='1.8', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [self.bool15, name_btn, self.float327, units_btn, ]
         box351 = Box(children=row, layout=box_layout)
 
         self.bool16 = Checkbox(description='enabled', value=False,layout=name_button_layout)
         name_btn = Button(description='set_absolute_equilibrium_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float328 = FloatText(value='15.12', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [self.bool16, name_btn, self.float328, units_btn, ]
         box352 = Box(children=row, layout=box_layout)
 
@@ -3407,26 +3407,26 @@ class CellTypesTab(object):
         div_row29.style.button_color = 'orange'
 
         name_btn = Button(description='speed', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float329 = FloatText(value='4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float329, units_btn]
         box353 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='persistence_time', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float330 = FloatText(value='5', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float330, units_btn]
         box354 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='migration_bias', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float331 = FloatText(value='0.7', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float331, units_btn]
         box355 = Box(children=row, layout=box_layout)
         self.bool17 = Checkbox(description='enabled', value=True,layout=name_button_layout)
@@ -3438,13 +3438,13 @@ class CellTypesTab(object):
         self.bool19 = Checkbox(description='enabled', value=False,layout=name_button_layout)
 
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.chemotaxis_substrate4 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.chemotaxis_substrate4]
         box356 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='direction', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.chemotaxis_direction4 = Text(value='1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.chemotaxis_direction4]
         box357 = Box(children=row, layout=box_layout)
@@ -3452,117 +3452,117 @@ class CellTypesTab(object):
         div_row30 = Button(description='phenotype:secretion', disabled=True, layout=divider_button_layout)
         div_row30.style.button_color = 'orange'
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.text18 = Text(value='interferon 1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text18]
         box358 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float332 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float332, units_btn]
         box359 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float333 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float333, units_btn]
         box360 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.text19 = Text(value='pro-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text19]
         box361 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float334 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float334, units_btn]
         box362 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float335 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float335, units_btn]
         box363 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.text20 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text20]
         box364 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float336 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float336, units_btn]
         box365 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float337 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float337, units_btn]
         box366 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.text21 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text21]
         box367 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float338 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float338, units_btn]
         box368 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float339 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float339, units_btn]
         box369 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.text22 = Text(value='anti-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text22]
         box370 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float340 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float340, units_btn]
         box371 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float341 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float341, units_btn]
         box372 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.text23 = Text(value='collagen', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text23]
         box373 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float342 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float342, units_btn]
         box374 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float343 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float343, units_btn]
         box375 = Box(children=row, layout=box_layout)
         #  ------------------------- 
@@ -3574,522 +3574,522 @@ class CellTypesTab(object):
         div_row32 = Button(description='Custom Data',disabled=True, layout=divider_button_layout)
         div_row32.style.button_color = 'cyan'
         name_btn = Button(description='virion', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float344 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='virions', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='endocytosed virions', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float344, units_btn, description_btn] 
 
         box376 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uncoated_virion', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float345 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='virions', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='uncoated endocytosed virions', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float345, units_btn, description_btn] 
 
         box377 = Box(children=row, layout=box_layout)
         name_btn = Button(description='viral_RNA', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float346 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='RNA', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='total (functional) viral RNA copies', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float346, units_btn, description_btn] 
 
         box378 = Box(children=row, layout=box_layout)
         name_btn = Button(description='viral_protein', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float347 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='protein', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='total assembled sets of viral protein', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float347, units_btn, description_btn] 
 
         box379 = Box(children=row, layout=box_layout)
         name_btn = Button(description='assembled_virion', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float348 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='total assembled virions', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float348, units_btn, description_btn] 
 
         box380 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_uncoating_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float349 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at which an internalized virion is uncoated', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float349, units_btn, description_btn] 
 
         box381 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uncoated_to_RNA_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float350 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate at which uncoated virion makes its mRNA available', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float350, units_btn, description_btn] 
 
         box382 = Box(children=row, layout=box_layout)
         name_btn = Button(description='protein_synthesis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float351 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at mRNA creates complete set of proteins', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float351, units_btn, description_btn] 
 
         box383 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_assembly_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float352 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate at which viral proteins are assembled into complete virion', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float352, units_btn, description_btn] 
 
         box384 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_export_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float353 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at which a virion is exported from a live cell', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float353, units_btn, description_btn] 
 
         box385 = Box(children=row, layout=box_layout)
         name_btn = Button(description='unbound_external_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float354 = FloatText(value='1000', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='initial number of unbound ACE2 receptors on surface', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float354, units_btn, description_btn] 
 
         box386 = Box(children=row, layout=box_layout)
         name_btn = Button(description='bound_external_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float355 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='initial number of bound ACE2 receptors on surface', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float355, units_btn, description_btn] 
 
         box387 = Box(children=row, layout=box_layout)
         name_btn = Button(description='unbound_internal_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float356 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='initial number of internalized unbound ACE2 receptors', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float356, units_btn, description_btn] 
 
         box388 = Box(children=row, layout=box_layout)
         name_btn = Button(description='bound_internal_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float357 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='initial number of internalized bound ACE2 receptors', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float357, units_btn, description_btn] 
 
         box389 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_binding_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float358 = FloatText(value='0.001', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='ACE2 receptor-virus binding rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float358, units_btn, description_btn] 
 
         box390 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_endocytosis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float359 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='ACE2 receptor-virus endocytosis rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float359, units_btn, description_btn] 
 
         box391 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_cargo_release_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float360 = FloatText(value='0.001', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='ACE2 receptor-virus cargo release rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float360, units_btn, description_btn] 
 
         box392 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_recycling_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float361 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='ACE2 receptor recycling rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float361, units_btn, description_btn] 
 
         box393 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_infected_apoptosis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float362 = FloatText(value='0.001', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='maximum rate of cell apoptosis due to viral infection', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float362, units_btn, description_btn] 
 
         box394 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_apoptosis_half_max', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float363 = FloatText(value='250', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='virion', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='viral load at which cells reach half max apoptosis rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float363, units_btn, description_btn] 
 
         box395 = Box(children=row, layout=box_layout)
         name_btn = Button(description='apoptosis_hill_power', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float364 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='none', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Hill power for viral load apoptosis response', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float364, units_btn, description_btn] 
 
         box396 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virus_fraction_released_at_death', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float365 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='none', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='fraction of internal virus released at cell death', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float365, units_btn, description_btn] 
 
         box397 = Box(children=row, layout=box_layout)
         name_btn = Button(description='infected_cell_chemokine_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float366 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='max rate that infected cells secrete chemokine', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float366, units_btn, description_btn] 
 
         box398 = Box(children=row, layout=box_layout)
         name_btn = Button(description='debris_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float367 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate that dead cells release debris', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float367, units_btn, description_btn] 
 
         box399 = Box(children=row, layout=box_layout)
         name_btn = Button(description='infected_cell_chemokine_secretion_activated', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float368 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='none', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='used internally to track activation of chemokine secretion', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float368, units_btn, description_btn] 
 
         box400 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_secretion_rate_via_infection', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float369 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='Type-1 interferon secretion rate for infected cells', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float369, units_btn, description_btn] 
 
         box401 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_interferon_secretion_rate_via_paracrine', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float370 = FloatText(value='0.5', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Type-1 interferon secretion rate after activation by Type-1 interferon', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float370, units_btn, description_btn] 
 
         box402 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_max_response_threshold', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float371 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='Interferon response scales linearly until Int-1 exceeds this threshold', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float371, units_btn, description_btn] 
 
         box403 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_activation', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float372 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Current interferon signaling activation state (between 0 and 1)', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float372, units_btn, description_btn] 
 
         box404 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_max_virus_inhibition', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float373 = FloatText(value='0.9', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='At max interferon activation, max inhibition of viral replication (between 0 and 1)', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float373, units_btn, description_btn] 
 
         box405 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_viral_RNA_threshold', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float374 = FloatText(value='2', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='infected cell interferon secretion saturates at this viral RNA level', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float374, units_btn, description_btn] 
 
         box406 = Box(children=row, layout=box_layout)
         name_btn = Button(description='TCell_contact_time', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float375 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='tracks total contact time with CD8 T cells', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float375, units_btn, description_btn] 
 
         box407 = Box(children=row, layout=box_layout)
         name_btn = Button(description='cell_attachment_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float376 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='the rate at which the cell attaches to cells in contact', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float376, units_btn, description_btn] 
 
         box408 = Box(children=row, layout=box_layout)
         name_btn = Button(description='cell_attachment_lifetime', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float377 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='the mean duration of a cell-cell attachment', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float377, units_btn, description_btn] 
 
         box409 = Box(children=row, layout=box_layout)
         name_btn = Button(description='TCell_contact_death_threshold', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float378 = FloatText(value='50', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='threshold CD8 T cell contact time to trigger apoptosis', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float378, units_btn, description_btn] 
 
         box410 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_attachment_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float379 = FloatText(value='15', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='micron', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float379, units_btn, description_btn] 
 
         box411 = Box(children=row, layout=box_layout)
         name_btn = Button(description='elastic_attachment_coefficient', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float380 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='elastic coefficient for cell-cell attachment', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float380, units_btn, description_btn] 
 
         box412 = Box(children=row, layout=box_layout)
         name_btn = Button(description='time_to_next_phagocytosis', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float381 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='time it takes for the apoptotic material to be phagocytosed', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float381, units_btn, description_btn] 
 
         box413 = Box(children=row, layout=box_layout)
         name_btn = Button(description='material_internalisation_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float382 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float382, units_btn, description_btn] 
 
         box414 = Box(children=row, layout=box_layout)
         name_btn = Button(description='threshold_macrophage_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float383 = FloatText(value='6500', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='micron', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float383, units_btn, description_btn] 
 
         box415 = Box(children=row, layout=box_layout)
         name_btn = Button(description='threshold_neutrophil_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float384 = FloatText(value='1581', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='micron', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float384, units_btn, description_btn] 
 
         box416 = Box(children=row, layout=box_layout)
         name_btn = Button(description='exhausted_macrophage_death_rat', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float385 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float385, units_btn, description_btn] 
 
         box417 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ability_to_phagocytose_infected_cell', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float386 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Boolean for whether macrophages can phagocytose infected cells', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float386, units_btn, description_btn] 
 
         box418 = Box(children=row, layout=box_layout)
         name_btn = Button(description='time_of_DC_departure', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float387 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='Time DC leaves tissue after activation', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float387, units_btn, description_btn] 
 
         box419 = Box(children=row, layout=box_layout)
         name_btn = Button(description='phagocytosis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float388 = FloatText(value='0.167', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float388, units_btn, description_btn] 
 
         box420 = Box(children=row, layout=box_layout)
         name_btn = Button(description='sensitivity_to_debris_chemotaxis', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float389 = FloatText(value='1.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='relative sensitivity to debris in chemotaxis', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float389, units_btn, description_btn] 
 
         box421 = Box(children=row, layout=box_layout)
         name_btn = Button(description='sensitivity_to_chemokine_chemotaxis', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float390 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='relative sensitivity to chemokine in chemotaxis', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float390, units_btn, description_btn] 
 
         box422 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_speed', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float391 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='speed after activation', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float391, units_btn, description_btn] 
 
         box423 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_cytokine_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float392 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate of secreting pro-inflamatory cytokine after activation', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float392, units_btn, description_btn] 
 
         box424 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_immune_cell', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float393 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='used internally to track activation state', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float393, units_btn, description_btn] 
 
         box425 = Box(children=row, layout=box_layout)
         name_btn = Button(description='antiinflammatory_cytokine_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float394 = FloatText(value='15', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='secretion rate of anti-inflammatory from infected epithelium cell', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float394, units_btn, description_btn] 
 
         box426 = Box(children=row, layout=box_layout)
         name_btn = Button(description='collagen_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float395 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='secretion rate of collagen from fibroblast', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float395, units_btn, description_btn] 
 
         box427 = Box(children=row, layout=box_layout)
@@ -5180,34 +5180,34 @@ class CellTypesTab(object):
         div_row41 = Button(description='phenotype:cycle (model: flow_cytometry_separated_cycle_model; code=6)', disabled=True, layout=divider_button_layout)
         div_row41.style.button_color = 'orange'
         name_btn = Button(description='Phase 0 -> Phase 1 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float495 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float495, units_btn, ]
         box535 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='Phase 1 -> Phase 2 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float496 = FloatText(value='0.00208333', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float496, units_btn, ]
         box536 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='Phase 2 -> Phase 3 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float497 = FloatText(value='0.00416667', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float497, units_btn, ]
         box537 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='Phase 3 -> Phase 0 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float498 = FloatText(value='0.0166667', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float498, units_btn, ]
         box538 = Box(children=row, layout=box_layout)
 
@@ -5217,116 +5217,116 @@ class CellTypesTab(object):
         death_model1 = Button(description='model: apoptosis', disabled=True, layout={'width':'30%'})
         death_model1.style.button_color = '#ffde6b'
         name_btn = Button(description='death rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float499 = FloatText(value='8.9e-4', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float499, units_btn, ]
         box539 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='unlysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float500 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float500, units_btn, ]
         box540 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='lysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float501 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float501, units_btn, ]
         box541 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cytoplasmic_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float502 = FloatText(value='1.66667e-02', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float502, units_btn, ]
         box542 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float503 = FloatText(value='5.83333e-03', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float503, units_btn, ]
         box543 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcification_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float504 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float504, units_btn, ]
         box544 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_rupture_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float505 = FloatText(value='2.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float505, units_btn, ]
         box545 = Box(children=row, layout=box_layout)
 
         death_model2 = Button(description='model: necrosis', disabled=True, layout={'width':'30%'})
         death_model2.style.button_color = '#ffde6b'
         name_btn = Button(description='death rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float506 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float506, units_btn, ]
         box546 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='unlysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float507 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float507, units_btn, ]
         box547 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='lysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float508 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float508, units_btn, ]
         box548 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cytoplasmic_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float509 = FloatText(value='1.66667e-02', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float509, units_btn, ]
         box549 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float510 = FloatText(value='5.83333e-03', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float510, units_btn, ]
         box550 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcification_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float511 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float511, units_btn, ]
         box551 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_rupture_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float512 = FloatText(value='2.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float512, units_btn, ]
         box552 = Box(children=row, layout=box_layout)
 
@@ -5334,74 +5334,74 @@ class CellTypesTab(object):
         div_row43 = Button(description='phenotype:volume', disabled=True, layout=divider_button_layout)
         div_row43.style.button_color = 'orange'
         name_btn = Button(description='total', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float513 = FloatText(value='1767', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float513, units_btn, ]
         box553 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='fluid_fraction', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float514 = FloatText(value='0.75', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float514, units_btn, ]
         box554 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float515 = FloatText(value='176.7', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float515, units_btn, ]
         box555 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float516 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float516, units_btn, ]
         box556 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cytoplasmic_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float517 = FloatText(value='0.045', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float517, units_btn, ]
         box557 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float518 = FloatText(value='0.0055', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float518, units_btn, ]
         box558 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcified_fraction', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float519 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float519, units_btn, ]
         box559 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcification_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float520 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float520, units_btn, ]
         box560 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_rupture_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float521 = FloatText(value='2.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float521, units_btn, ]
         box561 = Box(children=row, layout=box_layout)
 
@@ -5409,44 +5409,44 @@ class CellTypesTab(object):
         div_row44 = Button(description='phenotype:mechanics', disabled=True, layout=divider_button_layout)
         div_row44.style.button_color = 'orange'
         name_btn = Button(description='cell_cell_adhesion_strength', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float522 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float522, units_btn, ]
         box562 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cell_cell_repulsion_strength', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float523 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float523, units_btn, ]
         box563 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_maximum_adhesion_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float524 = FloatText(value='1.25', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float524, units_btn, ]
         box564 = Box(children=row, layout=box_layout)
 
         self.bool25 = Checkbox(description='enabled', value=False,layout=name_button_layout)
         name_btn = Button(description='set_relative_equilibrium_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float525 = FloatText(value='1.8', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [self.bool25, name_btn, self.float525, units_btn, ]
         box565 = Box(children=row, layout=box_layout)
 
         self.bool26 = Checkbox(description='enabled', value=False,layout=name_button_layout)
         name_btn = Button(description='set_absolute_equilibrium_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float526 = FloatText(value='15.12', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [self.bool26, name_btn, self.float526, units_btn, ]
         box566 = Box(children=row, layout=box_layout)
 
@@ -5455,26 +5455,26 @@ class CellTypesTab(object):
         div_row45.style.button_color = 'orange'
 
         name_btn = Button(description='speed', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float527 = FloatText(value='2', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float527, units_btn]
         box567 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='persistence_time', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float528 = FloatText(value='5', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float528, units_btn]
         box568 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='migration_bias', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float529 = FloatText(value='0.7', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float529, units_btn]
         box569 = Box(children=row, layout=box_layout)
         self.bool27 = Checkbox(description='enabled', value=True,layout=name_button_layout)
@@ -5486,13 +5486,13 @@ class CellTypesTab(object):
         self.bool29 = Checkbox(description='enabled', value=False,layout=name_button_layout)
 
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.chemotaxis_substrate6 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.chemotaxis_substrate6]
         box570 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='direction', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.chemotaxis_direction6 = Text(value='1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.chemotaxis_direction6]
         box571 = Box(children=row, layout=box_layout)
@@ -5500,117 +5500,117 @@ class CellTypesTab(object):
         div_row46 = Button(description='phenotype:secretion', disabled=True, layout=divider_button_layout)
         div_row46.style.button_color = 'orange'
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.text30 = Text(value='interferon 1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text30]
         box572 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float530 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float530, units_btn]
         box573 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float531 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float531, units_btn]
         box574 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.text31 = Text(value='pro-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text31]
         box575 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float532 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float532, units_btn]
         box576 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float533 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float533, units_btn]
         box577 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.text32 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text32]
         box578 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float534 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float534, units_btn]
         box579 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float535 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float535, units_btn]
         box580 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.text33 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text33]
         box581 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float536 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float536, units_btn]
         box582 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float537 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float537, units_btn]
         box583 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.text34 = Text(value='anti-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text34]
         box584 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float538 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float538, units_btn]
         box585 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float539 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float539, units_btn]
         box586 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.text35 = Text(value='collagen', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text35]
         box587 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float540 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float540, units_btn]
         box588 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float541 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float541, units_btn]
         box589 = Box(children=row, layout=box_layout)
         #  ------------------------- 
@@ -5622,522 +5622,522 @@ class CellTypesTab(object):
         div_row48 = Button(description='Custom Data',disabled=True, layout=divider_button_layout)
         div_row48.style.button_color = 'cyan'
         name_btn = Button(description='virion', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float542 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='virions', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='endocytosed virions', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float542, units_btn, description_btn] 
 
         box590 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uncoated_virion', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float543 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='virions', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='uncoated endocytosed virions', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float543, units_btn, description_btn] 
 
         box591 = Box(children=row, layout=box_layout)
         name_btn = Button(description='viral_RNA', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float544 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='RNA', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='total (functional) viral RNA copies', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float544, units_btn, description_btn] 
 
         box592 = Box(children=row, layout=box_layout)
         name_btn = Button(description='viral_protein', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float545 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='protein', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='total assembled sets of viral protein', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float545, units_btn, description_btn] 
 
         box593 = Box(children=row, layout=box_layout)
         name_btn = Button(description='assembled_virion', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float546 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='total assembled virions', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float546, units_btn, description_btn] 
 
         box594 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_uncoating_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float547 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at which an internalized virion is uncoated', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float547, units_btn, description_btn] 
 
         box595 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uncoated_to_RNA_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float548 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate at which uncoated virion makes its mRNA available', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float548, units_btn, description_btn] 
 
         box596 = Box(children=row, layout=box_layout)
         name_btn = Button(description='protein_synthesis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float549 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at mRNA creates complete set of proteins', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float549, units_btn, description_btn] 
 
         box597 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_assembly_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float550 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate at which viral proteins are assembled into complete virion', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float550, units_btn, description_btn] 
 
         box598 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_export_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float551 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at which a virion is exported from a live cell', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float551, units_btn, description_btn] 
 
         box599 = Box(children=row, layout=box_layout)
         name_btn = Button(description='unbound_external_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float552 = FloatText(value='1000', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='initial number of unbound ACE2 receptors on surface', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float552, units_btn, description_btn] 
 
         box600 = Box(children=row, layout=box_layout)
         name_btn = Button(description='bound_external_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float553 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='initial number of bound ACE2 receptors on surface', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float553, units_btn, description_btn] 
 
         box601 = Box(children=row, layout=box_layout)
         name_btn = Button(description='unbound_internal_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float554 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='initial number of internalized unbound ACE2 receptors', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float554, units_btn, description_btn] 
 
         box602 = Box(children=row, layout=box_layout)
         name_btn = Button(description='bound_internal_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float555 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='initial number of internalized bound ACE2 receptors', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float555, units_btn, description_btn] 
 
         box603 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_binding_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float556 = FloatText(value='0.001', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='ACE2 receptor-virus binding rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float556, units_btn, description_btn] 
 
         box604 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_endocytosis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float557 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='ACE2 receptor-virus endocytosis rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float557, units_btn, description_btn] 
 
         box605 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_cargo_release_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float558 = FloatText(value='0.001', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='ACE2 receptor-virus cargo release rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float558, units_btn, description_btn] 
 
         box606 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_recycling_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float559 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='ACE2 receptor recycling rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float559, units_btn, description_btn] 
 
         box607 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_infected_apoptosis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float560 = FloatText(value='0.001', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='maximum rate of cell apoptosis due to viral infection', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float560, units_btn, description_btn] 
 
         box608 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_apoptosis_half_max', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float561 = FloatText(value='250', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='virion', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='viral load at which cells reach half max apoptosis rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float561, units_btn, description_btn] 
 
         box609 = Box(children=row, layout=box_layout)
         name_btn = Button(description='apoptosis_hill_power', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float562 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='none', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Hill power for viral load apoptosis response', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float562, units_btn, description_btn] 
 
         box610 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virus_fraction_released_at_death', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float563 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='none', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='fraction of internal virus released at cell death', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float563, units_btn, description_btn] 
 
         box611 = Box(children=row, layout=box_layout)
         name_btn = Button(description='infected_cell_chemokine_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float564 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='max rate that infected cells secrete chemokine', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float564, units_btn, description_btn] 
 
         box612 = Box(children=row, layout=box_layout)
         name_btn = Button(description='debris_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float565 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate that dead cells release debris', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float565, units_btn, description_btn] 
 
         box613 = Box(children=row, layout=box_layout)
         name_btn = Button(description='infected_cell_chemokine_secretion_activated', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float566 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='none', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='used internally to track activation of chemokine secretion', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float566, units_btn, description_btn] 
 
         box614 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_secretion_rate_via_infection', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float567 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='Type-1 interferon secretion rate for infected cells', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float567, units_btn, description_btn] 
 
         box615 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_interferon_secretion_rate_via_paracrine', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float568 = FloatText(value='0.5', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Type-1 interferon secretion rate after activation by Type-1 interferon', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float568, units_btn, description_btn] 
 
         box616 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_max_response_threshold', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float569 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='Interferon response scales linearly until Int-1 exceeds this threshold', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float569, units_btn, description_btn] 
 
         box617 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_activation', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float570 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Current interferon signaling activation state (between 0 and 1)', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float570, units_btn, description_btn] 
 
         box618 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_max_virus_inhibition', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float571 = FloatText(value='0.9', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='At max interferon activation, max inhibition of viral replication (between 0 and 1)', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float571, units_btn, description_btn] 
 
         box619 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_viral_RNA_threshold', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float572 = FloatText(value='2', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='infected cell interferon secretion saturates at this viral RNA level', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float572, units_btn, description_btn] 
 
         box620 = Box(children=row, layout=box_layout)
         name_btn = Button(description='TCell_contact_time', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float573 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='tracks total contact time with CD8 T cells', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float573, units_btn, description_btn] 
 
         box621 = Box(children=row, layout=box_layout)
         name_btn = Button(description='cell_attachment_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float574 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='the rate at which the cell attaches to cells in contact', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float574, units_btn, description_btn] 
 
         box622 = Box(children=row, layout=box_layout)
         name_btn = Button(description='cell_attachment_lifetime', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float575 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='the mean duration of a cell-cell attachment', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float575, units_btn, description_btn] 
 
         box623 = Box(children=row, layout=box_layout)
         name_btn = Button(description='TCell_contact_death_threshold', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float576 = FloatText(value='50', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='threshold CD8 T cell contact time to trigger apoptosis', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float576, units_btn, description_btn] 
 
         box624 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_attachment_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float577 = FloatText(value='15', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='micron', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float577, units_btn, description_btn] 
 
         box625 = Box(children=row, layout=box_layout)
         name_btn = Button(description='elastic_attachment_coefficient', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float578 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='elastic coefficient for cell-cell attachment', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float578, units_btn, description_btn] 
 
         box626 = Box(children=row, layout=box_layout)
         name_btn = Button(description='time_to_next_phagocytosis', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float579 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='time it takes for the apoptotic material to be phagocytosed', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float579, units_btn, description_btn] 
 
         box627 = Box(children=row, layout=box_layout)
         name_btn = Button(description='material_internalisation_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float580 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float580, units_btn, description_btn] 
 
         box628 = Box(children=row, layout=box_layout)
         name_btn = Button(description='threshold_macrophage_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float581 = FloatText(value='6500', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='micron', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float581, units_btn, description_btn] 
 
         box629 = Box(children=row, layout=box_layout)
         name_btn = Button(description='threshold_neutrophil_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float582 = FloatText(value='1581', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='micron', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float582, units_btn, description_btn] 
 
         box630 = Box(children=row, layout=box_layout)
         name_btn = Button(description='exhausted_macrophage_death_rat', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float583 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float583, units_btn, description_btn] 
 
         box631 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ability_to_phagocytose_infected_cell', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float584 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Boolean for whether macrophages can phagocytose infected cells', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float584, units_btn, description_btn] 
 
         box632 = Box(children=row, layout=box_layout)
         name_btn = Button(description='time_of_DC_departure', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float585 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='Time DC leaves tissue after activation', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float585, units_btn, description_btn] 
 
         box633 = Box(children=row, layout=box_layout)
         name_btn = Button(description='phagocytosis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float586 = FloatText(value='0.167', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float586, units_btn, description_btn] 
 
         box634 = Box(children=row, layout=box_layout)
         name_btn = Button(description='sensitivity_to_debris_chemotaxis', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float587 = FloatText(value='1.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='relative sensitivity to debris in chemotaxis', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float587, units_btn, description_btn] 
 
         box635 = Box(children=row, layout=box_layout)
         name_btn = Button(description='sensitivity_to_chemokine_chemotaxis', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float588 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='relative sensitivity to chemokine in chemotaxis', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float588, units_btn, description_btn] 
 
         box636 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_speed', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float589 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='speed after activation', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float589, units_btn, description_btn] 
 
         box637 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_cytokine_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float590 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate of secreting pro-inflamatory cytokine after activation', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float590, units_btn, description_btn] 
 
         box638 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_immune_cell', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float591 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='used internally to track activation state', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float591, units_btn, description_btn] 
 
         box639 = Box(children=row, layout=box_layout)
         name_btn = Button(description='antiinflammatory_cytokine_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float592 = FloatText(value='15', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='secretion rate of anti-inflammatory from infected epithelium cell', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float592, units_btn, description_btn] 
 
         box640 = Box(children=row, layout=box_layout)
         name_btn = Button(description='collagen_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float593 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='secretion rate of collagen from fibroblast', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float593, units_btn, description_btn] 
 
         box641 = Box(children=row, layout=box_layout)
@@ -7228,34 +7228,34 @@ class CellTypesTab(object):
         div_row57 = Button(description='phenotype:cycle (model: flow_cytometry_separated_cycle_model; code=6)', disabled=True, layout=divider_button_layout)
         div_row57.style.button_color = 'orange'
         name_btn = Button(description='Phase 0 -> Phase 1 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float693 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float693, units_btn, ]
         box749 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='Phase 1 -> Phase 2 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float694 = FloatText(value='0.00208333', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float694, units_btn, ]
         box750 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='Phase 2 -> Phase 3 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float695 = FloatText(value='0.00416667', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float695, units_btn, ]
         box751 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='Phase 3 -> Phase 0 transition rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float696 = FloatText(value='0.0166667', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float696, units_btn, ]
         box752 = Box(children=row, layout=box_layout)
 
@@ -7265,116 +7265,116 @@ class CellTypesTab(object):
         death_model1 = Button(description='model: apoptosis', disabled=True, layout={'width':'30%'})
         death_model1.style.button_color = '#ffde6b'
         name_btn = Button(description='death rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float697 = FloatText(value='2.8e-4', step='1e-05', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float697, units_btn, ]
         box753 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='unlysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float698 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float698, units_btn, ]
         box754 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='lysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float699 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float699, units_btn, ]
         box755 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cytoplasmic_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float700 = FloatText(value='1.66667e-02', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float700, units_btn, ]
         box756 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float701 = FloatText(value='5.83333e-03', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float701, units_btn, ]
         box757 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcification_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float702 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float702, units_btn, ]
         box758 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_rupture_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float703 = FloatText(value='2.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float703, units_btn, ]
         box759 = Box(children=row, layout=box_layout)
 
         death_model2 = Button(description='model: necrosis', disabled=True, layout={'width':'30%'})
         death_model2.style.button_color = '#ffde6b'
         name_btn = Button(description='death rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float704 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float704, units_btn, ]
         box760 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='unlysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float705 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float705, units_btn, ]
         box761 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='lysed_fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float706 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float706, units_btn, ]
         box762 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cytoplasmic_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float707 = FloatText(value='1.66667e-02', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float707, units_btn, ]
         box763 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float708 = FloatText(value='5.83333e-03', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float708, units_btn, ]
         box764 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcification_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float709 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float709, units_btn, ]
         box765 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_rupture_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float710 = FloatText(value='2.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float710, units_btn, ]
         box766 = Box(children=row, layout=box_layout)
 
@@ -7382,74 +7382,74 @@ class CellTypesTab(object):
         div_row59 = Button(description='phenotype:volume', disabled=True, layout=divider_button_layout)
         div_row59.style.button_color = 'orange'
         name_btn = Button(description='total', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float711 = FloatText(value='2494', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float711, units_btn, ]
         box767 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='fluid_fraction', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float712 = FloatText(value='0.75', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float712, units_btn, ]
         box768 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float713 = FloatText(value='540', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float713, units_btn, ]
         box769 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='fluid_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float714 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float714, units_btn, ]
         box770 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cytoplasmic_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float715 = FloatText(value='0.0045', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float715, units_btn, ]
         box771 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='nuclear_biomass_change_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float716 = FloatText(value='0.0055', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float716, units_btn, ]
         box772 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcified_fraction', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float717 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float717, units_btn, ]
         box773 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='calcification_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float718 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float718, units_btn, ]
         box774 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_rupture_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float719 = FloatText(value='2.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float719, units_btn, ]
         box775 = Box(children=row, layout=box_layout)
 
@@ -7457,44 +7457,44 @@ class CellTypesTab(object):
         div_row60 = Button(description='phenotype:mechanics', disabled=True, layout=divider_button_layout)
         div_row60.style.button_color = 'orange'
         name_btn = Button(description='cell_cell_adhesion_strength', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float720 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float720, units_btn, ]
         box776 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='cell_cell_repulsion_strength', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float721 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float721, units_btn, ]
         box777 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='relative_maximum_adhesion_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float722 = FloatText(value='1.25', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float722, units_btn, ]
         box778 = Box(children=row, layout=box_layout)
 
         self.bool35 = Checkbox(description='enabled', value=False,layout=name_button_layout)
         name_btn = Button(description='set_relative_equilibrium_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float723 = FloatText(value='1.8', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [self.bool35, name_btn, self.float723, units_btn, ]
         box779 = Box(children=row, layout=box_layout)
 
         self.bool36 = Checkbox(description='enabled', value=False,layout=name_button_layout)
         name_btn = Button(description='set_absolute_equilibrium_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float724 = FloatText(value='15.12', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [self.bool36, name_btn, self.float724, units_btn, ]
         box780 = Box(children=row, layout=box_layout)
 
@@ -7503,26 +7503,26 @@ class CellTypesTab(object):
         div_row61.style.button_color = 'orange'
 
         name_btn = Button(description='speed', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float725 = FloatText(value='4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float725, units_btn]
         box781 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='persistence_time', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float726 = FloatText(value='5', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float726, units_btn]
         box782 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='migration_bias', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float727 = FloatText(value='0.70', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float727, units_btn]
         box783 = Box(children=row, layout=box_layout)
         self.bool37 = Checkbox(description='enabled', value=True,layout=name_button_layout)
@@ -7534,13 +7534,13 @@ class CellTypesTab(object):
         self.bool39 = Checkbox(description='enabled', value=False,layout=name_button_layout)
 
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.chemotaxis_substrate8 = Text(value='anti-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.chemotaxis_substrate8]
         box784 = Box(children=row, layout=box_layout)
 
         name_btn = Button(description='direction', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.chemotaxis_direction8 = Text(value='1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.chemotaxis_direction8]
         box785 = Box(children=row, layout=box_layout)
@@ -7548,117 +7548,117 @@ class CellTypesTab(object):
         div_row62 = Button(description='phenotype:secretion', disabled=True, layout=divider_button_layout)
         div_row62.style.button_color = 'orange'
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.text42 = Text(value='interferon 1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text42]
         box786 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float728 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float728, units_btn]
         box787 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float729 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float729, units_btn]
         box788 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.text43 = Text(value='pro-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text43]
         box789 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float730 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float730, units_btn]
         box790 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float731 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float731, units_btn]
         box791 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.text44 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text44]
         box792 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float732 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float732, units_btn]
         box793 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float733 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float733, units_btn]
         box794 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.text45 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text45]
         box795 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float734 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float734, units_btn]
         box796 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float735 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float735, units_btn]
         box797 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.text46 = Text(value='anti-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text46]
         box798 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float736 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float736, units_btn]
         box799 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float737 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float737, units_btn]
         box800 = Box(children=row, layout=box_layout)
         name_btn = Button(description='substrate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.text47 = Text(value='collagen', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text47]
         box801 = Box(children=row, layout=box_layout)
         name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float738 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         row = [name_btn, self.float738, units_btn]
         box802 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float739 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float739, units_btn]
         box803 = Box(children=row, layout=box_layout)
         #  ------------------------- 
@@ -7670,522 +7670,522 @@ class CellTypesTab(object):
         div_row64 = Button(description='Custom Data',disabled=True, layout=divider_button_layout)
         div_row64.style.button_color = 'cyan'
         name_btn = Button(description='virion', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float740 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='virions', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='endocytosed virions', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float740, units_btn, description_btn] 
 
         box804 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uncoated_virion', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float741 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='virions', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='uncoated endocytosed virions', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float741, units_btn, description_btn] 
 
         box805 = Box(children=row, layout=box_layout)
         name_btn = Button(description='viral_RNA', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float742 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='RNA', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='total (functional) viral RNA copies', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float742, units_btn, description_btn] 
 
         box806 = Box(children=row, layout=box_layout)
         name_btn = Button(description='viral_protein', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float743 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='protein', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='total assembled sets of viral protein', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float743, units_btn, description_btn] 
 
         box807 = Box(children=row, layout=box_layout)
         name_btn = Button(description='assembled_virion', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float744 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='total assembled virions', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float744, units_btn, description_btn] 
 
         box808 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_uncoating_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float745 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at which an internalized virion is uncoated', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float745, units_btn, description_btn] 
 
         box809 = Box(children=row, layout=box_layout)
         name_btn = Button(description='uncoated_to_RNA_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float746 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate at which uncoated virion makes its mRNA available', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float746, units_btn, description_btn] 
 
         box810 = Box(children=row, layout=box_layout)
         name_btn = Button(description='protein_synthesis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float747 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at mRNA creates complete set of proteins', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float747, units_btn, description_btn] 
 
         box811 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_assembly_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float748 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate at which viral proteins are assembled into complete virion', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float748, units_btn, description_btn] 
 
         box812 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virion_export_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float749 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate at which a virion is exported from a live cell', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float749, units_btn, description_btn] 
 
         box813 = Box(children=row, layout=box_layout)
         name_btn = Button(description='unbound_external_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float750 = FloatText(value='1000', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='initial number of unbound ACE2 receptors on surface', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float750, units_btn, description_btn] 
 
         box814 = Box(children=row, layout=box_layout)
         name_btn = Button(description='bound_external_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float751 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='initial number of bound ACE2 receptors on surface', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float751, units_btn, description_btn] 
 
         box815 = Box(children=row, layout=box_layout)
         name_btn = Button(description='unbound_internal_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float752 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='initial number of internalized unbound ACE2 receptors', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float752, units_btn, description_btn] 
 
         box816 = Box(children=row, layout=box_layout)
         name_btn = Button(description='bound_internal_ACE2', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float753 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='receptors', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='initial number of internalized bound ACE2 receptors', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float753, units_btn, description_btn] 
 
         box817 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_binding_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float754 = FloatText(value='0.001', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='ACE2 receptor-virus binding rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float754, units_btn, description_btn] 
 
         box818 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_endocytosis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float755 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='ACE2 receptor-virus endocytosis rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float755, units_btn, description_btn] 
 
         box819 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_cargo_release_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float756 = FloatText(value='0.001', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='ACE2 receptor-virus cargo release rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float756, units_btn, description_btn] 
 
         box820 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ACE2_recycling_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float757 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='ACE2 receptor recycling rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float757, units_btn, description_btn] 
 
         box821 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_infected_apoptosis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float758 = FloatText(value='0.001', step='0.0001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='maximum rate of cell apoptosis due to viral infection', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float758, units_btn, description_btn] 
 
         box822 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_apoptosis_half_max', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float759 = FloatText(value='250', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='virion', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='viral load at which cells reach half max apoptosis rate', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float759, units_btn, description_btn] 
 
         box823 = Box(children=row, layout=box_layout)
         name_btn = Button(description='apoptosis_hill_power', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float760 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='none', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Hill power for viral load apoptosis response', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float760, units_btn, description_btn] 
 
         box824 = Box(children=row, layout=box_layout)
         name_btn = Button(description='virus_fraction_released_at_death', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float761 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='none', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='fraction of internal virus released at cell death', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float761, units_btn, description_btn] 
 
         box825 = Box(children=row, layout=box_layout)
         name_btn = Button(description='infected_cell_chemokine_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float762 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='max rate that infected cells secrete chemokine', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float762, units_btn, description_btn] 
 
         box826 = Box(children=row, layout=box_layout)
         name_btn = Button(description='debris_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float763 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='rate that dead cells release debris', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float763, units_btn, description_btn] 
 
         box827 = Box(children=row, layout=box_layout)
         name_btn = Button(description='infected_cell_chemokine_secretion_activated', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float764 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='none', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='used internally to track activation of chemokine secretion', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float764, units_btn, description_btn] 
 
         box828 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_secretion_rate_via_infection', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float765 = FloatText(value='0.05', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='Type-1 interferon secretion rate for infected cells', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float765, units_btn, description_btn] 
 
         box829 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_interferon_secretion_rate_via_paracrine', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float766 = FloatText(value='0.5', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Type-1 interferon secretion rate after activation by Type-1 interferon', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float766, units_btn, description_btn] 
 
         box830 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_max_response_threshold', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float767 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='Interferon response scales linearly until Int-1 exceeds this threshold', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float767, units_btn, description_btn] 
 
         box831 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_activation', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float768 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Current interferon signaling activation state (between 0 and 1)', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float768, units_btn, description_btn] 
 
         box832 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_max_virus_inhibition', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float769 = FloatText(value='0.9', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='At max interferon activation, max inhibition of viral replication (between 0 and 1)', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float769, units_btn, description_btn] 
 
         box833 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_viral_RNA_threshold', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float770 = FloatText(value='2', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='infected cell interferon secretion saturates at this viral RNA level', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float770, units_btn, description_btn] 
 
         box834 = Box(children=row, layout=box_layout)
         name_btn = Button(description='TCell_contact_time', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float771 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='tracks total contact time with CD8 T cells', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float771, units_btn, description_btn] 
 
         box835 = Box(children=row, layout=box_layout)
         name_btn = Button(description='cell_attachment_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float772 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='the rate at which the cell attaches to cells in contact', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float772, units_btn, description_btn] 
 
         box836 = Box(children=row, layout=box_layout)
         name_btn = Button(description='cell_attachment_lifetime', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float773 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='the mean duration of a cell-cell attachment', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float773, units_btn, description_btn] 
 
         box837 = Box(children=row, layout=box_layout)
         name_btn = Button(description='TCell_contact_death_threshold', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float774 = FloatText(value='50', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='threshold CD8 T cell contact time to trigger apoptosis', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float774, units_btn, description_btn] 
 
         box838 = Box(children=row, layout=box_layout)
         name_btn = Button(description='max_attachment_distance', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float775 = FloatText(value='15', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='micron', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float775, units_btn, description_btn] 
 
         box839 = Box(children=row, layout=box_layout)
         name_btn = Button(description='elastic_attachment_coefficient', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float776 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='elastic coefficient for cell-cell attachment', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float776, units_btn, description_btn] 
 
         box840 = Box(children=row, layout=box_layout)
         name_btn = Button(description='time_to_next_phagocytosis', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float777 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='time it takes for the apoptotic material to be phagocytosed', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float777, units_btn, description_btn] 
 
         box841 = Box(children=row, layout=box_layout)
         name_btn = Button(description='material_internalisation_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float778 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float778, units_btn, description_btn] 
 
         box842 = Box(children=row, layout=box_layout)
         name_btn = Button(description='threshold_macrophage_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float779 = FloatText(value='6500', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='micron', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float779, units_btn, description_btn] 
 
         box843 = Box(children=row, layout=box_layout)
         name_btn = Button(description='threshold_neutrophil_volume', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float780 = FloatText(value='1581', step='100', style=style, layout=widget_layout)
         units_btn = Button(description='micron', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float780, units_btn, description_btn] 
 
         box844 = Box(children=row, layout=box_layout)
         name_btn = Button(description='exhausted_macrophage_death_rat', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float781 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float781, units_btn, description_btn] 
 
         box845 = Box(children=row, layout=box_layout)
         name_btn = Button(description='ability_to_phagocytose_infected_cell', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float782 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='Boolean for whether macrophages can phagocytose infected cells', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float782, units_btn, description_btn] 
 
         box846 = Box(children=row, layout=box_layout)
         name_btn = Button(description='time_of_DC_departure', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float783 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='Time DC leaves tissue after activation', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float783, units_btn, description_btn] 
 
         box847 = Box(children=row, layout=box_layout)
         name_btn = Button(description='phagocytosis_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float784 = FloatText(value='0.167', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float784, units_btn, description_btn] 
 
         box848 = Box(children=row, layout=box_layout)
         name_btn = Button(description='sensitivity_to_debris_chemotaxis', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float785 = FloatText(value='1.0', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='relative sensitivity to debris in chemotaxis', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float785, units_btn, description_btn] 
 
         box849 = Box(children=row, layout=box_layout)
         name_btn = Button(description='sensitivity_to_chemokine_chemotaxis', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float786 = FloatText(value='10.0', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='relative sensitivity to chemokine in chemotaxis', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float786, units_btn, description_btn] 
 
         box850 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_speed', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float787 = FloatText(value='0.4', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='micron/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='speed after activation', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float787, units_btn, description_btn] 
 
         box851 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_cytokine_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float788 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='rate of secreting pro-inflamatory cytokine after activation', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float788, units_btn, description_btn] 
 
         box852 = Box(children=row, layout=box_layout)
         name_btn = Button(description='activated_immune_cell', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float789 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='used internally to track activation state', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float789, units_btn, description_btn] 
 
         box853 = Box(children=row, layout=box_layout)
         name_btn = Button(description='antiinflammatory_cytokine_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'lightgreen'
+        name_btn.style.button_color = 'tan'
         self.float790 = FloatText(value='15', step='1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'lightgreen'
+        units_btn.style.button_color = 'tan'
         description_btn = Button(description='secretion rate of anti-inflammatory from infected epithelium cell', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'lightgreen'
+        description_btn.style.button_color = 'tan'
         row = [name_btn, self.float790, units_btn, description_btn] 
 
         box854 = Box(children=row, layout=box_layout)
         name_btn = Button(description='collagen_secretion_rate', disabled=True, layout=name_button_layout)
-        name_btn.style.button_color = 'tan'
+        name_btn.style.button_color = 'lightgreen'
         self.float791 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
-        units_btn.style.button_color = 'tan'
+        units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='secretion rate of collagen from fibroblast', disabled=True, layout=desc_button_layout)
-        description_btn.style.button_color = 'tan'
+        description_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float791, units_btn, description_btn] 
 
         box855 = Box(children=row, layout=box_layout)
