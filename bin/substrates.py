@@ -668,7 +668,7 @@ class SubstrateTab(object):
         if (self.substrate_choice.value == None):
             return
 
-        self.tb_count += 1
+        # self.tb_count += 1
         # print('substrate_field_changed_cb(): tb_count=',self.tb_count,', options= ',self.substrate_choice.options)
 
         if self.tb_count == 25:  # originally checked == 5 (I don't remember why I did this)
