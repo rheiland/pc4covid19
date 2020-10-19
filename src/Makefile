@@ -3,12 +3,12 @@ PROGRAM_NAME := myproj
 
 osRelease = $(shell lsb_release -r | sed -e "s/Release:\W*//" -e "s/\..*//")
 ifeq ($(osRelease),7)
-   hostName = $(shell hostname | sed -e "s:-.*::")$(osRelease)
+   hostName = $(shell hostname | sed -e "s:[-_].*::")$(osRelease)
 else
-   hostName = $(shell hostname | sed -e "s:-.*::")
+   hostName = $(shell hostname | sed -e "s:[-_].*::")
 endif
 
-ifeq ($(hostName),nanoHUB)
+ifeq ($(hostName),nanohub7)
    BIN = ../bin
 	MODINIT = . /etc/environ.sh
    MODCMD = use -e -r anaconda3-5.1
