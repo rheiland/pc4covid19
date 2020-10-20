@@ -1,4 +1,9 @@
-# substrates  Out:Plots
+# substrates.py - code for the 'Out: Plots' tab of the GUI.
+#
+# Contains visualization for: Cells and substrates, possibly overlaid (on the left); Extra analysis (2D line plots; on the right)
+#
+# Author: Randy Heiland, with contributions from many students and collaborators
+#
 
 import os, math
 from pathlib import Path
@@ -134,6 +139,7 @@ class SubstrateTab(object):
         self.yval7 = np.empty([1])
         self.yval8 = np.empty([1])
         self.yval9 = np.empty([1])
+        self.yval10 = np.empty([1])
         self.tname = "time"
         self.yname = 'Y'
         # self.num_2D_plots = 1
@@ -224,7 +230,7 @@ class SubstrateTab(object):
 
         #--------------------------
         self.custom_data_toggle = Checkbox(
-            description='2D plot',
+            description='Extra analysis',
             disabled=True,
             value=False,
             style = {'description_width': 'initial'},
@@ -252,7 +258,7 @@ class SubstrateTab(object):
 
 
         self.custom_data_choice = RadioButtons(
-            options=['live,infected,dead', 'Mac,Neut,CD8,DC,CD4,Fib'],
+            options=['live,infected,dead', 'Mac,Neut,CD8,DC,CD4,Fib', 'viral load'],
             value='live,infected,dead', 
 #           layout={'width': 'max-content'}, # If the items' names are long
             disabled=True
@@ -265,7 +271,8 @@ class SubstrateTab(object):
         self.custom_data_choice.observe(custom_data_choice_cb)
 
 
-        self.custom_data_wait = Label('')
+        # self.custom_data_wait = Label('')
+        self.custom_data_wait = Label('Will be available after simulation completes.')
         # self.custom_data_wait = Label('Wait for 1st time processing...')  
 
         custom_data_hbox = HBox([custom_data_vbox1, VBox([self.custom_data_choice, self.custom_data_wait])])
@@ -465,8 +472,10 @@ class SubstrateTab(object):
             self.yval7 = np.empty([1])
             self.yval8 = np.empty([1])
             self.yval9 = np.empty([1])
+            self.yval10 = np.empty([1])
             self.custom_data_set1 = False  # live, infected, dead
             self.custom_data_set2 = False  # Mac, Neut, CD8, etc
+            self.custom_data_set3 = False  # viral load
             # self.custom_data_toggle.value = False
         # self.custom_data_choice.disabled = bool_val
         # self.custom_data_update_button.disabled = bool_val
@@ -486,6 +495,7 @@ class SubstrateTab(object):
 
         self.custom_data_set1 = False  # live, infected, dead
         self.custom_data_set2 = False  # mac, neut, cd8
+        self.custom_data_set3 = False  # viral load
 
         xml_root = tree.getroot()
         self.field_min_max = {}
@@ -734,6 +744,8 @@ class SubstrateTab(object):
             return
         elif ('Mac' in self.custom_data_choice.value) and self.custom_data_set2:
             return
+        elif ('load' in self.custom_data_choice.value) and self.custom_data_set3:
+            return
 
         self.custom_data_wait.value = 'Wait for 1st time processing...'
         cwd = os.getcwd()
@@ -837,6 +849,14 @@ class SubstrateTab(object):
 
                 self.custom_data_set2 = True 
 
+        elif 'load' in self.custom_data_choice.value:  # viral load
+            if (self.custom_data_set3 == False):
+                # compute viral load in epi cells
+                # self.yval10 = np.array( [np.where(mcds[idx].data['discrete_cells']['cell_type'] == 1) & np.floor(mcds[idx].data['discrete_cells']['assembled_virion']).sum()  for idx in range(ds_count)] )
+                self.yval10 = np.array( [np.floor(mcds[idx].data['discrete_cells']['assembled_virion']).sum()  for idx in range(ds_count)] ).astype(int)
+
+                self.custom_data_set3 = True 
+
         self.custom_data_wait.value = ''
         self.i_plot.update()
 
@@ -880,6 +900,9 @@ class SubstrateTab(object):
             # print('plot_cell_custom_data(): yval7=',self.yval7)
             p5 = self.ax1.plot(self.xval, self.yval8, label='CD4', linewidth=3, color='orange')
             p6 = self.ax1.plot(self.xval, self.yval9, linestyle='dashed',  label='Fib', linewidth=3, color='orange') # dashes=[6,2],
+            # print('plot_cell_custom_data(): yval9=',self.yval9)
+        elif 'load' in self.custom_data_choice.value:  
+            p7 = self.ax1.plot(self.xval, self.yval10, linewidth=3)
 
         # print('xval=',xval)  # [   0.   60.  120. ...
         # print('yval=',yval)  # [2793 2793 2793 ...
@@ -930,15 +953,33 @@ class SubstrateTab(object):
                 self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval8[self.substrate_frame]+yoff, str(self.yval8[self.substrate_frame]), fontsize=fsize)
                 self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval9[self.substrate_frame]+yoff, str(self.yval9[self.substrate_frame]), fontsize=fsize)
 
+            elif 'load' in self.custom_data_choice.value:  # viral load
+                self.ax1.plot(self.xval[self.substrate_frame], self.yval10[self.substrate_frame], p7[-1].get_color(), marker='o', markersize=12)
+
+                ymax= int(self.yval10.max())
+                yoff= ymax * .01   # should be a % of axes range
+                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval10[self.substrate_frame]+yoff, str(self.yval10[self.substrate_frame]), fontsize=fsize)
+
+            #     ymax= int(self.yval10.max())  # should be a % of axes range
+            #     yoff= ymax * .01   # should be a % of axes range
+            #     self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval10[self.substrate_frame]+yoff, str(self.yval10[self.substrate_frame]), fontsize=fsize)
 
 
-        self.ax1.legend(loc='center left', prop={'size': 15})
+        if 'load' in self.custom_data_choice.value:  # no legend for viral load
+            pass
+        else:  
+            self.ax1.legend(loc='center left', prop={'size': 15})
+
         if xname == self.tname:
             self.ax1.set_xlabel('time (min)', fontsize=self.axis_label_fontsize)
         else:
             self.ax1.set_xlabel('total ' * (xname != self.tname) + xname)
 #        self.ax1.set_ylabel('total ' + (yname_list[0] if len(yname_list) == 1 else ', '.join(yname_list)))
-        self.ax1.set_ylabel('number of cells', fontsize=self.axis_label_fontsize)
+
+        if 'load' in self.custom_data_choice.value:  # viral load
+            self.ax1.set_ylabel('viral load', fontsize=self.axis_label_fontsize)
+        else:
+            self.ax1.set_ylabel('number of cells', fontsize=self.axis_label_fontsize)
 
         # p = self.ax1.plot(xval, yval, label=yname)
         # self.ax1.set_legend()
