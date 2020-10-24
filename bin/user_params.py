@@ -340,71 +340,92 @@ class UserTab(object):
           value='rosybrown',
           style=style, layout=widget_layout)
 
-        param_name40 = Button(description='CD8_Tcell_color', disabled=True, layout=name_button_layout)
+        param_name40 = Button(description='pyroptotic_epithelium_color', disabled=True, layout=name_button_layout)
         param_name40.style.button_color = 'tan'
+
+        self.pyroptotic_epithelium_color = Text(
+          value='darkorange',
+          style=style, layout=widget_layout)
+
+        param_name41 = Button(description='pyroptotic_bystander_epithelium_color', disabled=True, layout=name_button_layout)
+        param_name41.style.button_color = 'lightgreen'
+
+        self.pyroptotic_bystander_epithelium_color = Text(
+          value='red',
+          style=style, layout=widget_layout)
+
+        param_name42 = Button(description='vi_apoptotic_epithelium_color', disabled=True, layout=name_button_layout)
+        param_name42.style.button_color = 'tan'
+
+        self.vi_apoptotic_epithelium_color = Text(
+          value='forestgreen',
+          style=style, layout=widget_layout)
+
+        param_name43 = Button(description='CD8_Tcell_color', disabled=True, layout=name_button_layout)
+        param_name43.style.button_color = 'lightgreen'
 
         self.CD8_Tcell_color = Text(
           value='red',
           style=style, layout=widget_layout)
 
-        param_name41 = Button(description='CD4_Tcell_color', disabled=True, layout=name_button_layout)
-        param_name41.style.button_color = 'lightgreen'
+        param_name44 = Button(description='CD4_Tcell_color', disabled=True, layout=name_button_layout)
+        param_name44.style.button_color = 'tan'
 
         self.CD4_Tcell_color = Text(
           value='orange',
           style=style, layout=widget_layout)
 
-        param_name42 = Button(description='Macrophage_color', disabled=True, layout=name_button_layout)
-        param_name42.style.button_color = 'tan'
+        param_name45 = Button(description='Macrophage_color', disabled=True, layout=name_button_layout)
+        param_name45.style.button_color = 'lightgreen'
 
         self.Macrophage_color = Text(
           value='rgb(35,139,69)',
           style=style, layout=widget_layout)
 
-        param_name43 = Button(description='activated_macrophage_color', disabled=True, layout=name_button_layout)
-        param_name43.style.button_color = 'lightgreen'
+        param_name46 = Button(description='activated_macrophage_color', disabled=True, layout=name_button_layout)
+        param_name46.style.button_color = 'tan'
 
         self.activated_macrophage_color = Text(
           value='lime',
           style=style, layout=widget_layout)
 
-        param_name44 = Button(description='exhausted_macrophage_color', disabled=True, layout=name_button_layout)
-        param_name44.style.button_color = 'tan'
+        param_name47 = Button(description='exhausted_macrophage_color', disabled=True, layout=name_button_layout)
+        param_name47.style.button_color = 'lightgreen'
 
         self.exhausted_macrophage_color = Text(
           value='rgb(116,196,118)',
           style=style, layout=widget_layout)
 
-        param_name45 = Button(description='hyperactivated_macrophage_color', disabled=True, layout=name_button_layout)
-        param_name45.style.button_color = 'lightgreen'
+        param_name48 = Button(description='hyperactivated_macrophage_color', disabled=True, layout=name_button_layout)
+        param_name48.style.button_color = 'tan'
 
         self.hyperactivated_macrophage_color = Text(
           value='rgb(168,221,181)',
           style=style, layout=widget_layout)
 
-        param_name46 = Button(description='Neutrophil_color', disabled=True, layout=name_button_layout)
-        param_name46.style.button_color = 'tan'
+        param_name49 = Button(description='Neutrophil_color', disabled=True, layout=name_button_layout)
+        param_name49.style.button_color = 'lightgreen'
 
         self.Neutrophil_color = Text(
           value='cyan',
           style=style, layout=widget_layout)
 
-        param_name47 = Button(description='DC_color', disabled=True, layout=name_button_layout)
-        param_name47.style.button_color = 'lightgreen'
+        param_name50 = Button(description='DC_color', disabled=True, layout=name_button_layout)
+        param_name50.style.button_color = 'tan'
 
         self.DC_color = Text(
           value='rgb(129,15,124)',
           style=style, layout=widget_layout)
 
-        param_name48 = Button(description='activated_DC_color', disabled=True, layout=name_button_layout)
-        param_name48.style.button_color = 'tan'
+        param_name51 = Button(description='activated_DC_color', disabled=True, layout=name_button_layout)
+        param_name51.style.button_color = 'lightgreen'
 
         self.activated_DC_color = Text(
           value='deeppink',
           style=style, layout=widget_layout)
 
-        param_name49 = Button(description='fibroblast_color', disabled=True, layout=name_button_layout)
-        param_name49.style.button_color = 'lightgreen'
+        param_name52 = Button(description='fibroblast_color', disabled=True, layout=name_button_layout)
+        param_name52.style.button_color = 'tan'
 
         self.fibroblast_color = Text(
           value='orange',
@@ -514,6 +535,12 @@ class UserTab(object):
         units_button51.style.button_color = 'tan'
         units_button52 = Button(description='', disabled=True, layout=units_button_layout) 
         units_button52.style.button_color = 'lightgreen'
+        units_button53 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button53.style.button_color = 'tan'
+        units_button54 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button54.style.button_color = 'lightgreen'
+        units_button55 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button55.style.button_color = 'tan'
 
         desc_button1 = Button(description='' , tooltip='', disabled=True, layout=desc_button_layout) 
         desc_button1.style.button_color = 'lightgreen'
@@ -593,26 +620,32 @@ class UserTab(object):
         desc_button38.style.button_color = 'tan'
         desc_button39 = Button(description='apoptotic immune cell color' , tooltip='apoptotic immune cell color', disabled=True, layout=desc_button_layout) 
         desc_button39.style.button_color = 'lightgreen'
-        desc_button40 = Button(description='CD8 T cell color' , tooltip='CD8 T cell color', disabled=True, layout=desc_button_layout) 
+        desc_button40 = Button(description='pyroptotic epithelial cell color' , tooltip='pyroptotic epithelial cell color', disabled=True, layout=desc_button_layout) 
         desc_button40.style.button_color = 'tan'
-        desc_button41 = Button(description='CD8 T cell color' , tooltip='CD8 T cell color', disabled=True, layout=desc_button_layout) 
+        desc_button41 = Button(description='pyroptotic epithelial cell color' , tooltip='pyroptotic epithelial cell color', disabled=True, layout=desc_button_layout) 
         desc_button41.style.button_color = 'lightgreen'
-        desc_button42 = Button(description='macrophage color' , tooltip='macrophage color', disabled=True, layout=desc_button_layout) 
+        desc_button42 = Button(description='pyroptotic epithelial cell color' , tooltip='pyroptotic epithelial cell color', disabled=True, layout=desc_button_layout) 
         desc_button42.style.button_color = 'tan'
-        desc_button43 = Button(description='color of activated macrophage' , tooltip='color of activated macrophage', disabled=True, layout=desc_button_layout) 
+        desc_button43 = Button(description='CD8 T cell color' , tooltip='CD8 T cell color', disabled=True, layout=desc_button_layout) 
         desc_button43.style.button_color = 'lightgreen'
-        desc_button44 = Button(description='color of exhausted macrophage' , tooltip='color of exhausted macrophage', disabled=True, layout=desc_button_layout) 
+        desc_button44 = Button(description='CD8 T cell color' , tooltip='CD8 T cell color', disabled=True, layout=desc_button_layout) 
         desc_button44.style.button_color = 'tan'
-        desc_button45 = Button(description='color of hyperactivated macrophage' , tooltip='color of hyperactivated macrophage', disabled=True, layout=desc_button_layout) 
+        desc_button45 = Button(description='macrophage color' , tooltip='macrophage color', disabled=True, layout=desc_button_layout) 
         desc_button45.style.button_color = 'lightgreen'
-        desc_button46 = Button(description='neutrophil color' , tooltip='neutrophil color', disabled=True, layout=desc_button_layout) 
+        desc_button46 = Button(description='color of activated macrophage' , tooltip='color of activated macrophage', disabled=True, layout=desc_button_layout) 
         desc_button46.style.button_color = 'tan'
-        desc_button47 = Button(description='DC color' , tooltip='DC color', disabled=True, layout=desc_button_layout) 
+        desc_button47 = Button(description='color of exhausted macrophage' , tooltip='color of exhausted macrophage', disabled=True, layout=desc_button_layout) 
         desc_button47.style.button_color = 'lightgreen'
-        desc_button48 = Button(description='DC color' , tooltip='DC color', disabled=True, layout=desc_button_layout) 
+        desc_button48 = Button(description='color of hyperactivated macrophage' , tooltip='color of hyperactivated macrophage', disabled=True, layout=desc_button_layout) 
         desc_button48.style.button_color = 'tan'
-        desc_button49 = Button(description='fibroblast cell color' , tooltip='fibroblast cell color', disabled=True, layout=desc_button_layout) 
+        desc_button49 = Button(description='neutrophil color' , tooltip='neutrophil color', disabled=True, layout=desc_button_layout) 
         desc_button49.style.button_color = 'lightgreen'
+        desc_button50 = Button(description='DC color' , tooltip='DC color', disabled=True, layout=desc_button_layout) 
+        desc_button50.style.button_color = 'tan'
+        desc_button51 = Button(description='DC color' , tooltip='DC color', disabled=True, layout=desc_button_layout) 
+        desc_button51.style.button_color = 'lightgreen'
+        desc_button52 = Button(description='fibroblast cell color' , tooltip='fibroblast cell color', disabled=True, layout=desc_button_layout) 
+        desc_button52.style.button_color = 'tan'
 
         row1 = [param_name1, self.random_seed, units_button1, desc_button1] 
         row2 = [param_name2, self.immune_dt, units_button3, desc_button2] 
@@ -653,16 +686,19 @@ class UserTab(object):
         row37 = [param_name37, self.non_epithelial_opacity, units_button40, desc_button37] 
         row38 = [param_name38, self.apoptotic_epithelium_color, units_button41, desc_button38] 
         row39 = [param_name39, self.apoptotic_immune_color, units_button42, desc_button39] 
-        row40 = [param_name40, self.CD8_Tcell_color, units_button43, desc_button40] 
-        row41 = [param_name41, self.CD4_Tcell_color, units_button44, desc_button41] 
-        row42 = [param_name42, self.Macrophage_color, units_button45, desc_button42] 
-        row43 = [param_name43, self.activated_macrophage_color, units_button46, desc_button43] 
-        row44 = [param_name44, self.exhausted_macrophage_color, units_button47, desc_button44] 
-        row45 = [param_name45, self.hyperactivated_macrophage_color, units_button48, desc_button45] 
-        row46 = [param_name46, self.Neutrophil_color, units_button49, desc_button46] 
-        row47 = [param_name47, self.DC_color, units_button50, desc_button47] 
-        row48 = [param_name48, self.activated_DC_color, units_button51, desc_button48] 
-        row49 = [param_name49, self.fibroblast_color, units_button52, desc_button49] 
+        row40 = [param_name40, self.pyroptotic_epithelium_color, units_button43, desc_button40] 
+        row41 = [param_name41, self.pyroptotic_bystander_epithelium_color, units_button44, desc_button41] 
+        row42 = [param_name42, self.vi_apoptotic_epithelium_color, units_button45, desc_button42] 
+        row43 = [param_name43, self.CD8_Tcell_color, units_button46, desc_button43] 
+        row44 = [param_name44, self.CD4_Tcell_color, units_button47, desc_button44] 
+        row45 = [param_name45, self.Macrophage_color, units_button48, desc_button45] 
+        row46 = [param_name46, self.activated_macrophage_color, units_button49, desc_button46] 
+        row47 = [param_name47, self.exhausted_macrophage_color, units_button50, desc_button47] 
+        row48 = [param_name48, self.hyperactivated_macrophage_color, units_button51, desc_button48] 
+        row49 = [param_name49, self.Neutrophil_color, units_button52, desc_button49] 
+        row50 = [param_name50, self.DC_color, units_button53, desc_button50] 
+        row51 = [param_name51, self.activated_DC_color, units_button54, desc_button51] 
+        row52 = [param_name52, self.fibroblast_color, units_button55, desc_button52] 
 
         box_layout = Layout(display='flex', flex_flow='row', align_items='stretch', width='100%')
         box1 = Box(children=row1, layout=box_layout)
@@ -714,6 +750,9 @@ class UserTab(object):
         box47 = Box(children=row47, layout=box_layout)
         box48 = Box(children=row48, layout=box_layout)
         box49 = Box(children=row49, layout=box_layout)
+        box50 = Box(children=row50, layout=box_layout)
+        box51 = Box(children=row51, layout=box_layout)
+        box52 = Box(children=row52, layout=box_layout)
 
         self.tab = VBox([
           box1,
@@ -768,6 +807,9 @@ class UserTab(object):
           box47,
           box48,
           box49,
+          box50,
+          box51,
+          box52,
         ])
 
     # Populate the GUI widgets with values from the XML
@@ -818,6 +860,9 @@ class UserTab(object):
         self.non_epithelial_opacity.value = float(uep.find('.//non_epithelial_opacity').text)
         self.apoptotic_epithelium_color.value = (uep.find('.//apoptotic_epithelium_color').text)
         self.apoptotic_immune_color.value = (uep.find('.//apoptotic_immune_color').text)
+        self.pyroptotic_epithelium_color.value = (uep.find('.//pyroptotic_epithelium_color').text)
+        self.pyroptotic_bystander_epithelium_color.value = (uep.find('.//pyroptotic_bystander_epithelium_color').text)
+        self.vi_apoptotic_epithelium_color.value = (uep.find('.//vi_apoptotic_epithelium_color').text)
         self.CD8_Tcell_color.value = (uep.find('.//CD8_Tcell_color').text)
         self.CD4_Tcell_color.value = (uep.find('.//CD4_Tcell_color').text)
         self.Macrophage_color.value = (uep.find('.//Macrophage_color').text)
@@ -878,6 +923,9 @@ class UserTab(object):
         uep.find('.//non_epithelial_opacity').text = str(self.non_epithelial_opacity.value)
         uep.find('.//apoptotic_epithelium_color').text = str(self.apoptotic_epithelium_color.value)
         uep.find('.//apoptotic_immune_color').text = str(self.apoptotic_immune_color.value)
+        uep.find('.//pyroptotic_epithelium_color').text = str(self.pyroptotic_epithelium_color.value)
+        uep.find('.//pyroptotic_bystander_epithelium_color').text = str(self.pyroptotic_bystander_epithelium_color.value)
+        uep.find('.//vi_apoptotic_epithelium_color').text = str(self.vi_apoptotic_epithelium_color.value)
         uep.find('.//CD8_Tcell_color').text = str(self.CD8_Tcell_color.value)
         uep.find('.//CD4_Tcell_color').text = str(self.CD4_Tcell_color.value)
         uep.find('.//Macrophage_color').text = str(self.Macrophage_color.value)

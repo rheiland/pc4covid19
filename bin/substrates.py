@@ -78,10 +78,13 @@ class SubstrateTab(object):
 
         self.ax0 = None
         self.ax1 = None
+        self.ax1_lymph_TC = None
 
-        self.custom_data_plotted = False
-        self.custom_data_set1 = False  # live, infected, dead
-        self.custom_data_set2 = False  # Mac, Neut, CD8, 
+        self.analysis_data_plotted = False
+        self.analysis_data_set1 = False  # live, infected, dead
+        self.analysis_data_set2 = False  # Mac, Neut, CD8, 
+        self.analysis_data_set3 = False  
+        self.analysis_data_set4 = False  
 
         # self.fig = plt.figure(figsize=(7.2,6))  # this strange figsize results in a ~square contour plot
 
@@ -130,19 +133,32 @@ class SubstrateTab(object):
         # ------- custom data for cells ----------
         self.xval = np.empty([1])
         # print('sub, init: len(self.xval) = ',len(self.xval))
-        self.yval1 = np.empty([1])
+        self.yval1 = np.empty([1]) # live, infected, dead
         self.yval2 = np.empty([1])
         self.yval3 = np.empty([1])
-        self.yval4 = np.empty([1])
+
+        self.yval4 = np.empty([1]) # Mac,Neut,CD8,DC,CD4,Fib
         self.yval5 = np.empty([1])
         self.yval6 = np.empty([1])
         self.yval7 = np.empty([1])
         self.yval8 = np.empty([1])
         self.yval9 = np.empty([1])
-        self.yval10 = np.empty([1])
+
+        self.yval10 = np.empty([1]) # viral load
+
+        self.yval11 = np.empty([1])  # lymph node dynamics: DC,TC,TH1,TH2
+        self.yval12 = np.empty([1])
+        self.yval13 = np.empty([1])
+        self.yval14 = np.empty([1])
+
         self.tname = "time"
         self.yname = 'Y'
         # self.num_2D_plots = 1
+
+        # colors of plots for extra analysis
+        self.lymph_DC_color = 'black'
+        self.lymph_TC_color = 'red'
+
 
 
         self.title_str = ''
@@ -229,26 +245,38 @@ class SubstrateTab(object):
         substrate_vbox=VBox([hb2, hb3], layout=Layout(width='500px'))
 
         #--------------------------
-        self.custom_data_toggle = Checkbox(
+        # analysis_label = Label(value='--Extra analysis--')
+
+        self.analysis_data_toggle = Checkbox(
             description='Extra analysis',
-            disabled=True,
-            value=False,
+            disabled=False,
             style = {'description_width': 'initial'},
             layout=Layout(width='130px', )  #  border='1px solid black',)
         #           layout=Layout(width=constWidth2),
             )
 
+        self.analysis_data_update_button = Button(
+            description='Update',
+            disabled=True,
+            style = {'description_width': 'initial'},
+            layout=Layout(width='130px', )  #  border='1px solid black',)
+        #           layout=Layout(width=constWidth2),
+            )
+        self.analysis_data_update_button.style.button_color = 'lightgreen'
+
+
         #--------------
-        # self.custom_data_update_button= Button(
+        # self.analysis_data_update_button= Button(
         #     description='Update', 
         #     disabled=True,)
         #     # layout=Layout(width='120px',) ,style = {'description_width': 'initial'})
-        # self.custom_data_update_button.style.button_color = 'lightgreen'
+        # self.analysis_data_update_button.style.button_color = 'lightgreen'
 
-        # custom_data_vbox1 = VBox([self.custom_data_toggle, self.custom_data_update_button], layout=Layout(justify_content='center',border='1px solid black',))  # width='330px',
-        custom_data_vbox1 = VBox([self.custom_data_toggle, ], layout=Layout(justify_content='center'))  # ,border='1px solid black',  width='330px',
+        # analysis_data_vbox1 = VBox([self.analysis_data_toggle, ], layout=Layout(justify_content='center'))  # ,border='1px solid black',  width='330px',
+        # analysis_data_vbox1 = VBox([analysis_label, self.analysis_data_update_button, ], layout=Layout(justify_content='center'))  # ,border='1px solid black',  width='330px',
+        analysis_data_vbox1 = VBox([self.analysis_data_toggle, self.analysis_data_update_button], layout=Layout(justify_content='center'))  # ,border='1px solid black',))  # width='330px',
 
-        # self.custom_data_choice = SelectMultiple(
+        # self.analysis_data_choice = SelectMultiple(
         #     # options=['assembled_virion','susceptible','infected', 'dead'],
         #     options=['live','infected', 'dead'],
         #     disabled=True,
@@ -257,43 +285,56 @@ class SubstrateTab(object):
         #     layout=Layout(width='160px', ) )
 
 
-        self.custom_data_choice = RadioButtons(
-            options=['live,infected,dead', 'Mac,Neut,CD8,DC,CD4,Fib', 'viral load'],
+        self.analysis_data_choice = RadioButtons(
+            options=['live,infected,dead', 'Mac,Neut,CD8,DC,CD4,Fib', 'viral load', 'lymph node dynamics'],
             value='live,infected,dead', 
 #           layout={'width': 'max-content'}, # If the items' names are long
             disabled=True
         )
 
-        def custom_data_choice_cb(b):
-            self.update_custom_data()
+        # called when a user selects another choice in the custom data radio buttons
+        def analysis_data_choice_cb(b):
+            # self.update_analysis_data()
             self.i_plot.update()
 
-        self.custom_data_choice.observe(custom_data_choice_cb)
+        self.analysis_data_choice.observe(analysis_data_choice_cb)
 
 
-        # self.custom_data_wait = Label('')
-        self.custom_data_wait = Label('Will be available after simulation completes.')
-        # self.custom_data_wait = Label('Wait for 1st time processing...')  
+        self.analysis_data_wait = Label('')
+        # self.analysis_data_wait = Label('Will be available after simulation completes.')
+        # self.analysis_data_wait = Label('Wait for 1st time processing...')  
 
-        custom_data_hbox = HBox([custom_data_vbox1, VBox([self.custom_data_choice, self.custom_data_wait])])
+        analysis_data_hbox = HBox([analysis_data_vbox1, VBox([self.analysis_data_choice, self.analysis_data_wait])])
 
 
-        def custom_data_toggle_cb(b):
+        def analysis_data_toggle_cb(b):
             # self.update()
-            if (self.custom_data_toggle.value):  
-                # self.custom_data_wait.value = 'Wait for 1st time processing...'
-                self.update_custom_data()
-                self.custom_data_choice.disabled = False
+            if (self.analysis_data_toggle.value):  
+                self.analysis_data_wait.value = 'Press Update to analyze available data.'
+                self.analysis_data_choice.disabled = False
+                self.analysis_data_update_button.disabled = False
+                # self.update_analysis_data()
             else:
-                self.custom_data_wait.value = ''
-                self.custom_data_choice.disabled = True
+                self.analysis_data_wait.value = ''
+                self.analysis_data_choice.disabled = True
+                self.analysis_data_update_button.disabled = True
             self.i_plot.update()
-            self.custom_data_wait.value = ''
+            # self.analysis_data_wait.value = ''
 
-        self.custom_data_toggle.observe(custom_data_toggle_cb)
+        self.analysis_data_toggle.observe(analysis_data_toggle_cb)
+
+        def analysis_data_update_cb(b):
+            # self.update()
+            self.analysis_data_wait.value = 'Updating analysis data...'
+            self.update_analysis_data()
+
+            self.i_plot.update()
+            self.analysis_data_wait.value = ''
+
+        self.analysis_data_update_button.on_click(analysis_data_update_cb)
 
 
-        #gui=HBox([cells_vbox, substrate_vbox, custom_data_hbox], justify_content='center')  # vs. 'flex-start   , layout=Layout(width='900px'))
+        #gui=HBox([cells_vbox, substrate_vbox, analysis_data_hbox], justify_content='center')  # vs. 'flex-start   , layout=Layout(width='900px'))
 
         #==========================================================================
 
@@ -418,27 +459,27 @@ class SubstrateTab(object):
         self.substrates_toggle.observe(substrates_toggle_cb)
 
         #---------------------
-        # def custom_data_toggle_cb(b):
-        #     # print("custom_data_toggle_cb()")
+        # def analysis_data_toggle_cb(b):
+        #     # print("analysis_data_toggle_cb()")
         #     self.skip_cb = True
-        #     if (self.custom_data_toggle.value):  # seems bass-ackwards
-        #         self.custom_data_choice.disabled = False
-        #         self.custom_data_update_button.disabled = False
+        #     if (self.analysis_data_toggle.value):  # seems bass-ackwards
+        #         self.analysis_data_choice.disabled = False
+        #         self.analysis_data_update_button.disabled = False
         #     else:
-        #         self.custom_data_choice.disabled = True
-        #         self.custom_data_update_button.disabled = True
+        #         self.analysis_data_choice.disabled = True
+        #         self.analysis_data_update_button.disabled = True
         #     self.skip_cb = False
 
-        #     # print("custom_data_toggle_cb():  i_plot.update")
+        #     # print("analysis_data_toggle_cb():  i_plot.update")
         #     self.i_plot.update()
 
-        # self.custom_data_toggle.observe(custom_data_toggle_cb)
-        # self.custom_data_update_button.on_click(self.update_custom_data)
+        # self.analysis_data_toggle.observe(analysis_data_toggle_cb)
+        # self.analysis_data_update_button.on_click(self.update_analysis_data)
 
         #---------------------
         help_label = Label('select slider: drag or left/right arrows')
 
-        controls_box = HBox([cells_vbox, substrate_vbox, custom_data_hbox], justify_content='center')  # vs. 'flex-start   , layout=Layout(width='900px'))
+        controls_box = HBox([cells_vbox, substrate_vbox, analysis_data_hbox], justify_content='center')  # vs. 'flex-start   , layout=Layout(width='900px'))
 
         if (hublib_flag):
             self.download_button = Download('mcds.zip', style='warning', icon='cloud-download', 
@@ -450,7 +491,7 @@ class SubstrateTab(object):
 
             # box_layout = Layout(border='0px solid')
             # controls_box = VBox([row1, row2])  # ,width='50%', layout=box_layout)
-            # controls_box = HBox([cells_vbox, substrate_vbox, custom_data_hbox], justify_content='center')  # vs. 'flex-start   , layout=Layout(width='900px'))
+            # controls_box = HBox([cells_vbox, substrate_vbox, analysis_data_hbox], justify_content='center')  # vs. 'flex-start   , layout=Layout(width='900px'))
 
             self.tab = VBox([controls_box, self.i_plot, download_row, debug_view])
         else:
@@ -459,26 +500,35 @@ class SubstrateTab(object):
             self.tab = VBox([controls_box, self.i_plot])
 
     #---------------------------------------------------
-    def disable_2D_plotting(self, bool_val):
-        self.custom_data_toggle.disabled = bool_val
+    def reset_analysis_data_plotting(self, bool_val):
+        # self.analysis_data_toggle.disabled = bool_val
         if (bool_val == True):
-            self.custom_data_toggle.value = False
+            self.analysis_data_toggle.value = False
             self.yval1 = np.empty([1])
             self.yval2 = np.empty([1])
             self.yval3 = np.empty([1])
+
             self.yval4 = np.empty([1])
             self.yval5 = np.empty([1])
             self.yval6 = np.empty([1])
             self.yval7 = np.empty([1])
             self.yval8 = np.empty([1])
             self.yval9 = np.empty([1])
+
             self.yval10 = np.empty([1])
-            self.custom_data_set1 = False  # live, infected, dead
-            self.custom_data_set2 = False  # Mac, Neut, CD8, etc
-            self.custom_data_set3 = False  # viral load
-            # self.custom_data_toggle.value = False
-        # self.custom_data_choice.disabled = bool_val
-        # self.custom_data_update_button.disabled = bool_val
+
+            self.yval11 = np.empty([1])
+            self.yval12 = np.empty([1])
+            self.yval13 = np.empty([1])
+            self.yval14 = np.empty([1])
+
+            self.analysis_data_set1 = False  # live, infected, dead
+            self.analysis_data_set2 = False  # Mac, Neut, CD8, etc
+            self.analysis_data_set3 = False  # viral load
+            self.analysis_data_set4 = False  # lymph node dynamics
+            self.analysis_data_toggle.value = False
+        self.analysis_data_choice.disabled = bool_val
+        self.analysis_data_update_button.disabled = bool_val
 
     #---------------------------------------------------
     def update_dropdown_fields(self, data_dir):
@@ -493,9 +543,10 @@ class SubstrateTab(object):
             print("Cannot open ",fname," to read info, e.g., names of substrate fields.")
             return
 
-        self.custom_data_set1 = False  # live, infected, dead
-        self.custom_data_set2 = False  # mac, neut, cd8
-        self.custom_data_set3 = False  # viral load
+        self.analysis_data_set1 = False  # live, infected, dead
+        self.analysis_data_set2 = False  # mac, neut, cd8
+        self.analysis_data_set3 = False  # viral load
+        self.analysis_data_set4 = False  # lymph node dynamics
 
         xml_root = tree.getroot()
         self.field_min_max = {}
@@ -736,18 +787,25 @@ class SubstrateTab(object):
             self.i_plot.update()
 
     #------------------------------------------------------------
-    # def update_custom_data(self,b):
-    def update_custom_data(self):
-        # print('----- update_custom_data')
-        # print('update_custom_data(): self.output_dir = ', self.output_dir)
-        if ('live' in self.custom_data_choice.value) and self.custom_data_set1:
-            return
-        elif ('Mac' in self.custom_data_choice.value) and self.custom_data_set2:
-            return
-        elif ('load' in self.custom_data_choice.value) and self.custom_data_set3:
-            return
+    # Should be called only when we need to *compute* analysis_data
+    # def update_analysis_data(self,b):
+    def update_analysis_data(self):
+        # print('----- update_analysis_data')
+        # print('update_analysis_data(): self.output_dir = ', self.output_dir)
 
-        self.custom_data_wait.value = 'Wait for 1st time processing...'
+        # If we've already computed the plots being requested, just return.
+        # if ('live' in self.analysis_data_choice.value) and self.analysis_data_set1:
+        #     return
+        # elif ('Mac' in self.analysis_data_choice.value) and self.analysis_data_set2:
+        #     return
+        # elif ('load' in self.analysis_data_choice.value) and self.analysis_data_set3:
+        #     return
+        # elif ('lymph' in self.analysis_data_choice.value) and self.analysis_data_set4:
+        #     return
+
+        # self.analysis_data_wait.value = 'Wait for update...'
+        # self.analysis_data_wait.value = 'compute 1st of 4 sets...'
+
         cwd = os.getcwd()
         # print("----- cwd(1)=",cwd)
         data_dir = cwd
@@ -758,7 +816,7 @@ class SubstrateTab(object):
             # print("----- chdir to data_dir(2)=",data_dir, " --> chdir to there")
             # os.chdir(data_dir)
         else:
-            # print('update_custom_data: cwd=',cwd)
+            # print('update_analysis_data: cwd=',cwd)
             if not 'tmpdir' in cwd:
                 data_dir = os.path.abspath('tmpdir')
                 # print("----- data_dir(3)=",cwd)
@@ -768,13 +826,14 @@ class SubstrateTab(object):
         xml_files = glob.glob('output*.xml')
         # xml_files = glob.glob(os.path.join('tmpdir', 'output*.xml'))
         xml_files.sort()
+        # print('update_analysis_data(): len(xml_files)=',len(xml_files))
         # print('xml_files = ',xml_files)
         # print("----- chdir back to cwd=",cwd)
         # os.chdir(cwd)
 
         ds_count = len(xml_files)
         # print("----- ds_count = ",ds_count)
-        mcds = [pyMCDS(xml_files[i], '.') for i in range(ds_count)]
+        mcds = [pyMCDS(xml_files[i], '.') for i in range(ds_count)]  # optimize eventually?
         # mcds = [pyMCDS(xml_files[i], 'tmpdir') for i in range(ds_count)]
         # mcds = [pyMCDS(xml_files[i], data_dir) for i in range(ds_count)]
         # print("----- mcds = ",mcds)
@@ -787,8 +846,8 @@ class SubstrateTab(object):
         # return
 
         # if all selected:  ('assembled_virion', 'susceptible', 'infected', 'dead')
-        # print('custom_data_choice = ', self.custom_data_choice.value)  # get RadioButton selection
-        # self.num_2D_plots = len(self.custom_data_choice.value)
+        # print('analysis_data_choice = ', self.analysis_data_choice.value)  # get RadioButton selection
+        # self.num_2D_plots = len(self.analysis_data_choice.value)
         # print('num_2D_plots = ', self.num_2D_plots)
 
         xname = 'time'
@@ -808,164 +867,240 @@ class SubstrateTab(object):
         #         + np.array([(mcds[i].data['discrete_cells']['cycle_model'] >= 6).sum() for i in range(ds_count)])
 
 
-        # print('custom_data_choice = ',self.custom_data_choice.value)
+        # print('analysis_data_choice = ',self.analysis_data_choice.value)
 
-        if 'live' in self.custom_data_choice.value:  # live,infected,dead
-            if (self.custom_data_set1 == False):
-                # count # infected
-                self.yval2 = np.array( [len(np.where(mcds[idx].data['discrete_cells']['virion'] > 1)[0]) for idx in range(ds_count)] )
-                # print('self.yval2=',self.yval2)
+        # if 'live' in self.analysis_data_choice.value:  # live,infected,dead
+        #     if (self.analysis_data_set1 == False):
 
-                # count # dead
-                self.yval3 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cycle_model'] > 6) == True)) for idx in range(ds_count)] )
-                # print('self.yval3=',self.yval3)
+        # count # infected
+        # self.analysis_data_wait.value = 'compute 1st of 4 sets...'
+        # self.yval2 = np.array( [len(np.where(mcds[idx].data['discrete_cells']['virion'] > 1)[0]) for idx in range(ds_count)] )
+        self.yval2 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 1) & (mcds[idx].data['discrete_cells']['virion'] > 1.) == True)) for idx in range(ds_count)] )
+        # print('self.yval2=',self.yval2)
 
-                # count # live (all epi cells - dead)
-                self.yval1 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 1) == True)) for idx in range(ds_count)] )
+        # count # dead
+        # self.yval3 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cycle_model'] > 6) == True)) for idx in range(ds_count)] )
+        self.yval3 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 1) & (mcds[idx].data['discrete_cells']['cycle_model'] > 6) == True)) for idx in range(ds_count)] )
+        # print('self.yval3=',self.yval3)
 
-                self.custom_data_set1 = True 
+        # count # live (all epi cells - dead)
+        self.yval1 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 1) == True)) for idx in range(ds_count)] )
 
-        elif 'Mac' in self.custom_data_choice.value:  # mac,neut,cd8,DC,cd4,Fib
-            if (self.custom_data_set2 == False):
+        self.analysis_data_set1 = True 
+
+
+        # elif 'Mac' in self.analysis_data_choice.value:  # mac,neut,cd8,DC,cd4,Fib
+        #     if (self.analysis_data_set2 == False):
                 # count Macs
                 # self.yval4 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 4) == True)) for idx in range(ds_count)] )
-                self.yval4 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 4) & (mcds[idx].data['discrete_cells']['cycle_model'] < 100.) == True)) for idx in range(ds_count)] )
+        # self.analysis_data_wait.value = 'compute 2nd of 4 sets...'
+        self.yval4 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 4) & (mcds[idx].data['discrete_cells']['cycle_model'] < 100.) == True)) for idx in range(ds_count)] )
 
-                # count Neuts
-                # self.yval5 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 5) == True)) for idx in range(ds_count)] )
-                self.yval5 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 5) & (mcds[idx].data['discrete_cells']['cycle_model'] < 100.) == True)) for idx in range(ds_count)] )
+        # count Neuts
+        # self.yval5 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 5) == True)) for idx in range(ds_count)] )
+        self.yval5 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 5) & (mcds[idx].data['discrete_cells']['cycle_model'] < 100.) == True)) for idx in range(ds_count)] )
 
-                # count CD8
-                self.yval6 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 3) & (mcds[idx].data['discrete_cells']['cycle_model'] < 100.) == True)) for idx in range(ds_count)] )
+        # count CD8
+        self.yval6 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 3) & (mcds[idx].data['discrete_cells']['cycle_model'] < 100.) == True)) for idx in range(ds_count)] )
 
-                # count DC
-                self.yval7 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 6) & (mcds[idx].data['discrete_cells']['cycle_model'] < 100.) == True)) for idx in range(ds_count)] )
+        # count DC
+        self.yval7 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 6) & (mcds[idx].data['discrete_cells']['cycle_model'] < 100.) == True)) for idx in range(ds_count)] )
 
-                # count CD4
-                self.yval8 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 7) & (mcds[idx].data['discrete_cells']['cycle_model'] < 100.) == True)) for idx in range(ds_count)] )
+        # count CD4
+        self.yval8 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 7) & (mcds[idx].data['discrete_cells']['cycle_model'] < 100.) == True)) for idx in range(ds_count)] )
 
-                # count Fibroblasts
-                self.yval9 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 8) & (mcds[idx].data['discrete_cells']['cycle_model'] < 100.) == True)) for idx in range(ds_count)] )
+        # count Fibroblasts
+        self.yval9 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 8) & (mcds[idx].data['discrete_cells']['cycle_model'] < 100.) == True)) for idx in range(ds_count)] )
 
-                self.custom_data_set2 = True 
+        self.analysis_data_set2 = True 
 
-        elif 'load' in self.custom_data_choice.value:  # viral load
-            if (self.custom_data_set3 == False):
+
+        # self.analysis_data_wait.value = 'compute 3rd of 4 sets...'
+        # elif 'load' in self.analysis_data_choice.value:  # viral load
+        #     if (self.analysis_data_set3 == False):
                 # compute viral load in epi cells
                 # self.yval10 = np.array( [np.where(mcds[idx].data['discrete_cells']['cell_type'] == 1) & np.floor(mcds[idx].data['discrete_cells']['assembled_virion']).sum()  for idx in range(ds_count)] )
-                self.yval10 = np.array( [np.floor(mcds[idx].data['discrete_cells']['assembled_virion']).sum()  for idx in range(ds_count)] ).astype(int)
+        self.yval10 = np.array( [np.floor(mcds[idx].data['discrete_cells']['assembled_virion']).sum()  for idx in range(ds_count)] ).astype(int)
 
-                self.custom_data_set3 = True 
+        self.analysis_data_set3 = True 
 
-        self.custom_data_wait.value = ''
+
+        # self.analysis_data_wait.value = 'compute 4th set...'
+        # elif 'lymph' in self.analysis_data_choice.value:  # lymph node dynamics
+        #     if (self.analysis_data_set4 == False):
+        lymph_data = np.genfromtxt('dm_tc.dat', delimiter=' ')
+        self.yval11 = lymph_data[:,0]
+        # print('lymph data: yval11 = ',self.yval11)
+        self.yval12 = lymph_data[:,1]
+        # self.yval13 = lymph_data[:,2]
+        # self.yval14 = lymph_data[:,3]
+
+        self.analysis_data_set4 = True 
+
+
+        # self.analysis_data_wait.value = ''
         self.i_plot.update()
 
     #------------------------------------------------------------
-    # def plot_cell_custom_data_dummy(self):
-    #     print('----- plot_cell_custom_data()')
+    # def plot_analysis_data_dummy(self):
+    #     print('----- plot_analysis_data()')
     #     x = np.linspace(0, 2*np.pi, 400)
     #     y = np.sin(x**2)
     #     # self.i_plot.update()
     #     self.ax1.plot(x, y)
 
     #------------------------------------------------------------
-    def plot_empty_custom_data(self):
+    def plot_empty_analysis_data(self):
         self.ax1.plot([0.], [0.], color='white',marker='.')  # hack empty
         # self.ax1.clf()
         self.ax1.get_xaxis().set_visible(False)
         self.ax1.get_yaxis().set_visible(False)
         self.ax1.axis('off')
 
+        self.ax1_lymph_TC.plot([0.], [0.], color='white',marker='.')  # hack empty
+        # self.ax1.clf()
+        self.ax1_lymph_TC.get_xaxis().set_visible(False)
+        self.ax1_lymph_TC.get_yaxis().set_visible(False)
+        self.ax1_lymph_TC.axis('off')
+
+
     #------------------------------------------------------------
-    # def plot2D_custom_data(self, frame):
-    def plot_cell_custom_data(self, xname, yname_list, t):
-        # print("---------- plot_cell_custom_data()")
+    # Called from 'plot_substrate' if the checkbox is ON
+    # def plot_analysis_data(self, xname, yname_list, t):
+    def plot_analysis_data(self, xname, yname_list, substrate_frame_num):
+        # print("---------- plot_analysis_data()")
         # global current_idx, axes_max
         global current_frame
         # current_frame = frame
         # fname = "snapshot%08d.svg" % frame
         # full_fname = os.path.join(self.output_dir, fname)
-        # print('plot_cell_custom_data: self.output_dir=',self.output_dir)
+        # print('plot_analysis_data: self.output_dir=',self.output_dir)
 
-        if 'live' in self.custom_data_choice.value:  
+        #-----------  line plots for extra analysis ---------------------
+        self.ax1_lymph_TC.get_yaxis().set_visible(False)
+        self.ax1_lymph_TC.axis('off')
+
+        if 'live' in self.analysis_data_choice.value:  
             p1 = self.ax1.plot(self.xval, self.yval1, label='live', linewidth=3)
             p2 = self.ax1.plot(self.xval, self.yval2, label='infected', linewidth=3)
             p3 = self.ax1.plot(self.xval, self.yval3, label='dead', linewidth=3)
-        elif 'Mac' in self.custom_data_choice.value:  # mac,neut,cd8,DC,cd4
+
+        elif 'Mac' in self.analysis_data_choice.value:  # mac,neut,cd8,DC,cd4
             p1 = self.ax1.plot(self.xval, self.yval4, label='Mac', linewidth=3, color='lime')
             p2 = self.ax1.plot(self.xval, self.yval5, linestyle='dashed', label='Neut', linewidth=3, color='cyan')
             p3 = self.ax1.plot(self.xval, self.yval6, label='CD8', linewidth=3, color='red')
             p4 = self.ax1.plot(self.xval, self.yval7, linestyle='dashed', label='DC', linewidth=3, color='fuchsia')
-            # print('plot_cell_custom_data(): yval6=',self.yval6)
-            # print('plot_cell_custom_data(): yval7=',self.yval7)
+            # print('plot_analysis_data(): yval6=',self.yval6)
+            # print('plot_analysis_data(): yval7=',self.yval7)
             p5 = self.ax1.plot(self.xval, self.yval8, label='CD4', linewidth=3, color='orange')
             p6 = self.ax1.plot(self.xval, self.yval9, linestyle='dashed',  label='Fib', linewidth=3, color='orange') # dashes=[6,2],
-            # print('plot_cell_custom_data(): yval9=',self.yval9)
-        elif 'load' in self.custom_data_choice.value:  
-            p7 = self.ax1.plot(self.xval, self.yval10, linewidth=3)
+            # print('plot_analysis_data(): yval9=',self.yval9)
+
+        elif 'load' in self.analysis_data_choice.value:  
+            if len(self.xval) > len(self.yval10):
+                print('problem: len(xval) >= len(yval10)',self.xval,self.yval10 )
+                pass
+            else:
+                p7 = self.ax1.plot(self.xval, self.yval10, linewidth=3, color='black')
+
+        elif 'lymph' in self.analysis_data_choice.value:  # DC,TC,TH1,TH2
+            self.ax1_lymph_TC.get_yaxis().set_visible(True)
+            self.ax1_lymph_TC.axis('on')
+            if len(self.xval) < len(self.yval11):
+                # print("lymph unequal x,y: xval=",self.xval, ", yval=",self.yval11)
+                # print("lymph xval < yval11")
+                # p8 = self.ax1.plot(self.xval, self.yval11[:len(self.xval)], label='DC', linewidth=3, color=self.lymph_DC_color)
+                p8 = self.ax1.plot(self.xval, self.yval11[:len(self.xval)], linewidth=3, color=self.lymph_DC_color)
+                p9 = self.ax1_lymph_TC.plot(self.xval, self.yval12[:len(self.xval)], linewidth=3, color=self.lymph_TC_color)
+            else:
+                p8 = self.ax1.plot(self.xval, self.yval11, linewidth=3, color=self.lymph_DC_color)
+                p9 = self.ax1_lymph_TC.plot(self.xval, self.yval12,  linewidth=3, color=self.lymph_TC_color)
+            # p10 = self.ax1.plot(self.xval, self.yval13, label='TH1', linewidth=3, color='red')
+            # p11 = self.ax1.plot(self.xval, self.yval14, label='TH2', linewidth=3, color='green')
 
         # print('xval=',xval)  # [   0.   60.  120. ...
         # print('yval=',yval)  # [2793 2793 2793 ...
         # print('t=',t)
 
+
+        #-----------  markers (circles) on top of line plots: tracking Cells/Substrates plots ---------------------
         # if (t >= 0):
         xoff= self.xval.max() * .01   # should be a % of axes range
         fsize=12
-        if (t >= 0 and len(self.xval) > 1):
+        # kdx = self.substrate_frame
+        kdx = substrate_frame_num
+        # kdx = len(self.xval) - 1
+        # if (kdx >= len(self.xval)):
+            # kdx = len(self.xval) - 1
+        # print("plot_analysis_data(): t=",t,", kdx=",kdx,", len(self.xval)=",len(self.xval))
+
+        # if (t >= 0 and len(self.xval) > 1):
+        # if (substrate_frame_num >= len(self.xval)):
+        if (kdx >= len(self.xval)):
+            pass
+        elif (substrate_frame_num >= 0 and len(self.xval) > 1):
             # print('self.xval=',self.xval)  # [   0.   60.  120. ...
             # array = np.asarray(self.xval)
             # idx = (np.abs(array - t)).argmin()
             # print('closest value idx =',idx)
             # self.ax1.plot(self.xval[t], self.yval[t], p[-1].get_color(), marker='o')
-            if 'live' in self.custom_data_choice.value:  
-                self.ax1.plot(self.xval[self.substrate_frame], self.yval1[self.substrate_frame], p1[-1].get_color(), marker='o', markersize=12)
-                self.ax1.plot(self.xval[self.substrate_frame], self.yval2[self.substrate_frame], p2[-1].get_color(), marker='o', markersize=12)
-                self.ax1.plot(self.xval[self.substrate_frame], self.yval3[self.substrate_frame], p3[-1].get_color(), marker='o', markersize=12)
+            if 'live' in self.analysis_data_choice.value:  
+                self.ax1.plot(self.xval[kdx], self.yval1[kdx], p1[-1].get_color(), marker='o', markersize=12)
+                self.ax1.plot(self.xval[kdx], self.yval2[kdx], p2[-1].get_color(), marker='o', markersize=12)
+                self.ax1.plot(self.xval[kdx], self.yval3[kdx], p3[-1].get_color(), marker='o', markersize=12)
 
                 # label = "{:d}".format(self.yval1[self.substrate_frame]), 
                 # self.ax1.annotate(str(self.yval1[self.substrate_frame]), (self.xval[self.substrate_frame]+xoff,self.yval1[self.substrate_frame]+yoff) )
                 ymax= max(int(self.yval1.max()),int(self.yval2.max()),int(self.yval3.max())) # should be a % of axes range
                 yoff= ymax * .01   # should be a % of axes range
 
-                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval1[self.substrate_frame]+yoff, str(self.yval1[self.substrate_frame]), fontsize=fsize)
-                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval2[self.substrate_frame]+yoff, str(self.yval2[self.substrate_frame]), fontsize=fsize)
-                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval3[self.substrate_frame]+yoff, str(self.yval3[self.substrate_frame]), fontsize=fsize)
+                self.ax1.text( self.xval[kdx]+xoff, self.yval1[kdx]+yoff, str(self.yval1[kdx]), fontsize=fsize)
+                self.ax1.text( self.xval[kdx]+xoff, self.yval2[kdx]+yoff, str(self.yval2[kdx]), fontsize=fsize)
+                self.ax1.text( self.xval[kdx]+xoff, self.yval3[kdx]+yoff, str(self.yval3[kdx]), fontsize=fsize)
                  
-            elif 'Mac' in self.custom_data_choice.value:  # mac,neut,cd8,DC,cd4
-                self.ax1.plot(self.xval[self.substrate_frame], self.yval4[self.substrate_frame], p1[-1].get_color(), marker='o', markersize=12)
-                self.ax1.plot(self.xval[self.substrate_frame], self.yval5[self.substrate_frame], p2[-1].get_color(), marker='o', markersize=12)
-                self.ax1.plot(self.xval[self.substrate_frame], self.yval6[self.substrate_frame], p3[-1].get_color(), marker='o', markersize=12)
-                self.ax1.plot(self.xval[self.substrate_frame], self.yval7[self.substrate_frame], p4[-1].get_color(), marker='o', markersize=12)
-                self.ax1.plot(self.xval[self.substrate_frame], self.yval8[self.substrate_frame], p5[-1].get_color(), marker='o', markersize=12)
-                self.ax1.plot(self.xval[self.substrate_frame], self.yval9[self.substrate_frame], p6[-1].get_color(), marker='o', markersize=12)
+            elif 'Mac' in self.analysis_data_choice.value:  # mac,neut,cd8,DC,cd4
+                self.ax1.plot(self.xval[kdx], self.yval4[kdx], p1[-1].get_color(), marker='o', markersize=12)
+                self.ax1.plot(self.xval[kdx], self.yval5[kdx], p2[-1].get_color(), marker='o', markersize=12)
+                self.ax1.plot(self.xval[kdx], self.yval6[kdx], p3[-1].get_color(), marker='o', markersize=12)
+                self.ax1.plot(self.xval[kdx], self.yval7[kdx], p4[-1].get_color(), marker='o', markersize=12)
+                self.ax1.plot(self.xval[kdx], self.yval8[kdx], p5[-1].get_color(), marker='o', markersize=12)
+                self.ax1.plot(self.xval[kdx], self.yval9[kdx], p6[-1].get_color(), marker='o', markersize=12)
             # self.ax1.gca().spines['top'].set_visible(False)
             # self.ax1.gca().spines['right'].set_visible(False)
             # self.ax1.margins(0)
 
                 # label markers
                 ymax= max(int(self.yval4.max()), int(self.yval5.max()), int(self.yval6.max()), int(self.yval7.max()), int(self.yval8.max()), int(self.yval9.max()) ) # should be a % of axes range
-                # ymax= max(int(self.yval4.max()), int(self.yval5.max()), int(self.yval6.max()), int(self.yval7.max()) ) # should be a % of axes range
                 yoff= ymax * .01   # should be a % of axes range
-                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval4[self.substrate_frame]+yoff, str(self.yval4[self.substrate_frame]), fontsize=fsize)
-                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval5[self.substrate_frame]+yoff, str(self.yval5[self.substrate_frame]), fontsize=fsize)
-                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval6[self.substrate_frame]+yoff, str(self.yval6[self.substrate_frame]), fontsize=fsize)
-                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval7[self.substrate_frame]+yoff, str(self.yval7[self.substrate_frame]), fontsize=fsize)
-                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval8[self.substrate_frame]+yoff, str(self.yval8[self.substrate_frame]), fontsize=fsize)
-                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval9[self.substrate_frame]+yoff, str(self.yval9[self.substrate_frame]), fontsize=fsize)
+                self.ax1.text( self.xval[kdx]+xoff, self.yval4[kdx]+yoff, str(self.yval4[kdx]), fontsize=fsize)
+                self.ax1.text( self.xval[kdx]+xoff, self.yval5[kdx]+yoff, str(self.yval5[kdx]), fontsize=fsize)
+                self.ax1.text( self.xval[kdx]+xoff, self.yval6[kdx]+yoff, str(self.yval6[kdx]), fontsize=fsize)
+                self.ax1.text( self.xval[kdx]+xoff, self.yval7[kdx]+yoff, str(self.yval7[kdx]), fontsize=fsize)
+                self.ax1.text( self.xval[kdx]+xoff, self.yval8[kdx]+yoff, str(self.yval8[kdx]), fontsize=fsize)
+                self.ax1.text( self.xval[kdx]+xoff, self.yval9[kdx]+yoff, str(self.yval9[kdx]), fontsize=fsize)
 
-            elif 'load' in self.custom_data_choice.value:  # viral load
-                self.ax1.plot(self.xval[self.substrate_frame], self.yval10[self.substrate_frame], p7[-1].get_color(), marker='o', markersize=12)
+            elif 'load' in self.analysis_data_choice.value:  # viral load
+                # self.ax1.plot(self.xval[kdx], self.yval10[kdx], p7[-1].get_color(), marker='o', markersize=12)
+                self.ax1.plot(self.xval[kdx], self.yval10[kdx], color='black', marker='o', markersize=12)
 
-                ymax= int(self.yval10.max())
-                yoff= ymax * .01   # should be a % of axes range
-                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval10[self.substrate_frame]+yoff, str(self.yval10[self.substrate_frame]), fontsize=fsize)
+                # ymax= int(self.yval10.max())
+                # yoff= ymax * .01   # should be a % of axes range
+                # self.ax1.text( self.xval[kdx]+xoff, self.yval10[kdx]+yoff, str(self.yval10[kdx]), fontsize=fsize)
+                # self.ax1_lymph_TC.text( self.xval[kdx]+xoff, self.yval11[kdx]+yoff, str(self.yval11[kdx]), fontsize=fsize)
 
-            #     ymax= int(self.yval10.max())  # should be a % of axes range
+            elif 'lymph' in self.analysis_data_choice.value:  # lymph node dynamics
+                self.ax1.plot(         self.xval[kdx], self.yval11[kdx], p8[-1].get_color(), marker='o', markersize=12)
+                self.ax1_lymph_TC.plot(self.xval[kdx], self.yval12[kdx], p9[-1].get_color(), marker='o', markersize=12)
+                # self.ax1.plot(self.xval[self.substrate_frame], self.yval11[self.substrate_frame], p8[-1].get_color(), marker='o', markersize=12)
+
+            #     ymax= int(self.yval11.max())
             #     yoff= ymax * .01   # should be a % of axes range
-            #     self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval10[self.substrate_frame]+yoff, str(self.yval10[self.substrate_frame]), fontsize=fsize)
+            #     self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval11[self.substrate_frame]+yoff, str(self.yval11[self.substrate_frame]), fontsize=fsize)
 
 
-        if 'load' in self.custom_data_choice.value:  # no legend for viral load
+        if 'load' in self.analysis_data_choice.value:  # no legend for viral load
+            pass
+        elif 'lymph' in self.analysis_data_choice.value:  
             pass
         else:  
             self.ax1.legend(loc='center left', prop={'size': 15})
@@ -976,10 +1111,16 @@ class SubstrateTab(object):
             self.ax1.set_xlabel('total ' * (xname != self.tname) + xname)
 #        self.ax1.set_ylabel('total ' + (yname_list[0] if len(yname_list) == 1 else ', '.join(yname_list)))
 
-        if 'load' in self.custom_data_choice.value:  # viral load
+        if 'live' in self.analysis_data_choice.value:  
+            self.ax1.set_ylabel('# of epithelial cells', fontsize=self.axis_label_fontsize)
+        elif 'load' in self.analysis_data_choice.value:  # viral load
             self.ax1.set_ylabel('viral load', fontsize=self.axis_label_fontsize)
-        else:
-            self.ax1.set_ylabel('number of cells', fontsize=self.axis_label_fontsize)
+        elif 'lymph' in self.analysis_data_choice.value:  
+            self.ax1.set_ylabel('DC', fontsize=self.axis_label_fontsize, color=self.lymph_DC_color)
+            self.ax1_lymph_TC.set_ylabel('TC', fontsize=self.axis_label_fontsize, color=self.lymph_TC_color)
+            self.ax1_lymph_TC.tick_params(axis='y', colors=self.lymph_TC_color)
+        else:  # Mac, Neut, etc
+            self.ax1.set_ylabel('# of cells', fontsize=self.axis_label_fontsize)
 
         # p = self.ax1.plot(xval, yval, label=yname)
         # self.ax1.set_legend()
@@ -1261,7 +1402,7 @@ class SubstrateTab(object):
         # y = np.sin(x**2)
         # self.i_plot.update()
         # self.ax1.plot(x, y)
-        # self.plot_cell_custom_data_0("time", ["assembled_virion"], 20)
+        # self.plot_analysis_data_0("time", ["assembled_virion"], 20)
 
         # if (self.show_tracks):
         #     for key in self.trackd.keys():
@@ -1294,14 +1435,15 @@ class SubstrateTab(object):
 #        if (self.cells_toggle.value):
 
         if self.substrates_toggle.value:
-            # maybe only show 2nd plot if self.custom_data_toggle is True
-            # if self.custom_data_toggle.value:  # substrates and 2D plots 
+            # maybe only show 2nd plot if self.analysis_data_toggle is True
+            # if self.analysis_data_toggle.value:  # substrates and 2D plots 
             if True:  # substrates and 2D plots 
                 # self.fig, (self.ax0, self.ax1) = plt.subplots(1, 2, figsize=(30, 12))
                 # self.fig, (self.ax0, self.ax1) = plt.subplots(1, 2, figsize=(self.figsize_width_substrate + self.figsize_width_2Dplot, self.figsize_height_substrate))
                 # self.fig, (self.ax0, self.ax1) = plt.subplots(1, 2, figsize=(31, self.figsize_height_substrate), gridspec_kw={'width_ratios': [1.35, 1]})
                 # self.fig, (self.ax0, self.ax1) = plt.subplots(1, 2, figsize=(31, 13), gridspec_kw={'width_ratios': [1.35, 1]})
                 self.fig, (self.ax0, self.ax1) = plt.subplots(1, 2, figsize=(34, 15), gridspec_kw={'width_ratios': [1.5, 1]})
+                self.ax1_lymph_TC = self.ax1.twinx()
             # else:  # substrates plot, but no 2D plot
             #     print('plot sub:  sub w,h= ',self.figsize_width_substrate,self.figsize_height_substrate)
             #     self.fig, (self.ax0) = plt.subplots(1, 1, figsize=(self.figsize_width_substrate, self.figsize_height_substrate))
@@ -1380,10 +1522,10 @@ class SubstrateTab(object):
         # Now plot the cells (possibly on top of the substrate)
         if self.cells_toggle.value:
             if not self.substrates_toggle.value:
-                # maybe only show 2nd plot if self.custom_data_toggle is True
+                # maybe only show 2nd plot if self.analysis_data_toggle is True
                 # self.fig, (self.ax0, self.ax1) = plt.subplots(1, 2, figsize=(self.figsize_width_svg*2, self.figsize_height_svg))
                 # self.fig, (self.ax0, self.ax1) = plt.subplots(1, 2, figsize=(24, 12))
-                # if self.custom_data_toggle.value:  # cells (SVG) and 2D plot (no substrate)
+                # if self.analysis_data_toggle.value:  # cells (SVG) and 2D plot (no substrate)
                 # if False:  # cells (SVG) and 2D plot (no substrate)
                 #     # self.fig, (self.ax0, self.ax1) = plt.subplots(1, 2, figsize=(20, 10))
                 #     self.fig, (self.ax0, self.ax1) = plt.subplots(1, 2, figsize=(self.figsize_width_svg + self.figsize_width_2Dplot, self.figsize_height_svg))
@@ -1392,17 +1534,19 @@ class SubstrateTab(object):
                     # print('plot svg:  svg w,h= ',self.figsize_width_svg,self.figsize_height_svg)
                     # self.fig, (self.ax0) = plt.subplots(1, 1, figsize=(self.figsize_width_svg, self.figsize_height_svg))
                     self.fig, (self.ax0, self.ax1) = plt.subplots(1, 2, figsize=(25, self.figsize_height_substrate), gridspec_kw={'width_ratios': [1.1, 1]})
+                    self.ax1_lymph_TC = self.ax1.twinx()
 
             self.svg_frame = frame
             # print('plot_svg with frame=',self.svg_frame)
             self.plot_svg(self.svg_frame)
             # cbar = self.fig.colorbar(substrate_plot, ax=self.ax0)
 
-        if (self.custom_data_toggle.value):
-            # print('custom_data_toggle.value =',self.custom_data_toggle.value )
-            # self.plot_cell_custom_data("time", ["assembled_virion"], -1)
+        if (self.analysis_data_toggle.value):
+        # if (self.substrate_frame > 0):  # rwh: when to plot extra analysis (custom data)?
+            # print('analysis_data_toggle.value =',self.analysis_data_toggle.value )
+            # self.plot_analysis_data("time", ["assembled_virion"], -1)
             # print('self.substrate_frame = ',self.substrate_frame)
             self.substrate_frame = int(frame / self.modulo)
-            self.plot_cell_custom_data("time", ["assembled_virion"], self.substrate_frame)
+            self.plot_analysis_data("time", ["assembled_virion"], self.substrate_frame)
         else:
-            self.plot_empty_custom_data()
+            self.plot_empty_analysis_data()
