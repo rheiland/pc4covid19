@@ -79,6 +79,7 @@ class SubstrateTab(object):
         self.ax0 = None
         self.ax1 = None
         self.ax1_lymph_TC = None
+        self.ax1_lymph_TH2 = None
 
         self.analysis_data_plotted = False
         self.analysis_data_set1 = False  # live, infected, dead
@@ -284,13 +285,21 @@ class SubstrateTab(object):
         #     rows=3,  
         #     layout=Layout(width='160px', ) )
 
-
-        self.analysis_data_choice = RadioButtons(
-            options=['live,infected,dead', 'Mac,Neut,CD8,DC,CD4,Fib', 'viral load', 'lymph node dynamics'],
-            value='live,infected,dead', 
-#           layout={'width': 'max-content'}, # If the items' names are long
-            disabled=True
+        self.analysis_data_choice = Dropdown(
+            options={'live,infected,dead':0, 'Mac,Neut,CD8,DC,CD4,Fib':1, 'viral load':2, 'lymph:DC,TC':3, 'lymph:Th1,Th2':4},
+            # options=['live,infected,dead', 'Mac,Neut,CD8,DC,CD4,Fib', 'viral load', 'lymph:DC,TC', 'lymph:Th1,Th2'],
+            value=0,
+            disabled = True,
+            #     description='Field',
+        #    layout=Layout(width='150px')
         )
+
+#         self.analysis_data_choice = RadioButtons(
+#             options=['live,infected,dead', 'Mac,Neut,CD8,DC,CD4,Fib', 'viral load', 'lymph node dynamics'],
+#             value='live,infected,dead', 
+# #           layout={'width': 'max-content'}, # If the items' names are long
+#             disabled=True
+#         )
 
         # called when a user selects another choice in the custom data radio buttons
         def analysis_data_choice_cb(b):
@@ -304,7 +313,7 @@ class SubstrateTab(object):
         # self.analysis_data_wait = Label('Will be available after simulation completes.')
         # self.analysis_data_wait = Label('Wait for 1st time processing...')  
 
-        analysis_data_hbox = HBox([analysis_data_vbox1, VBox([self.analysis_data_choice, self.analysis_data_wait])])
+
 
 
         def analysis_data_toggle_cb(b):
@@ -333,6 +342,24 @@ class SubstrateTab(object):
 
         self.analysis_data_update_button.on_click(analysis_data_update_cb)
 
+
+        #----------------------------
+        self.fixed_yrange = Checkbox(description='Fix',style = {'description_width': 'initial'}, layout=Layout(width='60px'))
+        constWidth3 = '120px'
+        self.y_max = FloatText(
+                    description='Ymax',
+                    value=1.0,
+                    step = 1.0,
+                    style = {'description_width': 'initial'},
+                    layout=Layout(width=constWidth3),)
+        self.y_min = FloatText(
+                    description='Ymin',
+                    value=0,
+                    step = 1.0, 
+                    style = {'description_width': 'initial'},
+                    layout=Layout(width=constWidth3),)
+        # hb3=HBox([colormap_fixed_toggle,colormap_min,colormap_max], layout=Layout(width='500px',justify_content='flex-start'))
+        y_range_box = HBox([self.fixed_yrange,self.y_max,self.y_min]) # layout=Layout(justify_content='flex-start'))  # border='1px solid black',
 
         #gui=HBox([cells_vbox, substrate_vbox, analysis_data_hbox], justify_content='center')  # vs. 'flex-start   , layout=Layout(width='900px'))
 
@@ -479,6 +506,8 @@ class SubstrateTab(object):
         #---------------------
         help_label = Label('select slider: drag or left/right arrows')
 
+        analysis_data_hbox = HBox([analysis_data_vbox1, VBox([self.analysis_data_choice, y_range_box, self.analysis_data_wait]), ])
+
         controls_box = HBox([cells_vbox, substrate_vbox, analysis_data_hbox], justify_content='center')  # vs. 'flex-start   , layout=Layout(width='900px'))
 
         if (hublib_flag):
@@ -504,6 +533,8 @@ class SubstrateTab(object):
         # self.analysis_data_toggle.disabled = bool_val
         if (bool_val == True):
             self.analysis_data_toggle.value = False
+            self.xval = np.empty([1])
+
             self.yval1 = np.empty([1])
             self.yval2 = np.empty([1])
             self.yval3 = np.empty([1])
@@ -522,10 +553,12 @@ class SubstrateTab(object):
             self.yval13 = np.empty([1])
             self.yval14 = np.empty([1])
 
+            # No longer used(?) since the manual 'Update' of analyses
             self.analysis_data_set1 = False  # live, infected, dead
             self.analysis_data_set2 = False  # Mac, Neut, CD8, etc
             self.analysis_data_set3 = False  # viral load
             self.analysis_data_set4 = False  # lymph node dynamics
+
             self.analysis_data_toggle.value = False
         self.analysis_data_choice.disabled = bool_val
         self.analysis_data_update_button.disabled = bool_val
@@ -543,6 +576,7 @@ class SubstrateTab(object):
             print("Cannot open ",fname," to read info, e.g., names of substrate fields.")
             return
 
+        # No longer used since 'Update' button (I think)
         self.analysis_data_set1 = False  # live, infected, dead
         self.analysis_data_set2 = False  # mac, neut, cd8
         self.analysis_data_set3 = False  # viral load
@@ -593,6 +627,9 @@ class SubstrateTab(object):
 #------------------------------------------------------------------------------
     # called from pc4covid19 module when user selects new cache dir in 'Load Config'
     def update_params(self, config_tab, user_params_tab):
+
+        self.reset_analysis_data_plotting(True)
+
         # xml_root.find(".//x_min").text = str(self.xmin.value)
         # xml_root.find(".//x_max").text = str(self.xmax.value)
         # xml_root.find(".//dx").text = str(self.xdelta.value)
@@ -932,8 +969,8 @@ class SubstrateTab(object):
         self.yval11 = lymph_data[:,0]
         # print('lymph data: yval11 = ',self.yval11)
         self.yval12 = lymph_data[:,1]
-        # self.yval13 = lymph_data[:,2]
-        # self.yval14 = lymph_data[:,3]
+        self.yval13 = lymph_data[:,2]
+        self.yval14 = lymph_data[:,3]
 
         self.analysis_data_set4 = True 
 
@@ -963,6 +1000,12 @@ class SubstrateTab(object):
         self.ax1_lymph_TC.get_yaxis().set_visible(False)
         self.ax1_lymph_TC.axis('off')
 
+        self.ax1_lymph_TH2.plot([0.], [0.], color='white',marker='.')  # hack empty
+        # self.ax1.clf()
+        self.ax1_lymph_TH2.get_xaxis().set_visible(False)
+        self.ax1_lymph_TH2.get_yaxis().set_visible(False)
+        self.ax1_lymph_TH2.axis('off')
+
 
     #------------------------------------------------------------
     # Called from 'plot_substrate' if the checkbox is ON
@@ -980,12 +1023,17 @@ class SubstrateTab(object):
         self.ax1_lymph_TC.get_yaxis().set_visible(False)
         self.ax1_lymph_TC.axis('off')
 
-        if 'live' in self.analysis_data_choice.value:  
+        self.ax1_lymph_TH2.get_yaxis().set_visible(False)
+        self.ax1_lymph_TH2.axis('off')
+
+        # if 'live' in self.analysis_data_choice.value:  
+        if self.analysis_data_choice.value == 0:  
             p1 = self.ax1.plot(self.xval, self.yval1, label='live', linewidth=3)
             p2 = self.ax1.plot(self.xval, self.yval2, label='infected', linewidth=3)
             p3 = self.ax1.plot(self.xval, self.yval3, label='dead', linewidth=3)
 
-        elif 'Mac' in self.analysis_data_choice.value:  # mac,neut,cd8,DC,cd4
+        # elif 'Mac' in self.analysis_data_choice.value:  # mac,neut,cd8,DC,cd4
+        elif self.analysis_data_choice.value == 1:  
             p1 = self.ax1.plot(self.xval, self.yval4, label='Mac', linewidth=3, color='lime')
             p2 = self.ax1.plot(self.xval, self.yval5, linestyle='dashed', label='Neut', linewidth=3, color='cyan')
             p3 = self.ax1.plot(self.xval, self.yval6, label='CD8', linewidth=3, color='red')
@@ -996,14 +1044,16 @@ class SubstrateTab(object):
             p6 = self.ax1.plot(self.xval, self.yval9, linestyle='dashed',  label='Fib', linewidth=3, color='orange') # dashes=[6,2],
             # print('plot_analysis_data(): yval9=',self.yval9)
 
-        elif 'load' in self.analysis_data_choice.value:  
+        # elif 'load' in self.analysis_data_choice.value:  
+        elif self.analysis_data_choice.value == 2:  
             if len(self.xval) > len(self.yval10):
                 print('problem: len(xval) >= len(yval10)',self.xval,self.yval10 )
                 pass
             else:
                 p7 = self.ax1.plot(self.xval, self.yval10, linewidth=3, color='black')
 
-        elif 'lymph' in self.analysis_data_choice.value:  # DC,TC,TH1,TH2
+        # elif 'lymph' in self.analysis_data_choice.value:  # DC,TC,TH1,TH2
+        elif self.analysis_data_choice.value == 3:  
             self.ax1_lymph_TC.get_yaxis().set_visible(True)
             self.ax1_lymph_TC.axis('on')
             if len(self.xval) < len(self.yval11):
@@ -1015,8 +1065,16 @@ class SubstrateTab(object):
             else:
                 p8 = self.ax1.plot(self.xval, self.yval11, linewidth=3, color=self.lymph_DC_color)
                 p9 = self.ax1_lymph_TC.plot(self.xval, self.yval12,  linewidth=3, color=self.lymph_TC_color)
-            # p10 = self.ax1.plot(self.xval, self.yval13, label='TH1', linewidth=3, color='red')
-            # p11 = self.ax1.plot(self.xval, self.yval14, label='TH2', linewidth=3, color='green')
+
+        elif self.analysis_data_choice.value == 4:  
+            self.ax1_lymph_TH2.get_yaxis().set_visible(True)
+            self.ax1_lymph_TH2.axis('on')
+            if len(self.xval) < len(self.yval13):
+                p10 = self.ax1.plot(self.xval, self.yval13[:len(self.xval)], linewidth=3, color=self.lymph_DC_color)
+                p11 = self.ax1_lymph_TH2.plot(self.xval, self.yval14[:len(self.xval)], linewidth=3, color=self.lymph_TC_color)
+            else:
+                p10 = self.ax1.plot(self.xval, self.yval13, linewidth=3, color=self.lymph_DC_color)
+                p11 = self.ax1_lymph_TH2.plot(self.xval, self.yval14,  linewidth=3, color=self.lymph_TC_color)
 
         # print('xval=',xval)  # [   0.   60.  120. ...
         # print('yval=',yval)  # [2793 2793 2793 ...
@@ -1044,7 +1102,8 @@ class SubstrateTab(object):
             # idx = (np.abs(array - t)).argmin()
             # print('closest value idx =',idx)
             # self.ax1.plot(self.xval[t], self.yval[t], p[-1].get_color(), marker='o')
-            if 'live' in self.analysis_data_choice.value:  
+            # if 'live' in self.analysis_data_choice.value:  
+            if self.analysis_data_choice.value == 0:  
                 self.ax1.plot(self.xval[kdx], self.yval1[kdx], p1[-1].get_color(), marker='o', markersize=12)
                 self.ax1.plot(self.xval[kdx], self.yval2[kdx], p2[-1].get_color(), marker='o', markersize=12)
                 self.ax1.plot(self.xval[kdx], self.yval3[kdx], p3[-1].get_color(), marker='o', markersize=12)
@@ -1058,7 +1117,8 @@ class SubstrateTab(object):
                 self.ax1.text( self.xval[kdx]+xoff, self.yval2[kdx]+yoff, str(self.yval2[kdx]), fontsize=fsize)
                 self.ax1.text( self.xval[kdx]+xoff, self.yval3[kdx]+yoff, str(self.yval3[kdx]), fontsize=fsize)
                  
-            elif 'Mac' in self.analysis_data_choice.value:  # mac,neut,cd8,DC,cd4
+            # elif 'Mac' in self.analysis_data_choice.value:  # mac,neut,cd8,DC,cd4
+            elif self.analysis_data_choice.value == 1:  
                 self.ax1.plot(self.xval[kdx], self.yval4[kdx], p1[-1].get_color(), marker='o', markersize=12)
                 self.ax1.plot(self.xval[kdx], self.yval5[kdx], p2[-1].get_color(), marker='o', markersize=12)
                 self.ax1.plot(self.xval[kdx], self.yval6[kdx], p3[-1].get_color(), marker='o', markersize=12)
@@ -1079,7 +1139,8 @@ class SubstrateTab(object):
                 self.ax1.text( self.xval[kdx]+xoff, self.yval8[kdx]+yoff, str(self.yval8[kdx]), fontsize=fsize)
                 self.ax1.text( self.xval[kdx]+xoff, self.yval9[kdx]+yoff, str(self.yval9[kdx]), fontsize=fsize)
 
-            elif 'load' in self.analysis_data_choice.value:  # viral load
+            # elif 'load' in self.analysis_data_choice.value:  # viral load
+            elif self.analysis_data_choice.value == 2:  
                 # self.ax1.plot(self.xval[kdx], self.yval10[kdx], p7[-1].get_color(), marker='o', markersize=12)
                 self.ax1.plot(self.xval[kdx], self.yval10[kdx], color='black', marker='o', markersize=12)
 
@@ -1088,7 +1149,8 @@ class SubstrateTab(object):
                 # self.ax1.text( self.xval[kdx]+xoff, self.yval10[kdx]+yoff, str(self.yval10[kdx]), fontsize=fsize)
                 # self.ax1_lymph_TC.text( self.xval[kdx]+xoff, self.yval11[kdx]+yoff, str(self.yval11[kdx]), fontsize=fsize)
 
-            elif 'lymph' in self.analysis_data_choice.value:  # lymph node dynamics
+            # elif 'lymph' in self.analysis_data_choice.value:  # lymph node dynamics
+            elif self.analysis_data_choice.value == 3:  
                 self.ax1.plot(         self.xval[kdx], self.yval11[kdx], p8[-1].get_color(), marker='o', markersize=12)
                 self.ax1_lymph_TC.plot(self.xval[kdx], self.yval12[kdx], p9[-1].get_color(), marker='o', markersize=12)
                 # self.ax1.plot(self.xval[self.substrate_frame], self.yval11[self.substrate_frame], p8[-1].get_color(), marker='o', markersize=12)
@@ -1097,10 +1159,16 @@ class SubstrateTab(object):
             #     yoff= ymax * .01   # should be a % of axes range
             #     self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval11[self.substrate_frame]+yoff, str(self.yval11[self.substrate_frame]), fontsize=fsize)
 
+            elif self.analysis_data_choice.value == 4:  
+                # print('kdx=',kdx,', yval14[kdx]=',self.yval14[kdx])
+                self.ax1.plot(          self.xval[kdx], self.yval13[kdx], p10[-1].get_color(), marker='o', markersize=12)
+                self.ax1_lymph_TH2.plot(self.xval[kdx], self.yval14[kdx], p11[-1].get_color(), marker='o', markersize=12)
 
-        if 'load' in self.analysis_data_choice.value:  # no legend for viral load
+        # if 'load' in self.analysis_data_choice.value:  # no legend for viral load
+        if self.analysis_data_choice.value == 2:  # no legend for viral load
             pass
-        elif 'lymph' in self.analysis_data_choice.value:  
+        # elif 'lymph' in self.analysis_data_choice.value:  
+        elif (self.analysis_data_choice.value == 3) or (self.analysis_data_choice.value == 4):  
             pass
         else:  
             self.ax1.legend(loc='center left', prop={'size': 15})
@@ -1111,22 +1179,28 @@ class SubstrateTab(object):
             self.ax1.set_xlabel('total ' * (xname != self.tname) + xname)
 #        self.ax1.set_ylabel('total ' + (yname_list[0] if len(yname_list) == 1 else ', '.join(yname_list)))
 
-        if 'live' in self.analysis_data_choice.value:  
+        # if 'live' in self.analysis_data_choice.value:  
+        if self.analysis_data_choice.value == 0:  
             self.ax1.set_ylabel('# of epithelial cells', fontsize=self.axis_label_fontsize)
-        elif 'load' in self.analysis_data_choice.value:  # viral load
+        elif self.analysis_data_choice.value == 1:   # Mac, Neut, etc
+            self.ax1.set_ylabel('# of cells', fontsize=self.axis_label_fontsize)
+        # elif 'load' in self.analysis_data_choice.value:  # viral load
+        elif self.analysis_data_choice.value == 2:  # viral load 
             self.ax1.set_ylabel('viral load', fontsize=self.axis_label_fontsize)
-        elif 'lymph' in self.analysis_data_choice.value:  
+        # elif 'lymph' in self.analysis_data_choice.value:  
+        elif (self.analysis_data_choice.value == 3):  # lymph: DC,TC
             self.ax1.set_ylabel('DC', fontsize=self.axis_label_fontsize, color=self.lymph_DC_color)
             self.ax1_lymph_TC.set_ylabel('TC', fontsize=self.axis_label_fontsize, color=self.lymph_TC_color)
             self.ax1_lymph_TC.tick_params(axis='y', colors=self.lymph_TC_color)
-        else:  # Mac, Neut, etc
-            self.ax1.set_ylabel('# of cells', fontsize=self.axis_label_fontsize)
+        elif (self.analysis_data_choice.value == 4):  # lymph: Th1,Th2
+            self.ax1.set_ylabel('Th1', fontsize=self.axis_label_fontsize, color=self.lymph_DC_color)
+            self.ax1_lymph_TH2.set_ylabel('Th2', fontsize=self.axis_label_fontsize, color=self.lymph_TC_color)
+            self.ax1_lymph_TH2.tick_params(axis='y', colors=self.lymph_TC_color)
 
         # p = self.ax1.plot(xval, yval, label=yname)
         # self.ax1.set_legend()
         # self.ax1.tight_layout()
         # self.ax1.show()
-
 
     #---------------------------------------------------------------------------
     def circles(self, x, y, s, c='b', vmin=None, vmax=None, **kwargs):
@@ -1444,6 +1518,7 @@ class SubstrateTab(object):
                 # self.fig, (self.ax0, self.ax1) = plt.subplots(1, 2, figsize=(31, 13), gridspec_kw={'width_ratios': [1.35, 1]})
                 self.fig, (self.ax0, self.ax1) = plt.subplots(1, 2, figsize=(34, 15), gridspec_kw={'width_ratios': [1.5, 1]})
                 self.ax1_lymph_TC = self.ax1.twinx()
+                self.ax1_lymph_TH2 = self.ax1.twinx()
             # else:  # substrates plot, but no 2D plot
             #     print('plot sub:  sub w,h= ',self.figsize_width_substrate,self.figsize_height_substrate)
             #     self.fig, (self.ax0) = plt.subplots(1, 1, figsize=(self.figsize_width_substrate, self.figsize_height_substrate))
@@ -1535,6 +1610,7 @@ class SubstrateTab(object):
                     # self.fig, (self.ax0) = plt.subplots(1, 1, figsize=(self.figsize_width_svg, self.figsize_height_svg))
                     self.fig, (self.ax0, self.ax1) = plt.subplots(1, 2, figsize=(25, self.figsize_height_substrate), gridspec_kw={'width_ratios': [1.1, 1]})
                     self.ax1_lymph_TC = self.ax1.twinx()
+                    self.ax1_lymph_TH2 = self.ax1.twinx()
 
             self.svg_frame = frame
             # print('plot_svg with frame=',self.svg_frame)
