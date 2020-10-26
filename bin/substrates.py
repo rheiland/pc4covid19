@@ -293,6 +293,7 @@ class SubstrateTab(object):
             #     description='Field',
         #    layout=Layout(width='150px')
         )
+        self.analysis_data_choice_y = {0:[False,0.,1.], 1:[False,0.,1.], 2:[False,0.,1.], 3:[False,0.,1.], 4:[False,0.,1.]} 
 
 #         self.analysis_data_choice = RadioButtons(
 #             options=['live,infected,dead', 'Mac,Neut,CD8,DC,CD4,Fib', 'viral load', 'lymph node dynamics'],
@@ -303,6 +304,20 @@ class SubstrateTab(object):
 
         # called when a user selects another choice in the custom data radio buttons
         def analysis_data_choice_cb(b):
+            idx = self.analysis_data_choice.value
+            if idx > 2:
+                self.fixed_yrange.disabled = True
+                self.y_min.disabled = True
+                self.y_max.disabled = True
+            else:
+                self.fixed_yrange.disabled = False
+                self.y_min.disabled = False
+                self.y_max.disabled = False
+
+            self.fixed_yrange.value = self.analysis_data_choice_y[idx][0]
+            self.y_min.value = self.analysis_data_choice_y[idx][1]
+            # print('idx,y_min=',idx,self.y_min.value)
+            self.y_max.value = self.analysis_data_choice_y[idx][2]
             # self.update_analysis_data()
             self.i_plot.update()
 
@@ -346,20 +361,43 @@ class SubstrateTab(object):
         #----------------------------
         self.fixed_yrange = Checkbox(description='Fix',style = {'description_width': 'initial'}, layout=Layout(width='60px'))
         constWidth3 = '120px'
-        self.y_max = FloatText(
-                    description='Ymax',
-                    value=1.0,
-                    step = 1.0,
-                    style = {'description_width': 'initial'},
-                    layout=Layout(width=constWidth3),)
         self.y_min = FloatText(
                     description='Ymin',
                     value=0,
                     step = 1.0, 
                     style = {'description_width': 'initial'},
                     layout=Layout(width=constWidth3),)
+        self.y_max = FloatText(
+                    description='Ymax',
+                    value=1.0,
+                    step = 1.0,
+                    style = {'description_width': 'initial'},
+                    layout=Layout(width=constWidth3),)
+
+        def fixed_yrange_cb(b):
+            idx = self.analysis_data_choice.value 
+            self.analysis_data_choice_y[idx][0] = self.fixed_yrange.value
+            if self.fixed_yrange.value:
+                self.y_min.disabled = False
+                self.y_max.disabled = False
+            else:
+                self.y_min.disabled = True
+                self.y_max.disabled = True
+
+        # self.fixed_yrange.observe(fixed_yrange_cb)
+
+        def analysis_yrange_cb(b):
+            idx = self.analysis_data_choice.value 
+            self.analysis_data_choice_y[idx][1] = self.y_min.value
+            self.analysis_data_choice_y[idx][2] = self.y_max.value
+            print('dict=',self.analysis_data_choice_y)
+
+        # self.y_min.observe(analysis_yrange_cb)
+        # self.y_max.observe(analysis_yrange_cb)
+
+
         # hb3=HBox([colormap_fixed_toggle,colormap_min,colormap_max], layout=Layout(width='500px',justify_content='flex-start'))
-        y_range_box = HBox([self.fixed_yrange,self.y_max,self.y_min]) # layout=Layout(justify_content='flex-start'))  # border='1px solid black',
+        y_range_box = HBox([self.fixed_yrange,self.y_min,self.y_max]) # layout=Layout(justify_content='flex-start'))  # border='1px solid black',
 
         #gui=HBox([cells_vbox, substrate_vbox, analysis_data_hbox], justify_content='center')  # vs. 'flex-start   , layout=Layout(width='900px'))
 
@@ -506,7 +544,8 @@ class SubstrateTab(object):
         #---------------------
         help_label = Label('select slider: drag or left/right arrows')
 
-        analysis_data_hbox = HBox([analysis_data_vbox1, VBox([self.analysis_data_choice, y_range_box, self.analysis_data_wait]), ])
+        # analysis_data_hbox = HBox([analysis_data_vbox1, VBox([self.analysis_data_choice, y_range_box, self.analysis_data_wait]), ])
+        analysis_data_hbox = HBox([analysis_data_vbox1, VBox([self.analysis_data_choice,  self.analysis_data_wait]), ])
 
         controls_box = HBox([cells_vbox, substrate_vbox, analysis_data_hbox], justify_content='center')  # vs. 'flex-start   , layout=Layout(width='900px'))
 
@@ -1145,12 +1184,12 @@ class SubstrateTab(object):
                 ymax= self.yval11.max()
                 yoff= ymax * .01   # should be a % of axes range
                 sval = '%.2f' % self.yval11[self.substrate_frame]
-                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval11[self.substrate_frame]+yoff, sval, fontsize=fsize)
+                # self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval11[self.substrate_frame]+yoff, sval, fontsize=fsize)
 
                 ymax= self.yval12.max()
                 yoff= ymax * .01   # should be a % of axes range
                 sval = '%.2f' % self.yval12[self.substrate_frame]
-                self.ax1_lymph_TC.text( self.xval[self.substrate_frame]+xoff, self.yval12[self.substrate_frame]+yoff, sval, fontsize=fsize)
+                # self.ax1_lymph_TC.text( self.xval[self.substrate_frame]+xoff, self.yval12[self.substrate_frame]+yoff, sval, fontsize=fsize)
 
             elif self.analysis_data_choice.value == 4: # lymph:Th1,Th2 
                 # print('kdx=',kdx,', yval14[kdx]=',self.yval14[kdx])
@@ -1160,12 +1199,12 @@ class SubstrateTab(object):
                 ymax= self.yval13.max()
                 yoff= ymax * .01   # should be a % of axes range
                 sval = '%.2f' % self.yval13[self.substrate_frame]
-                self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval13[self.substrate_frame]+yoff, sval, fontsize=fsize)
+                # self.ax1.text( self.xval[self.substrate_frame]+xoff, self.yval13[self.substrate_frame]+yoff, sval, fontsize=fsize)
 
                 ymax= self.yval14.max()
                 yoff= ymax * .01   # should be a % of axes range
                 sval = '%.2f' % self.yval14[self.substrate_frame]
-                self.ax1_lymph_TH2.text( self.xval[self.substrate_frame]+xoff, self.yval14[self.substrate_frame]+yoff, sval, fontsize=fsize)
+                # self.ax1_lymph_TH2.text( self.xval[self.substrate_frame]+xoff, self.yval14[self.substrate_frame]+yoff, sval, fontsize=fsize)
 
 
         #-------- Provide a legend if necessary
