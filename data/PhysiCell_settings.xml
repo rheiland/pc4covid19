@@ -260,11 +260,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate>
-					<substrate name="anti-inflammatory cytokine">
+						<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-					<substrate name="collagen">
+						<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -284,6 +284,9 @@
 				
 				<virion_uncoating_rate description="rate at which an internalized virion is uncoated" type="double" units="1/min">0.01</virion_uncoating_rate>
 				<uncoated_to_RNA_rate description="rate at which uncoated virion makes its mRNA available" type="double" units="1/min">0.01</uncoated_to_RNA_rate> 
+				<max_RNA_replication_rate description="mRNA self replication max rate" type="double" units="1/min">3</max_RNA_replication_rate> 
+				<RNA_replication_half description="mRNA self replication half max" type="double" units="virions">200</RNA_replication_half> 
+				<basal_RNA_degradation_rate description="mRNA degradation rate" type="double" units="1/min">1</basal_RNA_degradation_rate> 
 				<protein_synthesis_rate description="rate at mRNA creates complete set of proteins" type="double" units="1/min">0.01</protein_synthesis_rate>
 				<virion_assembly_rate description="rate at which viral proteins are assembled into complete virion" type="double" units="1/min">0.01</virion_assembly_rate>
  
@@ -296,13 +299,13 @@
 				<unbound_internal_ACE2 description="initial number of internalized unbound ACE2 receptors" type="double" units="receptors">0</unbound_internal_ACE2>
 				<bound_internal_ACE2 description="initial number of internalized bound ACE2 receptors" type="double" units="receptors">0</bound_internal_ACE2>
 	
-				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.001</ACE2_binding_rate> 
+				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.01</ACE2_binding_rate> 
 				<ACE2_endocytosis_rate description="ACE2 receptor-virus endocytosis rate" type="double" units="1/min">0.01</ACE2_endocytosis_rate> 
-				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.001</ACE2_cargo_release_rate> 
+				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.01</ACE2_cargo_release_rate> 
 				<ACE2_recycling_rate description="ACE2 receptor recycling rate" type="double" units="1/min">0.01</ACE2_recycling_rate> 
 				
 				 
-				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.001</max_infected_apoptosis_rate>
+				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.002</max_infected_apoptosis_rate>
 				<max_apoptosis_half_max description="viral load at which cells reach half max apoptosis rate" type="double" units="virion">250</max_apoptosis_half_max> 
 				<apoptosis_hill_power description="Hill power for viral load apoptosis response" type="double" units="none">1</apoptosis_hill_power> 
 				<virus_fraction_released_at_death description="fraction of internal virus released at cell death" type="double" units="none">0</virus_fraction_released_at_death>
@@ -514,11 +517,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate>
-					<substrate name="anti-inflammatory cytokine">
+						<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-					<substrate name="collagen">
+						<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -538,6 +541,9 @@
 				
 				<virion_uncoating_rate description="rate at which an internalized virion is uncoated" type="double" units="1/min">0.01</virion_uncoating_rate>
 				<uncoated_to_RNA_rate description="rate at which uncoated virion makes its mRNA available" type="double" units="1/min">0.01</uncoated_to_RNA_rate> 
+				<max_RNA_replication_rate description="mRNA self replication max rate" type="double" units="1/min">3</max_RNA_replication_rate> 
+				<RNA_replication_half description="mRNA self replication half max" type="double" units="virions">200</RNA_replication_half> 
+				<basal_RNA_degradation_rate description="mRNA degradation rate" type="double" units="1/min">1</basal_RNA_degradation_rate> 
 				<protein_synthesis_rate description="rate at mRNA creates complete set of proteins" type="double" units="1/min">0.01</protein_synthesis_rate>
 				<virion_assembly_rate description="rate at which viral proteins are assembled into complete virion" type="double" units="1/min">0.01</virion_assembly_rate>
  
@@ -550,13 +556,13 @@
 				<unbound_internal_ACE2 description="initial number of internalized unbound ACE2 receptors" type="double" units="receptors">0</unbound_internal_ACE2>
 				<bound_internal_ACE2 description="initial number of internalized bound ACE2 receptors" type="double" units="receptors">0</bound_internal_ACE2>
 	
-				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.001</ACE2_binding_rate> 
+				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.01</ACE2_binding_rate> 
 				<ACE2_endocytosis_rate description="ACE2 receptor-virus endocytosis rate" type="double" units="1/min">0.01</ACE2_endocytosis_rate> 
-				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.001</ACE2_cargo_release_rate> 
+				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.01</ACE2_cargo_release_rate> 
 				<ACE2_recycling_rate description="ACE2 receptor recycling rate" type="double" units="1/min">0.01</ACE2_recycling_rate> 
 				
 				 
-				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.001</max_infected_apoptosis_rate>
+				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.002</max_infected_apoptosis_rate>
 				<max_apoptosis_half_max description="viral load at which cells reach half max apoptosis rate" type="double" units="virion">250</max_apoptosis_half_max> 
 				<apoptosis_hill_power description="Hill power for viral load apoptosis response" type="double" units="none">1</apoptosis_hill_power> 
 				<virus_fraction_released_at_death description="fraction of internal virus released at cell death" type="double" units="none">0</virus_fraction_released_at_death>
@@ -768,11 +774,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate>
-					<substrate name="anti-inflammatory cytokine">
+						<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-					<substrate name="collagen">
+						<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -792,6 +798,9 @@
 				
 				<virion_uncoating_rate description="rate at which an internalized virion is uncoated" type="double" units="1/min">0.01</virion_uncoating_rate>
 				<uncoated_to_RNA_rate description="rate at which uncoated virion makes its mRNA available" type="double" units="1/min">0.01</uncoated_to_RNA_rate> 
+				<max_RNA_replication_rate description="mRNA self replication max rate" type="double" units="1/min">3</max_RNA_replication_rate> 
+				<RNA_replication_half description="mRNA self replication half max" type="double" units="virions">200</RNA_replication_half> 
+				<basal_RNA_degradation_rate description="mRNA degradation rate" type="double" units="1/min">1</basal_RNA_degradation_rate> 
 				<protein_synthesis_rate description="rate at mRNA creates complete set of proteins" type="double" units="1/min">0.01</protein_synthesis_rate>
 				<virion_assembly_rate description="rate at which viral proteins are assembled into complete virion" type="double" units="1/min">0.01</virion_assembly_rate>
  
@@ -804,13 +813,13 @@
 				<unbound_internal_ACE2 description="initial number of internalized unbound ACE2 receptors" type="double" units="receptors">0</unbound_internal_ACE2>
 				<bound_internal_ACE2 description="initial number of internalized bound ACE2 receptors" type="double" units="receptors">0</bound_internal_ACE2>
 	
-				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.001</ACE2_binding_rate> 
+				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.01</ACE2_binding_rate> 
 				<ACE2_endocytosis_rate description="ACE2 receptor-virus endocytosis rate" type="double" units="1/min">0.01</ACE2_endocytosis_rate> 
-				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.001</ACE2_cargo_release_rate> 
+				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.01</ACE2_cargo_release_rate> 
 				<ACE2_recycling_rate description="ACE2 receptor recycling rate" type="double" units="1/min">0.01</ACE2_recycling_rate> 
 				
 				 
-				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.001</max_infected_apoptosis_rate>
+				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.002</max_infected_apoptosis_rate>
 				<max_apoptosis_half_max description="viral load at which cells reach half max apoptosis rate" type="double" units="virion">250</max_apoptosis_half_max> 
 				<apoptosis_hill_power description="Hill power for viral load apoptosis response" type="double" units="none">1</apoptosis_hill_power> 
 				<virus_fraction_released_at_death description="fraction of internal virus released at cell death" type="double" units="none">0</virus_fraction_released_at_death>
@@ -1022,11 +1031,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate>
-					<substrate name="anti-inflammatory cytokine">
+						<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-					<substrate name="collagen">
+						<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -1046,6 +1055,9 @@
 				
 				<virion_uncoating_rate description="rate at which an internalized virion is uncoated" type="double" units="1/min">0.01</virion_uncoating_rate>
 				<uncoated_to_RNA_rate description="rate at which uncoated virion makes its mRNA available" type="double" units="1/min">0.01</uncoated_to_RNA_rate> 
+				<max_RNA_replication_rate description="mRNA self replication max rate" type="double" units="1/min">3</max_RNA_replication_rate> 
+				<RNA_replication_half description="mRNA self replication half max" type="double" units="virions">200</RNA_replication_half> 
+				<basal_RNA_degradation_rate description="mRNA degradation rate" type="double" units="1/min">1</basal_RNA_degradation_rate> 
 				<protein_synthesis_rate description="rate at mRNA creates complete set of proteins" type="double" units="1/min">0.01</protein_synthesis_rate>
 				<virion_assembly_rate description="rate at which viral proteins are assembled into complete virion" type="double" units="1/min">0.01</virion_assembly_rate>
  
@@ -1058,13 +1070,13 @@
 				<unbound_internal_ACE2 description="initial number of internalized unbound ACE2 receptors" type="double" units="receptors">0</unbound_internal_ACE2>
 				<bound_internal_ACE2 description="initial number of internalized bound ACE2 receptors" type="double" units="receptors">0</bound_internal_ACE2>
 	
-				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.001</ACE2_binding_rate> 
+				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.01</ACE2_binding_rate> 
 				<ACE2_endocytosis_rate description="ACE2 receptor-virus endocytosis rate" type="double" units="1/min">0.01</ACE2_endocytosis_rate> 
-				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.001</ACE2_cargo_release_rate> 
+				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.01</ACE2_cargo_release_rate> 
 				<ACE2_recycling_rate description="ACE2 receptor recycling rate" type="double" units="1/min">0.01</ACE2_recycling_rate> 
 				
 				 
-				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.001</max_infected_apoptosis_rate>
+				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.002</max_infected_apoptosis_rate>
 				<max_apoptosis_half_max description="viral load at which cells reach half max apoptosis rate" type="double" units="virion">250</max_apoptosis_half_max> 
 				<apoptosis_hill_power description="Hill power for viral load apoptosis response" type="double" units="none">1</apoptosis_hill_power> 
 				<virus_fraction_released_at_death description="fraction of internal virus released at cell death" type="double" units="none">0</virus_fraction_released_at_death>
@@ -1276,11 +1288,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate>
-					<substrate name="anti-inflammatory cytokine">
+						<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-					<substrate name="collagen">
+						<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -1300,6 +1312,9 @@
 				
 				<virion_uncoating_rate description="rate at which an internalized virion is uncoated" type="double" units="1/min">0.01</virion_uncoating_rate>
 				<uncoated_to_RNA_rate description="rate at which uncoated virion makes its mRNA available" type="double" units="1/min">0.01</uncoated_to_RNA_rate> 
+				<max_RNA_replication_rate description="mRNA self replication max rate" type="double" units="1/min">3</max_RNA_replication_rate> 
+				<RNA_replication_half description="mRNA self replication half max" type="double" units="virions">200</RNA_replication_half> 
+				<basal_RNA_degradation_rate description="mRNA degradation rate" type="double" units="1/min">1</basal_RNA_degradation_rate> 
 				<protein_synthesis_rate description="rate at mRNA creates complete set of proteins" type="double" units="1/min">0.01</protein_synthesis_rate>
 				<virion_assembly_rate description="rate at which viral proteins are assembled into complete virion" type="double" units="1/min">0.01</virion_assembly_rate>
  
@@ -1312,13 +1327,13 @@
 				<unbound_internal_ACE2 description="initial number of internalized unbound ACE2 receptors" type="double" units="receptors">0</unbound_internal_ACE2>
 				<bound_internal_ACE2 description="initial number of internalized bound ACE2 receptors" type="double" units="receptors">0</bound_internal_ACE2>
 	
-				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.001</ACE2_binding_rate> 
+				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.01</ACE2_binding_rate> 
 				<ACE2_endocytosis_rate description="ACE2 receptor-virus endocytosis rate" type="double" units="1/min">0.01</ACE2_endocytosis_rate> 
-				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.001</ACE2_cargo_release_rate> 
+				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.01</ACE2_cargo_release_rate> 
 				<ACE2_recycling_rate description="ACE2 receptor recycling rate" type="double" units="1/min">0.01</ACE2_recycling_rate> 
 				
 				 
-				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.001</max_infected_apoptosis_rate>
+				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.002</max_infected_apoptosis_rate>
 				<max_apoptosis_half_max description="viral load at which cells reach half max apoptosis rate" type="double" units="virion">250</max_apoptosis_half_max> 
 				<apoptosis_hill_power description="Hill power for viral load apoptosis response" type="double" units="none">1</apoptosis_hill_power> 
 				<virus_fraction_released_at_death description="fraction of internal virus released at cell death" type="double" units="none">0</virus_fraction_released_at_death>
@@ -1530,11 +1545,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate>
-					<substrate name="anti-inflammatory cytokine">
+						<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-					<substrate name="collagen">
+						<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -1554,6 +1569,9 @@
 				
 				<virion_uncoating_rate description="rate at which an internalized virion is uncoated" type="double" units="1/min">0.01</virion_uncoating_rate>
 				<uncoated_to_RNA_rate description="rate at which uncoated virion makes its mRNA available" type="double" units="1/min">0.01</uncoated_to_RNA_rate> 
+				<max_RNA_replication_rate description="mRNA self replication max rate" type="double" units="1/min">3</max_RNA_replication_rate> 
+				<RNA_replication_half description="mRNA self replication half max" type="double" units="virions">200</RNA_replication_half> 
+				<basal_RNA_degradation_rate description="mRNA degradation rate" type="double" units="1/min">1</basal_RNA_degradation_rate> 
 				<protein_synthesis_rate description="rate at mRNA creates complete set of proteins" type="double" units="1/min">0.01</protein_synthesis_rate>
 				<virion_assembly_rate description="rate at which viral proteins are assembled into complete virion" type="double" units="1/min">0.01</virion_assembly_rate>
  
@@ -1566,13 +1584,13 @@
 				<unbound_internal_ACE2 description="initial number of internalized unbound ACE2 receptors" type="double" units="receptors">0</unbound_internal_ACE2>
 				<bound_internal_ACE2 description="initial number of internalized bound ACE2 receptors" type="double" units="receptors">0</bound_internal_ACE2>
 	
-				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.001</ACE2_binding_rate> 
+				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.01</ACE2_binding_rate> 
 				<ACE2_endocytosis_rate description="ACE2 receptor-virus endocytosis rate" type="double" units="1/min">0.01</ACE2_endocytosis_rate> 
-				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.001</ACE2_cargo_release_rate> 
+				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.01</ACE2_cargo_release_rate> 
 				<ACE2_recycling_rate description="ACE2 receptor recycling rate" type="double" units="1/min">0.01</ACE2_recycling_rate> 
 				
 				 
-				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.001</max_infected_apoptosis_rate>
+				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.002</max_infected_apoptosis_rate>
 				<max_apoptosis_half_max description="viral load at which cells reach half max apoptosis rate" type="double" units="virion">250</max_apoptosis_half_max> 
 				<apoptosis_hill_power description="Hill power for viral load apoptosis response" type="double" units="none">1</apoptosis_hill_power> 
 				<virus_fraction_released_at_death description="fraction of internal virus released at cell death" type="double" units="none">0</virus_fraction_released_at_death>
@@ -1784,11 +1802,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate>
-					<substrate name="anti-inflammatory cytokine">
+						<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-					<substrate name="collagen">
+						<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -1808,6 +1826,9 @@
 				
 				<virion_uncoating_rate description="rate at which an internalized virion is uncoated" type="double" units="1/min">0.01</virion_uncoating_rate>
 				<uncoated_to_RNA_rate description="rate at which uncoated virion makes its mRNA available" type="double" units="1/min">0.01</uncoated_to_RNA_rate> 
+				<max_RNA_replication_rate description="mRNA self replication max rate" type="double" units="1/min">3</max_RNA_replication_rate> 
+				<RNA_replication_half description="mRNA self replication half max" type="double" units="virions">200</RNA_replication_half> 
+				<basal_RNA_degradation_rate description="mRNA degradation rate" type="double" units="1/min">1</basal_RNA_degradation_rate> 
 				<protein_synthesis_rate description="rate at mRNA creates complete set of proteins" type="double" units="1/min">0.01</protein_synthesis_rate>
 				<virion_assembly_rate description="rate at which viral proteins are assembled into complete virion" type="double" units="1/min">0.01</virion_assembly_rate>
  
@@ -1820,13 +1841,13 @@
 				<unbound_internal_ACE2 description="initial number of internalized unbound ACE2 receptors" type="double" units="receptors">0</unbound_internal_ACE2>
 				<bound_internal_ACE2 description="initial number of internalized bound ACE2 receptors" type="double" units="receptors">0</bound_internal_ACE2>
 	
-				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.001</ACE2_binding_rate> 
+				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.01</ACE2_binding_rate> 
 				<ACE2_endocytosis_rate description="ACE2 receptor-virus endocytosis rate" type="double" units="1/min">0.01</ACE2_endocytosis_rate> 
-				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.001</ACE2_cargo_release_rate> 
+				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.01</ACE2_cargo_release_rate> 
 				<ACE2_recycling_rate description="ACE2 receptor recycling rate" type="double" units="1/min">0.01</ACE2_recycling_rate> 
 				
 				 
-				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.001</max_infected_apoptosis_rate>
+				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.002</max_infected_apoptosis_rate>
 				<max_apoptosis_half_max description="viral load at which cells reach half max apoptosis rate" type="double" units="virion">250</max_apoptosis_half_max> 
 				<apoptosis_hill_power description="Hill power for viral load apoptosis response" type="double" units="none">1</apoptosis_hill_power> 
 				<virus_fraction_released_at_death description="fraction of internal virus released at cell death" type="double" units="none">0</virus_fraction_released_at_death>
@@ -2038,11 +2059,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate>
-					<substrate name="anti-inflammatory cytokine">
+						<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-					<substrate name="collagen">
+						<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
                         <uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -2062,6 +2083,9 @@
 				
 				<virion_uncoating_rate description="rate at which an internalized virion is uncoated" type="double" units="1/min">0.01</virion_uncoating_rate>
 				<uncoated_to_RNA_rate description="rate at which uncoated virion makes its mRNA available" type="double" units="1/min">0.01</uncoated_to_RNA_rate> 
+				<max_RNA_replication_rate description="mRNA self replication max rate" type="double" units="1/min">3</max_RNA_replication_rate> 
+				<RNA_replication_half description="mRNA self replication half max" type="double" units="virions">200</RNA_replication_half> 
+				<basal_RNA_degradation_rate description="mRNA degradation rate" type="double" units="1/min">1</basal_RNA_degradation_rate> 
 				<protein_synthesis_rate description="rate at mRNA creates complete set of proteins" type="double" units="1/min">0.01</protein_synthesis_rate>
 				<virion_assembly_rate description="rate at which viral proteins are assembled into complete virion" type="double" units="1/min">0.01</virion_assembly_rate>
  
@@ -2074,13 +2098,13 @@
 				<unbound_internal_ACE2 description="initial number of internalized unbound ACE2 receptors" type="double" units="receptors">0</unbound_internal_ACE2>
 				<bound_internal_ACE2 description="initial number of internalized bound ACE2 receptors" type="double" units="receptors">0</bound_internal_ACE2>
 	
-				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.001</ACE2_binding_rate> 
+				<ACE2_binding_rate description="ACE2 receptor-virus binding rate" type="double" units="1/min">0.01</ACE2_binding_rate> 
 				<ACE2_endocytosis_rate description="ACE2 receptor-virus endocytosis rate" type="double" units="1/min">0.01</ACE2_endocytosis_rate> 
-				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.001</ACE2_cargo_release_rate> 
+				<ACE2_cargo_release_rate description="ACE2 receptor-virus cargo release rate" type="double" units="1/min">0.01</ACE2_cargo_release_rate> 
 				<ACE2_recycling_rate description="ACE2 receptor recycling rate" type="double" units="1/min">0.01</ACE2_recycling_rate> 
 				
 				 
-				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.001</max_infected_apoptosis_rate>
+				<max_infected_apoptosis_rate description="maximum rate of cell apoptosis due to viral infection" type="double" units="1/min">0.002</max_infected_apoptosis_rate>
 				<max_apoptosis_half_max description="viral load at which cells reach half max apoptosis rate" type="double" units="virion">250</max_apoptosis_half_max> 
 				<apoptosis_hill_power description="Hill power for viral load apoptosis response" type="double" units="none">1</apoptosis_hill_power> 
 				<virus_fraction_released_at_death description="fraction of internal virus released at cell death" type="double" units="none">0</virus_fraction_released_at_death>
