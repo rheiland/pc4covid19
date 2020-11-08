@@ -81,6 +81,7 @@ class SubstrateTab(object):
         self.ax1_lymph_TC = None
         self.ax1_lymph_TH2 = None
 
+        self.updated_analysis_flag = True
         self.analysis_data_plotted = False
         self.analysis_data_set1 = False  # live, infected, dead
         self.analysis_data_set2 = False  # Mac, Neut, CD8, 
@@ -551,11 +552,15 @@ class SubstrateTab(object):
 
         if (hublib_flag):
             self.download_button = Download('mcds.zip', style='warning', icon='cloud-download', 
-                                                tooltip='Download data', cb=self.download_cb)
+                                                tooltip='Download MCDS data', cb=self.download_cb)
 
             self.download_svg_button = Download('svg.zip', style='warning', icon='cloud-download', 
-                                            tooltip='You need to allow pop-ups in your browser', cb=self.download_svg_cb)
-            download_row = HBox([self.download_button.w, self.download_svg_button.w, Label("Download all cell plots (browser must allow pop-ups).")])
+                                            tooltip='Download cells SVG', cb=self.download_svg_cb)
+            # config_file = Path(os.path.join(self.output_dir, 'config.xml'))
+            # config_file = self.output_dir + '/config.xml'
+            self.download_config_button = Download('config.zip', style='warning', icon='cloud-download', 
+                                            tooltip='Download the config params', cb=self.download_config_cb)
+            download_row = HBox([self.download_button.w, self.download_svg_button.w, self.download_config_button.w, Label("Download data (browser must allow pop-ups).")])
 
             # box_layout = Layout(border='0px solid')
             # controls_box = VBox([row1, row2])  # ,width='50%', layout=box_layout)
@@ -570,6 +575,8 @@ class SubstrateTab(object):
     #---------------------------------------------------
     def reset_analysis_data_plotting(self, bool_val):
         # self.analysis_data_toggle.disabled = bool_val
+        self.analysis_data_plotted = False
+
         if (bool_val == True):
             self.analysis_data_toggle.value = False
             self.xval = np.empty([1])
@@ -779,6 +786,11 @@ class SubstrateTab(object):
                 last_file = substrate_files[-1]
                 self.max_frames.value = int(last_file[-12:-4])
 
+    def download_config_cb(self):
+        file_str = os.path.join(self.output_dir, 'config.xml')
+        with zipfile.ZipFile('config.zip', 'w') as myzip:
+            myzip.write(file_str, os.path.basename(file_str))   # 2nd arg avoids full filename path in the archive
+
     def download_svg_cb(self):
         file_str = os.path.join(self.output_dir, '*.svg')
         # print('zip up all ',file_str)
@@ -882,6 +894,9 @@ class SubstrateTab(object):
         # self.analysis_data_wait.value = 'Wait for update...'
         # self.analysis_data_wait.value = 'compute 1st of 4 sets...'
 
+        # self.updated_analysis_flag = True
+        self.analysis_data_plotted = True
+
         cwd = os.getcwd()
         # print("----- cwd(1)=",cwd)
         data_dir = cwd
@@ -910,8 +925,8 @@ class SubstrateTab(object):
         ds_count = len(xml_files)
         # print("----- ds_count = ",ds_count)
         mcds = [pyMCDS(xml_files[i], '.') for i in range(ds_count)]  # optimize eventually?
-        # mcds = [pyMCDS(xml_files[i], 'tmpdir') for i in range(ds_count)]
-        # mcds = [pyMCDS(xml_files[i], data_dir) for i in range(ds_count)]
+        # # mcds = [pyMCDS(xml_files[i], 'tmpdir') for i in range(ds_count)]
+        # # mcds = [pyMCDS(xml_files[i], data_dir) for i in range(ds_count)]
         # print("----- mcds = ",mcds)
         # print(mcds[0].data['discrete_cells'].keys())
 #        dict_keys(['ID', 'position_x', 'position_y', 'position_z', 'total_volume', 'cell_type', 'cycle_model', 'current_phase', 'elapsed_time_in_phase', 'nuclear_volume', 'cytoplasmic_volume', 'fluid_fraction', 'calcified_fraction', 'orientation_x', 'orientation_y', 'orientation_z', 'polarity', 'migration_speed', 'motility_vector_x', 'motility_vector_y', 'motility_vector_z', 'migration_bias', 'motility_bias_direction_x', 'motility_bias_direction_y', 'motility_bias_direction_z', 'persistence_time', 'motility_reserved', 'unbound_external_ACE2', 'bound_external_ACE2', 'unbound_internal_ACE2', 'bound_internal_ACE2', 'ACE2_binding_rate', 'ACE2_endocytosis_rate', 'ACE2_cargo_release_rate', 'ACE2_recycling_rate', 'virion', 'uncoated_virion', 'viral_RNA', 'viral_protein', 'assembled_virion', 'virion_uncoating_rate', 'uncoated_to_RNA_rate', 'protein_synthesis_rate', 'virion_assembly_rate', 'virion_export_rate', 'max_infected_apoptosis_rate', 'max_apoptosis_half_max', 'apoptosis_hill_power'])
@@ -929,6 +944,10 @@ class SubstrateTab(object):
         xname = 'time'
         if xname == self.tname:
             self.xval = tval
+            # print("xname == self.tname")
+            # print("#1 self.xval=",self.xval)
+        else:
+            print("Warning: xname != self.tname")
         # elif xname in discrete_cells_names:
         #     self.xval = np.array([mcds[i].data['discrete_cells'][xname].sum() for i in range(ds_count)])
         # else:
@@ -1241,11 +1260,17 @@ class SubstrateTab(object):
             self.ax1_lymph_TH2.tick_params(axis='y', colors=self.lymph_TC_color)
 
         max_time_min = int(self.xval[-1])
-        num_days = int(max_time_min/1440)
+        # print('self.xval =',self.xval)
+        # print('max_time_min =',max_time_min)
+        num_days = int(max_time_min/1440.)
         num_hours = int((max_time_min - num_days*1440.)/60.)
         num_min = int(max_time_min % 60)
         title_str = 'Updated to ' + '%dd, %dh %dm'%(num_days,num_hours,num_min)
-        self.ax1.set_title(title_str)
+        if (self.analysis_data_plotted):
+            self.ax1.set_title(title_str)
+        else:
+            self.ax1.set_xticklabels([])
+            self.ax1.set_yticklabels([])
         # p = self.ax1.plot(xval, yval, label=yname)
         # self.ax1.set_legend()
         # self.ax1.tight_layout()
