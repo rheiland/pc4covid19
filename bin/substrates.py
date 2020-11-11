@@ -967,19 +967,18 @@ class SubstrateTab(object):
         # if 'live' in self.analysis_data_choice.value:  # live,infected,dead
         #     if (self.analysis_data_set1 == False):
 
-        # count # infected
         self.analysis_data_wait.value = 'compute 1 of 5 ...'
-        # self.yval2 = np.array( [len(np.where(mcds[idx].data['discrete_cells']['virion'] > 1)[0]) for idx in range(ds_count)] )
+
+        # count epi cells still alive 
+        self.yval1 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 1) & (mcds[idx].data['discrete_cells']['cycle_model'] < 100) == True)) for idx in range(ds_count)] )
+
+        # count epi cells infected 
         self.yval2 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 1) & (mcds[idx].data['discrete_cells']['virion'] > 1.) == True)) for idx in range(ds_count)] )
         # print('self.yval2=',self.yval2)
 
-        # count # dead
-        # self.yval3 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cycle_model'] > 6) == True)) for idx in range(ds_count)] )
-        self.yval3 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 1) & (mcds[idx].data['discrete_cells']['cycle_model'] > 6) == True)) for idx in range(ds_count)] )
+        # count epi cells dead 
+        self.yval3 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 1) & (mcds[idx].data['discrete_cells']['cycle_model'] >= 100) == True)) for idx in range(ds_count)] )
         # print('self.yval3=',self.yval3)
-
-        # count # live (all epi cells - dead)
-        self.yval1 = np.array( [(np.count_nonzero((mcds[idx].data['discrete_cells']['cell_type'] == 1) == True)) for idx in range(ds_count)] )
 
         self.analysis_data_set1 = True 
 
