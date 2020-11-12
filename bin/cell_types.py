@@ -384,17 +384,17 @@ class CellTypesTab(object):
         self.text0 = Text(value='interferon 1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text0]
         box37 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float35 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float35 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float35, units_btn]
         box38 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float36 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float36 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float36, units_btn]
         box39 = Box(children=row, layout=box_layout)
@@ -403,17 +403,17 @@ class CellTypesTab(object):
         self.text1 = Text(value='pro-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text1]
         box40 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float37 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float37 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float37, units_btn]
         box41 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float38 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float38 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float38, units_btn]
         box42 = Box(children=row, layout=box_layout)
@@ -422,17 +422,17 @@ class CellTypesTab(object):
         self.text2 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text2]
         box43 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float39 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float39 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float39, units_btn]
         box44 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float40 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float40 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float40, units_btn]
         box45 = Box(children=row, layout=box_layout)
@@ -441,17 +441,17 @@ class CellTypesTab(object):
         self.text3 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text3]
         box46 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float41 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float41 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float41, units_btn]
         box47 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float42 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float42 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float42, units_btn]
         box48 = Box(children=row, layout=box_layout)
@@ -460,17 +460,17 @@ class CellTypesTab(object):
         self.text4 = Text(value='anti-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text4]
         box49 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float43 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float43 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float43, units_btn]
         box50 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float44 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float44 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float44, units_btn]
         box51 = Box(children=row, layout=box_layout)
@@ -479,17 +479,17 @@ class CellTypesTab(object):
         self.text5 = Text(value='collagen', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text5]
         box52 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float45 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float45 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float45, units_btn]
         box53 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float46 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float46 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float46, units_btn]
         box54 = Box(children=row, layout=box_layout)
@@ -603,7 +603,7 @@ class CellTypesTab(object):
         box64 = Box(children=row, layout=box_layout)
         name_btn = Button(description='basal_RNA_degradation_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float57 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        self.float57 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='mRNA degradation rate', disabled=True, layout=desc_button_layout)
@@ -1013,7 +1013,7 @@ class CellTypesTab(object):
         box105 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_viral_RNA_threshold', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float98 = FloatText(value='2', step='0.1', style=style, layout=widget_layout)
+        self.float98 = FloatText(value='100', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='infected cell interferon secretion saturates at this viral RNA level', disabled=True, layout=desc_button_layout)
@@ -1639,17 +1639,17 @@ class CellTypesTab(object):
         self.text6 = Text(value='interferon 1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text6]
         box165 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float155 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float155 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float155, units_btn]
         box166 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float156 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float156 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float156, units_btn]
         box167 = Box(children=row, layout=box_layout)
@@ -1658,17 +1658,17 @@ class CellTypesTab(object):
         self.text7 = Text(value='pro-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text7]
         box168 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float157 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float157 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float157, units_btn]
         box169 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float158 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float158 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float158, units_btn]
         box170 = Box(children=row, layout=box_layout)
@@ -1677,17 +1677,17 @@ class CellTypesTab(object):
         self.text8 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text8]
         box171 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float159 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float159 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float159, units_btn]
         box172 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float160 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float160 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float160, units_btn]
         box173 = Box(children=row, layout=box_layout)
@@ -1696,17 +1696,17 @@ class CellTypesTab(object):
         self.text9 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text9]
         box174 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float161 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float161 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float161, units_btn]
         box175 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float162 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float162 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float162, units_btn]
         box176 = Box(children=row, layout=box_layout)
@@ -1715,17 +1715,17 @@ class CellTypesTab(object):
         self.text10 = Text(value='anti-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text10]
         box177 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float163 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float163 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float163, units_btn]
         box178 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float164 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float164 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float164, units_btn]
         box179 = Box(children=row, layout=box_layout)
@@ -1734,17 +1734,17 @@ class CellTypesTab(object):
         self.text11 = Text(value='collagen', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text11]
         box180 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float165 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float165 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float165, units_btn]
         box181 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float166 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float166 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float166, units_btn]
         box182 = Box(children=row, layout=box_layout)
@@ -1858,7 +1858,7 @@ class CellTypesTab(object):
         box192 = Box(children=row, layout=box_layout)
         name_btn = Button(description='basal_RNA_degradation_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float177 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        self.float177 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='mRNA degradation rate', disabled=True, layout=desc_button_layout)
@@ -2268,7 +2268,7 @@ class CellTypesTab(object):
         box233 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_viral_RNA_threshold', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float218 = FloatText(value='2', step='0.1', style=style, layout=widget_layout)
+        self.float218 = FloatText(value='100', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='infected cell interferon secretion saturates at this viral RNA level', disabled=True, layout=desc_button_layout)
@@ -2894,17 +2894,17 @@ class CellTypesTab(object):
         self.text12 = Text(value='interferon 1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text12]
         box293 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float275 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float275 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float275, units_btn]
         box294 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float276 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float276 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float276, units_btn]
         box295 = Box(children=row, layout=box_layout)
@@ -2913,17 +2913,17 @@ class CellTypesTab(object):
         self.text13 = Text(value='pro-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text13]
         box296 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float277 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float277 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float277, units_btn]
         box297 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float278 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float278 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float278, units_btn]
         box298 = Box(children=row, layout=box_layout)
@@ -2932,17 +2932,17 @@ class CellTypesTab(object):
         self.text14 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text14]
         box299 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float279 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float279 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float279, units_btn]
         box300 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float280 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float280 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float280, units_btn]
         box301 = Box(children=row, layout=box_layout)
@@ -2951,17 +2951,17 @@ class CellTypesTab(object):
         self.text15 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text15]
         box302 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float281 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float281 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float281, units_btn]
         box303 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float282 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float282 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float282, units_btn]
         box304 = Box(children=row, layout=box_layout)
@@ -2970,17 +2970,17 @@ class CellTypesTab(object):
         self.text16 = Text(value='anti-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text16]
         box305 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float283 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float283 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float283, units_btn]
         box306 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float284 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float284 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float284, units_btn]
         box307 = Box(children=row, layout=box_layout)
@@ -2989,17 +2989,17 @@ class CellTypesTab(object):
         self.text17 = Text(value='collagen', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text17]
         box308 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float285 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float285 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float285, units_btn]
         box309 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float286 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float286 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float286, units_btn]
         box310 = Box(children=row, layout=box_layout)
@@ -3113,7 +3113,7 @@ class CellTypesTab(object):
         box320 = Box(children=row, layout=box_layout)
         name_btn = Button(description='basal_RNA_degradation_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float297 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        self.float297 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='mRNA degradation rate', disabled=True, layout=desc_button_layout)
@@ -3523,7 +3523,7 @@ class CellTypesTab(object):
         box361 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_viral_RNA_threshold', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float338 = FloatText(value='2', step='0.1', style=style, layout=widget_layout)
+        self.float338 = FloatText(value='100', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='infected cell interferon secretion saturates at this viral RNA level', disabled=True, layout=desc_button_layout)
@@ -4149,17 +4149,17 @@ class CellTypesTab(object):
         self.text18 = Text(value='interferon 1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text18]
         box421 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float395 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float395 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float395, units_btn]
         box422 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float396 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float396 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float396, units_btn]
         box423 = Box(children=row, layout=box_layout)
@@ -4168,17 +4168,17 @@ class CellTypesTab(object):
         self.text19 = Text(value='pro-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text19]
         box424 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float397 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float397 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float397, units_btn]
         box425 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float398 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float398 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float398, units_btn]
         box426 = Box(children=row, layout=box_layout)
@@ -4187,17 +4187,17 @@ class CellTypesTab(object):
         self.text20 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text20]
         box427 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float399 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float399 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float399, units_btn]
         box428 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float400 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float400 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float400, units_btn]
         box429 = Box(children=row, layout=box_layout)
@@ -4206,17 +4206,17 @@ class CellTypesTab(object):
         self.text21 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text21]
         box430 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float401 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float401 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float401, units_btn]
         box431 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float402 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float402 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float402, units_btn]
         box432 = Box(children=row, layout=box_layout)
@@ -4225,17 +4225,17 @@ class CellTypesTab(object):
         self.text22 = Text(value='anti-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text22]
         box433 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float403 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float403 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float403, units_btn]
         box434 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float404 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float404 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float404, units_btn]
         box435 = Box(children=row, layout=box_layout)
@@ -4244,17 +4244,17 @@ class CellTypesTab(object):
         self.text23 = Text(value='collagen', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text23]
         box436 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float405 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float405 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float405, units_btn]
         box437 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float406 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float406 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float406, units_btn]
         box438 = Box(children=row, layout=box_layout)
@@ -4368,7 +4368,7 @@ class CellTypesTab(object):
         box448 = Box(children=row, layout=box_layout)
         name_btn = Button(description='basal_RNA_degradation_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float417 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        self.float417 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='mRNA degradation rate', disabled=True, layout=desc_button_layout)
@@ -4778,7 +4778,7 @@ class CellTypesTab(object):
         box489 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_viral_RNA_threshold', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float458 = FloatText(value='2', step='0.1', style=style, layout=widget_layout)
+        self.float458 = FloatText(value='100', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='infected cell interferon secretion saturates at this viral RNA level', disabled=True, layout=desc_button_layout)
@@ -5404,17 +5404,17 @@ class CellTypesTab(object):
         self.text24 = Text(value='interferon 1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text24]
         box549 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float515 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float515 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float515, units_btn]
         box550 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float516 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float516 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float516, units_btn]
         box551 = Box(children=row, layout=box_layout)
@@ -5423,17 +5423,17 @@ class CellTypesTab(object):
         self.text25 = Text(value='pro-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text25]
         box552 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float517 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float517 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float517, units_btn]
         box553 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float518 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float518 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float518, units_btn]
         box554 = Box(children=row, layout=box_layout)
@@ -5442,17 +5442,17 @@ class CellTypesTab(object):
         self.text26 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text26]
         box555 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float519 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float519 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float519, units_btn]
         box556 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float520 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float520 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float520, units_btn]
         box557 = Box(children=row, layout=box_layout)
@@ -5461,17 +5461,17 @@ class CellTypesTab(object):
         self.text27 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text27]
         box558 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float521 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float521 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float521, units_btn]
         box559 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float522 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float522 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float522, units_btn]
         box560 = Box(children=row, layout=box_layout)
@@ -5480,17 +5480,17 @@ class CellTypesTab(object):
         self.text28 = Text(value='anti-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text28]
         box561 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float523 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float523 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float523, units_btn]
         box562 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float524 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float524 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float524, units_btn]
         box563 = Box(children=row, layout=box_layout)
@@ -5499,17 +5499,17 @@ class CellTypesTab(object):
         self.text29 = Text(value='collagen', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text29]
         box564 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float525 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float525 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float525, units_btn]
         box565 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float526 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float526 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float526, units_btn]
         box566 = Box(children=row, layout=box_layout)
@@ -5623,7 +5623,7 @@ class CellTypesTab(object):
         box576 = Box(children=row, layout=box_layout)
         name_btn = Button(description='basal_RNA_degradation_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float537 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        self.float537 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='mRNA degradation rate', disabled=True, layout=desc_button_layout)
@@ -6033,7 +6033,7 @@ class CellTypesTab(object):
         box617 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_viral_RNA_threshold', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float578 = FloatText(value='2', step='0.1', style=style, layout=widget_layout)
+        self.float578 = FloatText(value='100', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='infected cell interferon secretion saturates at this viral RNA level', disabled=True, layout=desc_button_layout)
@@ -6659,17 +6659,17 @@ class CellTypesTab(object):
         self.text30 = Text(value='interferon 1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text30]
         box677 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float635 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float635 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float635, units_btn]
         box678 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float636 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float636 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float636, units_btn]
         box679 = Box(children=row, layout=box_layout)
@@ -6678,17 +6678,17 @@ class CellTypesTab(object):
         self.text31 = Text(value='pro-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text31]
         box680 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float637 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float637 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float637, units_btn]
         box681 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float638 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float638 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float638, units_btn]
         box682 = Box(children=row, layout=box_layout)
@@ -6697,17 +6697,17 @@ class CellTypesTab(object):
         self.text32 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text32]
         box683 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float639 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float639 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float639, units_btn]
         box684 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float640 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float640 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float640, units_btn]
         box685 = Box(children=row, layout=box_layout)
@@ -6716,17 +6716,17 @@ class CellTypesTab(object):
         self.text33 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text33]
         box686 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float641 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float641 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float641, units_btn]
         box687 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float642 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float642 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float642, units_btn]
         box688 = Box(children=row, layout=box_layout)
@@ -6735,17 +6735,17 @@ class CellTypesTab(object):
         self.text34 = Text(value='anti-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text34]
         box689 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float643 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float643 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float643, units_btn]
         box690 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float644 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float644 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float644, units_btn]
         box691 = Box(children=row, layout=box_layout)
@@ -6754,17 +6754,17 @@ class CellTypesTab(object):
         self.text35 = Text(value='collagen', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text35]
         box692 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float645 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float645 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float645, units_btn]
         box693 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float646 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float646 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float646, units_btn]
         box694 = Box(children=row, layout=box_layout)
@@ -6878,7 +6878,7 @@ class CellTypesTab(object):
         box704 = Box(children=row, layout=box_layout)
         name_btn = Button(description='basal_RNA_degradation_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float657 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        self.float657 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='mRNA degradation rate', disabled=True, layout=desc_button_layout)
@@ -7288,7 +7288,7 @@ class CellTypesTab(object):
         box745 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_viral_RNA_threshold', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float698 = FloatText(value='2', step='0.1', style=style, layout=widget_layout)
+        self.float698 = FloatText(value='100', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='infected cell interferon secretion saturates at this viral RNA level', disabled=True, layout=desc_button_layout)
@@ -7914,17 +7914,17 @@ class CellTypesTab(object):
         self.text36 = Text(value='interferon 1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text36]
         box805 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float755 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float755 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float755, units_btn]
         box806 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float756 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float756 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float756, units_btn]
         box807 = Box(children=row, layout=box_layout)
@@ -7933,17 +7933,17 @@ class CellTypesTab(object):
         self.text37 = Text(value='pro-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text37]
         box808 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float757 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float757 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float757, units_btn]
         box809 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float758 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float758 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float758, units_btn]
         box810 = Box(children=row, layout=box_layout)
@@ -7952,17 +7952,17 @@ class CellTypesTab(object):
         self.text38 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text38]
         box811 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float759 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float759 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float759, units_btn]
         box812 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float760 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float760 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float760, units_btn]
         box813 = Box(children=row, layout=box_layout)
@@ -7971,17 +7971,17 @@ class CellTypesTab(object):
         self.text39 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text39]
         box814 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float761 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float761 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float761, units_btn]
         box815 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float762 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float762 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float762, units_btn]
         box816 = Box(children=row, layout=box_layout)
@@ -7990,17 +7990,17 @@ class CellTypesTab(object):
         self.text40 = Text(value='anti-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text40]
         box817 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float763 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float763 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float763, units_btn]
         box818 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float764 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float764 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float764, units_btn]
         box819 = Box(children=row, layout=box_layout)
@@ -8009,17 +8009,17 @@ class CellTypesTab(object):
         self.text41 = Text(value='collagen', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text41]
         box820 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float765 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float765 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float765, units_btn]
         box821 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float766 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float766 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float766, units_btn]
         box822 = Box(children=row, layout=box_layout)
@@ -8133,7 +8133,7 @@ class CellTypesTab(object):
         box832 = Box(children=row, layout=box_layout)
         name_btn = Button(description='basal_RNA_degradation_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float777 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        self.float777 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='mRNA degradation rate', disabled=True, layout=desc_button_layout)
@@ -8543,7 +8543,7 @@ class CellTypesTab(object):
         box873 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_viral_RNA_threshold', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float818 = FloatText(value='2', step='0.1', style=style, layout=widget_layout)
+        self.float818 = FloatText(value='100', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='infected cell interferon secretion saturates at this viral RNA level', disabled=True, layout=desc_button_layout)
@@ -9169,17 +9169,17 @@ class CellTypesTab(object):
         self.text42 = Text(value='interferon 1', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text42]
         box933 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float875 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float875 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float875, units_btn]
         box934 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float876 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float876 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float876, units_btn]
         box935 = Box(children=row, layout=box_layout)
@@ -9188,17 +9188,17 @@ class CellTypesTab(object):
         self.text43 = Text(value='pro-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text43]
         box936 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float877 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float877 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float877, units_btn]
         box937 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float878 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float878 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float878, units_btn]
         box938 = Box(children=row, layout=box_layout)
@@ -9207,17 +9207,17 @@ class CellTypesTab(object):
         self.text44 = Text(value='chemokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text44]
         box939 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float879 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float879 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float879, units_btn]
         box940 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float880 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float880 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float880, units_btn]
         box941 = Box(children=row, layout=box_layout)
@@ -9226,17 +9226,17 @@ class CellTypesTab(object):
         self.text45 = Text(value='debris', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text45]
         box942 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float881 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float881 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float881, units_btn]
         box943 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float882 = FloatText(value='0.1', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float882 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float882, units_btn]
         box944 = Box(children=row, layout=box_layout)
@@ -9245,17 +9245,17 @@ class CellTypesTab(object):
         self.text46 = Text(value='anti-inflammatory cytokine', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text46]
         box945 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float883 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float883 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float883, units_btn]
         box946 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float884 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float884 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float884, units_btn]
         box947 = Box(children=row, layout=box_layout)
@@ -9264,17 +9264,17 @@ class CellTypesTab(object):
         self.text47 = Text(value='collagen', disabled=False, style=style, layout=widget_layout_long)
         row = [name_btn, self.text47]
         box948 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float885 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
-        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
+        self.float885 = FloatText(value='0', step='0.01', style=style, layout=widget_layout)
+        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         row = [name_btn, self.float885, units_btn]
         box949 = Box(children=row, layout=box_layout)
-        name_btn = Button(description='uptake_rate', disabled=True, layout=name_button_layout)
+        name_btn = Button(description='secretion_target', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float886 = FloatText(value='0.0', step='0.01', style=style, layout=widget_layout)
-        units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
+        self.float886 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        units_btn = Button(description='dimensionless substrate concentration', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         row = [name_btn, self.float886, units_btn]
         box950 = Box(children=row, layout=box_layout)
@@ -9388,7 +9388,7 @@ class CellTypesTab(object):
         box960 = Box(children=row, layout=box_layout)
         name_btn = Button(description='basal_RNA_degradation_rate', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'tan'
-        self.float897 = FloatText(value='1', step='0.1', style=style, layout=widget_layout)
+        self.float897 = FloatText(value='0.01', step='0.001', style=style, layout=widget_layout)
         units_btn = Button(description='1/min', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'tan'
         description_btn = Button(description='mRNA degradation rate', disabled=True, layout=desc_button_layout)
@@ -9798,7 +9798,7 @@ class CellTypesTab(object):
         box1001 = Box(children=row, layout=box_layout)
         name_btn = Button(description='interferon_viral_RNA_threshold', disabled=True, layout=name_button_layout)
         name_btn.style.button_color = 'lightgreen'
-        self.float938 = FloatText(value='2', step='0.1', style=style, layout=widget_layout)
+        self.float938 = FloatText(value='100', step='10', style=style, layout=widget_layout)
         units_btn = Button(description='dimensionless', disabled=True, layout=name_button_layout)
         units_btn.style.button_color = 'lightgreen'
         description_btn = Button(description='infected cell interferon secretion saturates at this viral RNA level', disabled=True, layout=desc_button_layout)
@@ -10187,23 +10187,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         self.chemotaxis_direction1.value = uep.find('.//cell_definition[1]//phenotype//motility//options//chemotaxis//direction').text
         # ---------  secretion 
         self.text0.value = uep.find('.//cell_definition[1]//phenotype//secretion//substrate[1]').attrib['name']
-        self.float35.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[1]//secretion_target').text)
-        self.float36.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float35.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float36.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[1]//secretion_target').text)
         self.text1.value = uep.find('.//cell_definition[1]//phenotype//secretion//substrate[2]').attrib['name']
-        self.float37.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[2]//secretion_target').text)
-        self.float38.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float37.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float38.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[2]//secretion_target').text)
         self.text2.value = uep.find('.//cell_definition[1]//phenotype//secretion//substrate[3]').attrib['name']
-        self.float39.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[3]//secretion_target').text)
-        self.float40.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float39.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float40.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[3]//secretion_target').text)
         self.text3.value = uep.find('.//cell_definition[1]//phenotype//secretion//substrate[4]').attrib['name']
-        self.float41.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[4]//secretion_target').text)
-        self.float42.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float41.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float42.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[4]//secretion_target').text)
         self.text4.value = uep.find('.//cell_definition[1]//phenotype//secretion//substrate[5]').attrib['name']
-        self.float43.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[5]//secretion_target').text)
-        self.float44.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float43.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float44.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[5]//secretion_target').text)
         self.text5.value = uep.find('.//cell_definition[1]//phenotype//secretion//substrate[6]').attrib['name']
-        self.float45.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[6]//secretion_target').text)
-        self.float46.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float45.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float46.value = float(uep.find('.//cell_definition[1]//phenotype//secretion//substrate[6]//secretion_target').text)
         # ---------  molecular
         # ------------------ cell_definition: lung epithelium
         # ---------  cycle (flow_cytometry_separated_cycle_model)
@@ -10253,23 +10253,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         self.chemotaxis_direction2.value = uep.find('.//cell_definition[2]//phenotype//motility//options//chemotaxis//direction').text
         # ---------  secretion 
         self.text6.value = uep.find('.//cell_definition[2]//phenotype//secretion//substrate[1]').attrib['name']
-        self.float155.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[1]//secretion_target').text)
-        self.float156.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float155.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float156.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[1]//secretion_target').text)
         self.text7.value = uep.find('.//cell_definition[2]//phenotype//secretion//substrate[2]').attrib['name']
-        self.float157.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[2]//secretion_target').text)
-        self.float158.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float157.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float158.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[2]//secretion_target').text)
         self.text8.value = uep.find('.//cell_definition[2]//phenotype//secretion//substrate[3]').attrib['name']
-        self.float159.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[3]//secretion_target').text)
-        self.float160.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float159.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float160.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[3]//secretion_target').text)
         self.text9.value = uep.find('.//cell_definition[2]//phenotype//secretion//substrate[4]').attrib['name']
-        self.float161.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[4]//secretion_target').text)
-        self.float162.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float161.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float162.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[4]//secretion_target').text)
         self.text10.value = uep.find('.//cell_definition[2]//phenotype//secretion//substrate[5]').attrib['name']
-        self.float163.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[5]//secretion_target').text)
-        self.float164.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float163.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float164.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[5]//secretion_target').text)
         self.text11.value = uep.find('.//cell_definition[2]//phenotype//secretion//substrate[6]').attrib['name']
-        self.float165.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[6]//secretion_target').text)
-        self.float166.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float165.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float166.value = float(uep.find('.//cell_definition[2]//phenotype//secretion//substrate[6]//secretion_target').text)
         # ---------  molecular
         # ------------------ cell_definition: CD8 Tcell
         # ---------  cycle (flow_cytometry_separated_cycle_model)
@@ -10319,23 +10319,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         self.chemotaxis_direction3.value = uep.find('.//cell_definition[3]//phenotype//motility//options//chemotaxis//direction').text
         # ---------  secretion 
         self.text12.value = uep.find('.//cell_definition[3]//phenotype//secretion//substrate[1]').attrib['name']
-        self.float275.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[1]//secretion_target').text)
-        self.float276.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float275.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float276.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[1]//secretion_target').text)
         self.text13.value = uep.find('.//cell_definition[3]//phenotype//secretion//substrate[2]').attrib['name']
-        self.float277.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[2]//secretion_target').text)
-        self.float278.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float277.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float278.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[2]//secretion_target').text)
         self.text14.value = uep.find('.//cell_definition[3]//phenotype//secretion//substrate[3]').attrib['name']
-        self.float279.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[3]//secretion_target').text)
-        self.float280.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float279.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float280.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[3]//secretion_target').text)
         self.text15.value = uep.find('.//cell_definition[3]//phenotype//secretion//substrate[4]').attrib['name']
-        self.float281.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[4]//secretion_target').text)
-        self.float282.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float281.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float282.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[4]//secretion_target').text)
         self.text16.value = uep.find('.//cell_definition[3]//phenotype//secretion//substrate[5]').attrib['name']
-        self.float283.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[5]//secretion_target').text)
-        self.float284.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float283.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float284.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[5]//secretion_target').text)
         self.text17.value = uep.find('.//cell_definition[3]//phenotype//secretion//substrate[6]').attrib['name']
-        self.float285.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[6]//secretion_target').text)
-        self.float286.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float285.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float286.value = float(uep.find('.//cell_definition[3]//phenotype//secretion//substrate[6]//secretion_target').text)
         # ---------  molecular
         # ------------------ cell_definition: macrophage
         # ---------  cycle (flow_cytometry_separated_cycle_model)
@@ -10385,23 +10385,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         self.chemotaxis_direction4.value = uep.find('.//cell_definition[4]//phenotype//motility//options//chemotaxis//direction').text
         # ---------  secretion 
         self.text18.value = uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]').attrib['name']
-        self.float395.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]//secretion_target').text)
-        self.float396.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float395.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float396.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]//secretion_target').text)
         self.text19.value = uep.find('.//cell_definition[4]//phenotype//secretion//substrate[2]').attrib['name']
-        self.float397.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[2]//secretion_target').text)
-        self.float398.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float397.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float398.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[2]//secretion_target').text)
         self.text20.value = uep.find('.//cell_definition[4]//phenotype//secretion//substrate[3]').attrib['name']
-        self.float399.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[3]//secretion_target').text)
-        self.float400.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float399.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float400.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[3]//secretion_target').text)
         self.text21.value = uep.find('.//cell_definition[4]//phenotype//secretion//substrate[4]').attrib['name']
-        self.float401.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[4]//secretion_target').text)
-        self.float402.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float401.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float402.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[4]//secretion_target').text)
         self.text22.value = uep.find('.//cell_definition[4]//phenotype//secretion//substrate[5]').attrib['name']
-        self.float403.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[5]//secretion_target').text)
-        self.float404.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float403.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float404.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[5]//secretion_target').text)
         self.text23.value = uep.find('.//cell_definition[4]//phenotype//secretion//substrate[6]').attrib['name']
-        self.float405.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[6]//secretion_target').text)
-        self.float406.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float405.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float406.value = float(uep.find('.//cell_definition[4]//phenotype//secretion//substrate[6]//secretion_target').text)
         # ---------  molecular
         # ------------------ cell_definition: neutrophil
         # ---------  cycle (flow_cytometry_separated_cycle_model)
@@ -10451,23 +10451,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         self.chemotaxis_direction5.value = uep.find('.//cell_definition[5]//phenotype//motility//options//chemotaxis//direction').text
         # ---------  secretion 
         self.text24.value = uep.find('.//cell_definition[5]//phenotype//secretion//substrate[1]').attrib['name']
-        self.float515.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[1]//secretion_target').text)
-        self.float516.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float515.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float516.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[1]//secretion_target').text)
         self.text25.value = uep.find('.//cell_definition[5]//phenotype//secretion//substrate[2]').attrib['name']
-        self.float517.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[2]//secretion_target').text)
-        self.float518.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float517.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float518.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[2]//secretion_target').text)
         self.text26.value = uep.find('.//cell_definition[5]//phenotype//secretion//substrate[3]').attrib['name']
-        self.float519.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[3]//secretion_target').text)
-        self.float520.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float519.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float520.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[3]//secretion_target').text)
         self.text27.value = uep.find('.//cell_definition[5]//phenotype//secretion//substrate[4]').attrib['name']
-        self.float521.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[4]//secretion_target').text)
-        self.float522.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float521.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float522.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[4]//secretion_target').text)
         self.text28.value = uep.find('.//cell_definition[5]//phenotype//secretion//substrate[5]').attrib['name']
-        self.float523.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[5]//secretion_target').text)
-        self.float524.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float523.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float524.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[5]//secretion_target').text)
         self.text29.value = uep.find('.//cell_definition[5]//phenotype//secretion//substrate[6]').attrib['name']
-        self.float525.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[6]//secretion_target').text)
-        self.float526.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float525.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float526.value = float(uep.find('.//cell_definition[5]//phenotype//secretion//substrate[6]//secretion_target').text)
         # ---------  molecular
         # ------------------ cell_definition: DC
         # ---------  cycle (flow_cytometry_separated_cycle_model)
@@ -10517,23 +10517,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         self.chemotaxis_direction6.value = uep.find('.//cell_definition[6]//phenotype//motility//options//chemotaxis//direction').text
         # ---------  secretion 
         self.text30.value = uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]').attrib['name']
-        self.float635.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]//secretion_target').text)
-        self.float636.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float635.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float636.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]//secretion_target').text)
         self.text31.value = uep.find('.//cell_definition[6]//phenotype//secretion//substrate[2]').attrib['name']
-        self.float637.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[2]//secretion_target').text)
-        self.float638.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float637.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float638.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[2]//secretion_target').text)
         self.text32.value = uep.find('.//cell_definition[6]//phenotype//secretion//substrate[3]').attrib['name']
-        self.float639.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[3]//secretion_target').text)
-        self.float640.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float639.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float640.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[3]//secretion_target').text)
         self.text33.value = uep.find('.//cell_definition[6]//phenotype//secretion//substrate[4]').attrib['name']
-        self.float641.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[4]//secretion_target').text)
-        self.float642.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float641.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float642.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[4]//secretion_target').text)
         self.text34.value = uep.find('.//cell_definition[6]//phenotype//secretion//substrate[5]').attrib['name']
-        self.float643.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[5]//secretion_target').text)
-        self.float644.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float643.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float644.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[5]//secretion_target').text)
         self.text35.value = uep.find('.//cell_definition[6]//phenotype//secretion//substrate[6]').attrib['name']
-        self.float645.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[6]//secretion_target').text)
-        self.float646.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float645.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float646.value = float(uep.find('.//cell_definition[6]//phenotype//secretion//substrate[6]//secretion_target').text)
         # ---------  molecular
         # ------------------ cell_definition: CD4 Tcell
         # ---------  cycle (flow_cytometry_separated_cycle_model)
@@ -10583,23 +10583,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         self.chemotaxis_direction7.value = uep.find('.//cell_definition[7]//phenotype//motility//options//chemotaxis//direction').text
         # ---------  secretion 
         self.text36.value = uep.find('.//cell_definition[7]//phenotype//secretion//substrate[1]').attrib['name']
-        self.float755.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[1]//secretion_target').text)
-        self.float756.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float755.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float756.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[1]//secretion_target').text)
         self.text37.value = uep.find('.//cell_definition[7]//phenotype//secretion//substrate[2]').attrib['name']
-        self.float757.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[2]//secretion_target').text)
-        self.float758.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float757.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float758.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[2]//secretion_target').text)
         self.text38.value = uep.find('.//cell_definition[7]//phenotype//secretion//substrate[3]').attrib['name']
-        self.float759.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[3]//secretion_target').text)
-        self.float760.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float759.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float760.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[3]//secretion_target').text)
         self.text39.value = uep.find('.//cell_definition[7]//phenotype//secretion//substrate[4]').attrib['name']
-        self.float761.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[4]//secretion_target').text)
-        self.float762.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float761.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float762.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[4]//secretion_target').text)
         self.text40.value = uep.find('.//cell_definition[7]//phenotype//secretion//substrate[5]').attrib['name']
-        self.float763.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[5]//secretion_target').text)
-        self.float764.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float763.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float764.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[5]//secretion_target').text)
         self.text41.value = uep.find('.//cell_definition[7]//phenotype//secretion//substrate[6]').attrib['name']
-        self.float765.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[6]//secretion_target').text)
-        self.float766.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float765.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float766.value = float(uep.find('.//cell_definition[7]//phenotype//secretion//substrate[6]//secretion_target').text)
         # ---------  molecular
         # ------------------ cell_definition: fibroblast
         # ---------  cycle (flow_cytometry_separated_cycle_model)
@@ -10649,23 +10649,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         self.chemotaxis_direction8.value = uep.find('.//cell_definition[8]//phenotype//motility//options//chemotaxis//direction').text
         # ---------  secretion 
         self.text42.value = uep.find('.//cell_definition[8]//phenotype//secretion//substrate[1]').attrib['name']
-        self.float875.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[1]//secretion_target').text)
-        self.float876.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float875.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[1]//uptake_rate').text)
+        self.float876.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[1]//secretion_target').text)
         self.text43.value = uep.find('.//cell_definition[8]//phenotype//secretion//substrate[2]').attrib['name']
-        self.float877.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[2]//secretion_target').text)
-        self.float878.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float877.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[2]//uptake_rate').text)
+        self.float878.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[2]//secretion_target').text)
         self.text44.value = uep.find('.//cell_definition[8]//phenotype//secretion//substrate[3]').attrib['name']
-        self.float879.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[3]//secretion_target').text)
-        self.float880.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float879.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[3]//uptake_rate').text)
+        self.float880.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[3]//secretion_target').text)
         self.text45.value = uep.find('.//cell_definition[8]//phenotype//secretion//substrate[4]').attrib['name']
-        self.float881.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[4]//secretion_target').text)
-        self.float882.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float881.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[4]//uptake_rate').text)
+        self.float882.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[4]//secretion_target').text)
         self.text46.value = uep.find('.//cell_definition[8]//phenotype//secretion//substrate[5]').attrib['name']
-        self.float883.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[5]//secretion_target').text)
-        self.float884.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float883.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[5]//uptake_rate').text)
+        self.float884.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[5]//secretion_target').text)
         self.text47.value = uep.find('.//cell_definition[8]//phenotype//secretion//substrate[6]').attrib['name']
-        self.float885.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[6]//secretion_target').text)
-        self.float886.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float885.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[6]//uptake_rate').text)
+        self.float886.value = float(uep.find('.//cell_definition[8]//phenotype//secretion//substrate[6]//secretion_target').text)
         # ---------  molecular
 
 
@@ -10721,23 +10721,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         uep.find('.//cell_definition[1]//phenotype//motility//options//chemotaxis//direction').text = str(self.chemotaxis_direction1.value)
         # ---------  secretion 
         uep.find('.//cell_definition[1]//phenotype//secretion//substrate[1]').attrib['name'] = str(self.text0.value)
-        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float35.value)
-        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float36.value)
+        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float35.value)
+        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float36.value)
         uep.find('.//cell_definition[1]//phenotype//secretion//substrate[2]').attrib['name'] = str(self.text1.value)
-        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float37.value)
-        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float38.value)
+        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float37.value)
+        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float38.value)
         uep.find('.//cell_definition[1]//phenotype//secretion//substrate[3]').attrib['name'] = str(self.text2.value)
-        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float39.value)
-        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float40.value)
+        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float39.value)
+        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float40.value)
         uep.find('.//cell_definition[1]//phenotype//secretion//substrate[4]').attrib['name'] = str(self.text3.value)
-        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float41.value)
-        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float42.value)
+        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float41.value)
+        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float42.value)
         uep.find('.//cell_definition[1]//phenotype//secretion//substrate[5]').attrib['name'] = str(self.text4.value)
-        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float43.value)
-        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float44.value)
+        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float43.value)
+        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float44.value)
         uep.find('.//cell_definition[1]//phenotype//secretion//substrate[6]').attrib['name'] = str(self.text5.value)
-        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float45.value)
-        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float46.value)
+        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float45.value)
+        uep.find('.//cell_definition[1]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float46.value)
         # ---------  molecular
         # ------------------ cell_definition: lung epithelium
         # ---------  cycle (flow_cytometry_separated_cycle_model)
@@ -10787,23 +10787,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         uep.find('.//cell_definition[2]//phenotype//motility//options//chemotaxis//direction').text = str(self.chemotaxis_direction2.value)
         # ---------  secretion 
         uep.find('.//cell_definition[2]//phenotype//secretion//substrate[1]').attrib['name'] = str(self.text6.value)
-        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float155.value)
-        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float156.value)
+        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float155.value)
+        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float156.value)
         uep.find('.//cell_definition[2]//phenotype//secretion//substrate[2]').attrib['name'] = str(self.text7.value)
-        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float157.value)
-        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float158.value)
+        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float157.value)
+        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float158.value)
         uep.find('.//cell_definition[2]//phenotype//secretion//substrate[3]').attrib['name'] = str(self.text8.value)
-        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float159.value)
-        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float160.value)
+        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float159.value)
+        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float160.value)
         uep.find('.//cell_definition[2]//phenotype//secretion//substrate[4]').attrib['name'] = str(self.text9.value)
-        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float161.value)
-        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float162.value)
+        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float161.value)
+        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float162.value)
         uep.find('.//cell_definition[2]//phenotype//secretion//substrate[5]').attrib['name'] = str(self.text10.value)
-        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float163.value)
-        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float164.value)
+        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float163.value)
+        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float164.value)
         uep.find('.//cell_definition[2]//phenotype//secretion//substrate[6]').attrib['name'] = str(self.text11.value)
-        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float165.value)
-        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float166.value)
+        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float165.value)
+        uep.find('.//cell_definition[2]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float166.value)
         # ---------  molecular
         # ------------------ cell_definition: CD8 Tcell
         # ---------  cycle (flow_cytometry_separated_cycle_model)
@@ -10853,23 +10853,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         uep.find('.//cell_definition[3]//phenotype//motility//options//chemotaxis//direction').text = str(self.chemotaxis_direction3.value)
         # ---------  secretion 
         uep.find('.//cell_definition[3]//phenotype//secretion//substrate[1]').attrib['name'] = str(self.text12.value)
-        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float275.value)
-        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float276.value)
+        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float275.value)
+        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float276.value)
         uep.find('.//cell_definition[3]//phenotype//secretion//substrate[2]').attrib['name'] = str(self.text13.value)
-        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float277.value)
-        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float278.value)
+        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float277.value)
+        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float278.value)
         uep.find('.//cell_definition[3]//phenotype//secretion//substrate[3]').attrib['name'] = str(self.text14.value)
-        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float279.value)
-        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float280.value)
+        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float279.value)
+        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float280.value)
         uep.find('.//cell_definition[3]//phenotype//secretion//substrate[4]').attrib['name'] = str(self.text15.value)
-        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float281.value)
-        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float282.value)
+        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float281.value)
+        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float282.value)
         uep.find('.//cell_definition[3]//phenotype//secretion//substrate[5]').attrib['name'] = str(self.text16.value)
-        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float283.value)
-        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float284.value)
+        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float283.value)
+        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float284.value)
         uep.find('.//cell_definition[3]//phenotype//secretion//substrate[6]').attrib['name'] = str(self.text17.value)
-        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float285.value)
-        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float286.value)
+        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float285.value)
+        uep.find('.//cell_definition[3]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float286.value)
         # ---------  molecular
         # ------------------ cell_definition: macrophage
         # ---------  cycle (flow_cytometry_separated_cycle_model)
@@ -10919,23 +10919,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         uep.find('.//cell_definition[4]//phenotype//motility//options//chemotaxis//direction').text = str(self.chemotaxis_direction4.value)
         # ---------  secretion 
         uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]').attrib['name'] = str(self.text18.value)
-        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float395.value)
-        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float396.value)
+        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float395.value)
+        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float396.value)
         uep.find('.//cell_definition[4]//phenotype//secretion//substrate[2]').attrib['name'] = str(self.text19.value)
-        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float397.value)
-        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float398.value)
+        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float397.value)
+        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float398.value)
         uep.find('.//cell_definition[4]//phenotype//secretion//substrate[3]').attrib['name'] = str(self.text20.value)
-        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float399.value)
-        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float400.value)
+        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float399.value)
+        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float400.value)
         uep.find('.//cell_definition[4]//phenotype//secretion//substrate[4]').attrib['name'] = str(self.text21.value)
-        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float401.value)
-        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float402.value)
+        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float401.value)
+        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float402.value)
         uep.find('.//cell_definition[4]//phenotype//secretion//substrate[5]').attrib['name'] = str(self.text22.value)
-        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float403.value)
-        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float404.value)
+        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float403.value)
+        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float404.value)
         uep.find('.//cell_definition[4]//phenotype//secretion//substrate[6]').attrib['name'] = str(self.text23.value)
-        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float405.value)
-        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float406.value)
+        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float405.value)
+        uep.find('.//cell_definition[4]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float406.value)
         # ---------  molecular
         # ------------------ cell_definition: neutrophil
         # ---------  cycle (flow_cytometry_separated_cycle_model)
@@ -10985,23 +10985,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         uep.find('.//cell_definition[5]//phenotype//motility//options//chemotaxis//direction').text = str(self.chemotaxis_direction5.value)
         # ---------  secretion 
         uep.find('.//cell_definition[5]//phenotype//secretion//substrate[1]').attrib['name'] = str(self.text24.value)
-        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float515.value)
-        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float516.value)
+        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float515.value)
+        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float516.value)
         uep.find('.//cell_definition[5]//phenotype//secretion//substrate[2]').attrib['name'] = str(self.text25.value)
-        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float517.value)
-        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float518.value)
+        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float517.value)
+        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float518.value)
         uep.find('.//cell_definition[5]//phenotype//secretion//substrate[3]').attrib['name'] = str(self.text26.value)
-        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float519.value)
-        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float520.value)
+        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float519.value)
+        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float520.value)
         uep.find('.//cell_definition[5]//phenotype//secretion//substrate[4]').attrib['name'] = str(self.text27.value)
-        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float521.value)
-        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float522.value)
+        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float521.value)
+        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float522.value)
         uep.find('.//cell_definition[5]//phenotype//secretion//substrate[5]').attrib['name'] = str(self.text28.value)
-        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float523.value)
-        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float524.value)
+        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float523.value)
+        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float524.value)
         uep.find('.//cell_definition[5]//phenotype//secretion//substrate[6]').attrib['name'] = str(self.text29.value)
-        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float525.value)
-        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float526.value)
+        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float525.value)
+        uep.find('.//cell_definition[5]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float526.value)
         # ---------  molecular
         # ------------------ cell_definition: DC
         # ---------  cycle (flow_cytometry_separated_cycle_model)
@@ -11051,23 +11051,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         uep.find('.//cell_definition[6]//phenotype//motility//options//chemotaxis//direction').text = str(self.chemotaxis_direction6.value)
         # ---------  secretion 
         uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]').attrib['name'] = str(self.text30.value)
-        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float635.value)
-        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float636.value)
+        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float635.value)
+        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float636.value)
         uep.find('.//cell_definition[6]//phenotype//secretion//substrate[2]').attrib['name'] = str(self.text31.value)
-        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float637.value)
-        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float638.value)
+        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float637.value)
+        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float638.value)
         uep.find('.//cell_definition[6]//phenotype//secretion//substrate[3]').attrib['name'] = str(self.text32.value)
-        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float639.value)
-        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float640.value)
+        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float639.value)
+        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float640.value)
         uep.find('.//cell_definition[6]//phenotype//secretion//substrate[4]').attrib['name'] = str(self.text33.value)
-        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float641.value)
-        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float642.value)
+        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float641.value)
+        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float642.value)
         uep.find('.//cell_definition[6]//phenotype//secretion//substrate[5]').attrib['name'] = str(self.text34.value)
-        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float643.value)
-        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float644.value)
+        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float643.value)
+        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float644.value)
         uep.find('.//cell_definition[6]//phenotype//secretion//substrate[6]').attrib['name'] = str(self.text35.value)
-        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float645.value)
-        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float646.value)
+        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float645.value)
+        uep.find('.//cell_definition[6]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float646.value)
         # ---------  molecular
         # ------------------ cell_definition: CD4 Tcell
         # ---------  cycle (flow_cytometry_separated_cycle_model)
@@ -11117,23 +11117,23 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         uep.find('.//cell_definition[7]//phenotype//motility//options//chemotaxis//direction').text = str(self.chemotaxis_direction7.value)
         # ---------  secretion 
         uep.find('.//cell_definition[7]//phenotype//secretion//substrate[1]').attrib['name'] = str(self.text36.value)
-        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float755.value)
-        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float756.value)
+        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float755.value)
+        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float756.value)
         uep.find('.//cell_definition[7]//phenotype//secretion//substrate[2]').attrib['name'] = str(self.text37.value)
-        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float757.value)
-        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float758.value)
+        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float757.value)
+        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float758.value)
         uep.find('.//cell_definition[7]//phenotype//secretion//substrate[3]').attrib['name'] = str(self.text38.value)
-        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float759.value)
-        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float760.value)
+        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float759.value)
+        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float760.value)
         uep.find('.//cell_definition[7]//phenotype//secretion//substrate[4]').attrib['name'] = str(self.text39.value)
-        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float761.value)
-        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float762.value)
+        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float761.value)
+        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float762.value)
         uep.find('.//cell_definition[7]//phenotype//secretion//substrate[5]').attrib['name'] = str(self.text40.value)
-        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float763.value)
-        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float764.value)
+        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float763.value)
+        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float764.value)
         uep.find('.//cell_definition[7]//phenotype//secretion//substrate[6]').attrib['name'] = str(self.text41.value)
-        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float765.value)
-        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float766.value)
+        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float765.value)
+        uep.find('.//cell_definition[7]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float766.value)
         # ---------  molecular
         # ------------------ cell_definition: fibroblast
         # ---------  cycle (flow_cytometry_separated_cycle_model)
@@ -11183,21 +11183,21 @@ self.cell_def_vbox0, self.cell_def_vbox1, self.cell_def_vbox2, self.cell_def_vbo
         uep.find('.//cell_definition[8]//phenotype//motility//options//chemotaxis//direction').text = str(self.chemotaxis_direction8.value)
         # ---------  secretion 
         uep.find('.//cell_definition[8]//phenotype//secretion//substrate[1]').attrib['name'] = str(self.text42.value)
-        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float875.value)
-        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float876.value)
+        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[1]//uptake_rate').text = str(self.float875.value)
+        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[1]//secretion_target').text = str(self.float876.value)
         uep.find('.//cell_definition[8]//phenotype//secretion//substrate[2]').attrib['name'] = str(self.text43.value)
-        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float877.value)
-        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float878.value)
+        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[2]//uptake_rate').text = str(self.float877.value)
+        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[2]//secretion_target').text = str(self.float878.value)
         uep.find('.//cell_definition[8]//phenotype//secretion//substrate[3]').attrib['name'] = str(self.text44.value)
-        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float879.value)
-        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float880.value)
+        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[3]//uptake_rate').text = str(self.float879.value)
+        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[3]//secretion_target').text = str(self.float880.value)
         uep.find('.//cell_definition[8]//phenotype//secretion//substrate[4]').attrib['name'] = str(self.text45.value)
-        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float881.value)
-        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float882.value)
+        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[4]//uptake_rate').text = str(self.float881.value)
+        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[4]//secretion_target').text = str(self.float882.value)
         uep.find('.//cell_definition[8]//phenotype//secretion//substrate[5]').attrib['name'] = str(self.text46.value)
-        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float883.value)
-        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float884.value)
+        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[5]//uptake_rate').text = str(self.float883.value)
+        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[5]//secretion_target').text = str(self.float884.value)
         uep.find('.//cell_definition[8]//phenotype//secretion//substrate[6]').attrib['name'] = str(self.text47.value)
-        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float885.value)
-        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float886.value)
+        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[6]//uptake_rate').text = str(self.float885.value)
+        uep.find('.//cell_definition[8]//phenotype//secretion//substrate[6]//secretion_target').text = str(self.float886.value)
         # ---------  molecular
