@@ -639,16 +639,17 @@ class SubstrateTab(object):
             for elm in uep.findall('variable'):
                 # print("-----> ",elm.attrib['name'])
                 field_name = elm.attrib['name']
-                self.field_min_max[field_name] = [0., 1., False]
-                self.field_dict[field_idx] = field_name
-                dropdown_options[field_name] = field_idx
+                if ('assembled' not in field_name):
+                    self.field_min_max[field_name] = [0., 1., False]
+                    self.field_dict[field_idx] = field_name
+                    dropdown_options[field_name] = field_idx
 
-                self.field_min_max[field_name][0] = 0   
-                self.field_min_max[field_name][1] = 1
+                    self.field_min_max[field_name][0] = 0   
+                    self.field_min_max[field_name][1] = 1
 
-                # self.field_min_max[field_name][0] = field_idx   #rwh: helps debug
-                # self.field_min_max[field_name][1] = field_idx+1   
-                self.field_min_max[field_name][2] = False
+                    # self.field_min_max[field_name][0] = field_idx   #rwh: helps debug
+                    # self.field_min_max[field_name][1] = field_idx+1   
+                    self.field_min_max[field_name][2] = False
                 field_idx += 1
 
 #        constWidth = '180px'
