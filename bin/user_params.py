@@ -351,7 +351,7 @@ class UserTab(object):
         param_name41.style.button_color = 'lightgreen'
 
         self.pyroptotic_bystander_epithelium_color = Text(
-          value='red',
+          value='darkred',
           style=style, layout=widget_layout)
 
         param_name42 = Button(description='vi_apoptotic_epithelium_color', disabled=True, layout=name_button_layout)
@@ -428,7 +428,7 @@ class UserTab(object):
         param_name52.style.button_color = 'tan'
 
         self.fibroblast_color = Text(
-          value='orange',
+          value='blueviolet',
           style=style, layout=widget_layout)
 
         units_button1 = Button(description='', disabled=True, layout=units_button_layout) 
