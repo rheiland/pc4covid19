@@ -2292,7 +2292,7 @@
 				
 
 			<CD8_Tcell_color description="CD8 T cell color" type="string">red</CD8_Tcell_color>
-			<CD4_Tcell_color description="CD8 T cell color" type="string">orange</CD4_Tcell_color>
+			<CD4_Tcell_color description="CD4 T cell color" type="string">orange</CD4_Tcell_color>
 			<Macrophage_color description="macrophage color" type="string">rgb(35,139,69)</Macrophage_color>
 			<activated_macrophage_color description="color of activated macrophage" type="string">lime</activated_macrophage_color> 
 		

@@ -628,7 +628,7 @@ class UserTab(object):
         desc_button42.style.button_color = 'tan'
         desc_button43 = Button(description='CD8 T cell color' , tooltip='CD8 T cell color', disabled=True, layout=desc_button_layout) 
         desc_button43.style.button_color = 'lightgreen'
-        desc_button44 = Button(description='CD8 T cell color' , tooltip='CD8 T cell color', disabled=True, layout=desc_button_layout) 
+        desc_button44 = Button(description='CD4 T cell color' , tooltip='CD4 T cell color', disabled=True, layout=desc_button_layout) 
         desc_button44.style.button_color = 'tan'
         desc_button45 = Button(description='macrophage color' , tooltip='macrophage color', disabled=True, layout=desc_button_layout) 
         desc_button45.style.button_color = 'lightgreen'

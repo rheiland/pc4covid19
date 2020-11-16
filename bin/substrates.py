@@ -88,6 +88,19 @@ class SubstrateTab(object):
         self.analysis_data_set3 = False  
         self.analysis_data_set4 = False  
 
+        # colors of plots for extra analysis (line ~1100)
+        self.mac_color = 'lime'
+        self.neut_color = 'cyan'
+        self.cd8_color = 'red'
+        self.dc_color = 'fuchsia'
+        self.cd4_color = 'orange'
+        self.fib_color = 'blueviolet'
+
+        self.lymph_DC_color = 'black'
+        self.lymph_TC_color = 'red'
+        self.viral_load_color = 'black'
+
+
         # self.fig = plt.figure(figsize=(7.2,6))  # this strange figsize results in a ~square contour plot
 
         self.first_time = True
@@ -156,10 +169,6 @@ class SubstrateTab(object):
         self.tname = "time"
         self.yname = 'Y'
         # self.num_2D_plots = 1
-
-        # colors of plots for extra analysis
-        self.lymph_DC_color = 'black'
-        self.lymph_TC_color = 'red'
 
 
 
@@ -1091,14 +1100,14 @@ class SubstrateTab(object):
             p3 = self.ax1.plot(self.xval, self.yval3, label='dead', linewidth=3)
 
         elif self.analysis_data_choice.value == 1:  # Mac,Neut,CD8,DC,CD4,Fib
-            p1 = self.ax1.plot(self.xval, self.yval4, label='Mac', linewidth=3, color='lime')
-            p2 = self.ax1.plot(self.xval, self.yval5, linestyle='dashed', label='Neut', linewidth=3, color='cyan')
-            p3 = self.ax1.plot(self.xval, self.yval6, label='CD8', linewidth=3, color='red')
-            p4 = self.ax1.plot(self.xval, self.yval7, linestyle='dashed', label='DC', linewidth=3, color='fuchsia')
+            p1 = self.ax1.plot(self.xval, self.yval4, label='Mac', linewidth=3, color=self.mac_color)
+            p2 = self.ax1.plot(self.xval, self.yval5, linestyle='dashed', label='Neut', linewidth=3, color=self.neut_color)
+            p3 = self.ax1.plot(self.xval, self.yval6, label='CD8', linewidth=3, color=self.cd8_color)
+            p4 = self.ax1.plot(self.xval, self.yval7, linestyle='dashed', label='DC', linewidth=3, color=self.dc_color)
             # print('plot_analysis_data(): yval6=',self.yval6)
             # print('plot_analysis_data(): yval7=',self.yval7)
-            p5 = self.ax1.plot(self.xval, self.yval8, label='CD4', linewidth=3, color='orange')
-            p6 = self.ax1.plot(self.xval, self.yval9, linestyle='dashed',  label='Fib', linewidth=3, color='orange') # dashes=[6,2],
+            p5 = self.ax1.plot(self.xval, self.yval8, label='CD4', linewidth=3, color=self.cd4_color)
+            p6 = self.ax1.plot(self.xval, self.yval9, linestyle='dashed',  label='Fib', linewidth=3, color=self.fib_color) # dashes=[6,2],
             # print('plot_analysis_data(): yval9=',self.yval9)
 
         elif self.analysis_data_choice.value == 2:  # viral load
@@ -1106,7 +1115,7 @@ class SubstrateTab(object):
                 print('problem: len(xval) >= len(yval10)',self.xval,self.yval10 )
                 pass
             else:
-                p7 = self.ax1.plot(self.xval, self.yval10, linewidth=3, color='black')
+                p7 = self.ax1.plot(self.xval, self.yval10, linewidth=3, color=self.viral_load_color)
 
         elif self.analysis_data_choice.value == 3:  # lymph: DC,TC
             self.ax1_lymph_TC.get_yaxis().set_visible(True)
