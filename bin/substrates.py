@@ -131,7 +131,7 @@ class SubstrateTab(object):
 
         self.show_nucleus = False
         self.show_edge = True
-        self.alpha = 0.7
+        self.alpha = 1.0   # 0.7 is partially transparent (all cells)
 
         substrates_default_disabled_flag = True  # True = disable them by default; False=enable them
 
