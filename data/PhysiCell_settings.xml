@@ -260,11 +260,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate>
-						<substrate name="anti-inflammatory cytokine">
+					<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-						<substrate name="collagen">
+					<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -359,6 +359,7 @@
 				<interferon_viral_RNA_detection description="infected cell interferon secretion starts at this viral RNA level" type="double" units="dimensionless">1</interferon_viral_RNA_detection>
 				
 				 
+				<TCell_detection description="protein value at which a T Cell can detect an infected cell" type="double" units="protein">10</TCell_detection>
 				<TCell_contact_time description="tracks total contact time with CD8 T cells" type="double" units="min">0.0</TCell_contact_time>
 				<cell_attachment_rate description="the rate at which the cell attaches to cells in contact" type="double" units="1/min">0</cell_attachment_rate>
 				<cell_attachment_lifetime description="the mean duration of a cell-cell attachment" type="double" units="min">0</cell_attachment_lifetime>
@@ -518,11 +519,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate>
-						<substrate name="anti-inflammatory cytokine">
+					<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-						<substrate name="collagen">
+					<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -617,6 +618,7 @@
 				<interferon_viral_RNA_detection description="infected cell interferon secretion starts at this viral RNA level" type="double" units="dimensionless">1</interferon_viral_RNA_detection>
 				
 				 
+				<TCell_detection description="protein value at which a T Cell can detect an infected cell" type="double" units="protein">10</TCell_detection>
 				<TCell_contact_time description="tracks total contact time with CD8 T cells" type="double" units="min">0.0</TCell_contact_time>
 				<cell_attachment_rate description="the rate at which the cell attaches to cells in contact" type="double" units="1/min">0</cell_attachment_rate>
 				<cell_attachment_lifetime description="the mean duration of a cell-cell attachment" type="double" units="min">0</cell_attachment_lifetime>
@@ -776,11 +778,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate>
-						<substrate name="anti-inflammatory cytokine">
+					<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-						<substrate name="collagen">
+					<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -875,6 +877,7 @@
 				<interferon_viral_RNA_detection description="infected cell interferon secretion starts at this viral RNA level" type="double" units="dimensionless">1</interferon_viral_RNA_detection>
 				
 				 
+				<TCell_detection description="protein value at which a T Cell can detect an infected cell" type="double" units="protein">10</TCell_detection>
 				<TCell_contact_time description="tracks total contact time with CD8 T cells" type="double" units="min">0.0</TCell_contact_time>
 				<cell_attachment_rate description="the rate at which the cell attaches to cells in contact" type="double" units="1/min">0.2</cell_attachment_rate>
 				<cell_attachment_lifetime description="the mean duration of a cell-cell attachment" type="double" units="min">8.5</cell_attachment_lifetime>
@@ -1034,11 +1037,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate>
-						<substrate name="anti-inflammatory cytokine">
+					<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-						<substrate name="collagen">
+					<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -1133,6 +1136,7 @@
 				<interferon_viral_RNA_detection description="infected cell interferon secretion starts at this viral RNA level" type="double" units="dimensionless">1</interferon_viral_RNA_detection>
 				
 				 
+				<TCell_detection description="protein value at which a T Cell can detect an infected cell" type="double" units="protein">10</TCell_detection>
 				<TCell_contact_time description="tracks total contact time with CD8 T cells" type="double" units="min">0.0</TCell_contact_time>
 				<cell_attachment_rate description="the rate at which the cell attaches to cells in contact" type="double" units="1/min">0</cell_attachment_rate>
 				<cell_attachment_lifetime description="the mean duration of a cell-cell attachment" type="double" units="min">0</cell_attachment_lifetime>
@@ -1292,11 +1296,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate>
-						<substrate name="anti-inflammatory cytokine">
+					<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-						<substrate name="collagen">
+					<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -1391,6 +1395,7 @@
 				<interferon_viral_RNA_detection description="infected cell interferon secretion starts at this viral RNA level" type="double" units="dimensionless">1</interferon_viral_RNA_detection>
 				
 				 
+				<TCell_detection description="protein value at which a T Cell can detect an infected cell" type="double" units="protein">10</TCell_detection>
 				<TCell_contact_time description="tracks total contact time with CD8 T cells" type="double" units="min">0.0</TCell_contact_time>
 				<cell_attachment_rate description="the rate at which the cell attaches to cells in contact" type="double" units="1/min">0</cell_attachment_rate>
 				<cell_attachment_lifetime description="the mean duration of a cell-cell attachment" type="double" units="min">0</cell_attachment_lifetime>
@@ -1550,11 +1555,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate>
-						<substrate name="anti-inflammatory cytokine">
+					<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-						<substrate name="collagen">
+					<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -1649,6 +1654,7 @@
 				<interferon_viral_RNA_detection description="infected cell interferon secretion starts at this viral RNA level" type="double" units="dimensionless">1</interferon_viral_RNA_detection>
 				
 				 
+				<TCell_detection description="protein value at which a T Cell can detect an infected cell" type="double" units="protein">10</TCell_detection>
 				<TCell_contact_time description="tracks total contact time with CD8 T cells" type="double" units="min">0.0</TCell_contact_time>
 				<cell_attachment_rate description="the rate at which the cell attaches to cells in contact" type="double" units="1/min">0</cell_attachment_rate>
 				<cell_attachment_lifetime description="the mean duration of a cell-cell attachment" type="double" units="min">0</cell_attachment_lifetime>
@@ -1808,11 +1814,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate>
-						<substrate name="anti-inflammatory cytokine">
+					<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-						<substrate name="collagen">
+					<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -1907,6 +1913,7 @@
 				<interferon_viral_RNA_detection description="infected cell interferon secretion starts at this viral RNA level" type="double" units="dimensionless">1</interferon_viral_RNA_detection>
 				
 				 
+				<TCell_detection description="protein value at which a T Cell can detect an infected cell" type="double" units="protein">10</TCell_detection>
 				<TCell_contact_time description="tracks total contact time with CD8 T cells" type="double" units="min">0.0</TCell_contact_time>
 				<cell_attachment_rate description="the rate at which the cell attaches to cells in contact" type="double" units="1/min">0</cell_attachment_rate>
 				<cell_attachment_lifetime description="the mean duration of a cell-cell attachment" type="double" units="min">0</cell_attachment_lifetime>
@@ -2066,11 +2073,11 @@
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.1</uptake_rate>
 					</substrate>
-						<substrate name="anti-inflammatory cytokine">
+					<substrate name="anti-inflammatory cytokine">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 
-						<substrate name="collagen">
+					<substrate name="collagen">
 						<secretion_target units="dimensionless substrate concentration">1</secretion_target>
 						<uptake_rate units="1/min">0.0</uptake_rate>
 					</substrate> 	
@@ -2165,6 +2172,7 @@
 				<interferon_viral_RNA_detection description="infected cell interferon secretion starts at this viral RNA level" type="double" units="dimensionless">1</interferon_viral_RNA_detection>
 				
 				 
+				<TCell_detection description="protein value at which a T Cell can detect an infected cell" type="double" units="protein">10</TCell_detection>
 				<TCell_contact_time description="tracks total contact time with CD8 T cells" type="double" units="min">0.0</TCell_contact_time>
 				<cell_attachment_rate description="the rate at which the cell attaches to cells in contact" type="double" units="1/min">0</cell_attachment_rate>
 				<cell_attachment_lifetime description="the mean duration of a cell-cell attachment" type="double" units="min">0</cell_attachment_lifetime>

@@ -2,7 +2,7 @@
 
 using namespace PhysiCell; 
 
-std::string immune_submodels_version = "0.2.0"; 
+std::string immune_submodels_version = "0.4.0"; 
 // Submodel_Information Immune_submodels_info; // not needed for now 
 
 Submodel_Information CD8_submodel_info; 
@@ -1207,7 +1207,7 @@ Cell* check_for_dead_neighbor_for_interaction( Cell* pAttacker , double dt )
 bool attempt_immune_cell_attachment( Cell* pAttacker, Cell* pTarget , double dt )
 {
 	// if the target is not infected, give up 
-	if( pTarget->custom_data[ "assembled_virion" ] < 1 )
+	if( pTarget->custom_data[ "viral_protein" ] < pAttacker->custom_data[ "TCell_detection" ] )
 	{ return false; }
 		
 	// if the target cell is dead, give up 

@@ -11,9 +11,9 @@
 		</software>
 		<citation />
 		<current_time units="min">0.000000</current_time>
-		<current_runtime units="sec">0.118130</current_runtime>
-		<created>2020-11-05T16:56:23Z</created>
-		<last_modified>2020-11-05T16:56:23Z</last_modified>
+		<current_runtime units="sec">0.114985</current_runtime>
+		<created>2020-11-17T01:06:32Z</created>
+		<last_modified>2020-11-17T01:06:32Z</last_modified>
 	</metadata>
 	<microenvironment>
 		<domain name="microenvironment">
@@ -176,27 +176,29 @@
 							<label index="76" size="1">interferon_activation</label>
 							<label index="77" size="1">interferon_max_virus_inhibition</label>
 							<label index="78" size="1">interferon_viral_RNA_threshold</label>
-							<label index="79" size="1">TCell_contact_time</label>
-							<label index="80" size="1">cell_attachment_rate</label>
-							<label index="81" size="1">cell_attachment_lifetime</label>
-							<label index="82" size="1">TCell_contact_death_threshold</label>
-							<label index="83" size="1">max_attachment_distance</label>
-							<label index="84" size="1">elastic_attachment_coefficient</label>
-							<label index="85" size="1">time_to_next_phagocytosis</label>
-							<label index="86" size="1">material_internalisation_rate</label>
-							<label index="87" size="1">threshold_macrophage_volume</label>
-							<label index="88" size="1">threshold_neutrophil_volume</label>
-							<label index="89" size="1">exhausted_macrophage_death_rat</label>
-							<label index="90" size="1">ability_to_phagocytose_infected_cell</label>
-							<label index="91" size="1">time_of_DC_departure</label>
-							<label index="92" size="1">phagocytosis_rate</label>
-							<label index="93" size="1">sensitivity_to_debris_chemotaxis</label>
-							<label index="94" size="1">sensitivity_to_chemokine_chemotaxis</label>
-							<label index="95" size="1">activated_speed</label>
-							<label index="96" size="1">activated_cytokine_secretion_rate</label>
-							<label index="97" size="1">activated_immune_cell</label>
-							<label index="98" size="1">antiinflammatory_cytokine_secretion_rate</label>
-							<label index="99" size="1">collagen_secretion_rate</label>
+							<label index="79" size="1">interferon_viral_RNA_detection</label>
+							<label index="80" size="1">TCell_detection</label>
+							<label index="81" size="1">TCell_contact_time</label>
+							<label index="82" size="1">cell_attachment_rate</label>
+							<label index="83" size="1">cell_attachment_lifetime</label>
+							<label index="84" size="1">TCell_contact_death_threshold</label>
+							<label index="85" size="1">max_attachment_distance</label>
+							<label index="86" size="1">elastic_attachment_coefficient</label>
+							<label index="87" size="1">time_to_next_phagocytosis</label>
+							<label index="88" size="1">material_internalisation_rate</label>
+							<label index="89" size="1">threshold_macrophage_volume</label>
+							<label index="90" size="1">threshold_neutrophil_volume</label>
+							<label index="91" size="1">exhausted_macrophage_death_rat</label>
+							<label index="92" size="1">ability_to_phagocytose_infected_cell</label>
+							<label index="93" size="1">time_of_DC_departure</label>
+							<label index="94" size="1">phagocytosis_rate</label>
+							<label index="95" size="1">sensitivity_to_debris_chemotaxis</label>
+							<label index="96" size="1">sensitivity_to_chemokine_chemotaxis</label>
+							<label index="97" size="1">activated_speed</label>
+							<label index="98" size="1">activated_cytokine_secretion_rate</label>
+							<label index="99" size="1">activated_immune_cell</label>
+							<label index="100" size="1">antiinflammatory_cytokine_secretion_rate</label>
+							<label index="101" size="1">collagen_secretion_rate</label>
 						</labels>
 						<filename>initial_cells_physicell.mat</filename>
 					</simplified_data>
