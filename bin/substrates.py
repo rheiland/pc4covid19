@@ -437,8 +437,8 @@ class SubstrateTab(object):
 #        self.field_cmap.observe(self.plot_substrate)
         # self.field_colormap.observe(self.substrate_field_cb)
 
-        # self.colormap_min.observe(self.substrate_field_cb)
-        # self.colormap_max.observe(self.substrate_field_cb)
+        self.colormap_min.observe(self.substrate_field_cb)
+        self.colormap_max.observe(self.substrate_field_cb)
 
 #         self.cmap_fixed_toggle = Checkbox(
 #             description='Fix',
@@ -881,6 +881,7 @@ class SubstrateTab(object):
         self.field_min_max[field_name][0] = self.colormap_min.value 
         self.field_min_max[field_name][1] = self.colormap_max.value
         self.field_min_max[field_name][2] = self.colormap_fixed_toggle.value
+        # print('rwh: substrate_field_cb: ',self.field_min_max)
 
 #        self.field_index = self.substrate_choice.value + 4
 #        print('field_index=',self.field_index)
